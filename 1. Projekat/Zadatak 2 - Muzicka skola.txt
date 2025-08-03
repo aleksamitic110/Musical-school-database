@@ -1,0 +1,26 @@
+Potrebno je projektovati relacionu bazu podataka koja će pamtiti sve informacije neophodne za podršku 
+poslovanju jedne privatne muzičke škole koja organizuje nastavu za različite instrumente i uzraste. 
+
+Škola zapošljava nastavnike koji organizuju individualne i grupne časove. 
+U sistemu se pamte podaci o polaznicima škole. 
+Polaznici mogu biti deca ili odrasli. 
+Za decu se pamti jedinstveni broj dosijea, ime, prezime, datum rođenja, email adresa, broj telefona i podaci o 
+roditelju/staratelju (JMBG, ime i prezime, adresa, kontakt telefon i email adresa). Za odrasle polaznike se 
+pamti JMBG, ime, prezime, kontakt telefon, email i zanimanje. 
+Svaki polaznik može biti prijavljen na više kurseva. Kursevi mogu da se odnose na instrumentalnu nastavu 
+(u tom slučaju kurs je vezan za određeni instrument ili grupu instrumenata), vokalni kursevi (individualno 
+ili horsko pevanje) i muzička teorija (pamti se naziv teorijskog predmeta). Za svaki kurs se pamti i nivo 
+(početni, srednji, napredni). Takođe treba za kurs pamtiti i tip nastave (individualna ili grupna). Pri tome 
+treba voditi računa da kursevi vezani za instrumentalnu nastavu i individualno pevanje se organizuju sa 
+individualnom nastavom dok se svi ostali kursevi organizuju sa grupnom nastavom.  
+Za svaki kurs se vodi evidencija o terminima časova. Termin se odvija u određenoj učionici, u tačno 
+definisano vreme. Vodi se evidencija o prisustvu svakog polaznika za svaki čas, kao i o oceni za datu lekciju. 
+Nastavnici mogu biti stalno zaposleni ili honorarci. Za sve nastavnike se pamti JMBG, ime, prezime, stručna 
+sprema, email, kontakt telefon i datum zaposlenja. Za honorarce se dodatno beleži broj ugovora, trajanje 
+ugovora i broj časova mesečno. Za stalno zaposlene nastavnike se pamti i radno vreme, kao i da li imaju 
+status mentora. 
+Svaki kurs vodi jedan nastavnik. Takođe, svaki nastavnik može biti mentor drugom nastavniku. Kursevi se 
+odvijaju u prostorijama škole, koje se nalaze na više lokacija (filijala). Za svaku lokaciju se pamti adresa, 
+radno vreme, kapacitet i opremljenost učionica. 
+Na kraju svakog kursa polaznici polažu završni ispit. Pamti se datum ispita, ocena, komisija (nastavnici) koji 
+su prisustvovali i da li je polaznik dobio sertifikat.

@@ -1,0 +1,497 @@
+E:\SBP temp\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe.config
+E:\SBP temp\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe
+E:\SBP temp\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.pdb
+E:\SBP temp\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.dll
+E:\SBP temp\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.dll
+E:\SBP temp\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.dll
+E:\SBP temp\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.dll
+E:\SBP temp\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.pdb
+E:\SBP temp\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.xml
+E:\SBP temp\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.xml
+E:\SBP temp\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.xml
+E:\SBP temp\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.xml
+E:\SBP temp\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Form1.resources
+E:\SBP temp\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Properties.Resources.resources
+E:\SBP temp\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.GenerateResource.Cache
+E:\SBP temp\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.exe
+E:\SBP temp\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.pdb
+E:\SBP temp\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.OdeljenjaInformacije.resources
+E:\SBP temp\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.OdeljenjeEditBasic.resources
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe.config
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.pdb
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.dll
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.dll
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.dll
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.dll
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.pdb
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.xml
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.xml
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.xml
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.xml
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csprojAssemblyReference.cache
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Form1.resources
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.OdeljenjaInformacije.resources
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.OdeljenjeEditBasic.resources
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Properties.Resources.resources
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.GenerateResource.cache
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CoreCompileInputs.cache
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CopyComplete
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.exe
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.pdb
+C:\Users\Emma\Desktop\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PocetnaStranica.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe.config
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.pdb
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.pdb
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.xml
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.xml
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.xml
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.xml
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csprojAssemblyReference.cache
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Form1.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.OdeljenjaInformacije.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.OdeljenjeEditBasic.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PocetnaStranica.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavniceForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Properties.Resources.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.GenerateResource.cache
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CoreCompileInputs.cache
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CopyComplete
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.exe
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.pdb
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaDodajForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaUpdateForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.RadniciForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.RadniciDodajForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.RadniciUpdateForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiDodajForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csprojAssemblyReference.cache
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Form1.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjeDo5Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PocetnaStranica.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaDodajForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaUpdateForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavniceForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiDodajForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Properties.Resources.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.GenerateResource.cache
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CoreCompileInputs.cache
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.exe
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.pdb
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe.config
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.pdb
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.dll
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.dll
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.dll
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.dll
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.pdb
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.xml
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.xml
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.xml
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.xml
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CopyComplete
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeDo5Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeDo5Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeOd6Do15Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeOd6Do15Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjaOd6Do15Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeOdrasliForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeOdrasliForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjeOdrasliForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.ZaposleniForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajZaposlenogForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniZaposlenogForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniRadniOdnosForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajPostojecegZaposlenogForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe.config
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.pdb
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.pdb
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.xml
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.xml
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.xml
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.xml
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Form1.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeDo5Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeOd6Do15Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeOdrasliForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajPostojecegZaposlenogForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajZaposlenogForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeDo5Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeOd6Do15Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeOdrasliForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniRadniOdnosForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniZaposlenogForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjaOd6Do15Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjeDo5Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjeOdrasliForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.ZaposleniForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PocetnaStranica.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaDodajForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaUpdateForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavniceForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiDodajForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Properties.Resources.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.GenerateResource.cache
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CoreCompileInputs.cache
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CopyComplete
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.exe
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.pdb
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.SefoviForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajSefaForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniSefaForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajPostojecegZaposlenogKaoSefaForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csprojAssemblyReference.cache
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajSefaForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Form1.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeDo5Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeOd6Do15Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeOdrasliForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajPostojecegZaposlenogForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajZaposlenogForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeDo5Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeOd6Do15Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeOdrasliForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniRadniOdnosForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniZaposlenogForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjaOd6Do15Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjeDo5Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjeOdrasliForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.ZaposleniForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniSefaForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PocetnaStranica.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaDodajForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaUpdateForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavniceForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiDodajForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Properties.Resources.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.SefoviForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.GenerateResource.cache
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CoreCompileInputs.cache
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.exe
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.pdb
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe.config
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.pdb
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.dll
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.dll
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.dll
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.dll
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.pdb
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.xml
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.xml
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.xml
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.xml
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CopyComplete
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajPostojecegZaposlenogKaoSefa.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica2\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.SviZaposleniForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe.config
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.pdb
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.pdb
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.xml
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.xml
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.xml
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.xml
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csprojAssemblyReference.cache
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajPostojecegZaposlenogKaoSefa.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajSefaForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Form1.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeDo5Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeOd6Do15Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeOdrasliForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajPostojecegZaposlenogForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajZaposlenogForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeDo5Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeOd6Do15Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeOdrasliForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniRadniOdnosForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniZaposlenogForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjaOd6Do15Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjeDo5Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjeOdrasliForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.ZaposleniForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniSefaForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PocetnaStranica.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaDodajForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaUpdateForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavniceForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiDodajForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Properties.Resources.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.SefoviForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.SviZaposleniForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.GenerateResource.cache
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CoreCompileInputs.cache
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CopyComplete
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.exe
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.pdb
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PregledProizvodaOdeljenjaDo5Form.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodAutomobiliForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csprojAssemblyReference.cache
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodAutomobiliForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajPostojecegZaposlenogKaoSefa.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajSefaForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Form1.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeDo5Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeOd6Do15Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeOdrasliForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajPostojecegZaposlenogForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajZaposlenogForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeDo5Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeOd6Do15Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeOdrasliForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniRadniOdnosForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniZaposlenogForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjaOd6Do15Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjeDo5Forma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjeOdrasliForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.ZaposleniForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniSefaForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PocetnaStranica.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaDodajForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaUpdateForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavniceForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiDodajForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiForm.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PregledProizvodaOdeljenjaDo5Form.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Properties.Resources.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.SefoviForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.SviZaposleniForma.resources
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.GenerateResource.cache
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CoreCompileInputs.cache
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.exe
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.pdb
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe.config
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.pdb
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.dll
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.dll
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.dll
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.dll
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.pdb
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.xml
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.xml
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.xml
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.xml
+C:\Users\Emma\Desktop\RadneVerzije\Prodavnica3\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CopyComplete
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe.config
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.pdb
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.pdb
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.xml
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.xml
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.xml
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.xml
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csprojAssemblyReference.cache
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodAutomobiliForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajPostojecegZaposlenogKaoSefa.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajSefaForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Form1.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeDo5Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeOd6Do15Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeOdrasliForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajPostojecegZaposlenogForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajZaposlenogForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeDo5Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeOd6Do15Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeOdrasliForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniRadniOdnosForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniZaposlenogForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjaOd6Do15Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjeDo5Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjeOdrasliForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.ZaposleniForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniSefaForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PocetnaStranica.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaDodajForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaUpdateForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavniceForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiDodajForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PregledProizvodaOdeljenjaDo5Form.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Properties.Resources.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.SefoviForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.SviZaposleniForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.GenerateResource.cache
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CoreCompileInputs.cache
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CopyComplete
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.exe
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.pdb
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodIgrackePlastikaForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodVojniciForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodPuzzleForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodLutkeForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodDodaciZaLutkeForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodDo5Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodOd6Do15Forma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodOdrasliForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PregledProizvodaOdeljenjaOd6Do15Form.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PregledProizvodaOdrasliForm.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodIgrackePlastikaForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodAutomobilForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodVojnikForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodLutkaForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodDodatakZaLutkuForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodSlagalicaForma.resources
+C:\Users\Sibin\source\repos\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.SviProizvodiForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe.config
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.exe
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.pdb
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.pdb
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.dll
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.dll
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.dll
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.dll
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.pdb
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.xml
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.xml
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.xml
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.xml
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csprojResolveAssemblyReference.cache
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodAutomobiliForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodDodaciZaLutkeForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodDo5Forma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodIgrackePlastikaForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodLutkeForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodOd6Do15Forma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodOdrasliForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodPuzzleForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodVojniciForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajPostojecegZaposlenogKaoSefa.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajSefaForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Form1.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeDo5Forma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeOd6Do15Forma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeOdrasliForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajPostojecegZaposlenogForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajZaposlenogForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeDo5Forma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeOd6Do15Forma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeOdrasliForm.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniRadniOdnosForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniZaposlenogForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjaOd6Do15Forma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjeDo5Forma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjeOdrasliForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.ZaposleniForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniSefaForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodAutomobilForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodDodatakZaLutkuForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodIgrackePlastikaForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodLutkaForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodSlagalicaForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodVojnikForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PocetnaStranica.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaDodajForm.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaUpdateForm.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavniceForm.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiDodajForm.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiForm.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PregledProizvodaOdeljenjaDo5Form.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PregledProizvodaOdeljenjaOd6Do15Form.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PregledProizvodaOdrasliForm.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Properties.Resources.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.SefoviForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.SviZaposleniForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.SviProizvodiForma.resources
+D:\D particija\Nastava\Sistemi baza podataka\Prodavnica III deo UI\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.GenerateResource.Cache
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.AssemblyReference.cache
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.exe
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.pdb
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe.config
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.exe
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\bin\Debug\Prodavnica.pdb
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.dll
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.dll
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.dll
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.dll
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.pdb
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\bin\Debug\FluentNHibernate.xml
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\bin\Debug\Iesi.Collections.xml
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.xml
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\bin\Debug\NHibernate.Linq.xml
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodAutomobiliForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodDodaciZaLutkeForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodDo5Forma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodIgrackePlastikaForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodLutkeForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodOd6Do15Forma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodOdrasliForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodPuzzleForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajProizvodVojniciForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajPostojecegZaposlenogKaoSefa.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.DodajSefaForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Form1.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeDo5Forma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeOd6Do15Forma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajOdeljenjeOdrasliForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajPostojecegZaposlenogForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.DodajZaposlenogForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeDo5Forma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeOd6Do15Forma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniOdeljenjeOdrasliForm.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniRadniOdnosForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.IzmeniZaposlenogForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjaOd6Do15Forma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjeDo5Forma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.OdeljenjeOdrasliForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Forme.ZaposleniForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniSefaForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodAutomobilForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodDodatakZaLutkuForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodIgrackePlastikaForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodLutkaForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodSlagalicaForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.IzmeniProizvodVojnikForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PocetnaStranica.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaDodajForm.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavnicaUpdateForm.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProdavniceForm.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiDodajForm.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.ProizvodiForm.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PregledProizvodaOdeljenjaDo5Form.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PregledProizvodaOdeljenjaOd6Do15Form.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.PregledProizvodaOdrasliForm.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.Properties.Resources.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.SefoviForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.SviZaposleniForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.SviProizvodiForma.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.GenerateResource.cache
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.CoreCompileInputs.cache
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Prodavnica - III deo WINFORMS COMPLETE\Prodavnica - III deo\Prodavnica\obj\x86\Debug\Prodavnica.csproj.Up2Date

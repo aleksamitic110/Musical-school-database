@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\aleks\\OneDrive\\Desktop\\Fakultet\\3. godina\\2. Semestar\\Sistemi baza\\2. Projekat\\Prodavnica - III deo WINFORMS COMPLETE\\Prodavnica - III deo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C73AA318-950C-4CF9-8EE8-83949B306FC2}|Prodavnica\\Prodavnica.csproj|c:\\users\\aleks\\onedrive\\desktop\\fakultet\\3. godina\\2. semestar\\sistemi baza\\2. projekat\\prodavnica - iii deo winforms complete\\prodavnica - iii deo\\prodavnica\\mapiranja\\automobilmapiranja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C73AA318-950C-4CF9-8EE8-83949B306FC2}|Prodavnica\\Prodavnica.csproj|solutionrelative:prodavnica\\mapiranja\\automobilmapiranja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C73AA318-950C-4CF9-8EE8-83949B306FC2}|Prodavnica\\Prodavnica.csproj|c:\\users\\aleks\\onedrive\\desktop\\fakultet\\3. godina\\2. semestar\\sistemi baza\\2. projekat\\prodavnica - iii deo winforms complete\\prodavnica - iii deo\\prodavnica\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C73AA318-950C-4CF9-8EE8-83949B306FC2}|Prodavnica\\Prodavnica.csproj|solutionrelative:prodavnica\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C73AA318-950C-4CF9-8EE8-83949B306FC2}|Prodavnica\\Prodavnica.csproj|c:\\users\\aleks\\onedrive\\desktop\\fakultet\\3. godina\\2. semestar\\sistemi baza\\2. projekat\\prodavnica - iii deo winforms complete\\prodavnica - iii deo\\prodavnica\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C73AA318-950C-4CF9-8EE8-83949B306FC2}|Prodavnica\\Prodavnica.csproj|solutionrelative:prodavnica\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C73AA318-950C-4CF9-8EE8-83949B306FC2}|Prodavnica\\Prodavnica.csproj|c:\\users\\aleks\\onedrive\\desktop\\fakultet\\3. godina\\2. semestar\\sistemi baza\\2. projekat\\prodavnica - iii deo winforms complete\\prodavnica - iii deo\\prodavnica\\pocetnastranica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C73AA318-950C-4CF9-8EE8-83949B306FC2}|Prodavnica\\Prodavnica.csproj|solutionrelative:prodavnica\\pocetnastranica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AutomobilMapiranja.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\OneDrive\\Desktop\\Fakultet\\3. godina\\2. Semestar\\Sistemi baza\\2. Projekat\\Prodavnica - III deo WINFORMS COMPLETE\\Prodavnica - III deo\\Prodavnica\\Mapiranja\\AutomobilMapiranja.cs",
+              "RelativeDocumentMoniker": "Prodavnica\\Mapiranja\\AutomobilMapiranja.cs",
+              "ToolTip": "C:\\Users\\aleks\\OneDrive\\Desktop\\Fakultet\\3. godina\\2. Semestar\\Sistemi baza\\2. Projekat\\Prodavnica - III deo WINFORMS COMPLETE\\Prodavnica - III deo\\Prodavnica\\Mapiranja\\AutomobilMapiranja.cs",
+              "RelativeToolTip": "Prodavnica\\Mapiranja\\AutomobilMapiranja.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T14:07:44.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\OneDrive\\Desktop\\Fakultet\\3. godina\\2. Semestar\\Sistemi baza\\2. Projekat\\Prodavnica - III deo WINFORMS COMPLETE\\Prodavnica - III deo\\Prodavnica\\Form1.cs",
+              "RelativeDocumentMoniker": "Prodavnica\\Form1.cs",
+              "ToolTip": "C:\\Users\\aleks\\OneDrive\\Desktop\\Fakultet\\3. godina\\2. Semestar\\Sistemi baza\\2. Projekat\\Prodavnica - III deo WINFORMS COMPLETE\\Prodavnica - III deo\\Prodavnica\\Form1.cs",
+              "RelativeToolTip": "Prodavnica\\Form1.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T14:06:58.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PocetnaStranica.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\aleks\\OneDrive\\Desktop\\Fakultet\\3. godina\\2. Semestar\\Sistemi baza\\2. Projekat\\Prodavnica - III deo WINFORMS COMPLETE\\Prodavnica - III deo\\Prodavnica\\PocetnaStranica.cs",
+              "RelativeDocumentMoniker": "Prodavnica\\PocetnaStranica.cs",
+              "ToolTip": "C:\\Users\\aleks\\OneDrive\\Desktop\\Fakultet\\3. godina\\2. Semestar\\Sistemi baza\\2. Projekat\\Prodavnica - III deo WINFORMS COMPLETE\\Prodavnica - III deo\\Prodavnica\\PocetnaStranica.cs [Design]",
+              "RelativeToolTip": "Prodavnica\\PocetnaStranica.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T14:03:05.5Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\aleks\\OneDrive\\Desktop\\Fakultet\\3. godina\\2. Semestar\\Sistemi baza\\2. Projekat\\Prodavnica - III deo WINFORMS COMPLETE\\Prodavnica - III deo\\Prodavnica\\Form1.cs",
+              "RelativeDocumentMoniker": "Prodavnica\\Form1.cs",
+              "ToolTip": "C:\\Users\\aleks\\OneDrive\\Desktop\\Fakultet\\3. godina\\2. Semestar\\Sistemi baza\\2. Projekat\\Prodavnica - III deo WINFORMS COMPLETE\\Prodavnica - III deo\\Prodavnica\\Form1.cs [Design]",
+              "RelativeToolTip": "Prodavnica\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T14:01:47.618Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

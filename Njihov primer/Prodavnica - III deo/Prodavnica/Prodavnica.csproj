@@ -1,0 +1,535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C73AA318-950C-4CF9-8EE8-83949B306FC2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Prodavnica</RootNamespace>
+    <AssemblyName>Prodavnica</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Linq">
+      <HintPath>..\packages\NHibernate.Linq.1.0\lib\NHibernate.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.1.2400\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataLayer.cs" />
+    <Compile Include="Forme\DodajProizvodAutomobiliForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodAutomobiliForma.Designer.cs">
+      <DependentUpon>DodajProizvodAutomobiliForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodDodaciZaLutkeForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodDodaciZaLutkeForma.Designer.cs">
+      <DependentUpon>DodajProizvodDodaciZaLutkeForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodDo5Forma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodDo5Forma.Designer.cs">
+      <DependentUpon>DodajProizvodDo5Forma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodIgrackePlastikaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodIgrackePlastikaForma.Designer.cs">
+      <DependentUpon>DodajProizvodIgrackePlastikaForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodLutkeForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodLutkeForma.Designer.cs">
+      <DependentUpon>DodajProizvodLutkeForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodOd6Do15Forma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodOd6Do15Forma.Designer.cs">
+      <DependentUpon>DodajProizvodOd6Do15Forma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodOdrasliForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodOdrasliForma.Designer.cs">
+      <DependentUpon>DodajProizvodOdrasliForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodPuzzleForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodPuzzleForma.Designer.cs">
+      <DependentUpon>DodajProizvodPuzzleForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodVojniciForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajProizvodVojniciForma.Designer.cs">
+      <DependentUpon>DodajProizvodVojniciForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajPostojecegZaposlenogKaoSefa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajPostojecegZaposlenogKaoSefa.Designer.cs">
+      <DependentUpon>DodajPostojecegZaposlenogKaoSefa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajSefaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajSefaForma.Designer.cs">
+      <DependentUpon>DodajSefaForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DTOManager.cs" />
+    <Compile Include="DTOs.cs" />
+    <Compile Include="Entiteti\Automobil.cs" />
+    <Compile Include="Entiteti\DodatakZaLutku.cs" />
+    <Compile Include="Entiteti\IgrackaPlastika.cs" />
+    <Compile Include="Entiteti\Lutka.cs" />
+    <Compile Include="Entiteti\Odeljenje.cs" />
+    <Compile Include="Entiteti\ProdajeSe.cs" />
+    <Compile Include="Entiteti\Prodavnica.cs" />
+    <Compile Include="Entiteti\Proizvod.cs" />
+    <Compile Include="Entiteti\RadiU.cs" />
+    <Compile Include="Entiteti\RadiUId.cs" />
+    <Compile Include="Entiteti\Radnik.cs" />
+    <Compile Include="Entiteti\Sefuje.cs" />
+    <Compile Include="Entiteti\Slagalica.cs" />
+    <Compile Include="Entiteti\Vojnik.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajOdeljenjeDo5Forma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajOdeljenjeDo5Forma.Designer.cs">
+      <DependentUpon>DodajOdeljenjeDo5Forma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajOdeljenjeOd6Do15Forma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajOdeljenjeOd6Do15Forma.Designer.cs">
+      <DependentUpon>DodajOdeljenjeOd6Do15Forma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajOdeljenjeOdrasliForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajOdeljenjeOdrasliForma.Designer.cs">
+      <DependentUpon>DodajOdeljenjeOdrasliForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajPostojecegZaposlenogForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajPostojecegZaposlenogForma.Designer.cs">
+      <DependentUpon>DodajPostojecegZaposlenogForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajZaposlenogForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajZaposlenogForma.Designer.cs">
+      <DependentUpon>DodajZaposlenogForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniOdeljenjeDo5Forma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniOdeljenjeDo5Forma.Designer.cs">
+      <DependentUpon>IzmeniOdeljenjeDo5Forma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniOdeljenjeOd6Do15Forma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniOdeljenjeOd6Do15Forma.Designer.cs">
+      <DependentUpon>IzmeniOdeljenjeOd6Do15Forma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniOdeljenjeOdrasliForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniOdeljenjeOdrasliForm.Designer.cs">
+      <DependentUpon>IzmeniOdeljenjeOdrasliForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniRadniOdnosForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniRadniOdnosForma.Designer.cs">
+      <DependentUpon>IzmeniRadniOdnosForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniZaposlenogForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniZaposlenogForma.Designer.cs">
+      <DependentUpon>IzmeniZaposlenogForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\OdeljenjaOd6Do15Forma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\OdeljenjaOd6Do15Forma.Designer.cs">
+      <DependentUpon>OdeljenjaOd6Do15Forma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\OdeljenjeDo5Forma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\OdeljenjeDo5Forma.Designer.cs">
+      <DependentUpon>OdeljenjeDo5Forma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\OdeljenjeOdrasliForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\OdeljenjeOdrasliForma.Designer.cs">
+      <DependentUpon>OdeljenjeOdrasliForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\ZaposleniForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ZaposleniForma.Designer.cs">
+      <DependentUpon>ZaposleniForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniSefaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniSefaForma.Designer.cs">
+      <DependentUpon>IzmeniSefaForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniProizvodAutomobilForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniProizvodAutomobilForma.Designer.cs">
+      <DependentUpon>IzmeniProizvodAutomobilForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniProizvodDodatakZaLutkuForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniProizvodDodatakZaLutkuForma.Designer.cs">
+      <DependentUpon>IzmeniProizvodDodatakZaLutkuForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniProizvodIgrackePlastikaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniProizvodIgrackePlastikaForma.Designer.cs">
+      <DependentUpon>IzmeniProizvodIgrackePlastikaForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniProizvodLutkaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniProizvodLutkaForma.Designer.cs">
+      <DependentUpon>IzmeniProizvodLutkaForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniProizvodSlagalicaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniProizvodSlagalicaForma.Designer.cs">
+      <DependentUpon>IzmeniProizvodSlagalicaForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniProizvodVojnikForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniProizvodVojnikForma.Designer.cs">
+      <DependentUpon>IzmeniProizvodVojnikForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mapiranja\AutomobilMapiranja.cs" />
+    <Compile Include="Mapiranja\DodatakZaLutkuMapiranja.cs" />
+    <Compile Include="Mapiranja\IgrackaPlastikaMapiranja.cs" />
+    <Compile Include="Mapiranja\LutkaMapiranja.cs" />
+    <Compile Include="Mapiranja\OdeljenjeMapiranja.cs" />
+    <Compile Include="Mapiranja\ProdajeSeMapiranja.cs" />
+    <Compile Include="Mapiranja\ProdavnicaMapiranja.cs" />
+    <Compile Include="Mapiranja\ProizvodMapiranja.cs" />
+    <Compile Include="Mapiranja\RadiUMapiranja.cs" />
+    <Compile Include="Mapiranja\RadnikMapiranja.cs" />
+    <Compile Include="Mapiranja\SefujeMapiranja.cs" />
+    <Compile Include="Mapiranja\SlagalicaMapiranja.cs" />
+    <Compile Include="Mapiranja\VojnikMapiranja.cs" />
+    <Compile Include="PocetnaStranica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PocetnaStranica.Designer.cs">
+      <DependentUpon>PocetnaStranica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\ProdavnicaDodajForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ProdavnicaDodajForm.Designer.cs">
+      <DependentUpon>ProdavnicaDodajForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\ProdavnicaUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ProdavnicaUpdateForm.Designer.cs">
+      <DependentUpon>ProdavnicaUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\ProdavniceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ProdavniceForm.Designer.cs">
+      <DependentUpon>ProdavniceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\PregledProizvodaOdeljenjaDo5Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\PregledProizvodaOdeljenjaDo5Form.Designer.cs">
+      <DependentUpon>PregledProizvodaOdeljenjaDo5Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\PregledProizvodaOdeljenjaOd6Do15Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\PregledProizvodaOdeljenjaOd6Do15Form.Designer.cs">
+      <DependentUpon>PregledProizvodaOdeljenjaOd6Do15Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\PregledProizvodaOdrasliForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\PregledProizvodaOdrasliForm.Designer.cs">
+      <DependentUpon>PregledProizvodaOdrasliForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Forme\ProizvodiDodajForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ProizvodiDodajForm.Designer.cs">
+      <DependentUpon>ProizvodiDodajForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\ProizvodiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ProizvodiForm.Designer.cs">
+      <DependentUpon>ProizvodiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forme\SefoviForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\SefoviForma.Designer.cs">
+      <DependentUpon>SefoviForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\SviZaposleniForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\SviZaposleniForma.Designer.cs">
+      <DependentUpon>SviZaposleniForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\SviProizvodiForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\SviProizvodiForma.Designer.cs">
+      <DependentUpon>SviProizvodiForma.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forme\DodajProizvodAutomobiliForma.resx">
+      <DependentUpon>DodajProizvodAutomobiliForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajProizvodDodaciZaLutkeForma.resx">
+      <DependentUpon>DodajProizvodDodaciZaLutkeForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajProizvodDo5Forma.resx">
+      <DependentUpon>DodajProizvodDo5Forma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajProizvodIgrackePlastikaForma.resx">
+      <DependentUpon>DodajProizvodIgrackePlastikaForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajProizvodLutkeForma.resx">
+      <DependentUpon>DodajProizvodLutkeForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajProizvodOd6Do15Forma.resx">
+      <DependentUpon>DodajProizvodOd6Do15Forma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajProizvodOdrasliForma.resx">
+      <DependentUpon>DodajProizvodOdrasliForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajProizvodPuzzleForma.resx">
+      <DependentUpon>DodajProizvodPuzzleForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajProizvodVojniciForma.resx">
+      <DependentUpon>DodajProizvodVojniciForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajPostojecegZaposlenogKaoSefa.resx">
+      <DependentUpon>DodajPostojecegZaposlenogKaoSefa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajSefaForma.resx">
+      <DependentUpon>DodajSefaForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajOdeljenjeDo5Forma.resx">
+      <DependentUpon>DodajOdeljenjeDo5Forma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajOdeljenjeOd6Do15Forma.resx">
+      <DependentUpon>DodajOdeljenjeOd6Do15Forma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajOdeljenjeOdrasliForma.resx">
+      <DependentUpon>DodajOdeljenjeOdrasliForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajPostojecegZaposlenogForma.resx">
+      <DependentUpon>DodajPostojecegZaposlenogForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajZaposlenogForma.resx">
+      <DependentUpon>DodajZaposlenogForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniOdeljenjeDo5Forma.resx">
+      <DependentUpon>IzmeniOdeljenjeDo5Forma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniOdeljenjeOd6Do15Forma.resx">
+      <DependentUpon>IzmeniOdeljenjeOd6Do15Forma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniOdeljenjeOdrasliForm.resx">
+      <DependentUpon>IzmeniOdeljenjeOdrasliForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniRadniOdnosForma.resx">
+      <DependentUpon>IzmeniRadniOdnosForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniZaposlenogForma.resx">
+      <DependentUpon>IzmeniZaposlenogForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\OdeljenjaOd6Do15Forma.resx">
+      <DependentUpon>OdeljenjaOd6Do15Forma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\OdeljenjeDo5Forma.resx">
+      <DependentUpon>OdeljenjeDo5Forma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\OdeljenjeOdrasliForma.resx">
+      <DependentUpon>OdeljenjeOdrasliForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ZaposleniForma.resx">
+      <DependentUpon>ZaposleniForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniSefaForma.resx">
+      <DependentUpon>IzmeniSefaForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniProizvodAutomobilForma.resx">
+      <DependentUpon>IzmeniProizvodAutomobilForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniProizvodDodatakZaLutkuForma.resx">
+      <DependentUpon>IzmeniProizvodDodatakZaLutkuForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniProizvodIgrackePlastikaForma.resx">
+      <DependentUpon>IzmeniProizvodIgrackePlastikaForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniProizvodLutkaForma.resx">
+      <DependentUpon>IzmeniProizvodLutkaForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniProizvodSlagalicaForma.resx">
+      <DependentUpon>IzmeniProizvodSlagalicaForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniProizvodVojnikForma.resx">
+      <DependentUpon>IzmeniProizvodVojnikForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PocetnaStranica.resx">
+      <DependentUpon>PocetnaStranica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ProdavnicaDodajForm.resx">
+      <DependentUpon>ProdavnicaDodajForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ProdavnicaUpdateForm.resx">
+      <DependentUpon>ProdavnicaUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ProdavniceForm.resx">
+      <DependentUpon>ProdavniceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ProizvodiDodajForm.resx">
+      <DependentUpon>ProizvodiDodajForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ProizvodiForm.resx">
+      <DependentUpon>ProizvodiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\PregledProizvodaOdeljenjaDo5Form.resx">
+      <DependentUpon>PregledProizvodaOdeljenjaDo5Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\PregledProizvodaOdeljenjaOd6Do15Form.resx">
+      <DependentUpon>PregledProizvodaOdeljenjaOd6Do15Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\PregledProizvodaOdrasliForm.resx">
+      <DependentUpon>PregledProizvodaOdrasliForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Forme\SefoviForma.resx">
+      <DependentUpon>SefoviForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\SviZaposleniForma.resx">
+      <DependentUpon>SviZaposleniForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\SviProizvodiForma.resx">
+      <DependentUpon>SviProizvodiForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

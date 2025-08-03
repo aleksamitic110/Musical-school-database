@@ -1,0 +1,7 @@
+2/08/2025 Changelog
+- Surogat kljucevi dodati kao zamena za kompozitne kod sledecih tabela: Pohadja, Evidencija, Telefon, Polaganje, Komisija - dodati su automatski ID-Evidencija
+
+- Tabele koje su nasledjivale Osobu (Nastavnik, Polaznik, Staratelj) kao i tabele koje su nasledjivale Nastavnika(Stalni, Honorarni) i Polaznika(Dete, Odrasli) su dobili svoje ID kljuceve, i postali "nezavisne" tabele.
+  Svaka od njih je povezana sa svojom roditeljskom tabelom preko FK-a, ali taj FK vise nije ujedno i PK. Sada svaka od njih ima svoj PK a to je ID koji se automatski generise. 
+  Ovo je moralo da se uradi zato sto NHibernate ne podrzava nasledjivanje u vise nivoa/hijerarhija, pa baza nije imala jasnu discriminator logiku da zna kako da interpretira JMBG u različitim tabelama.
+  Sada ce svaka od njih, iako se javlja ista osoba u razlicitim tabelama (npr. Osoba je ujedno i Nastavnik i Staratelj) imati jedinstven kljuc za svaku svoju ulogu.
