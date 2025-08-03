@@ -56,3 +56,6 @@ C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. P
 C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Muzicka_skola\bin\Debug\Snork.FluentNHibernateTools.pdb
 C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Muzicka_skola\bin\Debug\NHibernate.Linq.dll
 C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Muzicka_skola\bin\Debug\NHibernate.Linq.xml
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.Forme.GlobalForm.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.MainForm.resources
+C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.Forme.ViewForm.resources
