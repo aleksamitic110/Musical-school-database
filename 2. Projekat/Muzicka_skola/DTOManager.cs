@@ -69,18 +69,35 @@ namespace Muzicka_skola
                 {
                     var telefon = new Telefon { BrojTelefona = item.BrojTelefona, Osoba = osoba };
                     osoba.Telefoni.Add(telefon);
-
                 }
                 session.Save(osoba);
                 session.Flush();
                 session.Close();
                 osobaJMBG = osoba.JMBG;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "\n" + ex.InnerException?.Message);
-            }
-            return osobaJMBG;
+			catch (Exception ex)
+			{
+				StringBuilder sb = new StringBuilder();
+				sb.AppendLine("Greška prilikom čuvanja osobe:");
+				sb.AppendLine();
+
+				int level = 0;
+				Exception currentEx = ex;
+				while (currentEx != null)
+				{
+					sb.AppendLine($"[Nivo {level}] {currentEx.GetType().FullName}");
+					sb.AppendLine($"Poruka: {currentEx.Message}");
+					sb.AppendLine("StackTrace:");
+					sb.AppendLine(currentEx.StackTrace);
+					sb.AppendLine(new string('-', 40));
+
+					currentEx = currentEx.InnerException;
+					level++;
+				}
+
+				MessageBox.Show(sb.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			return osobaJMBG;
         }
 		
 		#endregion

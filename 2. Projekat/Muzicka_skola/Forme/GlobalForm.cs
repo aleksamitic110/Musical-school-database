@@ -56,12 +56,7 @@ namespace Muzicka_skola.Forme
 
 
 
-		/* Ovde preurediti panele: 
-			panelPrikaz (samo ucitati odgovarajuce elemente iz baze panelPrikaz.dataGridViewPrikaz)
-			panelFilteri sadrzi dva panela (panelStandardniFilteri - oni po atributima, i on se menja, i panelDodatniFilteri takodje se menja na osnovu tipa)
-			panelFunkcije sadrzi dva panela (panelStandardneFunkcije - Nikad se ne menja to su add, delete, modify i panelDodatneFunkcije menja se po promeni tipa)
-			Dugme filtriraj ce da pokrece funkciju Filtriraj(Svi podaci potrebni za precizno filtriranje) tako da se njegova implementacija nikad ne menja
-		*/
+		#region Preuredjivanje_Prikaza
 		private void PreurediPrikazPolaznici() {
 			this.panelDodatneFunkcije.Controls.Add(new Label() { Text = "Polaznik" });
 			this.panelStandardniFilteri.Controls.Add(new Label() { Text = "Filteri za polaznike" });
@@ -90,7 +85,9 @@ namespace Muzicka_skola.Forme
 			this.panelStandardniFilteri.Controls.Add(new Label() { Text = "Filteri za ispite" });
 			this.panelDodatniFilteri.Controls.Add(new Label() { Text = "Dodatni Filteri za ispite" , Size = new Size(200, 200) });
 		}
+		#endregion
 
+		#region Main_Page_Buttons
 		private void buttunPolaznici_Click(object sender, EventArgs e)
 		{
 			trenutniTip = Tip.Polaznici;
@@ -113,8 +110,10 @@ namespace Muzicka_skola.Forme
 		{
 			Ucitaj(Tip.Ispiti);
 		}
+		#endregion
 
-        private void AddFunkcija_Click(object sender, EventArgs e)
+		#region Panel_Standardne_Funkcije_Buttons
+		private void buttonAdd_Click(object sender, EventArgs e)
         {
             switch (trenutniTip)
             {
@@ -133,7 +132,61 @@ namespace Muzicka_skola.Forme
             }
         }
 
-        private void NastavniciRadioButton_CheckedChanged(object sender, EventArgs e)
+
+		private void buttonUpdate_Click(object sender, EventArgs e)
+		{
+			switch (trenutniTip)
+			{
+				case Tip.Polaznici:
+					break;
+
+				case Tip.Nastavnici:
+					break;
+
+				case Tip.Kursevi:
+					break;
+				case Tip.Ispiti:
+					break;
+			}
+		}
+
+		private void buttonDelete_Click(object sender, EventArgs e)
+		{
+			switch (trenutniTip)
+			{
+				case Tip.Polaznici:
+					break;
+
+				case Tip.Nastavnici:
+					break;
+
+				case Tip.Kursevi:
+					break;
+				case Tip.Ispiti:
+					break;
+			}
+		}
+		#endregion
+
+
+
+		#region Polaznici
+
+		#endregion
+
+
+		#region Kursevi
+
+		#endregion
+
+
+		#region Ispiti
+
+		#endregion
+
+
+		#region Nastavnici
+		private void NastavniciRadioButton_CheckedChanged(object sender, EventArgs e)
         {
 			if (radioButtonSviNastavnici.Checked)
 			{
@@ -148,5 +201,7 @@ namespace Muzicka_skola.Forme
                 this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiSveStalneNastavnike();
             }
         }
-    }
+		#endregion
+
+	}
 }

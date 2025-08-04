@@ -17,7 +17,7 @@ namespace Muzicka_skola.Mapiranja
 			Id(x => x.Id).Column("ID").GeneratedBy.Identity();
 			Map(x => x.BrojTelefona).Column("BROJTELEFONA");
 
-			References(x => x.Osoba).Column("JMBG");
+			References(x => x.Osoba).Column("JMBG").Not.Nullable();
 		}
 	}
 }

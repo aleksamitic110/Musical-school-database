@@ -87,7 +87,7 @@ namespace Muzicka_skola.Forme
                     return;
                 }
             }
-            if(PickerTrajanjeUgovora.Value < PickerDatumZaposlenja.Value)
+            if(PickerTrajanjeUgovora.Value < PickerDatumZaposlenja.Value && radioButtonHonorarni.Checked)
             {
                 MessageBox.Show("Trajanje ugovora nije validno");
                 return;
