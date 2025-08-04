@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Muzicka_skola.Entiteti;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -71,7 +72,33 @@ namespace Muzicka_skola
 	public class OsobaDTO
 	{
 
+        public string JMBG { get; set; }
+        public string Ime { get; set; }
+        public string Prezime { get; set; }
+        public string Adresa { get; set; }
+        public string Mail { get; set; }
+        public string Telefoni { get; set; }
+
+		public OsobaDTO(string JMBG, string ime, string prezime, string adresa, string mail, string telefoni)
+        {
+            this.JMBG = JMBG;
+            Ime = ime;
+            Prezime = prezime;
+            Adresa = adresa;
+            Mail = mail;
+            Telefoni = telefoni;
+        }
+		public OsobaDTO() { }
 	}
+	public class OsobaBasic {
+        public string JMBG { get; set; }
+        public string Ime { get; set; }
+        public string Prezime { get; set; }
+        public string Adresa { get; set; }
+        public string Mail { get; set; }
+        public IList<TelefonBasic> Telefoni { get; set; } = new List<TelefonBasic>();
+    }
+
 	#endregion
 
 	#region Polaznik
@@ -89,24 +116,60 @@ namespace Muzicka_skola
 	#endregion
 
 	#region Nastavnik
-	public class NastavnikDTO
+	public class NastavnikDTO : OsobaDTO
 	{
+        public string StrucnaSprema { get; set; }
+        public DateTime DatumZaposlenja { get; set; }
+        public NastavnikDTO(string strucnaSprema, DateTime datumZaposlenja, string JMBG, string ime, string prezime, string adresa, string mail, string telefoni) : base(JMBG,ime,prezime,adresa,mail,telefoni){ 
+			this.StrucnaSprema = strucnaSprema;
+			this.DatumZaposlenja = datumZaposlenja;
+		}
 
 	}
+	public class NastavnikBasic {
+        public string StrucnaSprema { get; set; }
+        public DateTime DatumZaposlenja { get; set; }
+    }
+
 	#endregion
 
 	#region Honorarni
-	public class HonorarniDTO
+	public class HonorarniDTO : NastavnikDTO
 	{
-
-	}
+        public string BrojUgovora { get; set; }
+        public int BrojCasovaMesecno { get; set; }
+        public DateTime TrajanjeUgovora { get; set; }
+		public HonorarniDTO(string brojUgovora, int brojCasovaMesecno, DateTime trajanjeUgovora, string strucnaSprema, DateTime datumZaposlenja, string JMBG, string ime, string prezime, string adresa, string mail, string telefoni) : base(strucnaSprema, datumZaposlenja, JMBG, ime, prezime, adresa, mail, telefoni)
+		{
+			BrojUgovora = brojUgovora;
+			BrojCasovaMesecno = brojCasovaMesecno;
+			TrajanjeUgovora = trajanjeUgovora;
+		}
+    }
+	public class HonorarniBasic {
+        public string BrojUgovora { get; set; }
+        public int BrojCasovaMesecno { get; set; }
+        public DateTime TrajanjeUgovora { get; set; }
+    }
 	#endregion
 
 	#region Stalni
-	public class StalniDTO
+	public class StalniDTO : NastavnikDTO
 	{
-
+        public string RadnoVreme { get; set; }
+        public bool StatusMentora { get; set; }
+		public StalniDTO(string radnoVreme, bool statusMentora, string strucnaSprema, DateTime datumZaposlenja, string JMBG, string ime, string prezime, string adresa, string mail, string telefoni) : base(strucnaSprema, datumZaposlenja, JMBG, ime, prezime, adresa, mail, telefoni)
+        {
+            RadnoVreme = radnoVreme;
+            StatusMentora = statusMentora;
+		}
 	}
+
+	public class StalniBasic {
+        public string RadnoVreme { get; set; }
+        public bool StatusMentora { get; set; }
+    }
+
 	#endregion
 
 	#region Dete
@@ -142,6 +205,12 @@ namespace Muzicka_skola
 	{
 
 	}
+
+	public class TelefonBasic {
+        public string BrojTelefona { get; set; }
+        public Osoba Osoba { get; set; }
+    }
+
 	#endregion
 
 	#region Komisija

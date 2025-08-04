@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FluentNHibernate.Conventions.AcceptanceCriteria;
+using Muzicka_skola.Entiteti;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -67,10 +69,14 @@ namespace Muzicka_skola.Forme
 		}
 
 		private void PreurediPrikazNastavnici() {
-			this.panelDodatneFunkcije.Controls.Add(new Label() { Text = "Nastavnik" });
-			this.panelStandardniFilteri.Controls.Add(new Label() { Text = "Filteri za nastavnike" });
-			this.panelDodatniFilteri.Controls.Add(new Label() { Text = "Dodatni Filteri za nastavnike", Size = new Size(200, 200) });
-		}
+			//this.panelDodatneFunkcije.Controls.Add(new Label() { Text = "Nastavnik" });
+			//this.panelStandardniFilteri.Controls.Add(new Label() { Text = "Filteri za nastavnike" });
+			//this.panelDodatniFilteri.Controls.Add(new Label() { Text = "Dodatni Filteri za nastavnike", Size = new Size(200, 200) });
+			this.panelDodatneFunkcije.Controls.Add(panelDodatneFunkcijeNastavnik);
+			panelDodatneFunkcijeNastavnik.Show();
+			panelDodatneFunkcijeNastavnik.BringToFront();
+            this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiSveNastavnike();
+        }
 
 		private void PreurediPrikazKursevi()
 		{
@@ -87,16 +93,19 @@ namespace Muzicka_skola.Forme
 
 		private void buttunPolaznici_Click(object sender, EventArgs e)
 		{
+			trenutniTip = Tip.Polaznici;
 			Ucitaj(Tip.Polaznici);
 		}
 
 		private void buttonNastavnici_Click(object sender, EventArgs e)
 		{
-			Ucitaj(Tip.Nastavnici);
+            trenutniTip = Tip.Nastavnici;
+            Ucitaj(Tip.Nastavnici);
 		}
 
 		private void buttonKursevi_Click(object sender, EventArgs e)
 		{
+
 			Ucitaj(Tip.Kursevi);
 		}
 
@@ -104,5 +113,40 @@ namespace Muzicka_skola.Forme
 		{
 			Ucitaj(Tip.Ispiti);
 		}
-	}
+
+        private void AddFunkcija_Click(object sender, EventArgs e)
+        {
+            switch (trenutniTip)
+            {
+                case Tip.Polaznici:
+                    break;
+
+                case Tip.Nastavnici:
+					AddNastavnik addNastavnikForm = new AddNastavnik();
+					addNastavnikForm.Show();
+                    break;
+
+                case Tip.Kursevi:
+                    break;
+                case Tip.Ispiti:
+                    break;
+            }
+        }
+
+        private void NastavniciRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+			if (radioButtonSviNastavnici.Checked)
+			{
+                this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiSveNastavnike();
+            }
+            else if (radioButtonHonorarni.Checked)
+			{
+                this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiSveHonorarneNastavnike();
+            }
+			else if (radioButtonStalni.Checked)
+			{
+                this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiSveStalneNastavnike();
+            }
+        }
+    }
 }

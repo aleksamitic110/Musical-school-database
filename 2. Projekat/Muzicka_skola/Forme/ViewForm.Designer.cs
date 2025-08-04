@@ -28,28 +28,31 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.dataGridViewData = new System.Windows.Forms.DataGridView();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// dataGridViewData
-			// 
-			this.dataGridViewData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridViewData.Location = new System.Drawing.Point(12, 12);
-			this.dataGridViewData.Name = "dataGridViewData";
-			this.dataGridViewData.Size = new System.Drawing.Size(776, 426);
-			this.dataGridViewData.TabIndex = 0;
-			// 
-			// ViewForm
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.dataGridViewData);
-			this.Name = "ViewForm";
-			this.Text = "ViewForm";
-			((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
-			this.ResumeLayout(false);
+            this.dataGridViewData = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dataGridViewData
+            // 
+            this.dataGridViewData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewData.Location = new System.Drawing.Point(16, 15);
+            this.dataGridViewData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewData.Name = "dataGridViewData";
+            this.dataGridViewData.RowHeadersWidth = 51;
+            this.dataGridViewData.Size = new System.Drawing.Size(1035, 524);
+            this.dataGridViewData.TabIndex = 0;
+            // 
+            // ViewForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.dataGridViewData);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "ViewForm";
+            this.Text = "ViewForm";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
+            this.ResumeLayout(false);
 
 		}
 
