@@ -1,0 +1,45 @@
+Funkcionalnosti
+Osnovno dodavanje, azuriranje, brisanje - osnovno imaju sve
+Filtriranje: za sve ce tabele filtriranje po svakom atributu tabele
+
+Globalno: Aleksa
+
+
+Polaznici: Aleksa
+	- Kursevi koje pohadja
+	- Koje ispite je polozio
+	- Ko mu je staratelj
+	- Dodatno filtriranje: range godina
+	- Check dugmici Dete, Odrasli
+
+Nastavnici: Luka Ilic
+	- Sta predaje, koje kurseve drzi
+	- Kome je mentor
+	- Ko mu je mentor
+        - Lista ispita koje je nadgledao (komisija)
+	- Dodatno filtriranje: polaznici koji su polozili kurs koji drzi - selektuje kurs za koji zeli da se prikazu
+	- Check dugmici Honorarni, Stalni
+	
+
+Kursevi: Lux
+	- Organizacija casa (Staviti u koju se ucionicu i filijalu odrzava koji nastavnik ga drzi itd.) - dodajes cas
+	- Dodatno filtriranje: poFilijali, josNestoMozda
+	- Check Voklani, Teorijski, Instrumentalni	
+	- Koji sve polaznici idu na njega
+
+Ispiti: Na kraju - maybe lux
+	- Ocenjivanje ispita (Lista onih koji su ga polagali i onda opcija za ocenjivanje svakog pojedinacno)
+	- Sortiranje po prosecnoj oceni svih ispita
+	- Sortiranje konkretnog ispita po ocenama polaznika
+	- Sortiranje po prolaznosti
+
+
+ 
+
+
+
+
+
+Onako kako je luks reko radimo:
+	Ispod tabele staviti atribute koji se trenutno prikazuju + dodatna filtriranja, sa praznim txtBox da moze da se filteruje po svakom od njih 
+	Dugme sa desne strane FILTER
