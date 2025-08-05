@@ -64,15 +64,15 @@ namespace Muzicka_skola.Forme
 		}
 
 		private void PreurediPrikazNastavnici() {
-<<<<<<< HEAD
+			
 			this.panelDodatneFunkcije.Controls.Add(panelDodatneFunkcijeNastavnik);
 			panelDodatneFunkcijeNastavnik.Show();
 			panelDodatneFunkcijeNastavnik.BringToFront();
-            this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiSveNastavnike();
-=======
+            this.dataGridViewPrikazPodataka.DataSource = DTOManager.PrikaziSveNastavnike();
+			
 			UcitajCeoPrikazNastavnika();
->>>>>>> 7d351d84e72578343b643525acf0fd9d5df1226e
-        }
+       
+		}
 
 		private void PreurediPrikazKursevi()
 		{

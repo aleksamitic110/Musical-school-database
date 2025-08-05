@@ -103,8 +103,7 @@ namespace Muzicka_skola
 			return osobaJMBG;
         }
 
-<<<<<<< HEAD
-=======
+
         public static void IzmeniOsobu(OsobaBasic novaOsoba)
         {
             try
@@ -150,8 +149,6 @@ namespace Muzicka_skola
                 MessageBox.Show(sb.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-		
->>>>>>> 7d351d84e72578343b643525acf0fd9d5df1226e
 		#endregion
 
 		#region Polaznik
