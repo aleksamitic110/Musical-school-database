@@ -120,7 +120,6 @@ C:\Users\Luka\Desktop\Sve\Faks\notepad skripte\Sistemi baza\projekat 2\Musical-s
 C:\Users\Luka\Desktop\Sve\Faks\notepad skripte\Sistemi baza\projekat 2\Musical-school-database\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_.F2F12416.Up2Date
 C:\Users\Luka\Desktop\Sve\Faks\notepad skripte\Sistemi baza\projekat 2\Musical-school-database\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.exe
 C:\Users\Luka\Desktop\Sve\Faks\notepad skripte\Sistemi baza\projekat 2\Musical-school-database\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.pdb
-C:\Users\Luka\Desktop\Sve\Faks\notepad skripte\Sistemi baza\projekat 2\Musical-school-database\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.Forme.AddNastavnik.resources
 C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\Projekat\2. Projekat\Muzicka_skola\bin\Debug\Muzicka_skola.exe.config
 C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\Projekat\2. Projekat\Muzicka_skola\bin\Debug\Muzicka_skola.exe
 C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\Projekat\2. Projekat\Muzicka_skola\bin\Debug\Muzicka_skola.pdb
@@ -183,3 +182,5 @@ C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\Proj
 C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\Projekat\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_.F2F12416.Up2Date
 C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\Projekat\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.exe
 C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\Projekat\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.pdb
+C:\Users\Luka\Desktop\Sve\Faks\notepad skripte\Sistemi baza\projekat 2\Musical-school-database\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.Forme.DodajNastavnik.resources
+C:\Users\Luka\Desktop\Sve\Faks\notepad skripte\Sistemi baza\projekat 2\Musical-school-database\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.Forme.Nastavnik.IzmeniNastavnik.resources

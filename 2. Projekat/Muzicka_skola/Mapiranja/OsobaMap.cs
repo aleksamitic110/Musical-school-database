@@ -21,7 +21,7 @@ namespace Muzicka_skola.Mapiranja
 			Map(x => x.Adresa).Column("ADRESA");
 			Map(x => x.Mail).Column("MAIL");
 
-			HasMany(x => x.Telefoni).KeyColumn("JMBG").Inverse().Cascade.All();
+			HasMany(x => x.Telefoni).KeyColumn("JMBG").Inverse().Cascade.AllDeleteOrphan();
 		}
 	}
 }

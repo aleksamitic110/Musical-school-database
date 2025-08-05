@@ -1,5 +1,6 @@
 ﻿using FluentNHibernate.Conventions.AcceptanceCriteria;
 using Muzicka_skola.Entiteti;
+using Muzicka_skola.Forme.Nastavnik;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,10 +64,14 @@ namespace Muzicka_skola.Forme
 		}
 
 		private void PreurediPrikazNastavnici() {
+<<<<<<< HEAD
 			this.panelDodatneFunkcije.Controls.Add(panelDodatneFunkcijeNastavnik);
 			panelDodatneFunkcijeNastavnik.Show();
 			panelDodatneFunkcijeNastavnik.BringToFront();
             this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiSveNastavnike();
+=======
+			UcitajCeoPrikazNastavnika();
+>>>>>>> 7d351d84e72578343b643525acf0fd9d5df1226e
         }
 
 		private void PreurediPrikazKursevi()
@@ -117,8 +122,8 @@ namespace Muzicka_skola.Forme
                     break;
 
                 case Tip.Nastavnici:
-					AddNastavnik addNastavnikForm = new AddNastavnik();
-					addNastavnikForm.Show();
+					DodajNastavnik dodajNastavnikForm = new DodajNastavnik(this);
+					dodajNastavnikForm.ShowDialog();
                     break;
 
                 case Tip.Kursevi:
@@ -137,6 +142,18 @@ namespace Muzicka_skola.Forme
 					break;
 
 				case Tip.Nastavnici:
+					var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
+                    
+					if(selectedRow != null)
+					{
+                        NastavnikDTO selectedNastavnik = selectedRow.DataBoundItem as NastavnikDTO;
+                        IzmeniNastavnik izmeniNastavnikForm = new IzmeniNastavnik(this, selectedNastavnik);
+                        izmeniNastavnikForm.ShowDialog();
+                    }
+					else
+					{
+                        MessageBox.Show("Izaberi nastavnika za izmenu");
+                    }
 					break;
 
 				case Tip.Kursevi:
@@ -154,6 +171,7 @@ namespace Muzicka_skola.Forme
 					break;
 
 				case Tip.Nastavnici:
+					ObrisiIzabranogNastavnika();
 					break;
 
 				case Tip.Kursevi:
@@ -186,18 +204,77 @@ namespace Muzicka_skola.Forme
         {
 			if (radioButtonSviNastavnici.Checked)
 			{
-                this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiSveNastavnike();
+                PrikaziNastavnikeUDataGrid();
             }
             else if (radioButtonHonorarni.Checked)
 			{
-                this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiSveHonorarneNastavnike();
+				PrikaziHonorarneNastavnikeUDataGrid();
             }
 			else if (radioButtonStalni.Checked)
 			{
-                this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiSveStalneNastavnike();
+				PrikaziStalneNastavnikeUDataGrid();
             }
         }
-		#endregion
+		private void ObrisiIzabranogNastavnika()
+		{
+			var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
+            if (selectedRow != null)
+            {
+				int nastavnikId = (int)selectedRow.Cells["Id"].Value;
+                DTOManager.ObrisiNastavnika(nastavnikId);
+				MessageBox.Show("Nastavnik uspesno obrisan!");
+                PrikaziNastavnikeUDataGrid();
+            }
+            else
+            {
+                MessageBox.Show("Izaberi nastavnika za brisanje");
+            }
+        }
+		private void UcitajCeoPrikazNastavnika()
+		{
+            panelDodatneFunkcije.Controls.Add(panelDodatneFunkcijeNastavnik);
+            panelDodatneFunkcijeNastavnik.Show();
+            panelDodatneFunkcijeNastavnik.BringToFront();
+			PrikaziNastavnikeUDataGrid();
+        }
+		public void PrikaziNastavnikeUDataGrid()
+		{
+			radioButtonSviNastavnici.Checked = true;
+			ClearDataGrid();
+            dataGridViewPrikazPodataka.DataSource = DTOManager.PrikaziSveNastavnike();
+			HideId();
+			OrderColumns();
+        }
+        private void PrikaziHonorarneNastavnikeUDataGrid()
+        {
+            ClearDataGrid();
+            dataGridViewPrikazPodataka.DataSource = DTOManager.PrikaziSveHonorarneNastavnike();
+            HideId();
+            OrderColumns();
+        }
+        private void PrikaziStalneNastavnikeUDataGrid()
+        {
+            ClearDataGrid();
+            dataGridViewPrikazPodataka.DataSource = DTOManager.PrikaziSveStalneNastavnike();
+            HideId();
+            OrderColumns();
+        }
+		private void HideId()
+		{
+            dataGridViewPrikazPodataka.Columns["Id"].Visible = false;
+        }
+		private void ClearDataGrid()
+		{
+            dataGridViewPrikazPodataka.DataSource = null;
+            dataGridViewPrikazPodataka.AllowUserToOrderColumns = true;
+        }
+		private void OrderColumns()
+		{
+            dataGridViewPrikazPodataka.Columns["Ime"].DisplayIndex = 0;
+            dataGridViewPrikazPodataka.Columns["Prezime"].DisplayIndex = 1;
+            dataGridViewPrikazPodataka.Columns["JMBG"].DisplayIndex = 2;
+        }
+        #endregion
 
-	}
+    }
 }

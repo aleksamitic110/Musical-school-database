@@ -131,11 +131,14 @@ namespace Muzicka_skola
 	#region Nastavnik
 	public class NastavnikDTO : OsobaDTO
 	{
+		public int Id { get; set; }
         public string StrucnaSprema { get; set; }
         public DateTime DatumZaposlenja { get; set; }
-        public NastavnikDTO(string strucnaSprema, DateTime datumZaposlenja, string JMBG, string ime, string prezime, string adresa, string mail, string telefoni) : base(JMBG,ime,prezime,adresa,mail,telefoni){ 
+        public NastavnikDTO(string JMBG, string ime, string prezime, string adresa, string mail, string telefoni, int Id, string strucnaSprema, DateTime datumZaposlenja) : base(JMBG,ime,prezime,adresa,mail,telefoni){ 
+			this.Id = Id;
 			this.StrucnaSprema = strucnaSprema;
 			this.DatumZaposlenja = datumZaposlenja;
+			
 		}
 
 	}
@@ -152,7 +155,7 @@ namespace Muzicka_skola
         public string BrojUgovora { get; set; }
         public int BrojCasovaMesecno { get; set; }
         public DateTime TrajanjeUgovora { get; set; }
-		public HonorarniDTO(string brojUgovora, int brojCasovaMesecno, DateTime trajanjeUgovora, string strucnaSprema, DateTime datumZaposlenja, string JMBG, string ime, string prezime, string adresa, string mail, string telefoni) : base(strucnaSprema, datumZaposlenja, JMBG, ime, prezime, adresa, mail, telefoni)
+		public HonorarniDTO(string JMBG, string ime, string prezime, string adresa, string mail, string telefoni, int Id, string strucnaSprema, DateTime datumZaposlenja, string brojUgovora, int brojCasovaMesecno, DateTime trajanjeUgovora) : base(JMBG, ime, prezime, adresa, mail, telefoni, Id, strucnaSprema, datumZaposlenja)
 		{
 			BrojUgovora = brojUgovora;
 			BrojCasovaMesecno = brojCasovaMesecno;
@@ -171,7 +174,7 @@ namespace Muzicka_skola
 	{
         public string RadnoVreme { get; set; }
         public bool StatusMentora { get; set; }
-		public StalniDTO(string radnoVreme, bool statusMentora, string strucnaSprema, DateTime datumZaposlenja, string JMBG, string ime, string prezime, string adresa, string mail, string telefoni) : base(strucnaSprema, datumZaposlenja, JMBG, ime, prezime, adresa, mail, telefoni)
+		public StalniDTO(string JMBG, string ime, string prezime, string adresa, string mail, string telefoni, int Id, string strucnaSprema, DateTime datumZaposlenja, string radnoVreme, bool statusMentora) : base(JMBG, ime, prezime, adresa, mail, telefoni, Id, strucnaSprema, datumZaposlenja)
         {
             RadnoVreme = radnoVreme;
             StatusMentora = statusMentora;
