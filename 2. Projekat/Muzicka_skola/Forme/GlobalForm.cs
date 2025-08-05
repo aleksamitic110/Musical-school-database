@@ -58,15 +58,11 @@ namespace Muzicka_skola.Forme
 
 		#region Preuredjivanje_Prikaza
 		private void PreurediPrikazPolaznici() {
-			this.panelDodatneFunkcije.Controls.Add(new Label() { Text = "Polaznik" });
-			this.panelStandardniFilteri.Controls.Add(new Label() { Text = "Filteri za polaznike" });
-			this.panelDodatniFilteri.Controls.Add(new Label() { Text = "Dodatni Filteri za polaznike" , Size = new Size(200, 200) });
+			
+			this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiPolaznike();
 		}
 
 		private void PreurediPrikazNastavnici() {
-			//this.panelDodatneFunkcije.Controls.Add(new Label() { Text = "Nastavnik" });
-			//this.panelStandardniFilteri.Controls.Add(new Label() { Text = "Filteri za nastavnike" });
-			//this.panelDodatniFilteri.Controls.Add(new Label() { Text = "Dodatni Filteri za nastavnike", Size = new Size(200, 200) });
 			this.panelDodatneFunkcije.Controls.Add(panelDodatneFunkcijeNastavnik);
 			panelDodatneFunkcijeNastavnik.Show();
 			panelDodatneFunkcijeNastavnik.BringToFront();

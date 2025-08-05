@@ -99,15 +99,38 @@ namespace Muzicka_skola
 			}
 			return osobaJMBG;
         }
-		
+
 		#endregion
 
 		#region Polaznik
-		
+		public static List<PolaznikDTO> vratiPolaznike()
+		{
+			List<PolaznikDTO> polaznici = new List<PolaznikDTO>();
+			try
+			{
+				ISession session = DataLayer.GetSession();
+				polaznici = session.Query<Polaznik>().Select(n => new PolaznikDTO(
+                    n.Id,
+					n.Osoba.JMBG,
+					n.Osoba.Ime,
+					n.Osoba.Prezime,
+					n.Osoba.Adresa,
+					n.Osoba.Mail,
+					string.Join(", ", n.Osoba.Telefoni.Select(t => t.BrojTelefona))
+					)).ToList();
+				session.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			return polaznici;
+		}
+
 		#endregion
 
 		#region Staratelj
-		
+
 		#endregion
 
 		#region Nastavnik

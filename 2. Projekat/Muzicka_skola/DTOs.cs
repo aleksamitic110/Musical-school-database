@@ -102,10 +102,23 @@ namespace Muzicka_skola
 	#endregion
 
 	#region Polaznik
-	public class PolaznikDTO
+	public class PolaznikDTO : OsobaDTO
 	{
+		public int Id { get; set; }
+		public PolaznikDTO(int Id, string JMBG, string ime, string prezime, string adresa, string mail, string telefoni):base(JMBG, ime, prezime, adresa, mail, telefoni)
+		{
+			this.Id = Id;
+		}
+	}
+	public class PolaznikBasic
+	{
+		public int Id { get; set; }
+		public virtual IList<Pohadja> Kursevi { get; set; } = new List<Pohadja>();
+		public virtual IList<Evidencija> Prisustva { get; set; } = new List<Evidencija>();
+		public virtual IList<Polaganje> Polaganja { get; set; } = new List<Polaganje>();
 
 	}
+
 	#endregion
 
 	#region Staratelj

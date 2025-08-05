@@ -179,6 +179,12 @@
     <Compile Include="Forme\AddNastavnik.Designer.cs">
       <DependentUpon>AddNastavnik.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\AddPolaznik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\AddPolaznik.Designer.cs">
+      <DependentUpon>AddPolaznik.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\GlobalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forme\AddNastavnik.resx">
       <DependentUpon>AddNastavnik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\AddPolaznik.resx">
+      <DependentUpon>AddPolaznik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\GlobalForm.resx">
       <DependentUpon>GlobalForm.cs</DependentUpon>
