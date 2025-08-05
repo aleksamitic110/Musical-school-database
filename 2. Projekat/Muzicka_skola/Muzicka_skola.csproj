@@ -173,17 +173,23 @@
     <Compile Include="Entiteti\Telefon.cs" />
     <Compile Include="Entiteti\Ucionica.cs" />
     <Compile Include="Enums.cs" />
-    <Compile Include="Forme\AddNastavnik.cs">
+    <Compile Include="Forme\Nastavnik\DodajNastavnik.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forme\AddNastavnik.Designer.cs">
-      <DependentUpon>AddNastavnik.cs</DependentUpon>
+    <Compile Include="Forme\Nastavnik\DodajNastavnik.Designer.cs">
+      <DependentUpon>DodajNastavnik.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\GlobalForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forme\GlobalForm.Designer.cs">
       <DependentUpon>GlobalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Nastavnik\IzmeniNastavnik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Nastavnik\IzmeniNastavnik.Designer.cs">
+      <DependentUpon>IzmeniNastavnik.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\ViewForm.cs">
       <SubType>Form</SubType>
@@ -220,11 +226,14 @@
     <Compile Include="Mapiranja\UcionicaMap.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forme\AddNastavnik.resx">
-      <DependentUpon>AddNastavnik.cs</DependentUpon>
+    <EmbeddedResource Include="Forme\Nastavnik\DodajNastavnik.resx">
+      <DependentUpon>DodajNastavnik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\GlobalForm.resx">
       <DependentUpon>GlobalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Nastavnik\IzmeniNastavnik.resx">
+      <DependentUpon>IzmeniNastavnik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\ViewForm.resx">
       <DependentUpon>ViewForm.cs</DependentUpon>
