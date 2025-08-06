@@ -56,7 +56,6 @@ namespace Muzicka_skola.Forme.Nastavnik
                 radioButtonStalni.Checked = true;
                 
                 textBoxJMBGMentora.Text = _stalni.Mentor?.JMBG;
-                checkBoxMentor.Checked = _stalni.StatusMentora;
                 string[] radnoVreme = _stalni.RadnoVreme.Split('-');
                 string radnoVremeOd = radnoVreme[0].Trim();
                 string radnoVremeDo = radnoVreme[1].Trim();
@@ -148,11 +147,21 @@ namespace Muzicka_skola.Forme.Nastavnik
             }
             if (radioButtonStalni.Checked)
             {
+                if (textBoxJMBG.Text == textBoxJMBGMentora.Text)
+                {
+                    MessageBox.Show("Nastavnik ne moze da bude sam sebi mentor");
+                    return;
+                }
                 if (pickerRadnoVremeDo.Value < pickerRadnoVremeOd.Value || pickerRadnoVremeOd.Value.ToString("HH:mm") == pickerRadnoVremeDo.Value.ToString("HH:mm"))
                 {
                     MessageBox.Show("Radno vreme nije validno");
                     return;
                 }
+            }
+            if (!textBoxJMBG.Text.All(char.IsDigit) || !textBoxJMBGMentora.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("JMBG nije validan");
+                return;
             }
 
             var osoba = new OsobaBasic
@@ -174,8 +183,7 @@ namespace Muzicka_skola.Forme.Nastavnik
                 DatumZaposlenja = PickerDatumZaposlenja.Value,
             };
 
-            DTOManager.IzmeniOsobu(osoba);
-            DTOManager.IzmeniNastavnika(nastavnik, _nastavnik.Id);
+            bool nastavnikIzmenjen = false;
 
             if (radioButtonHonorarni.Checked)
             {
@@ -188,12 +196,12 @@ namespace Muzicka_skola.Forme.Nastavnik
 
                 if (_stalni != null)
                 {
-                    DTOManager.ObrisiStalnogNastavnika(_stalni.Id);
-                    DTOManager.SacuvajHonorarnogNastavnika(honorarni, _nastavnik.Id);
+                    DTOManager.ObrisiNastavnika(_nastavnik.Id);
+                    nastavnikIzmenjen = DTOManager.SacuvajHonorarnogNastavnika(honorarni, osoba, nastavnik);
                 }
                 else
                 {
-                    DTOManager.IzmeniHonorarnogNastavnika(honorarni, _honorarni.Id);
+                    nastavnikIzmenjen = DTOManager.IzmeniHonorarnogNastavnika(honorarni, _honorarni.Id, osoba, nastavnik, _nastavnik.Id);
                 }
             }
             else if (radioButtonStalni.Checked)
@@ -203,18 +211,26 @@ namespace Muzicka_skola.Forme.Nastavnik
                 var stalni = new StalniBasic
                 {
                     RadnoVreme = radnoVreme,
-                    StatusMentora = checkBoxMentor.Checked
                 };
                 if (_honorarni != null)
                 {
-                    DTOManager.ObrisiHonorarnogNastavnika(_honorarni.Id);
-                    DTOManager.SacuvajStalnog(stalni, _nastavnik.Id, mentorJMBG);
+                    DTOManager.ObrisiNastavnika(_nastavnik.Id);
+                    nastavnikIzmenjen = DTOManager.SacuvajStalnog(stalni, mentorJMBG, osoba, nastavnik);
                 }
                 else
                 {
-                    DTOManager.IzmeniStalnog(stalni, _stalni.Id, mentorJMBG);
+                    nastavnikIzmenjen = DTOManager.IzmeniStalnog(stalni, _stalni.Id, mentorJMBG, osoba, nastavnik, _nastavnik.Id);
                 }
             }
+            if (nastavnikIzmenjen)
+            {
+                NastavnikUspesnoIzmenjen();
+            }
+        }
+
+        private void NastavnikUspesnoIzmenjen()
+        {
+            DTOManager.IzmeniStatusMentora();
             MessageBox.Show("Nastavnik uspesno izmenjen!");
             _globalForm.PrikaziNastavnikeUDataGrid();
             Close();
