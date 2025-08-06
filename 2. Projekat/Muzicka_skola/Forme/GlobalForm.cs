@@ -202,8 +202,11 @@ namespace Muzicka_skola.Forme
 		#region Nastavnici
 		private void NastavniciRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-			if (radioButtonSviNastavnici.Checked)
+            panelMentorButtons.Visible = radioButtonStalni.Checked;
+
+            if (radioButtonSviNastavnici.Checked)
 			{
+
                 PrikaziNastavnikeUDataGrid();
             }
             else if (radioButtonHonorarni.Checked)
@@ -222,7 +225,8 @@ namespace Muzicka_skola.Forme
             {
 				int nastavnikId = (int)selectedRow.Cells["Id"].Value;
                 DTOManager.ObrisiNastavnika(nastavnikId);
-				MessageBox.Show("Nastavnik uspesno obrisan!");
+                DTOManager.IzmeniStatusMentora();
+                MessageBox.Show("Nastavnik uspesno obrisan!");
                 PrikaziNastavnikeUDataGrid();
             }
             else
@@ -230,7 +234,87 @@ namespace Muzicka_skola.Forme
                 MessageBox.Show("Izaberi nastavnika za brisanje");
             }
         }
-		private void UcitajCeoPrikazNastavnika()
+
+        private void buttonPrikaziMentora_Click(object sender, EventArgs e)
+        {
+            var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
+            if (selectedRow != null)
+            {
+                int nastavnikId = (int)selectedRow.Cells["Id"].Value;
+                List<NastavnikDTO> nastavnici = DTOManager.PrikaziMentora(nastavnikId);
+				if(nastavnici.Count > 0)
+				{
+                    PrikazNastavnika prikazNastavnika = new PrikazNastavnika(nastavnici);
+                    prikazNastavnika.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nastavnik nije izabran");
+            }
+        }
+
+
+        private void buttonPrikaziKomeJeMentor_Click(object sender, EventArgs e)
+        {
+            var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
+            if (selectedRow != null)
+            {
+                string nastavnikJMBG= (string)selectedRow.Cells["JMBG"].Value;
+                List<NastavnikDTO> nastavnici = DTOManager.PrikaziKomeJeMentor(nastavnikJMBG);
+                if (nastavnici.Count > 0)
+                {
+                    PrikazNastavnika prikazNastavnika = new PrikazNastavnika(nastavnici);
+                    prikazNastavnika.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nastavnik nije izabran");
+            }
+        }
+
+
+        private void buttonPrikaziNadgledaniIspiti_Click(object sender, EventArgs e)
+        {
+            var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
+            if (selectedRow != null)
+            {
+                int nastavnikId = (int)selectedRow.Cells["Id"].Value;
+                List<NastavnikIspitDto> ispiti = DTOManager.PrikaziNadgledaneIspite(nastavnikId);
+                if(ispiti.Count > 0)
+                {
+                    PrikazIspita prikazIspita = new PrikazIspita(ispiti);
+                    prikazIspita.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Nije ucestvovao u nadgledanju nijednog ispita");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nastavnik nije izabran");
+            }
+        }
+
+
+        private void buttonKurseviNastavnika_Click(object sender, EventArgs e)
+        {
+            var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
+            if (selectedRow != null)
+            {
+                int nastavnikId = (int)selectedRow.Cells["Id"].Value;
+                KurseviNastavnika kurseviNastavnika = new KurseviNastavnika(nastavnikId);
+                kurseviNastavnika.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nastavnik nije izabran");
+            }
+        }
+
+        private void UcitajCeoPrikazNastavnika()
 		{
             panelDodatneFunkcije.Controls.Add(panelDodatneFunkcijeNastavnik);
             panelDodatneFunkcijeNastavnik.Show();
@@ -275,6 +359,5 @@ namespace Muzicka_skola.Forme
             dataGridViewPrikazPodataka.Columns["JMBG"].DisplayIndex = 2;
         }
         #endregion
-
     }
 }

@@ -186,3 +186,7 @@ C:\Users\Luka\Desktop\Sve\Faks\notepad skripte\Sistemi baza\projekat 2\Musical-s
 C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\Projekat\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.Forme.DodajNastavnik.resources
 C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\Projekat\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.Forme.AddPolaznik.resources
 C:\Users\aleks\OneDrive\Desktop\Fakultet\3. godina\2. Semestar\Sistemi baza\Projekat\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.Forme.Nastavnik.IzmeniNastavnik.resources
+C:\Users\Luka\Desktop\Sve\Faks\notepad skripte\Sistemi baza\projekat 2\Musical-school-database\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.Forme.AddPolaznik.resources
+C:\Users\Luka\Desktop\Sve\Faks\notepad skripte\Sistemi baza\projekat 2\Musical-school-database\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.Forme.Nastavnik.PrikazNastavnika.resources
+C:\Users\Luka\Desktop\Sve\Faks\notepad skripte\Sistemi baza\projekat 2\Musical-school-database\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.Forme.Nastavnik.KurseviNastavnika.resources
+C:\Users\Luka\Desktop\Sve\Faks\notepad skripte\Sistemi baza\projekat 2\Musical-school-database\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.Forme.Nastavnik.PrikazIspita.resources

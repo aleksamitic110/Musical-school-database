@@ -140,8 +140,49 @@ namespace Muzicka_skola
 			this.DatumZaposlenja = datumZaposlenja;
 			
 		}
+		public NastavnikDTO() { }
 
 	}
+
+	public class NastavnikKursDto {
+        public string Id { get; set; }
+        public string Naziv { get; set; }
+        public string Nivo { get; set; }
+        public string TipNastave { get; set; }
+        public string AdresaFilijale { get; set; }
+        public string RadnoVremeFilijale { get; set; }
+        public NastavnikKursDto() { }
+        public NastavnikKursDto(string Id, string Naziv, string Nivo, string TipNastave, string Adresa, string radnoVreme) {
+			this.Id = Id;
+			this.Naziv = Naziv;
+			this.Nivo = Nivo;
+			this.TipNastave = TipNastave;
+			this.AdresaFilijale = Adresa;
+			this.RadnoVremeFilijale = radnoVreme;
+		}
+	}
+
+	public class NastavnikPolaznikDto : OsobaDTO {
+		public NastavnikPolaznikDto(string JMBG, string ime, string prezime, string adresa, string mail, string telefoni) :base(JMBG, ime, prezime, adresa, mail, telefoni)
+		{
+
+		}
+		public NastavnikPolaznikDto() { }
+	}
+	public class NastavnikIspitDto
+	{
+        public string Id { get; set; }
+        public string NazivKursa { get; set; }
+        public DateTime Datum { get; set; }
+        public NastavnikIspitDto(string Id, string nazivKursa, DateTime datum) {
+			this.Id = Id;
+			this.NazivKursa = nazivKursa;
+			this.Datum = datum;
+		}
+        public NastavnikIspitDto() { }
+	}
+
+
 	public class NastavnikBasic {
         public string StrucnaSprema { get; set; }
         public DateTime DatumZaposlenja { get; set; }
@@ -183,8 +224,7 @@ namespace Muzicka_skola
 
 	public class StalniBasic {
         public string RadnoVreme { get; set; }
-        public bool StatusMentora { get; set; }
-    }
+	}
 
 	#endregion
 

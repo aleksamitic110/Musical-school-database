@@ -233,6 +233,76 @@ namespace Muzicka_skola
             return nastavnikId;
         }
 
+        public static List<NastavnikDTO> PrikaziMentora(int nastavnikId)
+        {
+            List<NastavnikDTO> nastavnikMentor = new List<NastavnikDTO>();
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                Stalni stalniNastavnik = session.Query<Stalni>().FirstOrDefault(s => s.Nastavnik.Id == nastavnikId);
+                if(stalniNastavnik.Mentor == null)
+                {
+                    throw new Exception("Nastavnik nema mentora");
+                }
+                Osoba mentor = stalniNastavnik.Mentor;
+                nastavnikMentor.Add(new NastavnikDTO
+                {
+                    JMBG = mentor.JMBG,
+                    Ime = mentor.Ime,
+                    Prezime = mentor.Prezime,
+                    Adresa = mentor.Adresa,
+                    Mail = mentor.Mail,
+                    Telefoni = string.Join(", ", mentor.Telefoni.Select(t => t.BrojTelefona)),
+                    DatumZaposlenja = stalniNastavnik.Nastavnik.DatumZaposlenja,
+                    StrucnaSprema = stalniNastavnik.Nastavnik.StrucnaSprema
+                });
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return nastavnikMentor;
+        }
+
+        public static List<NastavnikDTO> PrikaziKomeJeMentor(string nastavnikJMBG)
+        {
+            List<NastavnikDTO> nastavniciKomeJeMentor = new List<NastavnikDTO>();
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                List<Stalni> mentirani = session.Query<Stalni>()
+                    .Where(s => s.Mentor.JMBG == nastavnikJMBG)
+                    .ToList();
+                if (!mentirani.Any())
+                {
+                    throw new Exception("Nastavnik nije mentor");
+                }
+                    foreach (var m in mentirani)
+                {
+                    var o = m.Nastavnik.Osoba;
+
+                    nastavniciKomeJeMentor.Add(new NastavnikDTO
+                    {
+                        JMBG = o.JMBG,
+                        Ime = o.Ime,
+                        Prezime = o.Prezime,
+                        Adresa = o.Adresa,
+                        Mail = o.Mail,
+                        Telefoni = string.Join(", ", o.Telefoni.Select(t => t.BrojTelefona)),
+                        DatumZaposlenja = m.Nastavnik.DatumZaposlenja,
+                        StrucnaSprema = m.Nastavnik.StrucnaSprema
+                    });
+                }
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return nastavniciKomeJeMentor;
+        }
+
         public static void ObrisiNastavnika(int nastavnikId)
         {
             try
@@ -246,7 +316,17 @@ namespace Muzicka_skola
 
                 Stalni stalni = session.Query<Stalni>().FirstOrDefault(s => s.Nastavnik.Id == nastavnikId);
                 if (stalni != null)
+                {
+                    var stalniKojimaJeMentor = session.Query<Stalni>()
+                        .Where(s => s.Mentor.JMBG == nastavnik.Osoba.JMBG)
+                        .ToList();
+                    foreach (var s in stalniKojimaJeMentor)
+                    {
+                        s.Mentor = null;
+                        session.Update(s);
+                    }
                     session.Delete(stalni);
+                }
 
                 session.Delete(nastavnik);
 
@@ -265,6 +345,31 @@ namespace Muzicka_skola
             }
         }
 
+        public static List<NastavnikIspitDto> PrikaziNadgledaneIspite(int nastavnikId)
+        {
+            List<NastavnikIspitDto> nadgledaniIspiti = new List<NastavnikIspitDto>();
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                Nastavnik nastavnik = session.Load<Nastavnik>(nastavnikId);
+                List<Ispit> ispiti = session.Query<Komisija>()
+                 .Where(k => k.Nastavnik == nastavnik)
+                 .Select(k => k.Ispit)
+                 .ToList();
+                foreach (Ispit isp in ispiti)
+                {
+
+                    nadgledaniIspiti.Add(new NastavnikIspitDto(isp.Id, isp.Kurs.Naziv, isp.Datum));
+                }
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Greška prilikom brisanja: " + ex.Message);
+            }
+            return nadgledaniIspiti;
+        }
+
         public static void IzmeniNastavnika(NastavnikBasic noviNastavnik, int nastavnikId)
         {
             try
@@ -281,6 +386,73 @@ namespace Muzicka_skola
             {
                 MessageBox.Show("Greška prilikom brisanja: " + ex.Message);
             }
+        }
+
+        public static List<NastavnikKursDto> UcitajKurseveKojeNastavnikDrzi(int nastavnikId)
+        {
+            List<NastavnikKursDto> kursevi = new List<NastavnikKursDto>();
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                var nastavnik = session.Load<Nastavnik>(nastavnikId);
+                foreach (var kurs in nastavnik.Kursevi)
+                {
+                    kursevi.Add(new NastavnikKursDto(kurs.Id, kurs.Naziv, kurs.Nivo, kurs.TipNastave, kurs.Filijala.Adresa, kurs.Filijala.RadnoVreme));
+                }
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Greška prilikom brisanja: " + ex.Message);
+            }
+            return kursevi;
+        }
+
+        public static List<NastavnikPolaznikDto> PolazniciKojiSuPolozili(string kursId)
+        {
+            List<NastavnikPolaznikDto> polaznici = new List<NastavnikPolaznikDto>();
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                List<Osoba> polozili = session.Query<Polaganje>()
+                 .Where(p => p.Ispit.Kurs.Id == kursId && p.Polozio == true)
+                 .Select(p => p.Polaznik.Osoba)
+                 .ToList();
+                
+                foreach (var polaznik in polozili)
+                {
+                    polaznici.Add(new NastavnikPolaznikDto(polaznik.JMBG, polaznik.Ime, polaznik.Prezime, polaznik.Adresa, polaznik.Mail,
+                        string.Join(",", polaznik.Telefoni.Select(t => t.BrojTelefona))
+                       ));
+                }
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Greška prilikom brisanja: " + ex.Message);
+            }
+            return polaznici;
+        }
+
+        public static List<NastavnikIspitDto> IspitiKojiPredstoje(string kursId)
+        {
+            List<NastavnikIspitDto> ispiti = new List<NastavnikIspitDto>();
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                List<Ispit> predstojeci = session.Query<Ispit>().Where(i => i.Kurs.Id == kursId && i.Datum > DateTime.Now).ToList();
+
+                foreach (var isp in predstojeci)
+                {
+                    ispiti.Add(new NastavnikIspitDto(isp.Id, isp.Kurs.Naziv, isp.Datum));
+                }
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Greška prilikom brisanja: " + ex.Message);
+            }
+            return ispiti;
         }
 
         #endregion
@@ -316,25 +488,54 @@ namespace Muzicka_skola
             return honorarniNastavnici;
         }
 
-        public static void SacuvajHonorarnogNastavnika(HonorarniBasic noviHonorarni, int nastavnikId)
+        public static bool SacuvajHonorarnogNastavnika(HonorarniBasic noviHonorarni, OsobaBasic novaOsoba, NastavnikBasic noviNastavnik)
         {
             try
             {
                 ISession session = DataLayer.GetSession();
+                Osoba osobaUBazi = session.Query<Osoba>().FirstOrDefault(o => o.JMBG == novaOsoba.JMBG);
+                if (osobaUBazi != null)
+                {
+                    throw new Exception("Osoba sa tim JMBG-om vec postoji");
+                }
+                Osoba osoba = new Osoba
+                {
+                    Adresa = novaOsoba.Adresa,
+                    Ime = novaOsoba.Ime,
+                    JMBG = novaOsoba.JMBG,
+                    Mail = novaOsoba.Mail,
+                    Prezime = novaOsoba.Prezime,
+                };
+                foreach (var item in novaOsoba.Telefoni)
+                {
+                    var telefon = new Telefon { BrojTelefona = item.BrojTelefona, Osoba = osoba };
+                    osoba.Telefoni.Add(telefon);
+                }
+                Nastavnik nastavnik = new Nastavnik
+                {
+                    DatumZaposlenja = noviNastavnik.DatumZaposlenja,
+                    StrucnaSprema = noviNastavnik.StrucnaSprema,
+                    Osoba = osoba,
+                };
                 Honorarni honorarni = new Honorarni
                 {
                     BrojCasovaMesecno = noviHonorarni.BrojCasovaMesecno,
                     BrojUgovora = noviHonorarni.BrojUgovora,
                     TrajanjeUgovora = noviHonorarni.TrajanjeUgovora,
-                    Nastavnik = session.Load<Nastavnik>(nastavnikId),
+                    Nastavnik = nastavnik,
                 };
+                session.Save(osoba);
+                session.Save(nastavnik);
                 session.Save(honorarni);
+
                 session.Close();
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            return false;
         }
 
         public static Honorarni NadjiHonorarnog(int nastavnikId)
@@ -353,40 +554,47 @@ namespace Muzicka_skola
             return honorarni;
         }
 
-        public static void ObrisiHonorarnogNastavnika(int honorarniId)
+        public static bool IzmeniHonorarnogNastavnika(HonorarniBasic noviHonorarni, int honorarniId, OsobaBasic novaOsoba, NastavnikBasic noviNastavnik, int nastavnikId)
         {
             try
             {
                 ISession session = DataLayer.GetSession();
+                Osoba osoba = session.Load<Osoba>(novaOsoba.JMBG);
+                Nastavnik nastavnik = session.Load<Nastavnik>(nastavnikId);
                 Honorarni honorarni = session.Load<Honorarni>(honorarniId);
-                if (honorarni != null)
-                    session.Delete(honorarni);
-                session.Flush();
-                session.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
 
-        public static void IzmeniHonorarnogNastavnika(HonorarniBasic noviHonorarni, int honorarniId)
-        {
-            try
-            {
-                ISession session = DataLayer.GetSession();
-                Honorarni honorarni = session.Load<Honorarni>(honorarniId);
+                osoba.Telefoni.Clear();
+                session.Update(osoba);
+                session.Flush();
+                foreach (var item in novaOsoba.Telefoni)
+                {
+                    var telefon = new Telefon { BrojTelefona = item.BrojTelefona, Osoba = osoba };
+                    osoba.Telefoni.Add(telefon);
+                }
+                osoba.Ime = novaOsoba.Ime;
+                osoba.Prezime = novaOsoba.Prezime;
+                osoba.Adresa = novaOsoba.Adresa;
+                osoba.Mail = novaOsoba.Mail;
+
+                nastavnik.StrucnaSprema = noviNastavnik.StrucnaSprema;
+                nastavnik.DatumZaposlenja = noviNastavnik.DatumZaposlenja;
+
                 honorarni.BrojCasovaMesecno = noviHonorarni.BrojCasovaMesecno;
                 honorarni.BrojUgovora = noviHonorarni.BrojUgovora;
                 honorarni.TrajanjeUgovora = noviHonorarni.TrajanjeUgovora;
+
+                session.Update(osoba);
+                session.Update(nastavnik);
                 session.Update(honorarni);
                 session.Flush();
                 session.Close();
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            return false;
         }
 
         #endregion
@@ -420,71 +628,137 @@ namespace Muzicka_skola
             return stalniNastavnci;
         }
 
-        public static void SacuvajStalnog(StalniBasic noviStalni, int nastavnikId, string mentorJMBG)
+        public static bool SacuvajStalnog(StalniBasic noviStalni, string mentorJMBG, OsobaBasic novaOsoba, NastavnikBasic noviNastavnik)
         {
             try
             {
                 ISession session = DataLayer.GetSession();
-                Osoba mentor = session.Query<Osoba>().FirstOrDefault(o => o.JMBG == mentorJMBG);
+                Osoba osobaUBazi = session.Query<Osoba>().FirstOrDefault(o => o.JMBG == novaOsoba.JMBG);
+                Stalni mentor = session.Query<Stalni>().FirstOrDefault(s => s.Nastavnik.Osoba.JMBG == mentorJMBG);
+                if (osobaUBazi != null)
+                {
+                    throw new Exception("Osoba sa tim JMBG-om vec postoji");
+                }
                 if (!string.IsNullOrEmpty(mentorJMBG) && mentor == null)
                 {
                     throw new Exception("Mentor sa tim JMBG-om ne postoji");
                 }
+                Osoba osoba = new Osoba
+                {
+                    Adresa = novaOsoba.Adresa,
+                    Ime = novaOsoba.Ime,
+                    JMBG = novaOsoba.JMBG,
+                    Mail = novaOsoba.Mail,
+                    Prezime = novaOsoba.Prezime,
+                };
+                foreach (var item in novaOsoba.Telefoni)
+                {
+                    var telefon = new Telefon { BrojTelefona = item.BrojTelefona, Osoba = osoba };
+                    osoba.Telefoni.Add(telefon);
+                }
+                Nastavnik nastavnik = new Nastavnik
+                {
+                    DatumZaposlenja = noviNastavnik.DatumZaposlenja,
+                    StrucnaSprema = noviNastavnik.StrucnaSprema,
+                    Osoba = osoba,
+                };
                 Stalni stalni = new Stalni()
                 {
                     RadnoVreme = noviStalni.RadnoVreme,
-                    StatusMentora = noviStalni.StatusMentora,
-                    Mentor = mentor,
-                    Nastavnik = session.Load<Nastavnik>(nastavnikId),
+                    Mentor = mentor?.Nastavnik.Osoba,
+                    Nastavnik = nastavnik,
                 };
+                session.Save(osoba);
+                session.Save(nastavnik);
                 session.Save(stalni);
+                session.Flush();
                 session.Close();
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            return false;
         }
 
-        public static void IzmeniStalnog(StalniBasic noviStalni, int stalniId, string mentorJMBG)
+        public static bool IzmeniStalnog(StalniBasic noviStalni, int stalniId, string mentorJMBG, OsobaBasic novaOsoba, NastavnikBasic noviNastavnik, int nastavnikId)
         {
             try
             {
                 ISession session = DataLayer.GetSession();
-                Osoba mentor = session.Query<Osoba>().FirstOrDefault(o => o.JMBG == mentorJMBG);
+                Osoba osoba = session.Load<Osoba>(novaOsoba.JMBG);
+                Stalni mentor = session.Query<Stalni>().FirstOrDefault(s => s.Nastavnik.Osoba.JMBG == mentorJMBG);
+                Nastavnik nastavnik = session.Load<Nastavnik>(nastavnikId);
+                Stalni stalni = session.Load<Stalni>(stalniId);
                 if (!string.IsNullOrEmpty(mentorJMBG) && mentor == null)
                 {
                     throw new Exception("Mentor sa tim JMBG-om ne postoji");
                 }
-                Stalni stalni = session.Load<Stalni>(stalniId);
+
+                osoba.Telefoni.Clear();
+                session.Update(osoba);
+                session.Flush();
+                foreach (var item in novaOsoba.Telefoni)
+                {
+                    var telefon = new Telefon { BrojTelefona = item.BrojTelefona, Osoba = osoba };
+                    osoba.Telefoni.Add(telefon);
+                }
+                osoba.Ime = novaOsoba.Ime;
+                osoba.Prezime = novaOsoba.Prezime;
+                osoba.Adresa = novaOsoba.Adresa;
+                osoba.Mail = novaOsoba.Mail;
+
+                nastavnik.StrucnaSprema = noviNastavnik.StrucnaSprema;
+                nastavnik.DatumZaposlenja = noviNastavnik.DatumZaposlenja;
+
                 stalni.RadnoVreme = noviStalni.RadnoVreme;
-                stalni.StatusMentora = noviStalni.StatusMentora;
-                stalni.Mentor = mentor;
+                stalni.Mentor = mentor?.Nastavnik.Osoba;
+                session.Update(osoba);
+                session.Update(nastavnik);
                 session.Update(stalni);
+                session.Flush();
+                session.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        public static void IzmeniStatusMentora()
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                var sviStalni = session.Query<Stalni>().ToList();
+
+                var mentori = sviStalni
+                    .Where(s => s.Mentor != null)
+                    .Select(s => s.Mentor.JMBG)
+                    .Distinct()
+                    .ToList();
+
+                foreach (var nastavnik in sviStalni)
+                {
+                    if (mentori.Contains(nastavnik.Nastavnik.Osoba.JMBG))
+                    {
+                        nastavnik.StatusMentora = true;
+                    }
+                    else
+                    {
+                        nastavnik.StatusMentora = false;
+                    }
+                    session.Update(nastavnik);
+                }
                 session.Flush();
                 session.Close();
             }
             catch (Exception ex)
             {
-                StringBuilder sb = new StringBuilder();
-                sb.AppendLine("Greška prilikom čuvanja osobe:");
-                sb.AppendLine();
-
-                int level = 0;
-                Exception currentEx = ex;
-                while (currentEx != null)
-                {
-                    sb.AppendLine($"[Nivo {level}] {currentEx.GetType().FullName}");
-                    sb.AppendLine($"Poruka: {currentEx.Message}");
-                    sb.AppendLine("StackTrace:");
-                    sb.AppendLine(currentEx.StackTrace);
-                    sb.AppendLine(new string('-', 40));
-
-                    currentEx = currentEx.InnerException;
-                    level++;
-                }
-
-                MessageBox.Show(sb.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -504,22 +778,6 @@ namespace Muzicka_skola
             return stalni;
         }
 
-        public static void ObrisiStalnogNastavnika(int stalniId)
-        {
-            try
-            {
-                ISession session = DataLayer.GetSession();
-                Stalni stalni = session.Load<Stalni>(stalniId);
-                if (stalni != null)
-                    session.Delete(stalni);
-                session.Flush();
-                session.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
 
 
         #endregion

@@ -179,6 +179,24 @@
     <Compile Include="Forme\Nastavnik\DodajNastavnik.Designer.cs">
       <DependentUpon>DodajNastavnik.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\Nastavnik\KurseviNastavnika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Nastavnik\KurseviNastavnika.Designer.cs">
+      <DependentUpon>KurseviNastavnika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Nastavnik\PrikazIspita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Nastavnik\PrikazIspita.Designer.cs">
+      <DependentUpon>PrikazIspita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Nastavnik\PrikazNastavnika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Nastavnik\PrikazNastavnika.Designer.cs">
+      <DependentUpon>PrikazNastavnika.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\Polaznici\AddPolaznik.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +252,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forme\Nastavnik\DodajNastavnik.resx">
       <DependentUpon>DodajNastavnik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Nastavnik\KurseviNastavnika.resx">
+      <DependentUpon>KurseviNastavnika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Nastavnik\PrikazIspita.resx">
+      <DependentUpon>PrikazIspita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Nastavnik\PrikazNastavnika.resx">
+      <DependentUpon>PrikazNastavnika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\Polaznici\AddPolaznik.resx">
       <DependentUpon>AddPolaznik.cs</DependentUpon>
