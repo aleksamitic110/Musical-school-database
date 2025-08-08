@@ -18,39 +18,66 @@ namespace Muzicka_skola
 	 */
     public class DTOManager
     {
-		#region Filijala
-		
-		#endregion
+        #region Filijala
 
-		#region Ucionica
-		
-		#endregion
+        #endregion
 
-		#region Kurs
-		
-		#endregion
+        #region Ucionica
 
-		#region KursInstrumentalni
-		
-		#endregion
+        #endregion
 
-		#region KursVokalni
-		
-		#endregion
+        #region Kurs
+        public static List<KursDTO> vratiSveKurseve()
+        {
+            List<KursDTO> kursevi = new List<KursDTO>();
+            try
+            {
+                ISession session = DataLayer.GetSession();
 
-		#region KursTeorijski
-		
-		#endregion
+                kursevi = session.Query<Kurs>().Select(k => new KursDTO(
+                    k.Id,
+                    k.Naziv,
+                    k.Nivo,
+                    k.TipNastave,
+                    k.Filijala.Id,
+                    k.Nastavnik.Osoba.JMBG
+                )).ToList();
 
-		#region Cas
-		
-		#endregion
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-		#region Evidencija
-		
-		#endregion
+            return kursevi;
+        }
 
-		#region Osoba
+
+
+        #endregion
+
+        #region KursInstrumentalni
+
+        #endregion
+
+        #region KursVokalni
+
+        #endregion
+
+        #region KursTeorijski
+
+        #endregion
+
+        #region Cas
+
+        #endregion
+
+        #region Evidencija
+
+        #endregion
+
+        #region Osoba
 
         public static string sacuvajOsobu(OsobaBasic novaOsoba)
         {

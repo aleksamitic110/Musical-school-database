@@ -25,17 +25,36 @@ namespace Muzicka_skola
 	{
 
 	}
-	#endregion
+    #endregion
 
-	#region Kurs
-	public class KursDTO
-	{
+    #region Kurs
+    public class KursDTO
+    {
+        public string Id { get; set; }
+        public string Naziv { get; set; }
+        public string Nivo { get; set; }
+        public string TipNastave { get; set; }
 
-	}
-	#endregion
+        public string Filijala { get; set; }
+        public string NastavnikJMBG { get; set; }
 
-	#region KursInstrumentalni
-	public class KursInstrumentalniDTO
+        public KursDTO() { }
+
+        public KursDTO(string id, string naziv, string nivo, string tipNastave, string filijala, string nastavnikJMBG)
+        {
+            Id = id;
+            Naziv = naziv;
+            Nivo = nivo;
+            TipNastave = tipNastave;
+            Filijala = filijala;
+            NastavnikJMBG = nastavnikJMBG;
+        }
+    }
+
+    #endregion
+
+    #region KursInstrumentalni
+    public class KursInstrumentalniDTO
 	{
 
 	}

@@ -1,5 +1,6 @@
 ﻿using FluentNHibernate.Conventions.AcceptanceCriteria;
 using Muzicka_skola.Entiteti;
+using Muzicka_skola.Forme.Kursevi;
 using Muzicka_skola.Forme.Nastavnik;
 using System;
 using System.Collections.Generic;
@@ -76,9 +77,11 @@ namespace Muzicka_skola.Forme
 
 		private void PreurediPrikazKursevi()
 		{
-			this.panelDodatneFunkcije.Controls.Add(new Label() { Text = "Kurs" });
-			this.panelStandardniFilteri.Controls.Add(new Label() { Text = "Filteri za kurseve" });
-			this.panelDodatniFilteri.Controls.Add(new Label() { Text = "Dodatni Filteri za kurseve", Size = new Size(200, 200) });
+			//this.panelDodatneFunkcije.Controls.Add(new Label() { Text = "Kurs" });
+			//this.panelStandardniFilteri.Controls.Add(new Label() { Text = "Filteri za kurseve" });
+			//this.panelDodatniFilteri.Controls.Add(new Label() { Text = "Dodatni Filteri za kurseve", Size = new Size(200, 200) });
+
+			this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiSveKurseve();
 		}
 
 		private void PreurediPrikazIspiti() {
@@ -103,7 +106,7 @@ namespace Muzicka_skola.Forme
 
 		private void buttonKursevi_Click(object sender, EventArgs e)
 		{
-
+			trenutniTip = Tip.Kursevi;
 			Ucitaj(Tip.Kursevi);
 		}
 
@@ -127,6 +130,8 @@ namespace Muzicka_skola.Forme
                     break;
 
                 case Tip.Kursevi:
+					DodajKurs dodajKursForm = new DodajKurs(this);
+					dodajKursForm.ShowDialog();
                     break;
                 case Tip.Ispiti:
                     break;
