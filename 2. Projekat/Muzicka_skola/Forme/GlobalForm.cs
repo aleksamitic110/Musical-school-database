@@ -22,7 +22,6 @@ namespace Muzicka_skola.Forme
         {
             InitializeComponent();
         }
-
 		public GlobalForm(Tip tip)
 		{
 			InitializeComponent();
@@ -59,8 +58,12 @@ namespace Muzicka_skola.Forme
 
 		#region Preuredjivanje_Prikaza
 		private void PreurediPrikazPolaznici() {
-			
+			this.panelDodatneFunkcije.Controls.Add(panelDodatneFunkcijePolaznik);
+			panelDodatneFunkcijeNastavnik.Show();
+			panelDodatneFunkcijeNastavnik.BringToFront();
 			this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiPolaznike();
+
+            UcitajCeoPrikazPolaznika();
 		}
 
 		private void PreurediPrikazNastavnici() {
@@ -119,6 +122,8 @@ namespace Muzicka_skola.Forme
             switch (trenutniTip)
             {
                 case Tip.Polaznici:
+                    AddPolaznik dodajPolaznika = new AddPolaznik(this);
+                    dodajPolaznika.Show();
                     break;
 
                 case Tip.Nastavnici:
@@ -186,6 +191,70 @@ namespace Muzicka_skola.Forme
 
 		#region Polaznici
 
+		private void PolazniciRadioButton_CheckedChanged(object sender, EventArgs e)
+		{
+
+
+			if (radioButtonSviPolaznici.Checked)
+			{
+
+				PrikaziPolaznikeUDataGrid();
+			}
+			else if (radioButtonOdrasli.Checked)
+			{
+				PrikaziOdraslePolaznikeUDataGrid();
+			}
+			else if (radioButtonDeca.Checked)
+			{
+				PrikaziDecuPolaznikeUDataGrid();
+			}
+			else if (radioButtonStaratelji.Checked) {
+				PrikaziStarateljeUDataGrid();
+			}
+		}
+
+		public void PrikaziStarateljeUDataGrid()
+		{
+			radioButtonStaratelji.Checked = true;
+			ClearDataGrid();
+			dataGridViewPrikazPodataka.DataSource = DTOManager.VratiStaratelje();
+			HideId();
+			OrderColumns();
+		}
+
+		public void PrikaziOdraslePolaznikeUDataGrid()
+		{
+			radioButtonOdrasli.Checked = true;
+			ClearDataGrid();
+			dataGridViewPrikazPodataka.DataSource = DTOManager.PrikaziOdrasle();
+			HideId();
+			OrderColumns();
+		}
+		private void PrikaziDecuPolaznikeUDataGrid()
+		{
+			ClearDataGrid();
+			dataGridViewPrikazPodataka.DataSource = DTOManager.VratiDecu();
+			HideId();
+			OrderColumns();
+		}
+
+		public void PrikaziPolaznikeUDataGrid()
+		{
+			radioButtonSviPolaznici.Checked = true;
+			ClearDataGrid();
+			dataGridViewPrikazPodataka.DataSource = DTOManager.vratiPolaznike();
+			HideId();
+			OrderColumns();
+		}
+
+
+		private void UcitajCeoPrikazPolaznika()
+		{
+			panelDodatneFunkcije.Controls.Add(panelDodatneFunkcijePolaznik);
+			panelDodatneFunkcijeNastavnik.Show();
+			panelDodatneFunkcijeNastavnik.BringToFront();
+			PrikaziPolaznikeUDataGrid();
+		}
 		#endregion
 
 

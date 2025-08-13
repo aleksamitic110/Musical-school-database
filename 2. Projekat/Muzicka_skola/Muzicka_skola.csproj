@@ -215,6 +215,18 @@
     <Compile Include="Forme\Nastavnik\IzmeniNastavnik.Designer.cs">
       <DependentUpon>IzmeniNastavnik.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\Polaznici\DodajStarateljaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Polaznici\DodajStarateljaForm.Designer.cs">
+      <DependentUpon>DodajStarateljaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Polaznici\OdabirPostojecegStaratelja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Polaznici\OdabirPostojecegStaratelja.Designer.cs">
+      <DependentUpon>OdabirPostojecegStaratelja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\ViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +282,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\Nastavnik\IzmeniNastavnik.resx">
       <DependentUpon>IzmeniNastavnik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Polaznici\DodajStarateljaForm.resx">
+      <DependentUpon>DodajStarateljaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Polaznici\OdabirPostojecegStaratelja.resx">
+      <DependentUpon>OdabirPostojecegStaratelja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\ViewForm.resx">
       <DependentUpon>ViewForm.cs</DependentUpon>

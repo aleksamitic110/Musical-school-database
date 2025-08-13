@@ -10,5 +10,7 @@ namespace Muzicka_skola.Entiteti
 	{
 		public virtual int Id { get; set; }
 		public virtual Osoba Osoba { get; set; }
+
+		public virtual IList<Dete> Deca { get; set; } = new List<Dete>();
 	}
 }

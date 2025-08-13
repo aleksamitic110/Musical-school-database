@@ -17,11 +17,7 @@
   -- Select * FROM Nastavnik;
   -- Select * FROM Staratelj;
   -- Select * FROM Telefon;
-  Select * FROM Osoba;
-SELECT s.* 
-FROM Staratelj s
-LEFT JOIN Osoba o ON s.jmbg_osobe = o.jmbg
-WHERE o.jmbg IS NULL;
+  Select * FROM Dete;
 
 
 BEGIN

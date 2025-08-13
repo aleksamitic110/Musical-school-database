@@ -15,7 +15,9 @@ namespace Muzicka_skola.Mapiranja
 			Table("STARATELJ");
 
 			Id(x => x.Id).Column("ID").GeneratedBy.Identity();
-			References(x => x.Osoba).Column("JMBG_OSOBE").Not.Nullable(); ;
+			References(x => x.Osoba).Column("JMBG_OSOBE").Not.Nullable();
+
+			HasMany(x => x.Deca).KeyColumn("STARATELJ_ID").Inverse().Cascade.AllDeleteOrphan();
 		}
 	}
 }

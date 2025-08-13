@@ -39,9 +39,6 @@ namespace Muzicka_skola.Forme
 
             }
         }
-
-        
-
         private void buttonObrisiBroj_Click(object sender, EventArgs e)
         {
             if (listBoxDodatiBrojevi.SelectedItem != null)
@@ -53,7 +50,6 @@ namespace Muzicka_skola.Forme
                 MessageBox.Show("Izaberi broj za brisanje");
             }
         }
-
         private void buttonDodajBroj_Click(object sender, EventArgs e)
         {
             string input = textBoxBrojTelefona.Text.Trim();
@@ -80,7 +76,6 @@ namespace Muzicka_skola.Forme
             listBoxDodatiBrojevi.Items.Add(input);
             textBoxBrojTelefona.Clear();
         }
-
         private void ButtonDodajNastavnika_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBoxJMBG.Text) || string.IsNullOrWhiteSpace(textBoxIme.Text)
@@ -168,7 +163,6 @@ namespace Muzicka_skola.Forme
                 }
             }
         }
-
         private void NastavnikUspesnoDodat()
         {
             DTOManager.IzmeniStatusMentora();
@@ -176,5 +170,5 @@ namespace Muzicka_skola.Forme
             _globalForm.PrikaziNastavnikeUDataGrid();
             Close();
         }
-    }
+	}
 }
