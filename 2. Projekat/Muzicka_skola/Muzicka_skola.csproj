@@ -179,6 +179,12 @@
     <Compile Include="Forme\Kursevi\DodajKurs.Designer.cs">
       <DependentUpon>DodajKurs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\Kursevi\DodajPredmet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Kursevi\DodajPredmet.Designer.cs">
+      <DependentUpon>DodajPredmet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\Nastavnik\DodajNastavnik.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +246,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forme\Kursevi\DodajKurs.resx">
       <DependentUpon>DodajKurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Kursevi\DodajPredmet.resx">
+      <DependentUpon>DodajPredmet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\Nastavnik\DodajNastavnik.resx">
       <DependentUpon>DodajNastavnik.cs</DependentUpon>

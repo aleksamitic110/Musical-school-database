@@ -40,10 +40,10 @@
             this.grupna = new System.Windows.Forms.RadioButton();
             this.individualna = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.idFilijalaTextBox = new System.Windows.Forms.TextBox();
-            this.JMBGNastavnikaTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dodajKursButton = new System.Windows.Forms.Button();
+            this.jmbgNastavnikaComboBox = new System.Windows.Forms.ComboBox();
+            this.idFilijalaComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -168,20 +168,6 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "ID Filijale:";
             // 
-            // idFilijalaTextBox
-            // 
-            this.idFilijalaTextBox.Location = new System.Drawing.Point(397, 23);
-            this.idFilijalaTextBox.Name = "idFilijalaTextBox";
-            this.idFilijalaTextBox.Size = new System.Drawing.Size(139, 20);
-            this.idFilijalaTextBox.TabIndex = 11;
-            // 
-            // JMBGNastavnikaTextBox
-            // 
-            this.JMBGNastavnikaTextBox.Location = new System.Drawing.Point(397, 49);
-            this.JMBGNastavnikaTextBox.Name = "JMBGNastavnikaTextBox";
-            this.JMBGNastavnikaTextBox.Size = new System.Drawing.Size(139, 20);
-            this.JMBGNastavnikaTextBox.TabIndex = 12;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -203,15 +189,31 @@
             this.dodajKursButton.UseVisualStyleBackColor = false;
             this.dodajKursButton.Click += new System.EventHandler(this.dodajKursButton_Click);
             // 
+            // jmbgNastavnikaComboBox
+            // 
+            this.jmbgNastavnikaComboBox.FormattingEnabled = true;
+            this.jmbgNastavnikaComboBox.Location = new System.Drawing.Point(397, 49);
+            this.jmbgNastavnikaComboBox.Name = "jmbgNastavnikaComboBox";
+            this.jmbgNastavnikaComboBox.Size = new System.Drawing.Size(139, 21);
+            this.jmbgNastavnikaComboBox.TabIndex = 15;
+            // 
+            // idFilijalaComboBox
+            // 
+            this.idFilijalaComboBox.FormattingEnabled = true;
+            this.idFilijalaComboBox.Location = new System.Drawing.Point(397, 23);
+            this.idFilijalaComboBox.Name = "idFilijalaComboBox";
+            this.idFilijalaComboBox.Size = new System.Drawing.Size(139, 21);
+            this.idFilijalaComboBox.TabIndex = 16;
+            // 
             // DodajKurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(574, 350);
+            this.Controls.Add(this.idFilijalaComboBox);
+            this.Controls.Add(this.jmbgNastavnikaComboBox);
             this.Controls.Add(this.dodajKursButton);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.JMBGNastavnikaTextBox);
-            this.Controls.Add(this.idFilijalaTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -221,6 +223,7 @@
             this.Controls.Add(this.idKursaTextBox);
             this.Name = "DodajKurs";
             this.Text = "dodajKurs";
+            this.Load += new System.EventHandler(this.DodajKurs_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -244,9 +247,9 @@
         private System.Windows.Forms.RadioButton grupna;
         private System.Windows.Forms.RadioButton individualna;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox idFilijalaTextBox;
-        private System.Windows.Forms.TextBox JMBGNastavnikaTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button dodajKursButton;
+        private System.Windows.Forms.ComboBox jmbgNastavnikaComboBox;
+        private System.Windows.Forms.ComboBox idFilijalaComboBox;
     }
 }

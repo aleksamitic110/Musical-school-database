@@ -16,7 +16,23 @@ namespace Muzicka_skola
 	#region Filijala
 	public class FilijalaDTO
 	{
+		public string Id { get; set; }
+		public string Adresa { get; set; }
+		public string RadnoVreme { get; set; }
+		public string OpremljenostUcionica { get; set; }
+		public int KapacitetFilijale { get; set; }
+		public FilijalaDTO()
+		{
 
+		}
+		public FilijalaDTO(string id, string adresa, string radnoVreme, string opremljenostUcionica, int kapacitetFilijale)
+		{
+			Id = id;
+			Adresa = adresa;
+			RadnoVreme = radnoVreme;
+			OpremljenostUcionica = opremljenostUcionica;
+			KapacitetFilijale = kapacitetFilijale;
+		}
 	}
 	#endregion
 
@@ -36,46 +52,76 @@ namespace Muzicka_skola
         public string TipNastave { get; set; }
 
         public string Filijala { get; set; }
-        public string NastavnikJMBG { get; set; }
+        public int Nastavnik { get; set; }
 
         public KursDTO() { }
 
-        public KursDTO(string id, string naziv, string nivo, string tipNastave, string filijala, string nastavnikJMBG)
+        public KursDTO(string id, string naziv, string nivo, string tipNastave, string filijala, int nastavnik)
         {
             Id = id;
             Naziv = naziv;
             Nivo = nivo;
             TipNastave = tipNastave;
             Filijala = filijala;
-            NastavnikJMBG = nastavnikJMBG;
+            Nastavnik = nastavnik;
         }
     }
 
     #endregion
 
     #region KursInstrumentalni
-    public class KursInstrumentalniDTO
+    public class KursInstrumentalniDTO : KursDTO
 	{
+		public string Instrumenti { get; set; }
 
-	}
-	#endregion
+		public KursInstrumentalniDTO(string id, string naziv, string nivo, string tipNastave, string filijala, int nastavnik, string instrumenti) : base(id, naziv, nivo, tipNastave, filijala, nastavnik)
+        {
+			Instrumenti = instrumenti;
+        }
+    }
 
-	#region KursVokalni
-	public class KursVokalniDTO
+	public class basicKursInstrumentalniDTO
 	{
-
+		public string Instrumenti { get; set; }
 	}
-	#endregion
+    #endregion
 
-	#region KursTeorijski
-	public class KursTeorijskiDTO
-	{
+    #region KursVokalni
+    public class KursVokalniDTO : KursDTO
+    {
+        public string TipPevanja { get; set; }
 
-	}
-	#endregion
+        public KursVokalniDTO(string id, string naziv, string nivo, string tipNastave, string filijala, int nastavnik, string tipPevanja) : base(id, naziv, nivo, tipNastave, filijala, nastavnik)
+        {
+            TipPevanja = tipPevanja;
+        }
+    }
 
-	#region Cas
-	public class CasDTO{ 
+    public class basicKursVokalniDTO
+    {
+        public string TipPevanja { get; set; }
+    }
+    #endregion
+
+    #region KursTeorijski
+    public class KursTeorijskiDTO : KursDTO
+    {
+        public string NazivPredmeta { get; set; }
+
+        public KursTeorijskiDTO(string id, string naziv, string nivo, string tipNastave, string filijala, int nastavnik, string nazivpredmeta) : base(id, naziv, nivo, tipNastave, filijala, nastavnik)
+        {
+            NazivPredmeta = nazivpredmeta;
+        }
+    }
+
+    public class basicKursTeorijskiDTO
+    {
+        public string NazivPredmeta { get; set; }
+    }
+    #endregion
+
+    #region Cas
+    public class CasDTO{ 
     
     }
 	#endregion

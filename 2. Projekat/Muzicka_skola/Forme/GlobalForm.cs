@@ -18,6 +18,8 @@ namespace Muzicka_skola.Forme
     {
        
         private Tip trenutniTip;
+		private char selektovanTipKursa; 
+		//Da ne pravim radio dugmice stavio sam da updatujem ovo
 
         public GlobalForm()
         {
@@ -50,6 +52,7 @@ namespace Muzicka_skola.Forme
 				case Tip.Kursevi:
 					PreurediPrikazKursevi();
 					break;
+
 				case Tip.Ispiti:
 					PreurediPrikazIspiti();
 					break;
@@ -82,6 +85,11 @@ namespace Muzicka_skola.Forme
 			//this.panelDodatniFilteri.Controls.Add(new Label() { Text = "Dodatni Filteri za kurseve", Size = new Size(200, 200) });
 
 			this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiSveKurseve();
+			panelDodatneFunkcije.Controls.Add(panelKursevi);
+			panelKursevi.Show();
+			panelKursevi.BringToFront();
+
+
 		}
 
 		private void PreurediPrikazIspiti() {
@@ -107,6 +115,7 @@ namespace Muzicka_skola.Forme
 		private void buttonKursevi_Click(object sender, EventArgs e)
 		{
 			trenutniTip = Tip.Kursevi;
+			selektovanTipKursa = 'D';
 			Ucitaj(Tip.Kursevi);
 		}
 
@@ -130,8 +139,17 @@ namespace Muzicka_skola.Forme
                     break;
 
                 case Tip.Kursevi:
-					DodajKurs dodajKursForm = new DodajKurs(this);
-					dodajKursForm.ShowDialog();
+					if (selektovanTipKursa == 'D')
+					{
+						DodajKurs dodajKursForm = new DodajKurs(this);
+						dodajKursForm.ShowDialog();
+					}
+					else
+					{
+						DodajPredmet dodajPredmetForm = new DodajPredmet(this, selektovanTipKursa);
+						dodajPredmetForm.ShowDialog();
+					}
+
                     break;
                 case Tip.Ispiti:
                     break;
@@ -180,6 +198,7 @@ namespace Muzicka_skola.Forme
 					break;
 
 				case Tip.Kursevi:
+					obrisiIzabranKurs();
 					break;
 				case Tip.Ispiti:
 					break;
@@ -195,17 +214,72 @@ namespace Muzicka_skola.Forme
 
 
 		#region Kursevi
+		private void obrisiIzabranKurs()
+		{
+            var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
+            if (selectedRow != null)
+            {
+                string kursId = (string)selectedRow.Cells["Id"].Value;
+                DTOManager.obrisiKurs(kursId);
+                MessageBox.Show("Kurs je izbrisan.");
+                
+            }
+            else
+            {
+                MessageBox.Show("Selektuj Kurs");
+            }
+        }
 
-		#endregion
+        private void prikaziInstrumentalni_Click(object sender, EventArgs e)
+        {
+			selektovanTipKursa = 'I';
+			prikaziPodKurs();
+        }
+
+        private void prikaziTeorijski_Click(object sender, EventArgs e)
+        {
+			selektovanTipKursa = 'T';
+            prikaziPodKurs();
+        }
+
+        private void prikaziVokalni_Click(object sender, EventArgs e)
+        {
+            selektovanTipKursa = 'V';
+            prikaziPodKurs();
+        }
+
+		public void prikaziPodKurs()
+		{
+			ClearDataGrid();
+			switch (selektovanTipKursa)
+			{
+				case 'D':
+                    this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiSveKurseve();
+                    break;
+
+                case 'T':
+                    this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiTeorijski();
+                    break;
+
+                case 'V':
+                    this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiVokalni();
+                    break;
+
+                case 'I':
+                    this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiInstrumentalni();
+                    break;
+            }
+		}
+        #endregion
 
 
-		#region Ispiti
+        #region Ispiti
 
-		#endregion
+        #endregion
 
 
-		#region Nastavnici
-		private void NastavniciRadioButton_CheckedChanged(object sender, EventArgs e)
+        #region Nastavnici
+        private void NastavniciRadioButton_CheckedChanged(object sender, EventArgs e)
         {
 			if (radioButtonSviNastavnici.Checked)
 			{
@@ -279,7 +353,10 @@ namespace Muzicka_skola.Forme
             dataGridViewPrikazPodataka.Columns["Prezime"].DisplayIndex = 1;
             dataGridViewPrikazPodataka.Columns["JMBG"].DisplayIndex = 2;
         }
+
+
         #endregion
+
 
     }
 }
