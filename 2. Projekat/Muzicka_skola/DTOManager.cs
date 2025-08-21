@@ -111,29 +111,151 @@ namespace Muzicka_skola
             return kursD;
         }
 
+        public static void updateKurs(KursDTO k)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                var kurs = session.Get<Kurs>(k.Id);
+                if (kurs == null)
+                {
+                    MessageBox.Show("Kurs not found!");
+                    return;
+                }
+
+                // Update common fields
+                kurs.Naziv = k.Naziv;
+                kurs.Nivo = k.Nivo;
+                kurs.TipNastave = k.TipNastave;
+                kurs.Filijala = nadjiFilijalu(k.Filijala);
+                kurs.Nastavnik = nadjiNastavnika(k.Nastavnik);
+
+                // Update subtype-specific fields
+                switch (kurs)
+                {
+                    case KursInstrumentalni ki when k is KursInstrumentalniDTO dtoI:
+                        ki.Instrumenti = dtoI.Instrumenti;
+                        break;
+                    case KursTeorijski kt when k is KursTeorijskiDTO dtoT:
+                        kt.NazivPredmeta = dtoT.NazivPredmeta;
+                        break;
+                    case KursVokalni kv when k is KursVokalniDTO dtoV:
+                        kv.TipPevanja = dtoV.TipPevanja;
+                        break;
+                }
+                session.Update(kurs);
+                session.Flush();
+                session.Close();
+                MessageBox.Show("Uspesno!");
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = "Došlo je do greške:\n\n";
+
+                // Glavna poruka
+                errorMessage += "Exception: " + ex.Message + "\n";
+
+                // Ako postoji inner exception, idi rekurzivno kroz sve unutrašnje
+                Exception inner = ex.InnerException;
+                while (inner != null)
+                {
+                    errorMessage += "\nInner Exception: " + inner.Message + "\n";
+                    inner = inner.InnerException;
+                }
+
+                // Ako želiš i stack trace za debug
+                errorMessage += "\nStackTrace:\n" + ex.StackTrace;
+
+                MessageBox.Show(errorMessage, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         public static void addKurs(KursDTO k)
         {
             try
             {
                 ISession session = DataLayer.GetSession();
                 Nastavnik n = nadjiNastavnika(k.Nastavnik);
-                Kurs noviKurs = new Kurs
-                {
-                    Id = k.Id,
-                    Naziv = k.Naziv,
-                    Nivo = k.Nivo,
-                    TipNastave = k.TipNastave,
-                    Filijala = nadjiFilijalu(k.Filijala),
-                    Nastavnik = n
-                };
+                Kurs kurs;
 
-                session.Save(noviKurs);
+                switch (k)
+                {
+                    case KursInstrumentalniDTO dto:
+                        kurs = new KursInstrumentalni
+                        {
+                            Id = dto.Id,
+                            Naziv = dto.Naziv,
+                            Nivo = dto.Nivo,
+                            TipNastave = dto.TipNastave,
+                            Filijala = nadjiFilijalu(dto.Filijala),
+                            Nastavnik = n,
+                            Instrumenti = dto.Instrumenti
+                        };
+                        break;
+
+                    case KursTeorijskiDTO dto:
+                        kurs = new KursTeorijski
+                        {
+                            Id = dto.Id,
+                            Naziv = dto.Naziv,
+                            Nivo = dto.Nivo,
+                            TipNastave = dto.TipNastave,
+                            Filijala = nadjiFilijalu(dto.Filijala),
+                            Nastavnik = n,
+                            NazivPredmeta = dto.NazivPredmeta
+                        };
+                        break;
+
+                    case KursVokalniDTO dto:
+                        kurs = new KursVokalni
+                        {
+                            Id = dto.Id,
+                            Naziv = dto.Naziv,
+                            Nivo = dto.Nivo,
+                            TipNastave = dto.TipNastave,
+                            Filijala = nadjiFilijalu(dto.Filijala),
+                            Nastavnik = n,
+                            TipPevanja = dto.TipPevanja
+                        };
+                        break;
+
+                    default:
+                        kurs = new Kurs
+                        {
+                            Id = k.Id,
+                            Naziv = k.Naziv,
+                            Nivo = k.Nivo,
+                            TipNastave = k.TipNastave,
+                            Filijala = nadjiFilijalu(k.Filijala),
+                            Nastavnik = n
+                        };
+                        break;
+                }
+
+                session.Save(kurs);
+                session.Flush();
                 session.Close();
                 MessageBox.Show("Uspesno!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                string errorMessage = "Došlo je do greške:\n\n";
+
+                // Glavna poruka
+                errorMessage += "Exception: " + ex.Message + "\n";
+
+                // Ako postoji inner exception, idi rekurzivno kroz sve unutrašnje
+                Exception inner = ex.InnerException;
+                while (inner != null)
+                {
+                    errorMessage += "\nInner Exception: " + inner.Message + "\n";
+                    inner = inner.InnerException;
+                }
+
+                // Ako želiš i stack trace za debug
+                errorMessage += "\nStackTrace:\n" + ex.StackTrace;
+
+                MessageBox.Show(errorMessage, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -142,25 +264,46 @@ namespace Muzicka_skola
             try { 
             ISession session = DataLayer.GetSession();
             var kurs = session.Load<Kurs>(idKurs);
-
+            KursTeorijski kursT = session.Query<KursTeorijski>().FirstOrDefault(k => k.Id == idKurs);
             KursInstrumentalni kursI = session.Query<KursInstrumentalni>().FirstOrDefault(k => k.Id == idKurs);
+            KursVokalni kursV = session.Query<KursVokalni>().FirstOrDefault(k => k.Id == idKurs);
+
             if (kursI !=null)
                 session.Delete(kursI);
 
-            KursVokalni kursV = session.Query<KursVokalni>().FirstOrDefault(k => k.Id == idKurs);
+            
             if (kursV != null)
                 session.Delete(kursV);
 
-            KursTeorijski kursT = session.Query<KursTeorijski>().FirstOrDefault(k => k.Id == idKurs);
+            
             if (kursT != null)
                 session.Delete(kursT);
 
+
+
+            MessageBox.Show("Kurs je izbrisan.");
             session.Flush();
             session.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Brisanje nastavnika ciji ID je: " + idKurs + " , je izazvalo gresku: " + ex.Message);
+                string errorMessage = "Došlo je do greške:\n\n";
+
+                // Glavna poruka
+                errorMessage += "Exception: " + ex.Message + "\n";
+
+                // Ako postoji inner exception, idi rekurzivno kroz sve unutrašnje
+                Exception inner = ex.InnerException;
+                while (inner != null)
+                {
+                    errorMessage += "\nInner Exception: " + inner.Message + "\n";
+                    inner = inner.InnerException;
+                }
+
+                // Ako želiš i stack trace za debug
+                errorMessage += "\nStackTrace:\n" + ex.StackTrace;
+
+                MessageBox.Show(errorMessage, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -193,6 +336,24 @@ namespace Muzicka_skola
 
             return kursevi;
         }
+
+        public static KursInstrumentalni nadjiKursI(string idKurs)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                KursInstrumentalni kursD = session.Query<KursInstrumentalni>()
+                                             .FirstOrDefault(k => k.Id == idKurs);
+
+                // If kursD is null, it was not found
+                return kursD;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
         #endregion
 
         #region KursVokalni
@@ -222,6 +383,24 @@ namespace Muzicka_skola
 
             return kursevi;
         }
+
+        public static KursVokalni nadjiKursV(string idKurs)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                KursVokalni kursD = session.Query<KursVokalni>()
+                                             .FirstOrDefault(k => k.Id == idKurs);
+
+                // If kursD is null, it was not found
+                return kursD;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
         #endregion
 
         #region KursTeorijski
@@ -250,6 +429,24 @@ namespace Muzicka_skola
             }
 
             return kursevi;
+        }
+
+        public static KursTeorijski nadjiKursT(string idKurs)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                KursTeorijski kursD = session.Query<KursTeorijski>()
+                                             .FirstOrDefault(k => k.Id == idKurs);
+
+                // If kursD is null, it was not found
+                return kursD;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
         }
         #endregion
 

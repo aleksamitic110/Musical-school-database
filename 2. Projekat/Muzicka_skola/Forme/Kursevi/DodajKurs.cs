@@ -18,6 +18,7 @@ namespace Muzicka_skola.Forme.Kursevi
         {
             InitializeComponent();
             _globalForm = globalForm;
+            setPanelVisibleFalse();
         }
 
         private void dodajKursButton_Click(object sender, EventArgs e)
@@ -76,26 +77,71 @@ namespace Muzicka_skola.Forme.Kursevi
             .FirstOrDefault(r => r.Checked)?.Text;
             //proverava koji je selektovan u grupi
 
-            
-
-            var noviKurs = new KursDTO()
+            if (!(teorijski.Checked || instrumentalni.Checked || vokalni.Checked))
             {
-                Id = idKursaTextBox.Text,
-                Naziv = nazivKursaTextBox.Text,
-                Nivo = nivo,
-                TipNastave = tipNastave,
-                Filijala = (string)idFilijalaComboBox.SelectedValue,
-                Nastavnik = (int)jmbgNastavnikaComboBox.SelectedValue
-            };
+                MessageBox.Show("Morate izabrati pod tip kursa");
+                return;
+            }
 
-            DTOManager.addKurs(noviKurs);
+            string podTipKursa = groupBox3.Controls
+            .OfType<System.Windows.Forms.RadioButton>()
+            .FirstOrDefault(r => r.Checked)?.Text.ToLower();
+
+            if (podTipKursa == "instrumentalni")
+            {
+                var Kurs = new KursInstrumentalniDTO(
+                    idKursaTextBox.Text,
+                    nazivKursaTextBox.Text,
+                    nivo.ToLower(),
+                    tipNastave.ToLower().Split(' ')[0],
+                    (string)idFilijalaComboBox.SelectedValue,
+                    (int)jmbgNastavnikaComboBox.SelectedValue,
+                    textBoxInstrument.Text
+                );
+                DTOManager.addKurs(Kurs);
+            }
+
+            else if (podTipKursa == "teorijski")
+            {
+
+                var Kurs = new KursTeorijskiDTO(
+                    idKursaTextBox.Text,
+                    nazivKursaTextBox.Text,
+                    nivo.ToLower(),
+                    tipNastave.ToLower().Split(' ')[0],
+                    (string)idFilijalaComboBox.SelectedValue,
+                    (int)jmbgNastavnikaComboBox.SelectedValue,
+                    textBoxNazivPredmeta.Text
+                );
+
+                DTOManager.addKurs(Kurs);
+            }
+
+            else if (podTipKursa == "vokalni")
+            {
+                string tipPevanja = panelVokalni.Controls
+                .OfType<System.Windows.Forms.RadioButton>()
+                .FirstOrDefault(r => r.Checked)?.Text.ToLower();
+                var Kurs = new KursVokalniDTO(
+                    idKursaTextBox.Text,
+                    nazivKursaTextBox.Text,
+                    nivo.ToLower(),
+                    tipNastave.ToLower().Split(' ')[0],
+                    (string)idFilijalaComboBox.SelectedValue,
+                    (int)jmbgNastavnikaComboBox.SelectedValue,
+                    tipPevanja
+                );
+                DTOManager.addKurs(Kurs);
+            }
+
+            
             _globalForm.prikaziPodKurs();
             Close();
         }
 
         private void DodajKurs_Load(object sender, EventArgs e)
         {
-            //TODO Filijale return
+            
 
             // Load Filijale IDs
             var filijale = DTOManager.vratiSveFilijale(); // returns list of DTOs
@@ -109,6 +155,47 @@ namespace Muzicka_skola.Forme.Kursevi
             jmbgNastavnikaComboBox.DisplayMember = "JMBG"; // what user sees
             jmbgNastavnikaComboBox.ValueMember = "Id";         // actual JMBG
         }
+
+        private void setPanelVisibleFalse()
+        {
+            panelInstrumentalni.Visible = false;
+            panelTeorijski.Visible = false;
+            panelVokalni.Visible = false;
+        }
+
+        private void instrumentalni_CheckedChanged(object sender, EventArgs e)
+        {
+            if (instrumentalni.Checked)
+            {
+                setPanelVisibleFalse();
+                panelInstrumentalni.Visible = true;
+                panelInstrumentalni.BringToFront();
+                panelInstrumentalni.Show();
+            }
+        }
+
+        private void teorijski_CheckedChanged(object sender, EventArgs e)
+        {
+            if (teorijski.Checked)
+            {
+                setPanelVisibleFalse();
+                panelTeorijski.Visible = true;
+                panelTeorijski.BringToFront();
+                panelTeorijski.Show();
+            }
+        }
+
+        private void vokalni_CheckedChanged(object sender, EventArgs e)
+        {
+            if (vokalni.Checked)
+            {
+                setPanelVisibleFalse();
+                panelVokalni.Visible = true;
+                panelVokalni.BringToFront();
+                panelVokalni.Show();
+            }
+        }
+
     }
 
 

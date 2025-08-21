@@ -139,16 +139,9 @@ namespace Muzicka_skola.Forme
                     break;
 
                 case Tip.Kursevi:
-					if (selektovanTipKursa == 'D')
-					{
 						DodajKurs dodajKursForm = new DodajKurs(this);
 						dodajKursForm.ShowDialog();
-					}
-					else
-					{
-						DodajPredmet dodajPredmetForm = new DodajPredmet(this, selektovanTipKursa);
-						dodajPredmetForm.ShowDialog();
-					}
+
 
                     break;
                 case Tip.Ispiti:
@@ -159,6 +152,7 @@ namespace Muzicka_skola.Forme
 
 		private void buttonUpdate_Click(object sender, EventArgs e)
 		{
+
 			switch (trenutniTip)
 			{
 				case Tip.Polaznici:
@@ -180,7 +174,19 @@ namespace Muzicka_skola.Forme
 					break;
 
 				case Tip.Kursevi:
-					break;
+                    var selectedRowK = dataGridViewPrikazPodataka.CurrentRow;
+
+                    if (selectedRowK != null)
+                    {
+                        KursDTO selectedKurs = selectedRowK.DataBoundItem as KursDTO;
+                        UpdateKurs updateKursForm = new UpdateKurs(this, selectedKurs);
+                        updateKursForm.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Izaberi kurs za izmenu");
+                    }
+                    break;
 				case Tip.Ispiti:
 					break;
 			}
@@ -221,7 +227,7 @@ namespace Muzicka_skola.Forme
             {
                 string kursId = (string)selectedRow.Cells["Id"].Value;
                 DTOManager.obrisiKurs(kursId);
-                MessageBox.Show("Kurs je izbrisan.");
+				prikaziPodKurs();
                 
             }
             else

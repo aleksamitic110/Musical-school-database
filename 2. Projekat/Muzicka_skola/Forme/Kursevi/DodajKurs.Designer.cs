@@ -44,8 +44,27 @@
             this.dodajKursButton = new System.Windows.Forms.Button();
             this.jmbgNastavnikaComboBox = new System.Windows.Forms.ComboBox();
             this.idFilijalaComboBox = new System.Windows.Forms.ComboBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.instrumentalni = new System.Windows.Forms.RadioButton();
+            this.teorijski = new System.Windows.Forms.RadioButton();
+            this.vokalni = new System.Windows.Forms.RadioButton();
+            this.panelVokalni = new System.Windows.Forms.Panel();
+            this.Individualno = new System.Windows.Forms.RadioButton();
+            this.horsko = new System.Windows.Forms.RadioButton();
+            this.panelInstrumentalni = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxInstrument = new System.Windows.Forms.TextBox();
+            this.panelTeorijski = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxNazivPredmeta = new System.Windows.Forms.TextBox();
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.panelVokalni.SuspendLayout();
+            this.panelInstrumentalni.SuspendLayout();
+            this.panelTeorijski.SuspendLayout();
+            this.panelContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // idKursaTextBox
@@ -205,11 +224,155 @@
             this.idFilijalaComboBox.Size = new System.Drawing.Size(139, 21);
             this.idFilijalaComboBox.TabIndex = 16;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.vokalni);
+            this.groupBox3.Controls.Add(this.teorijski);
+            this.groupBox3.Controls.Add(this.instrumentalni);
+            this.groupBox3.Location = new System.Drawing.Point(301, 76);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(235, 97);
+            this.groupBox3.TabIndex = 17;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Pod Tip Kursa";
+            // 
+            // instrumentalni
+            // 
+            this.instrumentalni.AutoSize = true;
+            this.instrumentalni.Location = new System.Drawing.Point(69, 19);
+            this.instrumentalni.Name = "instrumentalni";
+            this.instrumentalni.Size = new System.Drawing.Size(90, 17);
+            this.instrumentalni.TabIndex = 0;
+            this.instrumentalni.TabStop = true;
+            this.instrumentalni.Text = "Instrumentalni";
+            this.instrumentalni.UseVisualStyleBackColor = true;
+            this.instrumentalni.CheckedChanged += new System.EventHandler(this.instrumentalni_CheckedChanged);
+            // 
+            // teorijski
+            // 
+            this.teorijski.AutoSize = true;
+            this.teorijski.Location = new System.Drawing.Point(69, 42);
+            this.teorijski.Name = "teorijski";
+            this.teorijski.Size = new System.Drawing.Size(64, 17);
+            this.teorijski.TabIndex = 1;
+            this.teorijski.TabStop = true;
+            this.teorijski.Text = "Teorijski";
+            this.teorijski.UseVisualStyleBackColor = true;
+            this.teorijski.CheckedChanged += new System.EventHandler(this.teorijski_CheckedChanged);
+            // 
+            // vokalni
+            // 
+            this.vokalni.AutoSize = true;
+            this.vokalni.Location = new System.Drawing.Point(69, 65);
+            this.vokalni.Name = "vokalni";
+            this.vokalni.Size = new System.Drawing.Size(60, 17);
+            this.vokalni.TabIndex = 2;
+            this.vokalni.TabStop = true;
+            this.vokalni.Text = "Vokalni";
+            this.vokalni.UseVisualStyleBackColor = true;
+            this.vokalni.CheckedChanged += new System.EventHandler(this.vokalni_CheckedChanged);
+            // 
+            // panelVokalni
+            // 
+            this.panelVokalni.Controls.Add(this.horsko);
+            this.panelVokalni.Controls.Add(this.Individualno);
+            this.panelVokalni.Location = new System.Drawing.Point(0, 0);
+            this.panelVokalni.Name = "panelVokalni";
+            this.panelVokalni.Size = new System.Drawing.Size(235, 73);
+            this.panelVokalni.TabIndex = 18;
+            this.panelVokalni.Visible = false;
+            // 
+            // Individualno
+            // 
+            this.Individualno.AutoSize = true;
+            this.Individualno.Location = new System.Drawing.Point(69, 19);
+            this.Individualno.Name = "Individualno";
+            this.Individualno.Size = new System.Drawing.Size(82, 17);
+            this.Individualno.TabIndex = 0;
+            this.Individualno.TabStop = true;
+            this.Individualno.Text = "Individualno";
+            this.Individualno.UseVisualStyleBackColor = true;
+            // 
+            // horsko
+            // 
+            this.horsko.AutoSize = true;
+            this.horsko.Location = new System.Drawing.Point(69, 42);
+            this.horsko.Name = "horsko";
+            this.horsko.Size = new System.Drawing.Size(59, 17);
+            this.horsko.TabIndex = 1;
+            this.horsko.TabStop = true;
+            this.horsko.Text = "Horsko";
+            this.horsko.UseVisualStyleBackColor = true;
+            // 
+            // panelInstrumentalni
+            // 
+            this.panelInstrumentalni.Controls.Add(this.textBoxInstrument);
+            this.panelInstrumentalni.Controls.Add(this.label5);
+            this.panelInstrumentalni.Location = new System.Drawing.Point(301, 179);
+            this.panelInstrumentalni.Name = "panelInstrumentalni";
+            this.panelInstrumentalni.Size = new System.Drawing.Size(235, 73);
+            this.panelInstrumentalni.TabIndex = 19;
+            this.panelInstrumentalni.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(25, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Instrument:";
+            // 
+            // textBoxInstrument
+            // 
+            this.textBoxInstrument.Location = new System.Drawing.Point(87, 29);
+            this.textBoxInstrument.Name = "textBoxInstrument";
+            this.textBoxInstrument.Size = new System.Drawing.Size(136, 20);
+            this.textBoxInstrument.TabIndex = 1;
+            // 
+            // panelTeorijski
+            // 
+            this.panelTeorijski.Controls.Add(this.textBoxNazivPredmeta);
+            this.panelTeorijski.Controls.Add(this.label6);
+            this.panelTeorijski.Location = new System.Drawing.Point(301, 179);
+            this.panelTeorijski.Name = "panelTeorijski";
+            this.panelTeorijski.Size = new System.Drawing.Size(235, 73);
+            this.panelTeorijski.TabIndex = 19;
+            this.panelTeorijski.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Naziv Predmeta:";
+            // 
+            // textBoxNazivPredmeta
+            // 
+            this.textBoxNazivPredmeta.Location = new System.Drawing.Point(69, 32);
+            this.textBoxNazivPredmeta.Name = "textBoxNazivPredmeta";
+            this.textBoxNazivPredmeta.Size = new System.Drawing.Size(154, 20);
+            this.textBoxNazivPredmeta.TabIndex = 1;
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.Controls.Add(this.panelVokalni);
+            this.panelContainer.Location = new System.Drawing.Point(301, 179);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(235, 73);
+            this.panelContainer.TabIndex = 20;
+            // 
             // DodajKurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 350);
+            this.ClientSize = new System.Drawing.Size(574, 342);
+            this.Controls.Add(this.panelContainer);
+            this.Controls.Add(this.panelInstrumentalni);
+            this.Controls.Add(this.panelTeorijski);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.idFilijalaComboBox);
             this.Controls.Add(this.jmbgNastavnikaComboBox);
             this.Controls.Add(this.dodajKursButton);
@@ -228,6 +391,15 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.panelVokalni.ResumeLayout(false);
+            this.panelVokalni.PerformLayout();
+            this.panelInstrumentalni.ResumeLayout(false);
+            this.panelInstrumentalni.PerformLayout();
+            this.panelTeorijski.ResumeLayout(false);
+            this.panelTeorijski.PerformLayout();
+            this.panelContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,5 +423,19 @@
         private System.Windows.Forms.Button dodajKursButton;
         private System.Windows.Forms.ComboBox jmbgNastavnikaComboBox;
         private System.Windows.Forms.ComboBox idFilijalaComboBox;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton vokalni;
+        private System.Windows.Forms.RadioButton teorijski;
+        private System.Windows.Forms.RadioButton instrumentalni;
+        private System.Windows.Forms.Panel panelVokalni;
+        private System.Windows.Forms.RadioButton horsko;
+        private System.Windows.Forms.RadioButton Individualno;
+        private System.Windows.Forms.Panel panelInstrumentalni;
+        private System.Windows.Forms.TextBox textBoxInstrument;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panelTeorijski;
+        private System.Windows.Forms.TextBox textBoxNazivPredmeta;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panelContainer;
     }
 }

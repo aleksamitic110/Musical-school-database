@@ -36,6 +36,15 @@
             this.panelFunkcije = new System.Windows.Forms.Panel();
             this.panelDodatneFunkcije = new System.Windows.Forms.Panel();
             this.panelDodatneFunkcijeNastavnik = new System.Windows.Forms.Panel();
+            this.panelKursevi = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.prikaziTeorijski = new System.Windows.Forms.Button();
+            this.prikaziVokalni = new System.Windows.Forms.Button();
+            this.prikaziInstrumentalni = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.radioButtonStalni = new System.Windows.Forms.RadioButton();
             this.radioButtonHonorarni = new System.Windows.Forms.RadioButton();
             this.radioButtonSviNastavnici = new System.Windows.Forms.RadioButton();
@@ -51,25 +60,16 @@
             this.buttunPolaznici = new System.Windows.Forms.Button();
             this.pictureBoxPocetna = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panelKursevi = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.prikaziInstrumentalni = new System.Windows.Forms.Button();
-            this.prikaziVokalni = new System.Windows.Forms.Button();
-            this.prikaziTeorijski = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.panelPrikaz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrikazPodataka)).BeginInit();
             this.panelFilter.SuspendLayout();
             this.panelFunkcije.SuspendLayout();
             this.panelDodatneFunkcije.SuspendLayout();
             this.panelDodatneFunkcijeNastavnik.SuspendLayout();
+            this.panelKursevi.SuspendLayout();
             this.panelStandardneFunkcije.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPocetna)).BeginInit();
-            this.panelKursevi.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelPrikaz
@@ -150,6 +150,97 @@
             this.panelDodatneFunkcijeNastavnik.Size = new System.Drawing.Size(301, 209);
             this.panelDodatneFunkcijeNastavnik.TabIndex = 0;
             this.panelDodatneFunkcijeNastavnik.Visible = false;
+            // 
+            // panelKursevi
+            // 
+            this.panelKursevi.BackColor = System.Drawing.Color.Maroon;
+            this.panelKursevi.Controls.Add(this.button7);
+            this.panelKursevi.Controls.Add(this.button6);
+            this.panelKursevi.Controls.Add(this.button5);
+            this.panelKursevi.Controls.Add(this.button4);
+            this.panelKursevi.Controls.Add(this.prikaziTeorijski);
+            this.panelKursevi.Controls.Add(this.prikaziVokalni);
+            this.panelKursevi.Controls.Add(this.prikaziInstrumentalni);
+            this.panelKursevi.Controls.Add(this.flowLayoutPanel1);
+            this.panelKursevi.Location = new System.Drawing.Point(0, 3);
+            this.panelKursevi.Name = "panelKursevi";
+            this.panelKursevi.Size = new System.Drawing.Size(300, 206);
+            this.panelKursevi.TabIndex = 3;
+            this.panelKursevi.Visible = false;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(19, 106);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(269, 23);
+            this.button7.TabIndex = 7;
+            this.button7.Text = "Prikazi sve kurseve vezane za selektovanu Filijalu";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Visible = false;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(19, 73);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(269, 23);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "Prikazi Filijale ";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(157, 43);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(131, 23);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "Zakazi Cas";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(19, 43);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(132, 23);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Polaznici";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // prikaziTeorijski
+            // 
+            this.prikaziTeorijski.Location = new System.Drawing.Point(213, 14);
+            this.prikaziTeorijski.Name = "prikaziTeorijski";
+            this.prikaziTeorijski.Size = new System.Drawing.Size(75, 23);
+            this.prikaziTeorijski.TabIndex = 3;
+            this.prikaziTeorijski.Text = "Teorijski";
+            this.prikaziTeorijski.UseVisualStyleBackColor = true;
+            this.prikaziTeorijski.Click += new System.EventHandler(this.prikaziTeorijski_Click);
+            // 
+            // prikaziVokalni
+            // 
+            this.prikaziVokalni.Location = new System.Drawing.Point(19, 14);
+            this.prikaziVokalni.Name = "prikaziVokalni";
+            this.prikaziVokalni.Size = new System.Drawing.Size(75, 23);
+            this.prikaziVokalni.TabIndex = 2;
+            this.prikaziVokalni.Text = "Vokalni";
+            this.prikaziVokalni.UseVisualStyleBackColor = true;
+            this.prikaziVokalni.Click += new System.EventHandler(this.prikaziVokalni_Click);
+            // 
+            // prikaziInstrumentalni
+            // 
+            this.prikaziInstrumentalni.Location = new System.Drawing.Point(100, 14);
+            this.prikaziInstrumentalni.Name = "prikaziInstrumentalni";
+            this.prikaziInstrumentalni.Size = new System.Drawing.Size(107, 23);
+            this.prikaziInstrumentalni.TabIndex = 1;
+            this.prikaziInstrumentalni.Text = "Instrumentalni";
+            this.prikaziInstrumentalni.UseVisualStyleBackColor = true;
+            this.prikaziInstrumentalni.Click += new System.EventHandler(this.prikaziInstrumentalni_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(241, 134);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // radioButtonStalni
             // 
@@ -323,96 +414,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "MUZICKA SKOLA";
             // 
-            // panelKursevi
-            // 
-            this.panelKursevi.BackColor = System.Drawing.Color.Maroon;
-            this.panelKursevi.Controls.Add(this.button7);
-            this.panelKursevi.Controls.Add(this.button6);
-            this.panelKursevi.Controls.Add(this.button5);
-            this.panelKursevi.Controls.Add(this.button4);
-            this.panelKursevi.Controls.Add(this.prikaziTeorijski);
-            this.panelKursevi.Controls.Add(this.prikaziVokalni);
-            this.panelKursevi.Controls.Add(this.prikaziInstrumentalni);
-            this.panelKursevi.Controls.Add(this.flowLayoutPanel1);
-            this.panelKursevi.Location = new System.Drawing.Point(0, 3);
-            this.panelKursevi.Name = "panelKursevi";
-            this.panelKursevi.Size = new System.Drawing.Size(300, 206);
-            this.panelKursevi.TabIndex = 3;
-            this.panelKursevi.Visible = false;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(241, 134);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // prikaziInstrumentalni
-            // 
-            this.prikaziInstrumentalni.Location = new System.Drawing.Point(100, 14);
-            this.prikaziInstrumentalni.Name = "prikaziInstrumentalni";
-            this.prikaziInstrumentalni.Size = new System.Drawing.Size(107, 23);
-            this.prikaziInstrumentalni.TabIndex = 1;
-            this.prikaziInstrumentalni.Text = "Instrumentalni";
-            this.prikaziInstrumentalni.UseVisualStyleBackColor = true;
-            this.prikaziInstrumentalni.Click += new System.EventHandler(this.prikaziInstrumentalni_Click);
-            // 
-            // prikaziVokalni
-            // 
-            this.prikaziVokalni.Location = new System.Drawing.Point(19, 14);
-            this.prikaziVokalni.Name = "prikaziVokalni";
-            this.prikaziVokalni.Size = new System.Drawing.Size(75, 23);
-            this.prikaziVokalni.TabIndex = 2;
-            this.prikaziVokalni.Text = "Vokalni";
-            this.prikaziVokalni.UseVisualStyleBackColor = true;
-            this.prikaziVokalni.Click += new System.EventHandler(this.prikaziVokalni_Click);
-            // 
-            // prikaziTeorijski
-            // 
-            this.prikaziTeorijski.Location = new System.Drawing.Point(213, 14);
-            this.prikaziTeorijski.Name = "prikaziTeorijski";
-            this.prikaziTeorijski.Size = new System.Drawing.Size(75, 23);
-            this.prikaziTeorijski.TabIndex = 3;
-            this.prikaziTeorijski.Text = "Teorijski";
-            this.prikaziTeorijski.UseVisualStyleBackColor = true;
-            this.prikaziTeorijski.Click += new System.EventHandler(this.prikaziTeorijski_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(19, 43);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(132, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Polaznici";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(157, 43);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(131, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Zakazi Cas";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(19, 73);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(269, 23);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Prikazi Filijale ";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(19, 106);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(269, 23);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Prikazi sve kurseve vezane za selektovanu Filijalu";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // GlobalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,11 +435,11 @@
             this.panelDodatneFunkcije.ResumeLayout(false);
             this.panelDodatneFunkcijeNastavnik.ResumeLayout(false);
             this.panelDodatneFunkcijeNastavnik.PerformLayout();
+            this.panelKursevi.ResumeLayout(false);
             this.panelStandardneFunkcije.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPocetna)).EndInit();
-            this.panelKursevi.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}

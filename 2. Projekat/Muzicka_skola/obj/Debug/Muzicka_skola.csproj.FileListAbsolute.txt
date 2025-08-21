@@ -252,4 +252,4 @@ D:\Faks\III God\Baze\GithubProjekat\Musical-school-database\2. Projekat\Muzicka_
 D:\Faks\III God\Baze\GithubProjekat\Musical-school-database\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.exe
 D:\Faks\III God\Baze\GithubProjekat\Musical-school-database\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.pdb
 D:\Faks\III God\Baze\GithubProjekat\Musical-school-database\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.Forme.Kursevi.DodajKurs.resources
-D:\Faks\III God\Baze\GithubProjekat\Musical-school-database\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.Forme.Kursevi.DodajPredmet.resources
+D:\Faks\III God\Baze\GithubProjekat\Musical-school-database\2. Projekat\Muzicka_skola\obj\Debug\Muzicka_skola.Forme.Kursevi.UpdateKurs.resources
