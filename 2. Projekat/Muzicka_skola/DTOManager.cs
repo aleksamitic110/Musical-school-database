@@ -61,10 +61,53 @@ namespace Muzicka_skola
 
             return f;
         }
+        public static FilijalaDTO nadjiFilijaluDTO(string fId)
+        {
+            Filijala f = nadjiFilijalu(fId);
+            FilijalaDTO fDTO = new FilijalaDTO(
+                f.Id,f.Adresa,f.RadnoVreme,f.OpremljenostUcionica,f.KapacitetFilijale);
+            return fDTO;
+        }
         #endregion
 
         #region Ucionica
+        public static Ucionica nadjiUcionicu(string uId)
+        {
+            Ucionica u = new Ucionica();
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                u = session.Query<Ucionica>().FirstOrDefault(k => k.Id == uId);
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                u = null;
+            }
+            return u;
+        }
 
+        public static List<UcionicaDTO> vratiSveUcionice()
+        {
+            List<UcionicaDTO> ucionice = new List<UcionicaDTO>();
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                ucionice = session.Query<Ucionica>().Select(k => new UcionicaDTO(
+                    k.Id, k.Oznaka, k.KapacitetUcionice, k.Filijala.Id
+                )).ToList();
+
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return ucionice;
+        }
         #endregion
 
         #region Kurs
@@ -307,6 +350,56 @@ namespace Muzicka_skola
             }
         }
 
+        public static List<KursDTO> vratiKursPoFilijali(string filijalaId)
+        {
+            List<KursDTO> kursevi = new List<KursDTO>();
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                kursevi = session.Query<Kurs>()
+                    .Where(k => k.Filijala.Id == filijalaId)
+                    .Select(k => new KursDTO(
+                        k.Id,
+                        k.Naziv,
+                        k.Nivo,
+                        k.TipNastave,
+                        k.Filijala.Id,
+                        k.Nastavnik.Id
+                    ))
+                    .ToList();
+
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return kursevi;
+        }
+
+        public static List<PolaznikDTO> nadjiPolaznikeZaKursDTO(string kursId)
+        {
+            using (ISession session = DataLayer.GetSession())
+            {
+                var polaznici = session.Query<Pohadja>()
+                                       .Where(p => p.Kurs.Id == kursId)
+                                       .Select(p => new PolaznikDTO(
+                                           p.Polaznik.Id,
+                                           p.Polaznik.Osoba.JMBG,
+                                           p.Polaznik.Osoba.Ime,
+                                           p.Polaznik.Osoba.Prezime,
+                                           p.Polaznik.Osoba.Adresa,
+                                           p.Polaznik.Osoba.Mail,
+                                           string.Join(", ", p.Polaznik.Osoba.Telefoni.Select(t => t.BrojTelefona))
+                                        )).ToList();
+                                      
+                return polaznici;
+            }
+        }
+
+
         #endregion
 
         #region KursInstrumentalni
@@ -448,10 +541,93 @@ namespace Muzicka_skola
                 return null;
             }
         }
+
         #endregion
 
         #region Cas
+        public static List<CasDTO> vratiSveCasove()
+        {
+            List<CasDTO> casovi = new List<CasDTO>();
+            try
+            {
+                ISession session = DataLayer.GetSession();
 
+                casovi = session.Query<Cas>().Select(k => new CasDTO(
+                    k.Id,k.Kurs.Id,k.Ucionica.Id,k.Datum,k.Vreme,k.Lekcija
+                )).ToList();
+
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return casovi;
+        }
+
+        public static Cas nadjiCas(string uId)
+        {
+            Cas c = new Cas();
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                c = session.Query<Cas>().FirstOrDefault(k => k.Id == uId);
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                c = null;
+            }
+
+            return c;
+        }
+
+        public static void addCas(CasDTO c)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                Kurs kurs = nadjiKurs(c.IdKursa);
+                Ucionica ucionica = nadjiUcionicu(c.IdUcionice);
+
+                Cas cas = new Cas
+                {
+                    Id = c.IdCasa,
+                    Datum = c.Datum,
+                    Vreme = c.Vreme,
+                    Lekcija = c.Lekcija,
+                    Kurs = kurs,
+                    Ucionica = ucionica
+                };
+
+                session.Save(cas);
+                session.Flush();
+                session.Close();
+                MessageBox.Show("Uspesno!");
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = "Došlo je do greške:\n\n";
+
+                // Glavna poruka
+                errorMessage += "Exception: " + ex.Message + "\n";
+
+                // Ako postoji inner exception, idi rekurzivno kroz sve unutrašnje
+                Exception inner = ex.InnerException;
+                while (inner != null)
+                {
+                    errorMessage += "\nInner Exception: " + inner.Message + "\n";
+                    inner = inner.InnerException;
+                }
+
+                // Ako želiš i stack trace za debug
+                errorMessage += "\nStackTrace:\n" + ex.StackTrace;
+
+                MessageBox.Show(errorMessage, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         #endregion
 
         #region Evidencija

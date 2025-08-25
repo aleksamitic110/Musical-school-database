@@ -34,13 +34,26 @@ namespace Muzicka_skola
 			KapacitetFilijale = kapacitetFilijale;
 		}
 	}
-	#endregion
+    #endregion
 
-	#region Ucionica
-	public class UcionicaDTO
-	{
+    #region Ucionica
+    public class UcionicaDTO
+    {
+        public string Id { get; set; }
+        public string Oznaka { get; set; }
+        public int KapacitetUcionice { get; set; }
+        public string FilijalaId { get; set; }   // flatten reference
 
-	}
+        public UcionicaDTO() { }
+
+        public UcionicaDTO(string id, string oznaka, int kapacitetUcionice, string filijalaId)
+        {
+            Id = id;
+            Oznaka = oznaka;
+            KapacitetUcionice = kapacitetUcionice;
+            FilijalaId = filijalaId;
+        }
+    }
     #endregion
 
     #region Kurs
@@ -121,8 +134,25 @@ namespace Muzicka_skola
     #endregion
 
     #region Cas
-    public class CasDTO{ 
-    
+    public class CasDTO{
+        public string IdCasa { get; set; }
+        public string IdKursa { get; set; }
+        public string IdUcionice { get; set; }
+        public DateTime Datum { get; set; }   // proper date type
+        public string Vreme { get; set; }     // stored separately as string
+        public string Lekcija { get; set; }
+
+        public CasDTO() { }
+
+        public CasDTO(string idCasa, string idKursa, string idUcionice, DateTime datum, string vreme, string lekcija)
+        {
+            IdCasa = idCasa;
+            IdKursa = idKursa;
+            IdUcionice = idUcionice;
+            Datum = datum;
+            Vreme = vreme;
+            Lekcija = lekcija;
+        }
     }
 	#endregion
 

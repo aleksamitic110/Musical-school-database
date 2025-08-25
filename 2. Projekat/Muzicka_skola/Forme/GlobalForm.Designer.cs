@@ -37,14 +37,13 @@
             this.panelDodatneFunkcije = new System.Windows.Forms.Panel();
             this.panelDodatneFunkcijeNastavnik = new System.Windows.Forms.Panel();
             this.panelKursevi = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.prikaziKursPoFilijali = new System.Windows.Forms.Button();
+            this.prikaziFilijalu = new System.Windows.Forms.Button();
+            this.zakaziCas = new System.Windows.Forms.Button();
+            this.prikaziPolaznikeKursa = new System.Windows.Forms.Button();
             this.prikaziTeorijski = new System.Windows.Forms.Button();
             this.prikaziVokalni = new System.Windows.Forms.Button();
             this.prikaziInstrumentalni = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.radioButtonStalni = new System.Windows.Forms.RadioButton();
             this.radioButtonHonorarni = new System.Windows.Forms.RadioButton();
             this.radioButtonSviNastavnici = new System.Windows.Forms.RadioButton();
@@ -60,6 +59,7 @@
             this.buttunPolaznici = new System.Windows.Forms.Button();
             this.pictureBoxPocetna = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxFilijalaID = new System.Windows.Forms.ComboBox();
             this.panelPrikaz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrikazPodataka)).BeginInit();
             this.panelFilter.SuspendLayout();
@@ -154,56 +154,59 @@
             // panelKursevi
             // 
             this.panelKursevi.BackColor = System.Drawing.Color.Maroon;
-            this.panelKursevi.Controls.Add(this.button7);
-            this.panelKursevi.Controls.Add(this.button6);
-            this.panelKursevi.Controls.Add(this.button5);
-            this.panelKursevi.Controls.Add(this.button4);
+            this.panelKursevi.Controls.Add(this.comboBoxFilijalaID);
+            this.panelKursevi.Controls.Add(this.prikaziKursPoFilijali);
+            this.panelKursevi.Controls.Add(this.prikaziFilijalu);
+            this.panelKursevi.Controls.Add(this.zakaziCas);
+            this.panelKursevi.Controls.Add(this.prikaziPolaznikeKursa);
             this.panelKursevi.Controls.Add(this.prikaziTeorijski);
             this.panelKursevi.Controls.Add(this.prikaziVokalni);
             this.panelKursevi.Controls.Add(this.prikaziInstrumentalni);
-            this.panelKursevi.Controls.Add(this.flowLayoutPanel1);
             this.panelKursevi.Location = new System.Drawing.Point(0, 3);
             this.panelKursevi.Name = "panelKursevi";
             this.panelKursevi.Size = new System.Drawing.Size(300, 206);
             this.panelKursevi.TabIndex = 3;
             this.panelKursevi.Visible = false;
             // 
-            // button7
+            // prikaziKursPoFilijali
             // 
-            this.button7.Location = new System.Drawing.Point(19, 106);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(269, 23);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Prikazi sve kurseve vezane za selektovanu Filijalu";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Visible = false;
+            this.prikaziKursPoFilijali.Location = new System.Drawing.Point(19, 102);
+            this.prikaziKursPoFilijali.Name = "prikaziKursPoFilijali";
+            this.prikaziKursPoFilijali.Size = new System.Drawing.Size(269, 23);
+            this.prikaziKursPoFilijali.TabIndex = 7;
+            this.prikaziKursPoFilijali.Text = "Prikazi sve kurseve vezane za selektovanu Filijalu";
+            this.prikaziKursPoFilijali.UseVisualStyleBackColor = true;
+            this.prikaziKursPoFilijali.Click += new System.EventHandler(this.prikaziKursPoFilijali_Click);
             // 
-            // button6
+            // prikaziFilijalu
             // 
-            this.button6.Location = new System.Drawing.Point(19, 73);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(269, 23);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Prikazi Filijale ";
-            this.button6.UseVisualStyleBackColor = true;
+            this.prikaziFilijalu.Location = new System.Drawing.Point(19, 73);
+            this.prikaziFilijalu.Name = "prikaziFilijalu";
+            this.prikaziFilijalu.Size = new System.Drawing.Size(269, 23);
+            this.prikaziFilijalu.TabIndex = 6;
+            this.prikaziFilijalu.Text = "Prikazi Filijale ";
+            this.prikaziFilijalu.UseVisualStyleBackColor = true;
+            this.prikaziFilijalu.Click += new System.EventHandler(this.prikaziFilijalu_Click);
             // 
-            // button5
+            // zakaziCas
             // 
-            this.button5.Location = new System.Drawing.Point(157, 43);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(131, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Zakazi Cas";
-            this.button5.UseVisualStyleBackColor = true;
+            this.zakaziCas.Location = new System.Drawing.Point(157, 43);
+            this.zakaziCas.Name = "zakaziCas";
+            this.zakaziCas.Size = new System.Drawing.Size(131, 23);
+            this.zakaziCas.TabIndex = 5;
+            this.zakaziCas.Text = "Zakazi Cas";
+            this.zakaziCas.UseVisualStyleBackColor = true;
+            this.zakaziCas.Click += new System.EventHandler(this.zakaziCas_Click);
             // 
-            // button4
+            // prikaziPolaznikeKursa
             // 
-            this.button4.Location = new System.Drawing.Point(19, 43);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(132, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Polaznici";
-            this.button4.UseVisualStyleBackColor = true;
+            this.prikaziPolaznikeKursa.Location = new System.Drawing.Point(19, 43);
+            this.prikaziPolaznikeKursa.Name = "prikaziPolaznikeKursa";
+            this.prikaziPolaznikeKursa.Size = new System.Drawing.Size(132, 23);
+            this.prikaziPolaznikeKursa.TabIndex = 4;
+            this.prikaziPolaznikeKursa.Text = "Polaznici";
+            this.prikaziPolaznikeKursa.UseVisualStyleBackColor = true;
+            this.prikaziPolaznikeKursa.Click += new System.EventHandler(this.prikaziPolaznikeKursa_Click);
             // 
             // prikaziTeorijski
             // 
@@ -234,13 +237,6 @@
             this.prikaziInstrumentalni.Text = "Instrumentalni";
             this.prikaziInstrumentalni.UseVisualStyleBackColor = true;
             this.prikaziInstrumentalni.Click += new System.EventHandler(this.prikaziInstrumentalni_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(241, 134);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
-            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // radioButtonStalni
             // 
@@ -414,6 +410,14 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "MUZICKA SKOLA";
             // 
+            // comboBoxFilijalaID
+            // 
+            this.comboBoxFilijalaID.FormattingEnabled = true;
+            this.comboBoxFilijalaID.Location = new System.Drawing.Point(19, 131);
+            this.comboBoxFilijalaID.Name = "comboBoxFilijalaID";
+            this.comboBoxFilijalaID.Size = new System.Drawing.Size(269, 21);
+            this.comboBoxFilijalaID.TabIndex = 8;
+            // 
             // GlobalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,13 +474,13 @@
         private System.Windows.Forms.RadioButton radioButtonStalni;
         private System.Windows.Forms.RadioButton radioButtonHonorarni;
         private System.Windows.Forms.Panel panelKursevi;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button zakaziCas;
+        private System.Windows.Forms.Button prikaziPolaznikeKursa;
         private System.Windows.Forms.Button prikaziTeorijski;
         private System.Windows.Forms.Button prikaziVokalni;
         private System.Windows.Forms.Button prikaziInstrumentalni;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button prikaziKursPoFilijali;
+        private System.Windows.Forms.Button prikaziFilijalu;
+        private System.Windows.Forms.ComboBox comboBoxFilijalaID;
     }
 }

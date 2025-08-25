@@ -173,6 +173,12 @@
     <Compile Include="Entiteti\Telefon.cs" />
     <Compile Include="Entiteti\Ucionica.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Forme\Kursevi\DodajCas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Kursevi\DodajCas.Designer.cs">
+      <DependentUpon>DodajCas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\Kursevi\DodajKurs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     <Compile Include="Mapiranja\UcionicaMap.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forme\Kursevi\DodajCas.resx">
+      <DependentUpon>DodajCas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forme\Kursevi\DodajKurs.resx">
       <DependentUpon>DodajKurs.cs</DependentUpon>
     </EmbeddedResource>

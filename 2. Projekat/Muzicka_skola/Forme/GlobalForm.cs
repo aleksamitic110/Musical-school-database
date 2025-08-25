@@ -117,12 +117,19 @@ namespace Muzicka_skola.Forme
 			trenutniTip = Tip.Kursevi;
 			selektovanTipKursa = 'D';
 			Ucitaj(Tip.Kursevi);
-		}
+
+            var filijale = DTOManager.vratiSveFilijale(); // returns list of DTOs
+            comboBoxFilijalaID.DataSource = filijale;
+            comboBoxFilijalaID.DisplayMember = "Id"; // what user sees
+            comboBoxFilijalaID.ValueMember = "Id";      // actual value stored
+        }
 
 		private void buttonIspiti_Click(object sender, EventArgs e)
 		{
 			Ucitaj(Tip.Ispiti);
 		}
+
+
 		#endregion
 
 		#region Panel_Standardne_Funkcije_Buttons
@@ -276,6 +283,43 @@ namespace Muzicka_skola.Forme
                     break;
             }
 		}
+
+        private void prikaziPolaznikeKursa_Click(object sender, EventArgs e)
+        {
+            var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
+            string kursId = (string)selectedRow.Cells["Id"].Value;
+			this.dataGridViewPrikazPodataka.DataSource = DTOManager.nadjiPolaznikeZaKursDTO(kursId);
+        }
+        private void zakaziCas_Click(object sender, EventArgs e)
+        {
+            var selectedRowK = dataGridViewPrikazPodataka.CurrentRow;
+
+            if (selectedRowK != null)
+            {
+                KursDTO selectedKurs = selectedRowK.DataBoundItem as KursDTO;
+                DodajCas dodajCasForm = new DodajCas(this, selectedKurs);
+                dodajCasForm.ShowDialog();
+            }
+        }
+        private void prikaziFilijalu_Click(object sender, EventArgs e)
+        {
+            var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
+			if (selectedRow != null && selektovanTipKursa == 'D')
+			{
+				string filijalaId = (string)selectedRow.Cells["Filijala"].Value;
+				this.dataGridViewPrikazPodataka.DataSource = new List<FilijalaDTO> { DTOManager.nadjiFilijaluDTO(filijalaId) };
+            }
+            else
+            {
+                MessageBox.Show("Selektuj Kurs");
+            }
+        }
+        private void prikaziKursPoFilijali_Click(object sender, EventArgs e)
+        {
+			//Prikazuje sve kurseve vezane za filijalu iz comboboxa
+			this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiKursPoFilijali((string)comboBoxFilijalaID.SelectedValue);
+			selektovanTipKursa = 'D';
+        }
         #endregion
 
 
@@ -359,6 +403,11 @@ namespace Muzicka_skola.Forme
             dataGridViewPrikazPodataka.Columns["Prezime"].DisplayIndex = 1;
             dataGridViewPrikazPodataka.Columns["JMBG"].DisplayIndex = 2;
         }
+
+
+
+
+
 
 
         #endregion
