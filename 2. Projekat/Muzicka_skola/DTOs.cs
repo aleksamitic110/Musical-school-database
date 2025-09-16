@@ -16,48 +16,143 @@ namespace Muzicka_skola
 	#region Filijala
 	public class FilijalaDTO
 	{
+		public string Id { get; set; }
+		public string Adresa { get; set; }
+		public string RadnoVreme { get; set; }
+		public string OpremljenostUcionica { get; set; }
+		public int KapacitetFilijale { get; set; }
+		public FilijalaDTO()
+		{
 
+		}
+		public FilijalaDTO(string id, string adresa, string radnoVreme, string opremljenostUcionica, int kapacitetFilijale)
+		{
+			Id = id;
+			Adresa = adresa;
+			RadnoVreme = radnoVreme;
+			OpremljenostUcionica = opremljenostUcionica;
+			KapacitetFilijale = kapacitetFilijale;
+		}
 	}
-	#endregion
+    #endregion
 
-	#region Ucionica
-	public class UcionicaDTO
+    #region Ucionica
+    public class UcionicaDTO
+    {
+        public string Id { get; set; }
+        public string Oznaka { get; set; }
+        public int KapacitetUcionice { get; set; }
+        public string FilijalaId { get; set; }   // flatten reference
+
+        public UcionicaDTO() { }
+
+        public UcionicaDTO(string id, string oznaka, int kapacitetUcionice, string filijalaId)
+        {
+            Id = id;
+            Oznaka = oznaka;
+            KapacitetUcionice = kapacitetUcionice;
+            FilijalaId = filijalaId;
+        }
+    }
+    #endregion
+
+    #region Kurs
+    public class KursDTO
+    {
+        public string Id { get; set; }
+        public string Naziv { get; set; }
+        public string Nivo { get; set; }
+        public string TipNastave { get; set; }
+
+        public string Filijala { get; set; }
+        public int Nastavnik { get; set; }
+
+        public KursDTO() { }
+
+        public KursDTO(string id, string naziv, string nivo, string tipNastave, string filijala, int nastavnik)
+        {
+            Id = id;
+            Naziv = naziv;
+            Nivo = nivo;
+            TipNastave = tipNastave;
+            Filijala = filijala;
+            Nastavnik = nastavnik;
+        }
+    }
+
+    #endregion
+
+    #region KursInstrumentalni
+    public class KursInstrumentalniDTO : KursDTO
 	{
+		public string Instrumenti { get; set; }
 
-	}
-	#endregion
+		public KursInstrumentalniDTO(string id, string naziv, string nivo, string tipNastave, string filijala, int nastavnik, string instrumenti) : base(id, naziv, nivo, tipNastave, filijala, nastavnik)
+        {
+			Instrumenti = instrumenti;
+        }
+    }
 
-	#region Kurs
-	public class KursDTO
+	public class basicKursInstrumentalniDTO
 	{
-
+		public string Instrumenti { get; set; }
 	}
-	#endregion
+    #endregion
 
-	#region KursInstrumentalni
-	public class KursInstrumentalniDTO
-	{
+    #region KursVokalni
+    public class KursVokalniDTO : KursDTO
+    {
+        public string TipPevanja { get; set; }
 
-	}
-	#endregion
+        public KursVokalniDTO(string id, string naziv, string nivo, string tipNastave, string filijala, int nastavnik, string tipPevanja) : base(id, naziv, nivo, tipNastave, filijala, nastavnik)
+        {
+            TipPevanja = tipPevanja;
+        }
+    }
 
-	#region KursVokalni
-	public class KursVokalniDTO
-	{
+    public class basicKursVokalniDTO
+    {
+        public string TipPevanja { get; set; }
+    }
+    #endregion
 
-	}
-	#endregion
+    #region KursTeorijski
+    public class KursTeorijskiDTO : KursDTO
+    {
+        public string NazivPredmeta { get; set; }
 
-	#region KursTeorijski
-	public class KursTeorijskiDTO
-	{
+        public KursTeorijskiDTO(string id, string naziv, string nivo, string tipNastave, string filijala, int nastavnik, string nazivpredmeta) : base(id, naziv, nivo, tipNastave, filijala, nastavnik)
+        {
+            NazivPredmeta = nazivpredmeta;
+        }
+    }
 
-	}
-	#endregion
+    public class basicKursTeorijskiDTO
+    {
+        public string NazivPredmeta { get; set; }
+    }
+    #endregion
 
-	#region Cas
-	public class CasDTO{ 
-    
+    #region Cas
+    public class CasDTO{
+        public string IdCasa { get; set; }
+        public string IdKursa { get; set; }
+        public string IdUcionice { get; set; }
+        public DateTime Datum { get; set; }   // proper date type
+        public string Vreme { get; set; }     // stored separately as string
+        public string Lekcija { get; set; }
+
+        public CasDTO() { }
+
+        public CasDTO(string idCasa, string idKursa, string idUcionice, DateTime datum, string vreme, string lekcija)
+        {
+            IdCasa = idCasa;
+            IdKursa = idKursa;
+            IdUcionice = idUcionice;
+            Datum = datum;
+            Vreme = vreme;
+            Lekcija = lekcija;
+        }
     }
 	#endregion
 

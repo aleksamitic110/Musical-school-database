@@ -1,5 +1,6 @@
 ﻿using FluentNHibernate.Conventions.AcceptanceCriteria;
 using Muzicka_skola.Entiteti;
+using Muzicka_skola.Forme.Kursevi;
 using Muzicka_skola.Forme.Nastavnik;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace Muzicka_skola.Forme
     {
        
         private Tip trenutniTip;
+		private char selektovanTipKursa; 
+		//Da ne pravim radio dugmice stavio sam da updatujem ovo
 
         public GlobalForm()
         {
@@ -49,6 +52,7 @@ namespace Muzicka_skola.Forme
 				case Tip.Kursevi:
 					PreurediPrikazKursevi();
 					break;
+
 				case Tip.Ispiti:
 					PreurediPrikazIspiti();
 					break;
@@ -76,9 +80,16 @@ namespace Muzicka_skola.Forme
 
 		private void PreurediPrikazKursevi()
 		{
-			this.panelDodatneFunkcije.Controls.Add(new Label() { Text = "Kurs" });
-			this.panelStandardniFilteri.Controls.Add(new Label() { Text = "Filteri za kurseve" });
-			this.panelDodatniFilteri.Controls.Add(new Label() { Text = "Dodatni Filteri za kurseve", Size = new Size(200, 200) });
+			//this.panelDodatneFunkcije.Controls.Add(new Label() { Text = "Kurs" });
+			//this.panelStandardniFilteri.Controls.Add(new Label() { Text = "Filteri za kurseve" });
+			//this.panelDodatniFilteri.Controls.Add(new Label() { Text = "Dodatni Filteri za kurseve", Size = new Size(200, 200) });
+
+			this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiSveKurseve();
+			panelDodatneFunkcije.Controls.Add(panelKursevi);
+			panelKursevi.Show();
+			panelKursevi.BringToFront();
+
+
 		}
 
 		private void PreurediPrikazIspiti() {
@@ -103,14 +114,22 @@ namespace Muzicka_skola.Forme
 
 		private void buttonKursevi_Click(object sender, EventArgs e)
 		{
-
+			trenutniTip = Tip.Kursevi;
+			selektovanTipKursa = 'D';
 			Ucitaj(Tip.Kursevi);
-		}
+
+            var filijale = DTOManager.vratiSveFilijale(); // returns list of DTOs
+            comboBoxFilijalaID.DataSource = filijale;
+            comboBoxFilijalaID.DisplayMember = "Id"; // what user sees
+            comboBoxFilijalaID.ValueMember = "Id";      // actual value stored
+        }
 
 		private void buttonIspiti_Click(object sender, EventArgs e)
 		{
 			Ucitaj(Tip.Ispiti);
 		}
+
+
 		#endregion
 
 		#region Panel_Standardne_Funkcije_Buttons
@@ -127,6 +146,10 @@ namespace Muzicka_skola.Forme
                     break;
 
                 case Tip.Kursevi:
+						DodajKurs dodajKursForm = new DodajKurs(this);
+						dodajKursForm.ShowDialog();
+
+
                     break;
                 case Tip.Ispiti:
                     break;
@@ -136,6 +159,7 @@ namespace Muzicka_skola.Forme
 
 		private void buttonUpdate_Click(object sender, EventArgs e)
 		{
+
 			switch (trenutniTip)
 			{
 				case Tip.Polaznici:
@@ -157,7 +181,19 @@ namespace Muzicka_skola.Forme
 					break;
 
 				case Tip.Kursevi:
-					break;
+                    var selectedRowK = dataGridViewPrikazPodataka.CurrentRow;
+
+                    if (selectedRowK != null)
+                    {
+                        KursDTO selectedKurs = selectedRowK.DataBoundItem as KursDTO;
+                        UpdateKurs updateKursForm = new UpdateKurs(this, selectedKurs);
+                        updateKursForm.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Izaberi kurs za izmenu");
+                    }
+                    break;
 				case Tip.Ispiti:
 					break;
 			}
@@ -175,6 +211,7 @@ namespace Muzicka_skola.Forme
 					break;
 
 				case Tip.Kursevi:
+					obrisiIzabranKurs();
 					break;
 				case Tip.Ispiti:
 					break;
@@ -190,17 +227,109 @@ namespace Muzicka_skola.Forme
 
 
 		#region Kursevi
+		private void obrisiIzabranKurs()
+		{
+            var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
+            if (selectedRow != null)
+            {
+                string kursId = (string)selectedRow.Cells["Id"].Value;
+                DTOManager.obrisiKurs(kursId);
+				prikaziPodKurs();
+                
+            }
+            else
+            {
+                MessageBox.Show("Selektuj Kurs");
+            }
+        }
 
-		#endregion
+        private void prikaziInstrumentalni_Click(object sender, EventArgs e)
+        {
+			selektovanTipKursa = 'I';
+			prikaziPodKurs();
+        }
+
+        private void prikaziTeorijski_Click(object sender, EventArgs e)
+        {
+			selektovanTipKursa = 'T';
+            prikaziPodKurs();
+        }
+
+        private void prikaziVokalni_Click(object sender, EventArgs e)
+        {
+            selektovanTipKursa = 'V';
+            prikaziPodKurs();
+        }
+
+		public void prikaziPodKurs()
+		{
+			ClearDataGrid();
+			switch (selektovanTipKursa)
+			{
+				case 'D':
+                    this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiSveKurseve();
+                    break;
+
+                case 'T':
+                    this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiTeorijski();
+                    break;
+
+                case 'V':
+                    this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiVokalni();
+                    break;
+
+                case 'I':
+                    this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiInstrumentalni();
+                    break;
+            }
+		}
+
+        private void prikaziPolaznikeKursa_Click(object sender, EventArgs e)
+        {
+            var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
+            string kursId = (string)selectedRow.Cells["Id"].Value;
+			this.dataGridViewPrikazPodataka.DataSource = DTOManager.nadjiPolaznikeZaKursDTO(kursId);
+        }
+        private void zakaziCas_Click(object sender, EventArgs e)
+        {
+            var selectedRowK = dataGridViewPrikazPodataka.CurrentRow;
+
+            if (selectedRowK != null)
+            {
+                KursDTO selectedKurs = selectedRowK.DataBoundItem as KursDTO;
+                DodajCas dodajCasForm = new DodajCas(this, selectedKurs);
+                dodajCasForm.ShowDialog();
+            }
+        }
+        private void prikaziFilijalu_Click(object sender, EventArgs e)
+        {
+            var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
+			if (selectedRow != null && selektovanTipKursa == 'D')
+			{
+				string filijalaId = (string)selectedRow.Cells["Filijala"].Value;
+				this.dataGridViewPrikazPodataka.DataSource = new List<FilijalaDTO> { DTOManager.nadjiFilijaluDTO(filijalaId) };
+            }
+            else
+            {
+                MessageBox.Show("Selektuj Kurs");
+            }
+        }
+        private void prikaziKursPoFilijali_Click(object sender, EventArgs e)
+        {
+			//Prikazuje sve kurseve vezane za filijalu iz comboboxa
+			this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiKursPoFilijali((string)comboBoxFilijalaID.SelectedValue);
+			selektovanTipKursa = 'D';
+        }
+        #endregion
 
 
-		#region Ispiti
+        #region Ispiti
 
-		#endregion
+        #endregion
 
 
-		#region Nastavnici
-		private void NastavniciRadioButton_CheckedChanged(object sender, EventArgs e)
+        #region Nastavnici
+        private void NastavniciRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             panelMentorButtons.Visible = radioButtonStalni.Checked;
 
@@ -358,6 +487,13 @@ namespace Muzicka_skola.Forme
             dataGridViewPrikazPodataka.Columns["Prezime"].DisplayIndex = 1;
             dataGridViewPrikazPodataka.Columns["JMBG"].DisplayIndex = 2;
         }
+
+
+
+
+
+
+
         #endregion
     }
 }

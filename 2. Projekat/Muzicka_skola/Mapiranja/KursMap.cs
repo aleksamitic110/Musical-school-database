@@ -14,7 +14,7 @@ namespace Muzicka_skola.Mapiranja
 		{
 			Table("KURS");
 
-			Id(x => x.Id, "IDKURSA");
+			Id(x => x.Id, "IDKURSA").CustomType<string>().GeneratedBy.Assigned();
 
 			Map(x => x.Naziv, "NAZIV");
 			Map(x => x.Nivo, "NIVO");
