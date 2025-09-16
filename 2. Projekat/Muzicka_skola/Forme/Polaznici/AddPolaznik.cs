@@ -151,7 +151,7 @@ namespace Muzicka_skola.Forme
 				{
 					DatumRodjenja = this.dateTimePickerDatumRodjenjaDeteta.Value,
 					BrojDosijea = this.textBoxBrojDosijeaDeteta.ToString(),
-					Staratelj = 
+					//Staratelj = 
 				};
 
 				if (DTOManager.SacuvajDete(dete, this.starateljId, polaznik, osoba) != -1)
