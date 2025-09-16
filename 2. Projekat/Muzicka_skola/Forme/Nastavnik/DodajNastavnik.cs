@@ -83,11 +83,6 @@ namespace Muzicka_skola.Forme
 
         private void ButtonDodajNastavnika_Click(object sender, EventArgs e)
         {
-            if (!textBoxJMBG.Text.All(char.IsDigit) || !textBoxJMBGMentora.Text.All(char.IsDigit))
-            {
-                MessageBox.Show("JMBG nije validan");
-                return;
-            }
             if (string.IsNullOrWhiteSpace(textBoxJMBG.Text) || string.IsNullOrWhiteSpace(textBoxIme.Text)
                 || string.IsNullOrWhiteSpace(textBoxPrezime.Text) || string.IsNullOrWhiteSpace(textBoxAdresa.Text)
                 || string.IsNullOrWhiteSpace(textBoxMail.Text) || listBoxDodatiBrojevi.Items.Count == 0
@@ -111,14 +106,23 @@ namespace Muzicka_skola.Forme
             }
             if (radioButtonStalni.Checked)
             {
+                if (textBoxJMBG.Text == textBoxJMBGMentora.Text) {
+                    MessageBox.Show("Nastavnik ne moze da bude sam sebi mentor");
+                    return;
+                }
                 if(pickerRadnoVremeDo.Value < pickerRadnoVremeOd.Value || pickerRadnoVremeOd.Value.ToString("HH:mm") == pickerRadnoVremeDo.Value.ToString("HH:mm"))
                 {
                     MessageBox.Show("Radno vreme nije validno");
                     return;
                 }
             }
+            if (!textBoxJMBG.Text.All(char.IsDigit) || !textBoxJMBGMentora.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("JMBG nije validan");
+                return;
+            }
 
-            var osoba = new OsobaBasic
+            OsobaBasic osoba = new OsobaBasic
             {
                 JMBG = textBoxJMBG.Text,
                 Ime = textBoxIme.Text,
@@ -131,14 +135,11 @@ namespace Muzicka_skola.Forme
             {
                 osoba.Telefoni.Add(new TelefonBasic { BrojTelefona = item.ToString() });
             }
-            var nastavnik = new NastavnikBasic
+            NastavnikBasic nastavnik = new NastavnikBasic
             {
                 StrucnaSprema = textBoxStrucnaSprema.Text,
                 DatumZaposlenja = PickerDatumZaposlenja.Value,
             };
-
-            string sacuvanaOsobaJMBG = DTOManager.sacuvajOsobu(osoba);
-            int nastavnikId = DTOManager.SacuvajNastavnika(nastavnik, sacuvanaOsobaJMBG);
 
             if (radioButtonHonorarni.Checked)
             {
@@ -148,7 +149,10 @@ namespace Muzicka_skola.Forme
                     BrojCasovaMesecno = (int)numericUpDownBrojCasova.Value,
                     TrajanjeUgovora = PickerTrajanjeUgovora.Value
                 };
-                DTOManager.SacuvajHonorarnogNastavnika(honorarni, nastavnikId);
+              if(DTOManager.SacuvajHonorarnogNastavnika(honorarni, osoba, nastavnik))
+                {
+                    NastavnikUspesnoDodat();
+                }
             }
             else if (radioButtonStalni.Checked)
             {
@@ -157,10 +161,17 @@ namespace Muzicka_skola.Forme
                 var stalni = new StalniBasic
                 {
                     RadnoVreme = radnoVreme,
-                    StatusMentora = checkBoxMentor.Checked
                 };
-                DTOManager.SacuvajStalnog(stalni, nastavnikId, mentorJMBG);
+                if(DTOManager.SacuvajStalnog(stalni, mentorJMBG, osoba, nastavnik))
+                {
+                    NastavnikUspesnoDodat();
+                }
             }
+        }
+
+        private void NastavnikUspesnoDodat()
+        {
+            DTOManager.IzmeniStatusMentora();
             MessageBox.Show("Nastavnik uspesno dodat!");
             _globalForm.PrikaziNastavnikeUDataGrid();
             Close();

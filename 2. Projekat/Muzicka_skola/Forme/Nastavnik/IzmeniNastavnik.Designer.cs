@@ -37,13 +37,11 @@
             this.textBoxBrojUgovora = new System.Windows.Forms.TextBox();
             this.panelStalni = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxJMBGMentora = new System.Windows.Forms.TextBox();
             this.pickerRadnoVremeOd = new System.Windows.Forms.DateTimePicker();
             this.pickerRadnoVremeDo = new System.Windows.Forms.DateTimePicker();
-            this.checkBoxMentor = new System.Windows.Forms.CheckBox();
             this.buttonDodajBroj = new System.Windows.Forms.Button();
             this.ObrisiBroj = new System.Windows.Forms.Button();
             this.buttonIzmeniNastavnika = new System.Windows.Forms.Button();
@@ -138,13 +136,11 @@
             // panelStalni
             // 
             this.panelStalni.Controls.Add(this.label13);
-            this.panelStalni.Controls.Add(this.label15);
             this.panelStalni.Controls.Add(this.label12);
             this.panelStalni.Controls.Add(this.label11);
             this.panelStalni.Controls.Add(this.textBoxJMBGMentora);
             this.panelStalni.Controls.Add(this.pickerRadnoVremeOd);
             this.panelStalni.Controls.Add(this.pickerRadnoVremeDo);
-            this.panelStalni.Controls.Add(this.checkBoxMentor);
             this.panelStalni.Location = new System.Drawing.Point(392, 166);
             this.panelStalni.Name = "panelStalni";
             this.panelStalni.Size = new System.Drawing.Size(394, 166);
@@ -158,15 +154,6 @@
             this.label13.Size = new System.Drawing.Size(115, 16);
             this.label13.TabIndex = 27;
             this.label13.Text = "Radno Vreme Do:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(66, 139);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(51, 16);
-            this.label15.TabIndex = 23;
-            this.label15.Text = "Mentor:";
             // 
             // label12
             // 
@@ -213,15 +200,6 @@
             this.pickerRadnoVremeDo.ShowUpDown = true;
             this.pickerRadnoVremeDo.Size = new System.Drawing.Size(87, 22);
             this.pickerRadnoVremeDo.TabIndex = 26;
-            // 
-            // checkBoxMentor
-            // 
-            this.checkBoxMentor.AutoSize = true;
-            this.checkBoxMentor.Location = new System.Drawing.Point(145, 140);
-            this.checkBoxMentor.Name = "checkBoxMentor";
-            this.checkBoxMentor.Size = new System.Drawing.Size(18, 17);
-            this.checkBoxMentor.TabIndex = 24;
-            this.checkBoxMentor.UseVisualStyleBackColor = true;
             // 
             // buttonDodajBroj
             // 
@@ -490,13 +468,11 @@
         private System.Windows.Forms.TextBox textBoxBrojUgovora;
         private System.Windows.Forms.Panel panelStalni;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBoxJMBGMentora;
         private System.Windows.Forms.DateTimePicker pickerRadnoVremeOd;
         private System.Windows.Forms.DateTimePicker pickerRadnoVremeDo;
-        private System.Windows.Forms.CheckBox checkBoxMentor;
         private System.Windows.Forms.Button buttonDodajBroj;
         private System.Windows.Forms.Button ObrisiBroj;
         private System.Windows.Forms.Button buttonIzmeniNastavnika;

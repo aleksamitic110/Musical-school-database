@@ -49,15 +49,9 @@
             this.radioButtonStalni = new System.Windows.Forms.RadioButton();
             this.radioButtonHonorarni = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
-            this.panelStalni = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBoxJMBGMentora = new System.Windows.Forms.TextBox();
-            this.pickerRadnoVremeOd = new System.Windows.Forms.DateTimePicker();
-            this.pickerRadnoVremeDo = new System.Windows.Forms.DateTimePicker();
-            this.checkBoxMentor = new System.Windows.Forms.CheckBox();
+            this.buttonDodajNastavnika = new System.Windows.Forms.Button();
+            this.ObrisiBroj = new System.Windows.Forms.Button();
+            this.buttonDodajBroj = new System.Windows.Forms.Button();
             this.panelHonorarni = new System.Windows.Forms.Panel();
             this.numericUpDownBrojCasova = new System.Windows.Forms.NumericUpDown();
             this.label17 = new System.Windows.Forms.Label();
@@ -65,12 +59,16 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.textBoxBrojUgovora = new System.Windows.Forms.TextBox();
-            this.buttonDodajNastavnika = new System.Windows.Forms.Button();
-            this.ObrisiBroj = new System.Windows.Forms.Button();
-            this.buttonDodajBroj = new System.Windows.Forms.Button();
-            this.panelStalni.SuspendLayout();
+            this.panelStalni = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxJMBGMentora = new System.Windows.Forms.TextBox();
+            this.pickerRadnoVremeOd = new System.Windows.Forms.DateTimePicker();
+            this.pickerRadnoVremeDo = new System.Windows.Forms.DateTimePicker();
             this.panelHonorarni.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBrojCasova)).BeginInit();
+            this.panelStalni.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxJMBG
@@ -255,94 +253,35 @@
             this.label10.TabIndex = 20;
             this.label10.Text = "Tip:";
             // 
-            // panelStalni
+            // buttonDodajNastavnika
             // 
-            this.panelStalni.Controls.Add(this.panelHonorarni);
-            this.panelStalni.Controls.Add(this.label13);
-            this.panelStalni.Controls.Add(this.label15);
-            this.panelStalni.Controls.Add(this.label12);
-            this.panelStalni.Controls.Add(this.label11);
-            this.panelStalni.Controls.Add(this.textBoxJMBGMentora);
-            this.panelStalni.Controls.Add(this.pickerRadnoVremeOd);
-            this.panelStalni.Controls.Add(this.pickerRadnoVremeDo);
-            this.panelStalni.Controls.Add(this.checkBoxMentor);
-            this.panelStalni.Location = new System.Drawing.Point(384, 170);
-            this.panelStalni.Name = "panelStalni";
-            this.panelStalni.Size = new System.Drawing.Size(394, 166);
-            this.panelStalni.TabIndex = 21;
+            this.buttonDodajNastavnika.Location = new System.Drawing.Point(384, 364);
+            this.buttonDodajNastavnika.Name = "buttonDodajNastavnika";
+            this.buttonDodajNastavnika.Size = new System.Drawing.Size(394, 63);
+            this.buttonDodajNastavnika.TabIndex = 22;
+            this.buttonDodajNastavnika.Text = "Dodaj Nastavnika";
+            this.buttonDodajNastavnika.UseVisualStyleBackColor = true;
+            this.buttonDodajNastavnika.Click += new System.EventHandler(this.ButtonDodajNastavnika_Click);
             // 
-            // label13
+            // ObrisiBroj
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(2, 94);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(115, 16);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "Radno Vreme Do:";
+            this.ObrisiBroj.Location = new System.Drawing.Point(27, 343);
+            this.ObrisiBroj.Name = "ObrisiBroj";
+            this.ObrisiBroj.Size = new System.Drawing.Size(75, 23);
+            this.ObrisiBroj.TabIndex = 23;
+            this.ObrisiBroj.Text = "obrisi broj";
+            this.ObrisiBroj.UseVisualStyleBackColor = true;
+            this.ObrisiBroj.Click += new System.EventHandler(this.buttonObrisiBroj_Click);
             // 
-            // label15
+            // buttonDodajBroj
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(66, 139);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(51, 16);
-            this.label15.TabIndex = 23;
-            this.label15.Text = "Mentor:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(2, 64);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(115, 16);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "Radno Vreme Od:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(18, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(99, 16);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "JMBG Mentora:";
-            // 
-            // textBoxJMBGMentora
-            // 
-            this.textBoxJMBGMentora.Location = new System.Drawing.Point(145, 16);
-            this.textBoxJMBGMentora.MaxLength = 13;
-            this.textBoxJMBGMentora.Name = "textBoxJMBGMentora";
-            this.textBoxJMBGMentora.Size = new System.Drawing.Size(186, 22);
-            this.textBoxJMBGMentora.TabIndex = 16;
-            // 
-            // pickerRadnoVremeOd
-            // 
-            this.pickerRadnoVremeOd.CustomFormat = "HH:mm";
-            this.pickerRadnoVremeOd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.pickerRadnoVremeOd.Location = new System.Drawing.Point(145, 61);
-            this.pickerRadnoVremeOd.Name = "pickerRadnoVremeOd";
-            this.pickerRadnoVremeOd.ShowUpDown = true;
-            this.pickerRadnoVremeOd.Size = new System.Drawing.Size(87, 22);
-            this.pickerRadnoVremeOd.TabIndex = 25;
-            // 
-            // pickerRadnoVremeDo
-            // 
-            this.pickerRadnoVremeDo.CustomFormat = "HH:mm";
-            this.pickerRadnoVremeDo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.pickerRadnoVremeDo.Location = new System.Drawing.Point(145, 98);
-            this.pickerRadnoVremeDo.Name = "pickerRadnoVremeDo";
-            this.pickerRadnoVremeDo.ShowUpDown = true;
-            this.pickerRadnoVremeDo.Size = new System.Drawing.Size(87, 22);
-            this.pickerRadnoVremeDo.TabIndex = 26;
-            // 
-            // checkBoxMentor
-            // 
-            this.checkBoxMentor.AutoSize = true;
-            this.checkBoxMentor.Location = new System.Drawing.Point(145, 140);
-            this.checkBoxMentor.Name = "checkBoxMentor";
-            this.checkBoxMentor.Size = new System.Drawing.Size(18, 17);
-            this.checkBoxMentor.TabIndex = 24;
-            this.checkBoxMentor.UseVisualStyleBackColor = true;
+            this.buttonDodajBroj.Location = new System.Drawing.Point(231, 264);
+            this.buttonDodajBroj.Name = "buttonDodajBroj";
+            this.buttonDodajBroj.Size = new System.Drawing.Size(75, 23);
+            this.buttonDodajBroj.TabIndex = 24;
+            this.buttonDodajBroj.Text = "dodaj";
+            this.buttonDodajBroj.UseVisualStyleBackColor = true;
+            this.buttonDodajBroj.Click += new System.EventHandler(this.buttonDodajBroj_Click);
             // 
             // panelHonorarni
             // 
@@ -352,10 +291,10 @@
             this.panelHonorarni.Controls.Add(this.label16);
             this.panelHonorarni.Controls.Add(this.label20);
             this.panelHonorarni.Controls.Add(this.textBoxBrojUgovora);
-            this.panelHonorarni.Location = new System.Drawing.Point(0, 0);
+            this.panelHonorarni.Location = new System.Drawing.Point(384, 170);
             this.panelHonorarni.Name = "panelHonorarni";
             this.panelHonorarni.Size = new System.Drawing.Size(394, 166);
-            this.panelHonorarni.TabIndex = 22;
+            this.panelHonorarni.TabIndex = 50;
             // 
             // numericUpDownBrojCasova
             // 
@@ -406,41 +345,80 @@
             this.textBoxBrojUgovora.Size = new System.Drawing.Size(186, 22);
             this.textBoxBrojUgovora.TabIndex = 16;
             // 
-            // buttonDodajNastavnika
+            // panelStalni
             // 
-            this.buttonDodajNastavnika.Location = new System.Drawing.Point(384, 364);
-            this.buttonDodajNastavnika.Name = "buttonDodajNastavnika";
-            this.buttonDodajNastavnika.Size = new System.Drawing.Size(394, 63);
-            this.buttonDodajNastavnika.TabIndex = 22;
-            this.buttonDodajNastavnika.Text = "Dodaj Nastavnika";
-            this.buttonDodajNastavnika.UseVisualStyleBackColor = true;
-            this.buttonDodajNastavnika.Click += new System.EventHandler(this.ButtonDodajNastavnika_Click);
+            this.panelStalni.Controls.Add(this.label13);
+            this.panelStalni.Controls.Add(this.label12);
+            this.panelStalni.Controls.Add(this.label11);
+            this.panelStalni.Controls.Add(this.textBoxJMBGMentora);
+            this.panelStalni.Controls.Add(this.pickerRadnoVremeOd);
+            this.panelStalni.Controls.Add(this.pickerRadnoVremeDo);
+            this.panelStalni.Location = new System.Drawing.Point(384, 170);
+            this.panelStalni.Name = "panelStalni";
+            this.panelStalni.Size = new System.Drawing.Size(394, 166);
+            this.panelStalni.TabIndex = 49;
             // 
-            // ObrisiBroj
+            // label13
             // 
-            this.ObrisiBroj.Location = new System.Drawing.Point(27, 343);
-            this.ObrisiBroj.Name = "ObrisiBroj";
-            this.ObrisiBroj.Size = new System.Drawing.Size(75, 23);
-            this.ObrisiBroj.TabIndex = 23;
-            this.ObrisiBroj.Text = "obrisi broj";
-            this.ObrisiBroj.UseVisualStyleBackColor = true;
-            this.ObrisiBroj.Click += new System.EventHandler(this.buttonObrisiBroj_Click);
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(2, 94);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(115, 16);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Radno Vreme Do:";
             // 
-            // buttonDodajBroj
+            // label12
             // 
-            this.buttonDodajBroj.Location = new System.Drawing.Point(231, 264);
-            this.buttonDodajBroj.Name = "buttonDodajBroj";
-            this.buttonDodajBroj.Size = new System.Drawing.Size(75, 23);
-            this.buttonDodajBroj.TabIndex = 24;
-            this.buttonDodajBroj.Text = "dodaj";
-            this.buttonDodajBroj.UseVisualStyleBackColor = true;
-            this.buttonDodajBroj.Click += new System.EventHandler(this.buttonDodajBroj_Click);
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(2, 64);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(115, 16);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "Radno Vreme Od:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(18, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(99, 16);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "JMBG Mentora:";
+            // 
+            // textBoxJMBGMentora
+            // 
+            this.textBoxJMBGMentora.Location = new System.Drawing.Point(145, 16);
+            this.textBoxJMBGMentora.MaxLength = 13;
+            this.textBoxJMBGMentora.Name = "textBoxJMBGMentora";
+            this.textBoxJMBGMentora.Size = new System.Drawing.Size(186, 22);
+            this.textBoxJMBGMentora.TabIndex = 16;
+            // 
+            // pickerRadnoVremeOd
+            // 
+            this.pickerRadnoVremeOd.CustomFormat = "HH:mm";
+            this.pickerRadnoVremeOd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.pickerRadnoVremeOd.Location = new System.Drawing.Point(145, 61);
+            this.pickerRadnoVremeOd.Name = "pickerRadnoVremeOd";
+            this.pickerRadnoVremeOd.ShowUpDown = true;
+            this.pickerRadnoVremeOd.Size = new System.Drawing.Size(87, 22);
+            this.pickerRadnoVremeOd.TabIndex = 25;
+            // 
+            // pickerRadnoVremeDo
+            // 
+            this.pickerRadnoVremeDo.CustomFormat = "HH:mm";
+            this.pickerRadnoVremeDo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.pickerRadnoVremeDo.Location = new System.Drawing.Point(145, 98);
+            this.pickerRadnoVremeDo.Name = "pickerRadnoVremeDo";
+            this.pickerRadnoVremeDo.ShowUpDown = true;
+            this.pickerRadnoVremeDo.Size = new System.Drawing.Size(87, 22);
+            this.pickerRadnoVremeDo.TabIndex = 26;
             // 
             // DodajNastavnik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelHonorarni);
             this.Controls.Add(this.panelStalni);
             this.Controls.Add(this.buttonDodajBroj);
             this.Controls.Add(this.ObrisiBroj);
@@ -468,11 +446,11 @@
             this.Controls.Add(this.textBoxJMBG);
             this.Name = "DodajNastavnik";
             this.Text = "Dodaj Nastavnika";
-            this.panelStalni.ResumeLayout(false);
-            this.panelStalni.PerformLayout();
             this.panelHonorarni.ResumeLayout(false);
             this.panelHonorarni.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBrojCasova)).EndInit();
+            this.panelStalni.ResumeLayout(false);
+            this.panelStalni.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -501,24 +479,22 @@
         private System.Windows.Forms.RadioButton radioButtonStalni;
         private System.Windows.Forms.RadioButton radioButtonHonorarni;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panelStalni;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBoxJMBGMentora;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button buttonDodajNastavnika;
+        private System.Windows.Forms.Button ObrisiBroj;
+        private System.Windows.Forms.Button buttonDodajBroj;
         private System.Windows.Forms.Panel panelHonorarni;
+        private System.Windows.Forms.NumericUpDown numericUpDownBrojCasova;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DateTimePicker PickerTrajanjeUgovora;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBoxBrojUgovora;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DateTimePicker PickerTrajanjeUgovora;
-        private System.Windows.Forms.NumericUpDown numericUpDownBrojCasova;
-        private System.Windows.Forms.Button buttonDodajNastavnika;
-        private System.Windows.Forms.CheckBox checkBoxMentor;
-        private System.Windows.Forms.Button ObrisiBroj;
-        private System.Windows.Forms.Button buttonDodajBroj;
+        private System.Windows.Forms.Panel panelStalni;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxJMBGMentora;
         private System.Windows.Forms.DateTimePicker pickerRadnoVremeOd;
         private System.Windows.Forms.DateTimePicker pickerRadnoVremeDo;
-        private System.Windows.Forms.Label label13;
     }
 }
