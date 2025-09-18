@@ -1,5 +1,6 @@
 ﻿using FluentNHibernate.Conventions.AcceptanceCriteria;
 using Muzicka_skola.Entiteti;
+using Muzicka_skola.Forme.Ispit;
 using Muzicka_skola.Forme.Kursevi;
 using Muzicka_skola.Forme.Nastavnik;
 using System;
@@ -72,7 +73,6 @@ namespace Muzicka_skola.Forme
 			this.panelDodatneFunkcije.Controls.Add(panelDodatneFunkcijeNastavnik);
 			panelDodatneFunkcijeNastavnik.Show();
 			panelDodatneFunkcijeNastavnik.BringToFront();
-            this.dataGridViewPrikazPodataka.DataSource = DTOManager.PrikaziSveNastavnike();
 			
 			UcitajCeoPrikazNastavnika();
        
@@ -93,10 +93,12 @@ namespace Muzicka_skola.Forme
 		}
 
 		private void PreurediPrikazIspiti() {
-			this.panelDodatneFunkcije.Controls.Add(new Label() { Text = "Dodatne funkcije za ispit" });
-			this.panelStandardniFilteri.Controls.Add(new Label() { Text = "Filteri za ispite" });
-			this.panelDodatniFilteri.Controls.Add(new Label() { Text = "Dodatni Filteri za ispite" , Size = new Size(200, 200) });
-		}
+            this.panelDodatneFunkcije.Controls.Add(panelDodatneFunkcijeIspit);
+            panelDodatneFunkcijeIspit.Show();
+            panelDodatneFunkcijeIspit.BringToFront();
+            PrikaziIspiteUDataGrid();
+
+        }
 		#endregion
 
 		#region Main_Page_Buttons
@@ -126,7 +128,8 @@ namespace Muzicka_skola.Forme
 
 		private void buttonIspiti_Click(object sender, EventArgs e)
 		{
-			Ucitaj(Tip.Ispiti);
+            trenutniTip = Tip.Ispiti;
+            Ucitaj(Tip.Ispiti);
 		}
 
 
@@ -152,6 +155,8 @@ namespace Muzicka_skola.Forme
 
                     break;
                 case Tip.Ispiti:
+                    DodajIspit dodajIspitForm = new DodajIspit(this);
+                    dodajIspitForm.ShowDialog();
                     break;
             }
         }
@@ -195,7 +200,19 @@ namespace Muzicka_skola.Forme
                     }
                     break;
 				case Tip.Ispiti:
-					break;
+                    var selectedRowI = dataGridViewPrikazPodataka.CurrentRow;
+
+                    if (selectedRowI != null)
+                    {
+                        IspitDTO selectedIspit = selectedRowI.DataBoundItem as IspitDTO;
+                        IzmeniIspit izmeniIspitForm = new IzmeniIspit(this, selectedIspit);
+                        izmeniIspitForm.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Izaberi ispit za izmenu");
+                    }
+                    break;
 			}
 		}
 
@@ -214,7 +231,8 @@ namespace Muzicka_skola.Forme
 					obrisiIzabranKurs();
 					break;
 				case Tip.Ispiti:
-					break;
+                    ObrisiIzabraniIspit();
+                    break;
 			}
 		}
 		#endregion
@@ -324,6 +342,84 @@ namespace Muzicka_skola.Forme
 
 
         #region Ispiti
+        public void PrikaziIspiteUDataGrid()
+        {
+            ClearDataGrid();
+            dataGridViewPrikazPodataka.DataSource = DTOManager.PrikaziSveIspite();
+            HideKursId();
+            HideProsecnaOcena();
+        }
+
+        private void ObrisiIzabraniIspit()
+        {
+            var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
+            if (selectedRow != null)
+            {
+                string ispitId = (string)selectedRow.Cells["Id"].Value;
+                DTOManager.ObrisiIspit(ispitId);
+                MessageBox.Show("Ispit uspesno obrisan!");
+                PrikaziIspiteUDataGrid();
+            }
+            else
+            {
+                MessageBox.Show("Izaberi ispit za brisanje");
+            }
+        }
+
+        private void HideKursId()
+        {
+            dataGridViewPrikazPodataka.Columns["KursId"].Visible = false;
+        }
+
+        private void HideProsecnaOcena() {
+            dataGridViewPrikazPodataka.Columns["ProsecnaOcena"].Visible = false;
+        }
+
+        private void ShowProsecnaOcena()
+        {
+            dataGridViewPrikazPodataka.Columns["ProsecnaOcena"].Visible = true;
+        }
+
+        private void ispitOcenjivanjeButton_Click(object sender, EventArgs e)
+        {
+            var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
+            if (selectedRow != null)
+            {
+                string ispitId = (string)selectedRow.Cells["Id"].Value;
+              
+                    Ocenjivanje ocenjivanjeForm = new Ocenjivanje(ispitId);
+                    ocenjivanjeForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Izaberi ispit za ocenjivanje");
+            }
+        }
+
+        private void sortirajIspiteButton_Click(object sender, EventArgs e)
+        {
+            ClearDataGrid();
+            dataGridViewPrikazPodataka.DataSource = DTOManager.PrikaziIspitePoProsecnojOceni();
+            HideKursId();
+            ShowProsecnaOcena();
+        }
+
+
+        private void buttonPolaganje_Click(object sender, EventArgs e)
+        {
+            var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
+            if (selectedRow != null)
+            {
+                string ispitId = (string)selectedRow.Cells["Id"].Value;
+
+                PolaganjeForma polaganjeForm = new PolaganjeForma(ispitId);
+                polaganjeForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Izaberi ispit");
+            }
+        }
 
         #endregion
 

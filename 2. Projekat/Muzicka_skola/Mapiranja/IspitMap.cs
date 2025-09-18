@@ -20,9 +20,11 @@ namespace Muzicka_skola.Mapiranja
 
 			References(x => x.Kurs, "IDKURSA");
 
-			HasMany(x => x.Komisija).KeyColumn("IDISPITA").Inverse().Cascade.All();
+			HasMany(x => x.Komisija).KeyColumn("IDISPITA").Inverse().Cascade.AllDeleteOrphan();
 
-			HasMany(x => x.Polaganja).KeyColumn("IDISPITA").Inverse().Cascade.All();
-		}
+			HasMany(x => x.Polaganja).KeyColumn("IDISPITA").Inverse().Cascade.AllDeleteOrphan();
+
+
+        }
 	}
 }

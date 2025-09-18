@@ -347,8 +347,27 @@ namespace Muzicka_skola
 	#region Polaganje
 	public class PolaganjeDTO
 	{
+        public int Id { get; set; }
+        public string JMBG { get; set; }
+        public string Ime { get; set; }
+        public string Prezime { get; set; }
+        public string KursNaziv { get; set; }
+        public DateTime Datum { get; set; }
+        public int Ocena { get; set; }
+        public bool Polozio { get; set; }
 
-	}
+        public PolaganjeDTO(int id, string jmbg, string ime, string prezime, string kursNaziv, DateTime datum, int ocena, bool polozio) {
+            Id = id;
+            JMBG = jmbg;
+            Ime = ime;
+            Prezime = prezime;
+            KursNaziv = kursNaziv;
+            Datum = datum;
+            Ocena = ocena;
+            Polozio = polozio;
+        }
+
+    }
 	#endregion
 
 	#region Telefon
@@ -369,13 +388,47 @@ namespace Muzicka_skola
 	{
 
 	}
-	#endregion
+    #endregion
 
-	#region Ispit
-	public class IspitDTO
-	{
+    #region Ispit
+    public class IspitDTO
+    {
+        public string Id { get; set; }
+        public string KursId { get; set; }
+        public string KursNaziv { get; set; }
+        public DateTime Datum { get; set; }
+        public string Komisija { get; set; }
 
-	}
-	#endregion
+        public double ProsecnaOcena { get; set; }
+
+        public IspitDTO() { }
+
+        public IspitDTO(string id, string kursId, string kursNaziv, DateTime datum, string komisija)
+        {
+            Id = id;
+            KursId = kursId;
+            KursNaziv = kursNaziv;
+            Datum = datum;
+            Komisija = komisija;
+        }
+
+        public IspitDTO(string id, string kursId, string kursNaziv, DateTime datum, string komisija, double prosecnaOcena)
+        {
+            Id = id;
+            KursId = kursId;
+            KursNaziv = kursNaziv;
+            Datum = datum;
+            Komisija = komisija;
+            ProsecnaOcena = prosecnaOcena;
+        }
+
+    }
+
+    public class IspitBasic {
+        public string Id { get; set; }
+        public DateTime Datum { get; set; }
+        public List<int> NastavnikIds { get; set; } = new List<int>();
+    }
+    #endregion
 
 }

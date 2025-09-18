@@ -177,9 +177,10 @@ BEGIN
     INSERT INTO Kurs VALUES ('K003', 'F002', v_nastavnik_id, 'Teorija muzike', 'srednji', 'grupna');
   END;
 
+
   -- Ubacivanje u Ispit
   INSERT INTO Ispit VALUES ('I001', 'K001', TO_DATE('2025-08-01', 'YYYY-MM-DD'));
-  INSERT INTO Ispit VALUES ('I002', 'K002', TO_DATE('2025-08-02', 'YYYY-MM-DD'));
+  INSERT INTO Ispit VALUES ('I002', '50', TO_DATE('2025-08-02', 'YYYY-MM-DD'));
 
   -- Ubacivanje u Komisija
   DECLARE
