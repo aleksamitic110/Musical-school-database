@@ -1,3 +1,6 @@
 # Ignore build output folders
-**/bin/
-**/obj/
+.vs/
+bin/
+obj/
+*.user
+*.suo

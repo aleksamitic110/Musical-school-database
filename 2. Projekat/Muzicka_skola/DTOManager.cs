@@ -1,9 +1,11 @@
-﻿using FluentNHibernate.Testing.Values;
+﻿using FluentNHibernate.Conventions.AcceptanceCriteria;
+using FluentNHibernate.Testing.Values;
 using Muzicka_skola.Entiteti;
 using NHibernate;
 using NHibernate.Dialect.Schema;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -2052,21 +2054,296 @@ namespace Muzicka_skola
 
 		#endregion
 
-		#region Polaganje
+        #region Polaganje
+        public static List<PolaganjeDTO> VratiPolaznikeKojiSuPolagaliIspit(string ispitId)
+        {
+            List<PolaganjeDTO> polaznici = new List<PolaganjeDTO>();
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                polaznici = session.Query<Polaganje>().Where(po => po.Ispit.Id == ispitId && po.Ocena == 0).Select(po => new PolaganjeDTO(po.Id,po.Polaznik.Osoba.JMBG, po.Polaznik.Osoba.Ime, po.Polaznik.Osoba.Prezime, po.Ispit.Kurs.Naziv, po.Ispit.Datum, po.Ocena, po.Polozio )).ToList();
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return polaznici;
+        }
 
-		#endregion
+        public static bool OceniPolaganjePolaznika(int polaganjeId, bool polozio, int ocena) {
+            
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                var polaganje = session.Load<Polaganje>(polaganjeId);
+                if(polaganje == null)
+                {
+                    return false;
+                }
+                polaganje.Polozio = polozio;
+                polaganje.Ocena = ocena;
+                session.Update(polaganje);
+                session.Flush();
+                session.Close();
+                return true;
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        public static bool DodajPolaganje(List<int> polaznikIds, string ispitId)
+        {
+
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                Ispit ispit = session.Load<Ispit>(ispitId);
+                if (ispit == null)
+                {
+                    return false;
+                }
+                foreach (int polaznikId in polaznikIds)
+                {
+                    Polaznik pol = session.Load<Polaznik>(polaznikId);
+                    Polaganje polaganje = new Polaganje
+                    {
+                        Polaznik = pol,
+                        Ispit = ispit
+                    };
+                    ispit.Polaganja.Add(polaganje);
+                }
+                session.Update(ispit);
+                session.Flush();
+                session.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        #endregion
 
 		#region Telefon
 
 		#endregion
 
-		#region Komisija
-
-		#endregion
+        #region Komisija
+        public static List<NastavnikDTO> VratiKomisiju(string ispitId)
+        {
+            List<NastavnikDTO> nastavnici = new List<NastavnikDTO>();
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                var ispit = session.Get<Ispit>(ispitId);
+                if (ispit != null)
+                {
+                    nastavnici = ispit.Komisija
+                                      .Select(k => new NastavnikDTO(k.Nastavnik.Osoba.JMBG, k.Nastavnik.Osoba.Ime, k.Nastavnik.Osoba.Prezime, k.Nastavnik.Osoba.Adresa, k.Nastavnik.Osoba.Mail, string.Join(",", k.Nastavnik.Osoba.Telefoni.Select(t => t.BrojTelefona)), k.Nastavnik.Id, k.Nastavnik.StrucnaSprema, k.Nastavnik.DatumZaposlenja))
+                                      .ToList();
+                }
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return nastavnici;
+        }
+        #endregion
 
 		#region Ispit
 
-		#endregion
+        public static List<IspitDTO> PrikaziSveIspite()
+        {
+            List<IspitDTO> ispiti = new List<IspitDTO>();
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                ispiti = session.Query<Ispit>().Select(isp => new IspitDTO(isp.Id, 
+                    isp.Kurs.Id, 
+                    isp.Kurs.Naziv, 
+                    isp.Datum, 
+                    string.Join(",", isp.Komisija.Select(k => k.Nastavnik.Osoba.Ime).ToList()))).ToList();
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return ispiti;
+        }
+
+        public static List<IspitDTO> PrikaziIspitePoProsecnojOceni() {
+            List<IspitDTO> ispiti = new List<IspitDTO>();
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                ispiti = session.Query<Ispit>()
+                    .ToList()
+                    .Select(isp => new IspitDTO(
+                    isp.Id,
+                    isp.Kurs.Id,
+                    isp.Kurs.Naziv,
+                    isp.Datum,
+                    string.Join(",", isp.Komisija.Select(k => k.Nastavnik.Osoba.Ime).ToList()),
+                    isp.Polaganja.Where(p => p.Polozio).Any()
+                    ? isp.Polaganja.Where(p => p.Polozio).Average(p => p.Ocena)
+                    : 0
+                    ))
+                    .ToList();
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return ispiti;
+        }
+
+        public static bool DodajIspit(IspitBasic noviIspit,string kursId)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                var kurs = session.Load<Kurs>(kursId);
+                if (kurs == null)
+                {
+                    MessageBox.Show("Kurs nije pronađen!");
+                    return false;
+                }
+
+                Ispit ispit = new Ispit
+                {
+                    Id = noviIspit.Id,
+                    Kurs = kurs,
+                    Datum = noviIspit.Datum,
+                    Komisija = new List<Komisija>()
+                };
+
+                foreach (int id in noviIspit.NastavnikIds)
+                {
+                    var nastavnik = session.Load<Nastavnik>(id);
+                    if (nastavnik != null)
+                    {
+                        Komisija komisija = new Komisija
+                        {
+                            Nastavnik = nastavnik,
+                            Ispit = ispit
+                        };
+                        ispit.Komisija.Add(komisija);
+                    }
+                }
+
+                session.Save(ispit);
+                session.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        public static void ObrisiIspit(string ispitId)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                var ispit = session.Load<Ispit>(ispitId);
+                if (ispit == null)
+                {
+                    MessageBox.Show("Ispit nije pronađen!");
+                    return;
+                }
+                session.Delete(ispit);
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static bool IzmeniIspit(IspitBasic noviIspit)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                var ispit = session.Load<Ispit>(noviIspit.Id);
+                if (ispit == null)
+                    return false;
+
+                ispit.Datum = noviIspit.Datum;
+
+                ispit.Komisija.Clear();
+                session.Update(ispit);
+                session.Flush();
+
+                foreach (int id in noviIspit.NastavnikIds)
+                {
+                    var nastavnik = session.Load<Nastavnik>(id);
+                    if (nastavnik != null)
+                    {
+                        Komisija komisija = new Komisija
+                        {
+                            Nastavnik = nastavnik,
+                            Ispit = ispit
+                        };
+                        ispit.Komisija.Add(komisija);
+                    }
+                }
+
+                session.Update(ispit);
+                session.Flush();
+                session.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        public static List<PolaznikDTO> vratiPolaznikeKojiNePolazuIspit(string ispitId)
+        {
+            List<PolaznikDTO> polaznici = new List<PolaznikDTO>();
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                polaznici = session.Query<Polaznik>().Where(n => !n.Polaganja.Any(p => p.Ispit.Id == ispitId)).Select(n => new PolaznikDTO(
+                    n.Id,
+                    n.Osoba.JMBG,
+                    n.Osoba.Ime,
+                    n.Osoba.Prezime,
+                    n.Osoba.Adresa,
+                    n.Osoba.Mail,
+                    string.Join(", ", n.Osoba.Telefoni.Select(t => t.BrojTelefona))
+                    )).ToList();
+                
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return polaznici;
+        }
+
+
+
+        #endregion
 
 	}
 }
