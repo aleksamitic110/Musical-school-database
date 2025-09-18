@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\forme\\globalform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:forme\\globalform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\forme\\ispit\\dodajispit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:forme\\ispit\\dodajispit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\forme\\globalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:forme\\globalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\forme\\globalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:forme\\globalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\forme\\ispit\\polaganjeforma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:forme\\ispit\\polaganjeforma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\forme\\ispit\\ocenjivanje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:forme\\ispit\\ocenjivanje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|c:\\users\\luka\\desktop\\sve\\faks\\notepad skripte\\sistemi baza\\projekat 2\\musical-school-database\\2. projekat\\muzicka_skola\\dtomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:dtomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,28 +39,12 @@
       "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:entiteti\\ispit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\forme\\ispit\\ocenjivanje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:forme\\ispit\\ocenjivanje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\forme\\ispit\\ocenjivanje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:forme\\ispit\\ocenjivanje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\forme\\globalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:forme\\globalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\forme\\ispit\\polaganjeforma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:forme\\ispit\\polaganjeforma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\forme\\ispit\\polaganjeforma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:forme\\ispit\\polaganjeforma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\forme\\ispit\\dodajispit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:forme\\ispit\\dodajispit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\dtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\entiteti\\polaznik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:entiteti\\polaznik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\forme\\globalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:forme\\globalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\forme\\ispit\\ocenipolaznika.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -77,10 +81,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\entiteti\\osoba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:entiteti\\osoba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\forme\\globalform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|solutionrelative:forme\\globalform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA7786CF-D226-4B43-A100-E42CD65D61F2}|Muzicka_skola.csproj|C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\forme\\ispit\\izmeniispit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -142,23 +142,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 32,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
+              "Title": "Ocenjivanje.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\Ispit\\Ocenjivanje.cs",
+              "RelativeDocumentMoniker": "Forme\\Ispit\\Ocenjivanje.cs",
+              "ToolTip": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\Ispit\\Ocenjivanje.cs [Design]",
+              "RelativeToolTip": "Forme\\Ispit\\Ocenjivanje.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T11:57:41.954Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Ocenjivanje.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\Ispit\\Ocenjivanje.cs",
               "RelativeDocumentMoniker": "Forme\\Ispit\\Ocenjivanje.cs",
               "ToolTip": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\Ispit\\Ocenjivanje.cs",
               "RelativeToolTip": "Forme\\Ispit\\Ocenjivanje.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAxwBoAAABXAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABoAAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T20:19:52.964Z"
+              "WhenOpened": "2025-09-17T20:19:52.964Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "PolaganjeForma.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\Ispit\\PolaganjeForma.cs",
               "RelativeDocumentMoniker": "Forme\\Ispit\\PolaganjeForma.cs",
@@ -166,22 +180,24 @@
               "RelativeToolTip": "Forme\\Ispit\\PolaganjeForma.cs",
               "ViewState": "AQIAAB4AAAAAAAAAAAAWwCgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T19:55:31.964Z"
+              "WhenOpened": "2025-09-17T19:55:31.964Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "PolaganjeForma.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\Ispit\\PolaganjeForma.cs",
               "RelativeDocumentMoniker": "Forme\\Ispit\\PolaganjeForma.cs",
               "ToolTip": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\Ispit\\PolaganjeForma.cs [Design]",
               "RelativeToolTip": "Forme\\Ispit\\PolaganjeForma.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T19:54:41.911Z"
+              "WhenOpened": "2025-09-17T19:54:41.911Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "OceniPolaznika.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\Ispit\\OceniPolaznika.cs",
               "RelativeDocumentMoniker": "Forme\\Ispit\\OceniPolaznika.cs",
@@ -193,7 +209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Polaganje.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Entiteti\\Polaganje.cs",
               "RelativeDocumentMoniker": "Entiteti\\Polaganje.cs",
@@ -205,7 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Osoba.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Entiteti\\Osoba.cs",
               "RelativeDocumentMoniker": "Entiteti\\Osoba.cs",
@@ -217,7 +233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Polaznik.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Entiteti\\Polaznik.cs",
               "RelativeDocumentMoniker": "Entiteti\\Polaznik.cs",
@@ -229,19 +245,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 0,
               "Title": "GlobalForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\GlobalForm.Designer.cs",
               "RelativeDocumentMoniker": "Forme\\GlobalForm.Designer.cs",
               "ToolTip": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\GlobalForm.Designer.cs",
               "RelativeToolTip": "Forme\\GlobalForm.Designer.cs",
-              "ViewState": "AQIAACQCAAAAAAAAAAAAAC4CAAAAAAAA",
+              "ViewState": "AQIAAK4CAAAAAAAAAAAmwLECAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T11:14:08.369Z"
+              "WhenOpened": "2025-09-17T11:14:08.369Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "OceniPolaznika.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\Ispit\\OceniPolaznika.cs",
               "RelativeDocumentMoniker": "Forme\\Ispit\\OceniPolaznika.cs",
@@ -299,7 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "IzmeniNastavnik.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\Nastavnik\\IzmeniNastavnik.cs",
               "RelativeDocumentMoniker": "Forme\\Nastavnik\\IzmeniNastavnik.cs",
@@ -347,7 +364,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Ispit.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Entiteti\\Ispit.cs",
               "RelativeDocumentMoniker": "Entiteti\\Ispit.cs",
@@ -366,7 +383,8 @@
               "ToolTip": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\Ispit\\DodajIspit.cs [Design]",
               "RelativeToolTip": "Forme\\Ispit\\DodajIspit.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T16:36:21.85Z"
+              "WhenOpened": "2025-09-16T16:36:21.85Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -414,18 +432,8 @@
               "RelativeToolTip": "Forme\\Ispit\\DodajIspit.Designer.cs",
               "ViewState": "AQIAAHIAAAAAAAAAAAAQwH4AAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T13:36:25.524Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Ocenjivanje.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\Ispit\\Ocenjivanje.cs",
-              "RelativeDocumentMoniker": "Forme\\Ispit\\Ocenjivanje.cs",
-              "ToolTip": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\Ispit\\Ocenjivanje.cs [Design]",
-              "RelativeToolTip": "Forme\\Ispit\\Ocenjivanje.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T11:57:41.954Z"
+              "WhenOpened": "2025-09-16T13:36:25.524Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -440,7 +448,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "DodajIspit.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\Ispit\\DodajIspit.cs",
               "RelativeDocumentMoniker": "Forme\\Ispit\\DodajIspit.cs",
@@ -448,11 +456,12 @@
               "RelativeToolTip": "Forme\\Ispit\\DodajIspit.cs",
               "ViewState": "AQIAAF4AAAAAAAAAAAAwwHEAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T11:36:32.454Z"
+              "WhenOpened": "2025-09-16T11:36:32.454Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "IspitMap.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Mapiranja\\IspitMap.cs",
               "RelativeDocumentMoniker": "Mapiranja\\IspitMap.cs",
@@ -464,7 +473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "DTOs.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\DTOs.cs",
               "RelativeDocumentMoniker": "DTOs.cs",
@@ -476,7 +485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "PrikazNastavnika.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\Nastavnik\\PrikazNastavnika.cs",
               "RelativeDocumentMoniker": "Forme\\Nastavnik\\PrikazNastavnika.cs",
@@ -488,7 +497,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "PrikazNastavnika.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\Nastavnik\\PrikazNastavnika.cs",
               "RelativeDocumentMoniker": "Forme\\Nastavnik\\PrikazNastavnika.cs",
@@ -499,36 +508,38 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 3,
               "Title": "GlobalForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\GlobalForm.cs",
               "RelativeDocumentMoniker": "Forme\\GlobalForm.cs",
               "ToolTip": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\GlobalForm.cs [Design]",
               "RelativeToolTip": "Forme\\GlobalForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T20:07:01.71Z"
+              "WhenOpened": "2025-08-05T20:07:01.71Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "GlobalForm.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\GlobalForm.cs",
               "RelativeDocumentMoniker": "Forme\\GlobalForm.cs",
               "ToolTip": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\Forme\\GlobalForm.cs",
               "RelativeToolTip": "Forme\\GlobalForm.cs",
-              "ViewState": "AQIAAJcBAAAAAAAAAAAMwJ8BAAAQAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAqwCsAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T16:31:47.792Z"
+              "WhenOpened": "2025-08-05T16:31:47.792Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "DTOManager.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\DTOManager.cs",
               "RelativeDocumentMoniker": "DTOManager.cs",
               "ToolTip": "C:\\Users\\Luka\\Desktop\\Sve\\Faks\\notepad skripte\\Sistemi baza\\projekat 2\\Musical-school-database\\2. Projekat\\Muzicka_skola\\DTOManager.cs",
               "RelativeToolTip": "DTOManager.cs",
-              "ViewState": "AQIAALwFAAAAAAAAAAAAANAFAAAoAAAA",
+              "ViewState": "AQIAAIkHAAAAAAAAAAAAALoFAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-05T16:31:47.886Z",
               "EditorCaption": ""

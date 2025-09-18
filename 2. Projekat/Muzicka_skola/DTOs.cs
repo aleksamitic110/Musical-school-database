@@ -204,7 +204,10 @@ namespace Muzicka_skola
 		{
 			this.Id = Id;
 		}
+		public PolaznikDTO() { }
 	}
+
+
 	public class PolaznikBasic
 	{
 		public int Id { get; set; }
@@ -217,9 +220,39 @@ namespace Muzicka_skola
 	#endregion
 
 	#region Staratelj
-	public class StarateljDTO
+	public class StarateljDTO : OsobaDTO
 	{
+		public int Id { get; set; }
+		public IList<Dete> Deca { get; set; }
 
+
+		public StarateljDTO(int IdStaratelja, IList<Dete> deca, string jmbg, string ime, string prezime, string adresa, string mail, string telefoni)
+		: base(jmbg, ime, prezime, adresa, mail, telefoni)
+		{
+			this.Id = IdStaratelja;
+			this.Deca = deca;
+		}
+
+		public StarateljDTO()
+		{
+			Deca = new List<Dete>();
+		}
+
+		public override string ToString()
+		{
+			return $"{this.Id} - {this.Ime} {this.Prezime}";
+		}
+	}
+
+
+	public class StarateljBasic
+	{
+		public IList<Dete> Deca { get; set; }
+
+		public StarateljBasic()
+		{
+			Deca = new List<Dete>();
+		}
 	}
 	#endregion
 
@@ -324,16 +357,51 @@ namespace Muzicka_skola
 	#endregion
 
 	#region Dete
-	public class DeteDTO
+	public class DeteDTO : PolaznikDTO
 	{
+		public int IdDeteta { get; set; }
+		public DateTime DatumRodjenja { get; set; }
+		public string BrojDosijea { get; set; }
+		public StarateljDTO Staratelj { get; set; }
+
+		public DeteDTO() { }
+		public DeteDTO(int IdDeteta, StarateljDTO Staratelj, DateTime DatumRodjenja, string BrojDosijea, int Id, string JMBG, string ime, string prezime, string adresa, string mail, string telefoni)
+		: base(Id, JMBG, ime, prezime, adresa, mail, telefoni)
+		{
+			this.IdDeteta = IdDeteta;
+			this.DatumRodjenja = DatumRodjenja;
+			this.BrojDosijea = BrojDosijea;
+			this.Staratelj = Staratelj;
+		}
+	}
+
+	public class DeteBasic
+	{
+		public int IdDeteta { get; set; }
+		public DateTime DatumRodjenja { get; set; }
+		public string BrojDosijea { get; set; }
+		public StarateljBasic Staratelj { get; set; }
 
 	}
 	#endregion
 
 	#region Odrasli
-	public class OdrasliDTO
+	public class OdrasliDTO : PolaznikDTO
 	{
+		public String Zanimanje { get; set; }
 
+		public OdrasliDTO() { }
+
+		public OdrasliDTO(String Zanimanje, int Id, string JMBG, string ime, string prezime, string adresa, string mail, string telefoni)
+		: base(Id, JMBG, ime, prezime, adresa, mail, telefoni)
+		{
+			this.Zanimanje = Zanimanje;
+		}
+	}
+
+	public class OdrasliBasic
+	{
+		public String Zanimanje;
 	}
 	#endregion
 
