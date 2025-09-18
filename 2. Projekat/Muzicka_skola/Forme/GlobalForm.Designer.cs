@@ -28,19 +28,16 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
- 
             this.panelPrikaz = new System.Windows.Forms.Panel();
             this.dataGridViewPrikazPodataka = new System.Windows.Forms.DataGridView();
             this.panelFilter = new System.Windows.Forms.Panel();
             this.panelDodatniFilteri = new System.Windows.Forms.Panel();
             this.panelStandardniFilteri = new System.Windows.Forms.Panel();
             this.panelFunkcije = new System.Windows.Forms.Panel();
-            this.panelMentorButtons = new System.Windows.Forms.Panel();
-            this.buttonPrikaziKomeJeMentor = new System.Windows.Forms.Button();
-            this.buttonPrikaziMentora = new System.Windows.Forms.Button();
             this.panelDodatneFunkcije = new System.Windows.Forms.Panel();
             this.panelDodatneFunkcijeNastavnik = new System.Windows.Forms.Panel();
             this.panelDodatneFunkcijeIspit = new System.Windows.Forms.Panel();
+            this.buttonPolaganje = new System.Windows.Forms.Button();
             this.sortirajIspiteButton = new System.Windows.Forms.Button();
             this.ispitOcenjivanjeButton = new System.Windows.Forms.Button();
             this.panelKursevi = new System.Windows.Forms.Panel();
@@ -62,6 +59,9 @@
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonFilter = new System.Windows.Forms.Button();
+            this.panelMentorButtons = new System.Windows.Forms.Panel();
+            this.buttonPrikaziKomeJeMentor = new System.Windows.Forms.Button();
+            this.buttonPrikaziMentora = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonIspiti = new System.Windows.Forms.Button();
             this.buttonKursevi = new System.Windows.Forms.Button();
@@ -69,19 +69,28 @@
             this.buttunPolaznici = new System.Windows.Forms.Button();
             this.pictureBoxPocetna = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonPolaganje = new System.Windows.Forms.Button();
+            this.panelDodatneFunkcijePolaznik = new System.Windows.Forms.Panel();
+            this.buttonPrikaziKursevePolaznika = new System.Windows.Forms.Button();
+            this.buttonPrikaziDecuStaratelja = new System.Windows.Forms.Button();
+            this.radioButtonStaratelji = new System.Windows.Forms.RadioButton();
+            this.radioButtonDeca = new System.Windows.Forms.RadioButton();
+            this.radioButtonOdrasli = new System.Windows.Forms.RadioButton();
+            this.radioButtonSviPolaznici = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panelPrikaz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrikazPodataka)).BeginInit();
             this.panelFilter.SuspendLayout();
             this.panelFunkcije.SuspendLayout();
-            this.panelMentorButtons.SuspendLayout();
             this.panelDodatneFunkcije.SuspendLayout();
             this.panelDodatneFunkcijeNastavnik.SuspendLayout();
             this.panelDodatneFunkcijeIspit.SuspendLayout();
             this.panelKursevi.SuspendLayout();
             this.panelStandardneFunkcije.SuspendLayout();
+            this.panelMentorButtons.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPocetna)).BeginInit();
+            this.panelDodatneFunkcijePolaznik.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelPrikaz
@@ -148,40 +157,6 @@
             this.panelFunkcije.Size = new System.Drawing.Size(409, 725);
             this.panelFunkcije.TabIndex = 2;
             // 
-            // panelMentorButtons
-            // 
-            this.panelMentorButtons.BackColor = System.Drawing.Color.Orange;
-            this.panelMentorButtons.Controls.Add(this.buttonPrikaziKomeJeMentor);
-            this.panelMentorButtons.Controls.Add(this.buttonPrikaziMentora);
-            this.panelMentorButtons.Location = new System.Drawing.Point(7, 464);
-            this.panelMentorButtons.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelMentorButtons.Name = "panelMentorButtons";
-            this.panelMentorButtons.Size = new System.Drawing.Size(395, 100);
-            this.panelMentorButtons.TabIndex = 1;
-            this.panelMentorButtons.Visible = false;
-            // 
-            // buttonPrikaziKomeJeMentor
-            // 
-            this.buttonPrikaziKomeJeMentor.Location = new System.Drawing.Point(208, 20);
-            this.buttonPrikaziKomeJeMentor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonPrikaziKomeJeMentor.Name = "buttonPrikaziKomeJeMentor";
-            this.buttonPrikaziKomeJeMentor.Size = new System.Drawing.Size(171, 57);
-            this.buttonPrikaziKomeJeMentor.TabIndex = 4;
-            this.buttonPrikaziKomeJeMentor.Text = "Prikazi kome\r\nje mentor";
-            this.buttonPrikaziKomeJeMentor.UseVisualStyleBackColor = true;
-            this.buttonPrikaziKomeJeMentor.Click += new System.EventHandler(this.buttonPrikaziKomeJeMentor_Click);
-            // 
-            // buttonPrikaziMentora
-            // 
-            this.buttonPrikaziMentora.Location = new System.Drawing.Point(20, 20);
-            this.buttonPrikaziMentora.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonPrikaziMentora.Name = "buttonPrikaziMentora";
-            this.buttonPrikaziMentora.Size = new System.Drawing.Size(168, 57);
-            this.buttonPrikaziMentora.TabIndex = 3;
-            this.buttonPrikaziMentora.Text = "Prikazi njegovog\r\nmentora\r\n";
-            this.buttonPrikaziMentora.UseVisualStyleBackColor = true;
-            this.buttonPrikaziMentora.Click += new System.EventHandler(this.buttonPrikaziMentora_Click);
-            // 
             // panelDodatneFunkcije
             // 
             this.panelDodatneFunkcije.BackColor = System.Drawing.Color.Orange;
@@ -194,8 +169,9 @@
             // 
             // panelDodatneFunkcijeNastavnik
             // 
-            this.panelDodatneFunkcijeNastavnik.Controls.Add(this.panelDodatneFunkcijeIspit);
             this.panelDodatneFunkcijeNastavnik.Controls.Add(this.panelKursevi);
+            this.panelDodatneFunkcijeNastavnik.Controls.Add(this.button2);
+            this.panelDodatneFunkcijeNastavnik.Controls.Add(this.button1);
             this.panelDodatneFunkcijeNastavnik.Controls.Add(this.buttonKurseviNastavnika);
             this.panelDodatneFunkcijeNastavnik.Controls.Add(this.buttonPrikaziNadgledaniIspiti);
             this.panelDodatneFunkcijeNastavnik.Controls.Add(this.radioButtonStalni);
@@ -220,6 +196,16 @@
             this.panelDodatneFunkcijeIspit.TabIndex = 1;
             this.panelDodatneFunkcijeIspit.Visible = false;
             // 
+            // buttonPolaganje
+            // 
+            this.buttonPolaganje.Location = new System.Drawing.Point(23, 127);
+            this.buttonPolaganje.Name = "buttonPolaganje";
+            this.buttonPolaganje.Size = new System.Drawing.Size(358, 50);
+            this.buttonPolaganje.TabIndex = 2;
+            this.buttonPolaganje.Text = "Polaganje";
+            this.buttonPolaganje.UseVisualStyleBackColor = true;
+            this.buttonPolaganje.Click += new System.EventHandler(this.buttonPolaganje_Click);
+            // 
             // sortirajIspiteButton
             // 
             this.sortirajIspiteButton.Location = new System.Drawing.Point(20, 70);
@@ -243,6 +229,7 @@
             // panelKursevi
             // 
             this.panelKursevi.BackColor = System.Drawing.Color.Maroon;
+            this.panelKursevi.Controls.Add(this.panelDodatneFunkcijeIspit);
             this.panelKursevi.Controls.Add(this.comboBoxFilijalaID);
             this.panelKursevi.Controls.Add(this.prikaziKursPoFilijali);
             this.panelKursevi.Controls.Add(this.prikaziFilijalu);
@@ -251,7 +238,7 @@
             this.panelKursevi.Controls.Add(this.prikaziTeorijski);
             this.panelKursevi.Controls.Add(this.prikaziVokalni);
             this.panelKursevi.Controls.Add(this.prikaziInstrumentalni);
-            this.panelKursevi.Location = new System.Drawing.Point(0, 2);
+            this.panelKursevi.Location = new System.Drawing.Point(0, 0);
             this.panelKursevi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelKursevi.Name = "panelKursevi";
             this.panelKursevi.Size = new System.Drawing.Size(300, 206);
@@ -464,6 +451,40 @@
             this.buttonFilter.Text = "Filter";
             this.buttonFilter.UseVisualStyleBackColor = false;
             // 
+            // panelMentorButtons
+            // 
+            this.panelMentorButtons.BackColor = System.Drawing.Color.Orange;
+            this.panelMentorButtons.Controls.Add(this.buttonPrikaziKomeJeMentor);
+            this.panelMentorButtons.Controls.Add(this.buttonPrikaziMentora);
+            this.panelMentorButtons.Location = new System.Drawing.Point(7, 464);
+            this.panelMentorButtons.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelMentorButtons.Name = "panelMentorButtons";
+            this.panelMentorButtons.Size = new System.Drawing.Size(395, 100);
+            this.panelMentorButtons.TabIndex = 1;
+            this.panelMentorButtons.Visible = false;
+            // 
+            // buttonPrikaziKomeJeMentor
+            // 
+            this.buttonPrikaziKomeJeMentor.Location = new System.Drawing.Point(208, 20);
+            this.buttonPrikaziKomeJeMentor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonPrikaziKomeJeMentor.Name = "buttonPrikaziKomeJeMentor";
+            this.buttonPrikaziKomeJeMentor.Size = new System.Drawing.Size(171, 57);
+            this.buttonPrikaziKomeJeMentor.TabIndex = 4;
+            this.buttonPrikaziKomeJeMentor.Text = "Prikazi kome\r\nje mentor";
+            this.buttonPrikaziKomeJeMentor.UseVisualStyleBackColor = true;
+            this.buttonPrikaziKomeJeMentor.Click += new System.EventHandler(this.buttonPrikaziKomeJeMentor_Click);
+            // 
+            // buttonPrikaziMentora
+            // 
+            this.buttonPrikaziMentora.Location = new System.Drawing.Point(20, 20);
+            this.buttonPrikaziMentora.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonPrikaziMentora.Name = "buttonPrikaziMentora";
+            this.buttonPrikaziMentora.Size = new System.Drawing.Size(168, 57);
+            this.buttonPrikaziMentora.TabIndex = 3;
+            this.buttonPrikaziMentora.Text = "Prikazi njegovog\r\nmentora\r\n";
+            this.buttonPrikaziMentora.UseVisualStyleBackColor = true;
+            this.buttonPrikaziMentora.Click += new System.EventHandler(this.buttonPrikaziMentora_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.buttonIspiti);
@@ -547,15 +568,110 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "MUZICKA SKOLA";
             // 
-            // buttonPolaganje
+            // panelDodatneFunkcijePolaznik
             // 
-            this.buttonPolaganje.Location = new System.Drawing.Point(23, 127);
-            this.buttonPolaganje.Name = "buttonPolaganje";
-            this.buttonPolaganje.Size = new System.Drawing.Size(358, 50);
-            this.buttonPolaganje.TabIndex = 2;
-            this.buttonPolaganje.Text = "Polaganje";
-            this.buttonPolaganje.UseVisualStyleBackColor = true;
-            this.buttonPolaganje.Click += new System.EventHandler(this.buttonPolaganje_Click);
+            this.panelDodatneFunkcijePolaznik.Controls.Add(this.buttonPrikaziKursevePolaznika);
+            this.panelDodatneFunkcijePolaznik.Controls.Add(this.buttonPrikaziDecuStaratelja);
+            this.panelDodatneFunkcijePolaznik.Controls.Add(this.radioButtonStaratelji);
+            this.panelDodatneFunkcijePolaznik.Controls.Add(this.radioButtonDeca);
+            this.panelDodatneFunkcijePolaznik.Controls.Add(this.radioButtonOdrasli);
+            this.panelDodatneFunkcijePolaznik.Controls.Add(this.radioButtonSviPolaznici);
+            this.panelDodatneFunkcijePolaznik.Location = new System.Drawing.Point(1, 0);
+            this.panelDodatneFunkcijePolaznik.Name = "panelDodatneFunkcijePolaznik";
+            this.panelDodatneFunkcijePolaznik.Size = new System.Drawing.Size(298, 206);
+            this.panelDodatneFunkcijePolaznik.TabIndex = 8;
+            // 
+            // buttonPrikaziKursevePolaznika
+            // 
+            this.buttonPrikaziKursevePolaznika.Location = new System.Drawing.Point(27, 103);
+            this.buttonPrikaziKursevePolaznika.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonPrikaziKursevePolaznika.Name = "buttonPrikaziKursevePolaznika";
+            this.buttonPrikaziKursevePolaznika.Size = new System.Drawing.Size(126, 46);
+            this.buttonPrikaziKursevePolaznika.TabIndex = 5;
+            this.buttonPrikaziKursevePolaznika.Text = "Prikazi kurseve polaznika";
+            this.buttonPrikaziKursevePolaznika.UseVisualStyleBackColor = true;
+            this.buttonPrikaziKursevePolaznika.Click += new System.EventHandler(this.buttonPrikaziKursevePolaznika_Click);
+            // 
+            // buttonPrikaziDecuStaratelja
+            // 
+            this.buttonPrikaziDecuStaratelja.Location = new System.Drawing.Point(157, 103);
+            this.buttonPrikaziDecuStaratelja.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonPrikaziDecuStaratelja.Name = "buttonPrikaziDecuStaratelja";
+            this.buttonPrikaziDecuStaratelja.Size = new System.Drawing.Size(126, 46);
+            this.buttonPrikaziDecuStaratelja.TabIndex = 4;
+            this.buttonPrikaziDecuStaratelja.Text = "Prikazi decu staratelja";
+            this.buttonPrikaziDecuStaratelja.UseVisualStyleBackColor = true;
+            this.buttonPrikaziDecuStaratelja.Click += new System.EventHandler(this.buttonPrikaziDecuStaratelja_Click);
+            // 
+            // radioButtonStaratelji
+            // 
+            this.radioButtonStaratelji.AutoSize = true;
+            this.radioButtonStaratelji.Location = new System.Drawing.Point(218, 11);
+            this.radioButtonStaratelji.Name = "radioButtonStaratelji";
+            this.radioButtonStaratelji.Size = new System.Drawing.Size(65, 17);
+            this.radioButtonStaratelji.TabIndex = 3;
+            this.radioButtonStaratelji.TabStop = true;
+            this.radioButtonStaratelji.Text = "Staratelji";
+            this.radioButtonStaratelji.UseVisualStyleBackColor = true;
+            this.radioButtonStaratelji.CheckedChanged += new System.EventHandler(this.PolazniciRadioButton_CheckedChanged);
+            // 
+            // radioButtonDeca
+            // 
+            this.radioButtonDeca.AutoSize = true;
+            this.radioButtonDeca.Location = new System.Drawing.Point(161, 11);
+            this.radioButtonDeca.Name = "radioButtonDeca";
+            this.radioButtonDeca.Size = new System.Drawing.Size(51, 17);
+            this.radioButtonDeca.TabIndex = 2;
+            this.radioButtonDeca.TabStop = true;
+            this.radioButtonDeca.Text = "Deca";
+            this.radioButtonDeca.UseVisualStyleBackColor = true;
+            this.radioButtonDeca.CheckedChanged += new System.EventHandler(this.PolazniciRadioButton_CheckedChanged);
+            // 
+            // radioButtonOdrasli
+            // 
+            this.radioButtonOdrasli.AutoSize = true;
+            this.radioButtonOdrasli.Location = new System.Drawing.Point(98, 11);
+            this.radioButtonOdrasli.Name = "radioButtonOdrasli";
+            this.radioButtonOdrasli.Size = new System.Drawing.Size(57, 17);
+            this.radioButtonOdrasli.TabIndex = 1;
+            this.radioButtonOdrasli.TabStop = true;
+            this.radioButtonOdrasli.Text = "Odrasli";
+            this.radioButtonOdrasli.UseVisualStyleBackColor = true;
+            this.radioButtonOdrasli.CheckedChanged += new System.EventHandler(this.PolazniciRadioButton_CheckedChanged);
+            // 
+            // radioButtonSviPolaznici
+            // 
+            this.radioButtonSviPolaznici.AutoSize = true;
+            this.radioButtonSviPolaznici.Location = new System.Drawing.Point(8, 11);
+            this.radioButtonSviPolaznici.Name = "radioButtonSviPolaznici";
+            this.radioButtonSviPolaznici.Size = new System.Drawing.Size(84, 17);
+            this.radioButtonSviPolaznici.TabIndex = 0;
+            this.radioButtonSviPolaznici.TabStop = true;
+            this.radioButtonSviPolaznici.Text = "Svi polaznici";
+            this.radioButtonSviPolaznici.UseVisualStyleBackColor = true;
+            this.radioButtonSviPolaznici.CheckedChanged += new System.EventHandler(this.PolazniciRadioButton_CheckedChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(23, 135);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(168, 54);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Kome je mentor";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.buttonPrikaziKomeJeMentor_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(220, 135);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(161, 46);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Prikazi mentora";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.buttonPrikaziMentora_Click);
             // 
             // GlobalForm
             // 
@@ -576,130 +692,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrikazPodataka)).EndInit();
             this.panelFilter.ResumeLayout(false);
             this.panelFunkcije.ResumeLayout(false);
-            this.panelMentorButtons.ResumeLayout(false);
             this.panelDodatneFunkcije.ResumeLayout(false);
             this.panelDodatneFunkcijeNastavnik.ResumeLayout(false);
             this.panelDodatneFunkcijeNastavnik.PerformLayout();
             this.panelDodatneFunkcijeIspit.ResumeLayout(false);
             this.panelKursevi.ResumeLayout(false);
             this.panelStandardneFunkcije.ResumeLayout(false);
+            this.panelMentorButtons.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPocetna)).EndInit();
+            this.panelDodatneFunkcijePolaznik.ResumeLayout(false);
+            this.panelDodatneFunkcijePolaznik.PerformLayout();
             this.ResumeLayout(false);
- 
-			
-			this.panelDodatneFunkcijePolaznik = new System.Windows.Forms.Panel();
-			this.buttonPrikaziDecuStaratelja = new System.Windows.Forms.Button();
-			this.radioButtonStaratelji = new System.Windows.Forms.RadioButton();
-			this.radioButtonDeca = new System.Windows.Forms.RadioButton();
-			this.radioButtonOdrasli = new System.Windows.Forms.RadioButton();
-			this.radioButtonSviPolaznici = new System.Windows.Forms.RadioButton();
-			
-		
-			
-			
-			this.buttonPrikaziKursevePolaznika = new System.Windows.Forms.Button();
-			this.panelPrikaz.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrikazPodataka)).BeginInit();
-			this.panelFilter.SuspendLayout();
-			this.panelFunkcije.SuspendLayout();
-			this.panelMentorButtons.SuspendLayout();
-			this.panelDodatneFunkcije.SuspendLayout();
-			this.panelDodatneFunkcijeNastavnik.SuspendLayout();
-			this.panelKursevi.SuspendLayout();
-			this.panelDodatneFunkcijePolaznik.SuspendLayout();
-			this.panelStandardneFunkcije.SuspendLayout();
-			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPocetna)).BeginInit();
-			this.SuspendLayout();
-			
-			// 
-			// panelDodatneFunkcijePolaznik
-			// 
-			this.panelDodatneFunkcijePolaznik.Controls.Add(this.buttonPrikaziKursevePolaznika);
-			this.panelDodatneFunkcijePolaznik.Controls.Add(this.buttonPrikaziDecuStaratelja);
-			this.panelDodatneFunkcijePolaznik.Controls.Add(this.radioButtonStaratelji);
-			this.panelDodatneFunkcijePolaznik.Controls.Add(this.radioButtonDeca);
-			this.panelDodatneFunkcijePolaznik.Controls.Add(this.radioButtonOdrasli);
-			this.panelDodatneFunkcijePolaznik.Controls.Add(this.radioButtonSviPolaznici);
-			this.panelDodatneFunkcijePolaznik.Location = new System.Drawing.Point(1, 0);
-			this.panelDodatneFunkcijePolaznik.Name = "panelDodatneFunkcijePolaznik";
-			this.panelDodatneFunkcijePolaznik.Size = new System.Drawing.Size(298, 206);
-			this.panelDodatneFunkcijePolaznik.TabIndex = 8;
-			// 
-			// buttonPrikaziDecuStaratelja
-			// 
-			this.buttonPrikaziDecuStaratelja.Location = new System.Drawing.Point(157, 103);
-			this.buttonPrikaziDecuStaratelja.Margin = new System.Windows.Forms.Padding(2);
-			this.buttonPrikaziDecuStaratelja.Name = "buttonPrikaziDecuStaratelja";
-			this.buttonPrikaziDecuStaratelja.Size = new System.Drawing.Size(126, 46);
-			this.buttonPrikaziDecuStaratelja.TabIndex = 4;
-			this.buttonPrikaziDecuStaratelja.Text = "Prikazi decu staratelja";
-			this.buttonPrikaziDecuStaratelja.UseVisualStyleBackColor = true;
-			this.buttonPrikaziDecuStaratelja.Click += new System.EventHandler(this.buttonPrikaziDecuStaratelja_Click);
-			// 
-			// radioButtonStaratelji
-			// 
-			this.radioButtonStaratelji.AutoSize = true;
-			this.radioButtonStaratelji.Location = new System.Drawing.Point(218, 11);
-			this.radioButtonStaratelji.Name = "radioButtonStaratelji";
-			this.radioButtonStaratelji.Size = new System.Drawing.Size(65, 17);
-			this.radioButtonStaratelji.TabIndex = 3;
-			this.radioButtonStaratelji.TabStop = true;
-			this.radioButtonStaratelji.Text = "Staratelji";
-			this.radioButtonStaratelji.UseVisualStyleBackColor = true;
-			this.radioButtonStaratelji.CheckedChanged += new System.EventHandler(this.PolazniciRadioButton_CheckedChanged);
-			// 
-			// radioButtonDeca
-			// 
-			this.radioButtonDeca.AutoSize = true;
-			this.radioButtonDeca.Location = new System.Drawing.Point(161, 11);
-			this.radioButtonDeca.Name = "radioButtonDeca";
-			this.radioButtonDeca.Size = new System.Drawing.Size(51, 17);
-			this.radioButtonDeca.TabIndex = 2;
-			this.radioButtonDeca.TabStop = true;
-			this.radioButtonDeca.Text = "Deca";
-			this.radioButtonDeca.UseVisualStyleBackColor = true;
-			this.radioButtonDeca.CheckedChanged += new System.EventHandler(this.PolazniciRadioButton_CheckedChanged);
-			// 
-			// radioButtonOdrasli
-			// 
-			this.radioButtonOdrasli.AutoSize = true;
-			this.radioButtonOdrasli.Location = new System.Drawing.Point(98, 11);
-			this.radioButtonOdrasli.Name = "radioButtonOdrasli";
-			this.radioButtonOdrasli.Size = new System.Drawing.Size(57, 17);
-			this.radioButtonOdrasli.TabIndex = 1;
-			this.radioButtonOdrasli.TabStop = true;
-			this.radioButtonOdrasli.Text = "Odrasli";
-			this.radioButtonOdrasli.UseVisualStyleBackColor = true;
-			this.radioButtonOdrasli.CheckedChanged += new System.EventHandler(this.PolazniciRadioButton_CheckedChanged);
-			// 
-			// radioButtonSviPolaznici
-			// 
-			this.radioButtonSviPolaznici.AutoSize = true;
-			this.radioButtonSviPolaznici.Location = new System.Drawing.Point(8, 11);
-			this.radioButtonSviPolaznici.Name = "radioButtonSviPolaznici";
-			this.radioButtonSviPolaznici.Size = new System.Drawing.Size(84, 17);
-			this.radioButtonSviPolaznici.TabIndex = 0;
-			this.radioButtonSviPolaznici.TabStop = true;
-			this.radioButtonSviPolaznici.Text = "Svi polaznici";
-			this.radioButtonSviPolaznici.UseVisualStyleBackColor = true;
-			this.radioButtonSviPolaznici.CheckedChanged += new System.EventHandler(this.PolazniciRadioButton_CheckedChanged);
-			
-		
-
-            // 
-            // buttonPrikaziKursevePolaznika
-            // 
-            this.buttonPrikaziKursevePolaznika.Location = new System.Drawing.Point(27, 103);
-            this.buttonPrikaziKursevePolaznika.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonPrikaziKursevePolaznika.Name = "buttonPrikaziKursevePolaznika";
-            this.buttonPrikaziKursevePolaznika.Size = new System.Drawing.Size(126, 46);
-            this.buttonPrikaziKursevePolaznika.TabIndex = 5;
-            this.buttonPrikaziKursevePolaznika.Text = "Prikazi kurseve polaznika";
-            this.buttonPrikaziKursevePolaznika.UseVisualStyleBackColor = true;
-            this.buttonPrikaziKursevePolaznika.Click += new System.EventHandler(this.buttonPrikaziKursevePolaznika_Click);
 
         }
 
@@ -758,7 +763,9 @@
 		private System.Windows.Forms.RadioButton radioButtonSviPolaznici;
 		private System.Windows.Forms.Button buttonPrikaziDecuStaratelja;
 		private System.Windows.Forms.Button buttonPrikaziKursevePolaznika;
-		//komentar head
-	}
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        //komentar head
+    }
  
 }

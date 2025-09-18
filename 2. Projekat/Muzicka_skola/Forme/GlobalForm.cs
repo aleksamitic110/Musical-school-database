@@ -293,24 +293,27 @@ namespace Muzicka_skola.Forme
 			{
 				PrikaziPolaznikeUDataGrid();
 				buttonPrikaziDecuStaratelja.Hide();
-				
-			}
+                buttonPrikaziKursevePolaznika.Show();
+            }
 			else if (radioButtonOdrasli.Checked)
 			{
 				PrikaziOdraslePolaznikeUDataGrid();
 				buttonPrikaziDecuStaratelja.Hide();
-			}
+                buttonPrikaziKursevePolaznika.Show();
+            }
 			else if (radioButtonDeca.Checked)
 			{
 				PrikaziDecuPolaznikeUDataGrid();
 				buttonPrikaziDecuStaratelja.Hide();
-			}
+                buttonPrikaziKursevePolaznika.Show();
+            }
 			else if (radioButtonStaratelji.Checked)
 			{
 				PrikaziStarateljeUDataGrid();
 				buttonPrikaziDecuStaratelja.Show();
 				buttonPrikaziKursevePolaznika.Hide();
 			}
+
 		}
 
 		private void buttonPrikaziDecuStaratelja_Click(object sender, EventArgs e)
@@ -633,16 +636,25 @@ namespace Muzicka_skola.Forme
 			{
 
                 PrikaziNastavnikeUDataGrid();
+                button1.Hide();
+                button2.Hide();
             }
             else if (radioButtonHonorarni.Checked)
 			{
 				PrikaziHonorarneNastavnikeUDataGrid();
+                button1.Hide();
+                button2.Hide();
             }
 			else if (radioButtonStalni.Checked)
 			{
 				PrikaziStalneNastavnikeUDataGrid();
+				button1.Show();
+                button2.Show();
             }
         }
+
+
+
 		private void ObrisiIzabranogNastavnika()
 		{
 			var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
