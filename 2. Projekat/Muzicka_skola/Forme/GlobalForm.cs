@@ -2,6 +2,7 @@
 using Muzicka_skola.Entiteti;
 using Muzicka_skola.Forme.Kursevi;
 using Muzicka_skola.Forme.Nastavnik;
+using Muzicka_skola.Forme.Polaznici;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,7 @@ namespace Muzicka_skola.Forme
         public GlobalForm()
         {
             InitializeComponent();
-        }
+		}
 
 		public GlobalForm(Tip tip)
 		{
@@ -63,8 +64,13 @@ namespace Muzicka_skola.Forme
 
 		#region Preuredjivanje_Prikaza
 		private void PreurediPrikazPolaznici() {
-			
+
+			this.panelDodatneFunkcije.Controls.Add(panelDodatneFunkcijePolaznik);
+			panelDodatneFunkcijeNastavnik.Show();
+			panelDodatneFunkcijeNastavnik.BringToFront();
 			this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiPolaznike();
+
+			UcitajCeoPrikazPolaznika();
 		}
 
 		private void PreurediPrikazNastavnici() {
@@ -138,7 +144,9 @@ namespace Muzicka_skola.Forme
             switch (trenutniTip)
             {
                 case Tip.Polaznici:
-                    break;
+					AddPolaznik dodajPolaznika = new AddPolaznik(this);
+					dodajPolaznika.Show();
+					break;
 
                 case Tip.Nastavnici:
 					DodajNastavnik dodajNastavnikForm = new DodajNastavnik(this);
@@ -146,11 +154,10 @@ namespace Muzicka_skola.Forme
                     break;
 
                 case Tip.Kursevi:
-						DodajKurs dodajKursForm = new DodajKurs(this);
-						dodajKursForm.ShowDialog();
-
-
+					DodajKurs dodajKursForm = new DodajKurs(this);
+					dodajKursForm.ShowDialog();
                     break;
+
                 case Tip.Ispiti:
                     break;
             }
@@ -163,6 +170,43 @@ namespace Muzicka_skola.Forme
 			switch (trenutniTip)
 			{
 				case Tip.Polaznici:
+					var selectedRowP = dataGridViewPrikazPodataka.CurrentRow;
+
+					if (selectedRowP != null)
+					{
+						if (!radioButtonStaratelji.Checked)
+						{
+							PolaznikDTO selectedPolaznik = selectedRowP.DataBoundItem as PolaznikDTO;
+							using (IzmeniPolaznik izmeniPolaznikForm = new IzmeniPolaznik(selectedPolaznik.Id))
+							{
+								if (izmeniPolaznikForm.ShowDialog() == DialogResult.OK)
+								{
+									if (radioButtonDeca.Checked)
+										PrikaziDecuPolaznikeUDataGrid();
+									else if (radioButtonOdrasli.Checked)
+										PrikaziOdraslePolaznikeUDataGrid();
+									else if (radioButtonSviPolaznici.Checked)
+										PrikaziPolaznikeUDataGrid();
+									else if (radioButtonStaratelji.Checked)
+										PrikaziStarateljeUDataGrid();
+								}
+							}
+						}
+						else{
+							int starateljId = Convert.ToInt32(selectedRowP.Cells["Id"].Value);
+							using (IzmenaStaratelja formaIzmena = new IzmenaStaratelja(starateljId))
+							{
+								if (formaIzmena.ShowDialog() == DialogResult.OK)
+								{
+									PrikaziStarateljeUDataGrid(); 
+								}
+							}
+						}
+					}
+					else
+					{
+						MessageBox.Show("Izaberi nastavnika za izmenu");
+					}
 					break;
 
 				case Tip.Nastavnici:
@@ -204,6 +248,7 @@ namespace Muzicka_skola.Forme
 			switch (trenutniTip)
 			{
 				case Tip.Polaznici:
+					ObrisiIzabranogPolaznika();
 					break;
 
 				case Tip.Nastavnici:
@@ -222,7 +267,162 @@ namespace Muzicka_skola.Forme
 
 
 		#region Polaznici
+		private void PolazniciRadioButton_CheckedChanged(object sender, EventArgs e)
+		{
 
+
+			if (radioButtonSviPolaznici.Checked)
+			{
+				PrikaziPolaznikeUDataGrid();
+				buttonPrikaziDecuStaratelja.Hide();
+				
+			}
+			else if (radioButtonOdrasli.Checked)
+			{
+				PrikaziOdraslePolaznikeUDataGrid();
+				buttonPrikaziDecuStaratelja.Hide();
+			}
+			else if (radioButtonDeca.Checked)
+			{
+				PrikaziDecuPolaznikeUDataGrid();
+				buttonPrikaziDecuStaratelja.Hide();
+			}
+			else if (radioButtonStaratelji.Checked)
+			{
+				PrikaziStarateljeUDataGrid();
+				buttonPrikaziDecuStaratelja.Show();
+				buttonPrikaziKursevePolaznika.Hide();
+			}
+		}
+
+		private void buttonPrikaziDecuStaratelja_Click(object sender, EventArgs e)
+		{
+			if (dataGridViewPrikazPodataka.SelectedRows.Count > 0)
+			{
+				// Uzimamo selektovani red
+				DataGridViewRow selectedRow = dataGridViewPrikazPodataka.SelectedRows[0];
+
+				// Izvlačimo ID staratelja iz ćelije. Proveri da li se kolona zove "Id".
+				int starateljId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+				// Kreiramo instancu naše nove forme i prosleđujemo joj ID
+				using (PrikazDeceStaratelja formaZaDecu = new PrikazDeceStaratelja(starateljId))
+				{
+					formaZaDecu.ShowDialog();
+				}
+			}
+			else
+			{
+				MessageBox.Show("Molimo vas, prvo odaberite staratelja.");
+			}
+		}
+
+
+		private void ObrisiIzabranogPolaznika()
+		{
+			if (dataGridViewPrikazPodataka.SelectedRows.Count == 0)
+			{
+				MessageBox.Show("Molimo vas, odaberite polaznika kojeg želite da obrišete.");
+				return;
+			}
+
+			if (radioButtonStaratelji.Checked) {
+				MessageBox.Show("Staratelj se briše automatksi onda kada vise nema dece");
+				return;
+			}
+
+			// Uzimamo ID iz selektovanog reda. Proveri da li se kolona zaista zove "Id".
+			int polaznikId = Convert.ToInt32(dataGridViewPrikazPodataka.SelectedRows[0].Cells["Id"].Value);
+
+			// Dijaloh za potvrdu - ovo je OBAVEZNO da se ne bi slučajno obrisali podaci!
+			string ime = dataGridViewPrikazPodataka.SelectedRows[0].Cells["Ime"].Value.ToString();
+			string prezime = dataGridViewPrikazPodataka.SelectedRows[0].Cells["Prezime"].Value.ToString();
+
+			DialogResult result = MessageBox.Show($"Da li ste sigurni da želite da obrišete polaznika: {ime} {prezime}?",
+													"Potvrda brisanja",
+													MessageBoxButtons.YesNo,
+													MessageBoxIcon.Warning);
+
+			if (result == DialogResult.Yes)
+			{
+				DTOManager.ObrisiPolaznika(polaznikId);
+				MessageBox.Show("Polaznik je uspešno obrisan.");
+
+				// Ponovo učitaj podatke da se promena vidi u tabeli
+				// Pretpostavljam da se funkcija za prikaz zove ovako:
+				PrikaziPolaznikeUDataGrid();
+			}
+		}
+
+		private void buttonPrikaziKursevePolaznika_Click(object sender, EventArgs e)
+		{
+			// Proveravamo da li je korisnik uopšte selektovao nekog polaznika
+			if (dataGridViewPrikazPodataka.SelectedRows.Count == 0)
+			{
+				MessageBox.Show("Molimo vas, prvo odaberite polaznika.");
+				return;
+			}
+
+			// Uzimamo selektovani red
+			DataGridViewRow selectedRow = dataGridViewPrikazPodataka.SelectedRows[0];
+
+			// Izvlačimo ID polaznika, kao i ime i prezime za naslov prozora
+			int polaznikId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+			string ime = selectedRow.Cells["Ime"].Value.ToString();
+			string prezime = selectedRow.Cells["Prezime"].Value.ToString();
+			string imePrezime = $"{ime} {prezime}";
+
+			// Kreiramo instancu naše nove forme i prosleđujemo joj podatke
+			using (PrikazKursevaPolaznika formaKursevi = new PrikazKursevaPolaznika(polaznikId, imePrezime))
+			{
+				// Prikazujemo formu kao dijalog
+				formaKursevi.ShowDialog();
+			}
+		}
+
+		public void PrikaziStarateljeUDataGrid()
+		{
+			radioButtonStaratelji.Checked = true;
+			ClearDataGrid();
+			dataGridViewPrikazPodataka.DataSource = DTOManager.VratiStaratelje();
+			dataGridViewPrikazPodataka.Columns["Deca"].Visible = false;
+			HideId();
+			OrderColumns();
+		}
+
+		public void PrikaziOdraslePolaznikeUDataGrid()
+		{
+			radioButtonOdrasli.Checked = true;
+			ClearDataGrid();
+			dataGridViewPrikazPodataka.DataSource = DTOManager.PrikaziOdrasle();
+			HideId();
+			OrderColumns();
+		}
+		private void PrikaziDecuPolaznikeUDataGrid()
+		{
+			ClearDataGrid();
+			dataGridViewPrikazPodataka.DataSource = DTOManager.VratiDecu();
+			HideId();
+			OrderColumns();
+		}
+
+		public void PrikaziPolaznikeUDataGrid()
+		{
+			radioButtonSviPolaznici.Checked = true;  
+			ClearDataGrid();
+			dataGridViewPrikazPodataka.DataSource = DTOManager.vratiPolaznike();
+			HideId();
+			OrderColumns();
+		}
+
+
+		private void UcitajCeoPrikazPolaznika()
+		{
+			panelDodatneFunkcije.Controls.Add(panelDodatneFunkcijePolaznik);
+			panelDodatneFunkcijeNastavnik.Show();
+			panelDodatneFunkcijeNastavnik.BringToFront();
+			PrikaziPolaznikeUDataGrid();
+		}
 		#endregion
 
 
@@ -494,6 +694,9 @@ namespace Muzicka_skola.Forme
 
 
 
-        #endregion
-    }
+
+		#endregion
+
+		
+	}
 }

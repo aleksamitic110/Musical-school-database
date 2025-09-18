@@ -215,12 +215,6 @@
     <Compile Include="Forme\Nastavnik\PrikazNastavnika.Designer.cs">
       <DependentUpon>PrikazNastavnika.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forme\Polaznici\AddPolaznik.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forme\Polaznici\AddPolaznik.Designer.cs">
-      <DependentUpon>AddPolaznik.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forme\GlobalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +226,48 @@
     </Compile>
     <Compile Include="Forme\Nastavnik\IzmeniNastavnik.Designer.cs">
       <DependentUpon>IzmeniNastavnik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Polaznici\AddPolaznik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Polaznici\AddPolaznik.Designer.cs">
+      <DependentUpon>AddPolaznik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Polaznici\DodajStarateljaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Polaznici\DodajStarateljaForm.Designer.cs">
+      <DependentUpon>DodajStarateljaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Polaznici\IzmenaStaratelja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Polaznici\IzmenaStaratelja.Designer.cs">
+      <DependentUpon>IzmenaStaratelja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Polaznici\IzmeniPolaznik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Polaznici\IzmeniPolaznik.Designer.cs">
+      <DependentUpon>IzmeniPolaznik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Polaznici\OdabirPostojecegStaratelja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Polaznici\OdabirPostojecegStaratelja.Designer.cs">
+      <DependentUpon>OdabirPostojecegStaratelja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Polaznici\PrikazDeceStaratelja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Polaznici\PrikazDeceStaratelja.Designer.cs">
+      <DependentUpon>PrikazDeceStaratelja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Polaznici\PrikazKursevaPolaznika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Polaznici\PrikazKursevaPolaznika.Designer.cs">
+      <DependentUpon>PrikazKursevaPolaznika.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\ViewForm.cs">
       <SubType>Form</SubType>
@@ -289,14 +325,32 @@
     <EmbeddedResource Include="Forme\Nastavnik\PrikazNastavnika.resx">
       <DependentUpon>PrikazNastavnika.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forme\Polaznici\AddPolaznik.resx">
-      <DependentUpon>AddPolaznik.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forme\GlobalForm.resx">
       <DependentUpon>GlobalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\Nastavnik\IzmeniNastavnik.resx">
       <DependentUpon>IzmeniNastavnik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Polaznici\AddPolaznik.resx">
+      <DependentUpon>AddPolaznik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Polaznici\DodajStarateljaForm.resx">
+      <DependentUpon>DodajStarateljaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Polaznici\IzmenaStaratelja.resx">
+      <DependentUpon>IzmenaStaratelja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Polaznici\IzmeniPolaznik.resx">
+      <DependentUpon>IzmeniPolaznik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Polaznici\OdabirPostojecegStaratelja.resx">
+      <DependentUpon>OdabirPostojecegStaratelja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Polaznici\PrikazDeceStaratelja.resx">
+      <DependentUpon>PrikazDeceStaratelja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Polaznici\PrikazKursevaPolaznika.resx">
+      <DependentUpon>PrikazKursevaPolaznika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\ViewForm.resx">
       <DependentUpon>ViewForm.cs</DependentUpon>
