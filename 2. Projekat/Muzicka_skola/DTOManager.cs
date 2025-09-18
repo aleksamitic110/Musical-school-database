@@ -760,15 +760,416 @@ namespace Muzicka_skola
 			return polaznici;
 		}
 
+		public static void ObrisiPolaznika(int polaznikId)
+		{
+			int? starateljIdZaProveru = null;
+
+			// ----- DEO 1: Brisanje polaznika (Ovaj deo radi i ostaje isti) -----
+			// Uspešno briše Dete, Polaznika i Osobu koja je vezana SAMO za polaznika.
+			using (ISession session = DataLayer.GetSession())
+			using (ITransaction transaction = session.BeginTransaction())
+			{
+				try
+				{
+					var polaznik = session.Get<Polaznik>(polaznikId);
+					if (polaznik != null)
+					{
+						var pohadjanja = session.Query<Pohadja>().Where(p => p.Polaznik.Id == polaznikId).ToList();
+						foreach (var p in pohadjanja) { session.Delete(p); }
+
+						var polaganja = session.Query<Polaganje>().Where(p => p.Polaznik.Id == polaznikId).ToList();
+						foreach (var p in polaganja) { session.Delete(p); }
+
+						var odrasli = session.Query<Odrasli>().FirstOrDefault(o => o.Polaznik.Id == polaznikId);
+						if (odrasli != null) { session.Delete(odrasli); }
+
+						var dete = session.Query<Dete>().FirstOrDefault(d => d.Polaznik.Id == polaznikId);
+						if (dete != null)
+						{
+							// Sačuvamo ID staratelja za proveru u drugom delu
+							starateljIdZaProveru = dete.Staratelj.Id;
+							session.Delete(dete);
+						}
+
+						// Brišemo polaznika
+						session.Delete(polaznik);
+
+						// Brišemo OSOBU koja je vezana za polaznika
+						var osoba = polaznik.Osoba;
+						if (osoba != null)
+						{
+							foreach (var telefon in osoba.Telefoni.ToList()) { session.Delete(telefon); }
+							session.Delete(osoba);
+						}
+
+						transaction.Commit();
+					}
+				}
+				catch (Exception ex)
+				{
+					transaction?.Rollback();
+					string errorMessage = "Greška prilikom brisanja polaznika (Deo 1): " + ex.Message;
+					if (ex.InnerException != null) { errorMessage += "\n\nInner Exception: " + ex.InnerException.Message; }
+					MessageBox.Show(errorMessage);
+					return;
+				}
+			}
+
+			// ----- DEO 2: Čišćenje "uloge" staratelja (ISPRAVNA LOGIKA) -----
+			if (starateljIdZaProveru.HasValue)
+			{
+				try
+				{
+					using (ISession session2 = DataLayer.GetSession())
+					using (ITransaction transaction2 = session2.BeginTransaction())
+					{
+						int id = starateljIdZaProveru.Value;
+						// Proveravamo da li staratelj ima još dece
+						var brojPreostaleDece = session2.Query<Dete>().Count(d => d.Staratelj.Id == id);
+
+						if (brojPreostaleDece == 0)
+						{
+							// Ako nema više dece, brišemo SAMO zapis iz tabele STARATELJ.
+							var starateljZaBrisanje = session2.Get<Staratelj>(id);
+							if (starateljZaBrisanje != null)
+							{
+								session2.Delete(starateljZaBrisanje);
+							}
+						}
+						transaction2.Commit();
+					}
+				}
+				catch (Exception ex)
+				{
+					string errorMessage = "Greška prilikom čišćenja uloge staratelja (Deo 2): " + ex.Message;
+					if (ex.InnerException != null) { errorMessage += "\n\nInner Exception: " + ex.InnerException.Message; }
+					MessageBox.Show(errorMessage);
+				}
+			}
+		}
+		public static List<KursDTO> VratiKurseveZaPolaznika(int polaznikId)
+		{
+			List<KursDTO> kursevi = new List<KursDTO>();
+			try
+			{
+				using (ISession session = DataLayer.GetSession())
+				{
+					kursevi = session.Query<Pohadja>()
+						.Where(pohadja => pohadja.Polaznik.Id == polaznikId)
+						.Select(pohadja => pohadja.Kurs)
+
+						.Select(kurs => new KursDTO
+						{
+							Id = kurs.Id,
+							Naziv = kurs.Naziv,
+							Nivo = kurs.Nivo,
+							TipNastave = kurs.TipNastave,
+							Filijala = kurs.Filijala.Id,
+							Nastavnik = kurs.Nastavnik.Id
+						})
+						.ToList();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Greška prilikom vraćanja kurseva za polaznika: " + ex.Message);
+			}
+			return kursevi;
+		}
+
+		public static PolaznikDTO VratiDetaljePolaznika(int polaznikId)
+		{
+			try
+			{
+				using (ISession session = DataLayer.GetSession())
+				{
+					// Prvo proveravamo da li je polaznik Dete
+					var dete = session.Query<Dete>().FirstOrDefault(d => d.Polaznik.Id == polaznikId);
+					if (dete != null)
+					{
+						// Ako jeste, kreiramo i popunjavamo DeteDTO
+						var deteDTO = new DeteDTO
+						{
+							Id = dete.Polaznik.Id,
+							JMBG = dete.Polaznik.Osoba.JMBG,
+							Ime = dete.Polaznik.Osoba.Ime,
+							Prezime = dete.Polaznik.Osoba.Prezime,
+							Adresa = dete.Polaznik.Osoba.Adresa,
+							Mail = dete.Polaznik.Osoba.Mail,
+							Telefoni = string.Join(";", dete.Polaznik.Osoba.Telefoni.Select(t => t.BrojTelefona)),
+
+							IdDeteta = dete.Id,
+							DatumRodjenja = dete.DatumRodjenja,
+							BrojDosijea = dete.BrojDosijea,
+							Staratelj = new StarateljDTO
+							{
+								Id = dete.Staratelj.Id,
+								Ime = dete.Staratelj.Osoba.Ime,
+								Prezime = dete.Staratelj.Osoba.Prezime
+							}
+						};
+						return deteDTO;
+					}
+
+					// Ako nije Dete, proveravamo da li je Odrasli
+					var odrasli = session.Query<Odrasli>().FirstOrDefault(o => o.Polaznik.Id == polaznikId);
+					if (odrasli != null)
+					{
+						// Ako jeste, kreiramo i popunjavamo OdrasliDTO
+						var odrasliDTO = new OdrasliDTO
+						{
+							Id = odrasli.Polaznik.Id,
+							JMBG = odrasli.Polaznik.Osoba.JMBG,
+							Ime = odrasli.Polaznik.Osoba.Ime,
+							Prezime = odrasli.Polaznik.Osoba.Prezime,
+							Adresa = odrasli.Polaznik.Osoba.Adresa,
+							Mail = odrasli.Polaznik.Osoba.Mail,
+							Telefoni = string.Join(";", odrasli.Polaznik.Osoba.Telefoni.Select(t => t.BrojTelefona)),
+
+							Zanimanje = odrasli.Zanimanje
+						};
+						return odrasliDTO;
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Greška prilikom učitavanja detalja polaznika: " + ex.Message);
+			}
+			return null;
+		}
+
+		public static bool IzmeniPolaznika(PolaznikDTO podaci)
+		{
+			try
+			{
+				using (ISession session = DataLayer.GetSession())
+				using (ITransaction transaction = session.BeginTransaction())
+				{
+					var polaznikIzBaze = session.Get<Polaznik>(podaci.Id);
+					var osobaIzBaze = session.Get<Osoba>(podaci.JMBG);
+
+					if (polaznikIzBaze == null || osobaIzBaze == null)
+					{
+						MessageBox.Show("Polaznik ili osoba nisu pronađeni u bazi.");
+						return false;
+					}
+
+					osobaIzBaze.Ime = podaci.Ime;
+					osobaIzBaze.Prezime = podaci.Prezime;
+					osobaIzBaze.Adresa = podaci.Adresa;
+					osobaIzBaze.Mail = podaci.Mail;
+
+					osobaIzBaze.Telefoni.Clear();
+					session.Flush();
+					string[] noviTelefoni = podaci.Telefoni.Split(';');
+					foreach (var broj in noviTelefoni)
+					{
+						if (!string.IsNullOrWhiteSpace(broj))
+						{
+							osobaIzBaze.Telefoni.Add(new Telefon { BrojTelefona = broj, Osoba = osobaIzBaze });
+						}
+					}
+
+					if (podaci is DeteDTO detePodaci)
+					{
+						var deteIzBaze = session.Query<Dete>().FirstOrDefault(d => d.Polaznik.Id == podaci.Id);
+						deteIzBaze.DatumRodjenja = detePodaci.DatumRodjenja;
+						deteIzBaze.BrojDosijea = detePodaci.BrojDosijea;
+
+						if (deteIzBaze.Staratelj.Id != detePodaci.Staratelj.Id)
+						{
+							deteIzBaze.Staratelj = session.Load<Staratelj>(detePodaci.Staratelj.Id);
+						}
+						session.Update(deteIzBaze);
+					}
+					else if (podaci is OdrasliDTO odrasliPodaci)
+					{
+						var odrasliIzBaze = session.Query<Odrasli>().FirstOrDefault(o => o.Polaznik.Id == podaci.Id);
+						odrasliIzBaze.Zanimanje = odrasliPodaci.Zanimanje;
+						session.Update(odrasliIzBaze);
+					}
+
+					session.Update(osobaIzBaze);
+					transaction.Commit();
+					return true;
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Greška prilikom izmene polaznika: " + ex.Message);
+				return false;
+			}
+		}
+
 		#endregion
 
 		#region Staratelj
+		public static List<StarateljDTO> VratiStaratelje()
+		{
+			List<StarateljDTO> staratelji = new List<StarateljDTO>();
+
+			try
+			{
+				ISession session = DataLayer.GetSession();
+
+				staratelji = session.Query<Staratelj>()
+					.Select(s => new StarateljDTO(
+						s.Id,
+						s.Deca.ToList(), // IList<Dete> → List<Dete>
+						s.Osoba.JMBG,
+						s.Osoba.Ime,
+						s.Osoba.Prezime,
+						s.Osoba.Adresa,
+						s.Osoba.Mail,
+						string.Join(", ", s.Osoba.Telefoni.Select(t => t.BrojTelefona))
+					))
+					.ToList();
+
+				session.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+
+			return staratelji;
+		}
+
+		public static int SacuvajStaratelja(StarateljBasic noviStaratelj, OsobaBasic novaOsoba)
+		{
+			try
+			{
+				using (ISession session = DataLayer.GetSession())
+				{
+					// Provera da li osoba već postoji po JMBG
+					Osoba osobaUBazi = session.Query<Osoba>().FirstOrDefault(o => o.JMBG == novaOsoba.JMBG);
+					if (osobaUBazi != null)
+					{
+						MessageBox.Show("ERROR: Osoba sa tim JMBG-om već postoji");
+						return -1;
+					}
+
+					// Kreiranje novog entiteta Osoba i popunjavanje telefona
+					Osoba osoba = new Osoba
+					{
+						JMBG = novaOsoba.JMBG,
+						Ime = novaOsoba.Ime,
+						Prezime = novaOsoba.Prezime,
+						Adresa = novaOsoba.Adresa,
+						Mail = novaOsoba.Mail,
+						Telefoni = new List<Telefon>()
+					};
+
+					foreach (var telefonBasic in novaOsoba.Telefoni)
+					{
+						var telefon = new Telefon
+						{
+							BrojTelefona = telefonBasic.BrojTelefona,
+							Osoba = osoba
+						};
+						osoba.Telefoni.Add(telefon);
+					}
+
+					// Kreiranje staratelja i povezivanje sa osobom
+					Staratelj staratelj = new Staratelj
+					{
+						Osoba = osoba,
+						Deca = new List<Dete>()
+					};
+
+					session.Save(osoba);
+					session.Save(staratelj);
+
+					session.Flush();
+
+					return staratelj.Id;  // vraćamo id kreiranog staratelja
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+				return -1;
+			}
+		}
+
+		public static StarateljDTO VratiDetaljeStaratelja(int starateljId)
+		{
+			StarateljDTO staratelj = null;
+			try
+			{
+				using (ISession session = DataLayer.GetSession())
+				{
+					staratelj = session.Query<Staratelj>()
+						.Where(s => s.Id == starateljId)
+						.Select(s => new StarateljDTO
+						{
+							Id = s.Id,
+							JMBG = s.Osoba.JMBG,
+							Ime = s.Osoba.Ime,
+							Prezime = s.Osoba.Prezime,
+							Adresa = s.Osoba.Adresa,
+							Mail = s.Osoba.Mail,
+							Telefoni = string.Join(";", s.Osoba.Telefoni.Select(t => t.BrojTelefona))
+						})
+						.FirstOrDefault();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Greška prilikom učitavanja detalja staratelja: " + ex.Message);
+			}
+			return staratelj;
+		}
+
+		public static bool IzmeniStaratelja(StarateljDTO podaci)
+		{
+			try
+			{
+				using (ISession session = DataLayer.GetSession())
+				using (ITransaction transaction = session.BeginTransaction())
+				{
+					// Učitavamo Osobu koju menjamo (JMBG je ključ)
+					var osobaIzBaze = session.Get<Osoba>(podaci.JMBG);
+
+					if (osobaIzBaze == null)
+					{
+						MessageBox.Show("Osoba nije pronađena u bazi.");
+						return false;
+					}
+
+					// Ažuriramo podatke
+					osobaIzBaze.Ime = podaci.Ime;
+					osobaIzBaze.Prezime = podaci.Prezime;
+					osobaIzBaze.Adresa = podaci.Adresa;
+					osobaIzBaze.Mail = podaci.Mail;
+
+					// Ažuriramo telefone (brisanje starih, dodavanje novih)
+					osobaIzBaze.Telefoni.Clear();
+					session.Flush(); // Odmah primeni brisanje
+					string[] noviTelefoni = podaci.Telefoni.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+					foreach (var broj in noviTelefoni)
+					{
+						osobaIzBaze.Telefoni.Add(new Telefon { BrojTelefona = broj.Trim(), Osoba = osobaIzBaze });
+					}
+
+					session.Update(osobaIzBaze);
+					transaction.Commit();
+					return true;
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Greška prilikom izmene staratelja: " + ex.Message);
+				return false;
+			}
+		}
 
 		#endregion
 
 		#region Nastavnik
-        //cao lux ovde da ti doda pronadjiNastavnika kako bi mogo da nadjem taj objekat
-        public static Nastavnik nadjiNastavnika(int nId)
+		//cao lux ovde da ti doda pronadjiNastavnika kako bi mogo da nadjem taj objekat
+		public static Nastavnik nadjiNastavnika(int nId)
         {
             Nastavnik nast = new Nastavnik();
             try
@@ -1384,35 +1785,288 @@ namespace Muzicka_skola
 
 
 
-        #endregion
+		#endregion
 
-        #region Dete
+		#region Dete
+		public static List<DeteDTO> VratiDecu()
+		{
+			List<DeteDTO> decaDTO = new List<DeteDTO>();
+			try
+			{
+				using (ISession s = DataLayer.GetSession())
+				{
+					decaDTO = s.Query<Dete>()
+								 .Select(dete => new DeteDTO
+								 {
+									 // Podaci o detetu kao polazniku
+									 Id = dete.Polaznik.Id,
+									 JMBG = dete.Polaznik.Osoba.JMBG,
+									 Ime = dete.Polaznik.Osoba.Ime,
+									 Prezime = dete.Polaznik.Osoba.Prezime,
+									 Adresa = dete.Polaznik.Osoba.Adresa,
+									 Mail = dete.Polaznik.Osoba.Mail,
+									 Telefoni = string.Join(", ", dete.Polaznik.Osoba.Telefoni.Select(t => t.BrojTelefona)),
 
-        #endregion
+									 // Specifični podaci za Dete
+									 IdDeteta = dete.Id,
+									 DatumRodjenja = dete.DatumRodjenja,
+									 BrojDosijea = dete.BrojDosijea,
 
-        #region Odrasli
+									 // Kreiramo i popunjavamo StarateljDTO 
+									 Staratelj = new StarateljDTO
+									 {
+										 Id = dete.Staratelj.Id,
+										 Ime = dete.Staratelj.Osoba.Ime, 
+										 Prezime = dete.Staratelj.Osoba.Prezime
+									 }
+								 }).ToList();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Greška prilikom vraćanja dece: " + ex.Message);
+			}
 
-        #endregion
+			return decaDTO;
+		}
+		public static int SacuvajDete(DeteBasic novoDete, int starateljId, PolaznikBasic noviPolaznik, OsobaBasic novaOsoba)
+		{
+			try
+			{
+				using (ISession session = DataLayer.GetSession())
+				{
+					// Pronađi postojeći staratelj u bazi po ID-u
+					Staratelj starateljUBazi = session.Get<Staratelj>(starateljId);
+					if (starateljUBazi == null)
+					{
+						MessageBox.Show("Staratelj sa datim ID-jem ne postoji.");
+						return -1;
+					}
 
-        #region Pohadja
+					// Provera da li osoba sa JMBG već postoji (polaznik i dete koriste Osoba)
+					Osoba osobaUBazi = session.Query<Osoba>().FirstOrDefault(o => o.JMBG == novaOsoba.JMBG);
+					if (osobaUBazi != null)
+					{
+						MessageBox.Show("Osoba sa tim JMBG-om već postoji");
+						return -1;
+					}
 
-        #endregion
+					// Kreiraj novu Osobu za dete (nasleđuje Polaznika i Osobu)
+					Osoba osoba = new Osoba
+					{
+						JMBG = novaOsoba.JMBG,
+						Ime = novaOsoba.Ime,
+						Prezime = novaOsoba.Prezime,
+						Adresa = novaOsoba.Adresa,
+						Mail = novaOsoba.Mail,
+						Telefoni = new List<Telefon>()
+					};
 
-        #region Polaganje
+					foreach (var telefonBasic in novaOsoba.Telefoni)
+					{
+						var telefon = new Telefon
+						{
+							BrojTelefona = telefonBasic.BrojTelefona,
+							Osoba = osoba
+						};
+						osoba.Telefoni.Add(telefon);
+					}
 
-        #endregion
+					// Kreiraj Polaznika i poveži sa Osobom
+					Polaznik polaznik = new Polaznik
+					{
+						Osoba = osoba
+					};
 
-        #region Telefon
+					// Kreiraj Dete i poveži sa Polaznikom i Starateljem
+					Dete dete = new Dete
+					{
+						DatumRodjenja = novoDete.DatumRodjenja,
+						BrojDosijea = novoDete.BrojDosijea,
+						Polaznik = polaznik,
+						Staratelj = starateljUBazi
+					};
 
-        #endregion
+					session.Save(osoba);
+					session.Save(polaznik);
+					session.Save(dete);
 
-        #region Komisija
+					session.Flush();
 
-        #endregion
+					return dete.Id;  // vraćamo id kreiranog deteta
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+				return -1;
+			}
+		}
+		public static List<DeteDTO> VratiDecuStaratelja(int starateljId)
+		{
+			List<DeteDTO> decaStaratelja = new List<DeteDTO>();
+			try
+			{
+				using (ISession session = DataLayer.GetSession())
+				{
+					decaStaratelja = session.Query<Dete>()
+						// 1. Filtriramo decu da pripadaju samo staratelju sa datim ID-jem
+						.Where(dete => dete.Staratelj.Id == starateljId)
 
-        #region Ispit
+						// 2. Popunjavamo DeteDTO na isti način kao u VratiDecu metodi
+						.Select(dete => new DeteDTO
+						{
+							// Podaci o detetu
+							Id = dete.Polaznik.Id,
+							JMBG = dete.Polaznik.Osoba.JMBG,
+							Ime = dete.Polaznik.Osoba.Ime,
+							Prezime = dete.Polaznik.Osoba.Prezime,
+							Adresa = dete.Polaznik.Osoba.Adresa,
+							Mail = dete.Polaznik.Osoba.Mail,
+							Telefoni = string.Join(", ", dete.Polaznik.Osoba.Telefoni.Select(t => t.BrojTelefona)),
+							IdDeteta = dete.Id,
+							DatumRodjenja = dete.DatumRodjenja,
+							BrojDosijea = dete.BrojDosijea,
 
-        #endregion
+							// ---> KLJUČNA IZMENA: Dodajemo i podatke o staratelju <---
+							// Iako je to uvek isti staratelj, popunjavamo objekat
+							// da bi prikaz u tabeli bio isti kao na glavnom ekranu.
+							Staratelj = new StarateljDTO
+							{
+								Id = dete.Staratelj.Id,
+								Ime = dete.Staratelj.Osoba.Ime,
+								Prezime = dete.Staratelj.Osoba.Prezime
+							}
+						})
+						.ToList();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
 
-    }
+			return decaStaratelja;
+		}
+		#endregion
+
+		#region Odrasli
+		public static List<OdrasliDTO> PrikaziOdrasle()
+		{
+			List<OdrasliDTO> odrasliPolaznici = new List<OdrasliDTO>();
+			try
+			{
+				ISession session = DataLayer.GetSession();
+				odrasliPolaznici = session.Query<Odrasli>().Select(h => new OdrasliDTO(
+					h.Zanimanje,
+					h.Polaznik.Id,
+					h.Polaznik.Osoba.JMBG,
+					h.Polaznik.Osoba.Ime,
+					h.Polaznik.Osoba.Prezime,
+					h.Polaznik.Osoba.Adresa,
+					h.Polaznik.Osoba.Mail,
+					string.Join(", ", h.Polaznik.Osoba.Telefoni.Select(t => t.BrojTelefona))
+					)).ToList();
+				session.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			return odrasliPolaznici;
+		}
+		/*
+        public static List<OdrasliDTO> PrikaziDecu()
+		{
+			List<DeteDTO> odrasliPolaznici = new List<DeteDTO>();
+			try
+			{
+				ISession session = DataLayer.GetSession();
+				odrasliPolaznici = session.Query<Dete>().Select(h => new DeteDTO(
+					h.Polaznik.Id,
+					h.Polaznik.Osoba.JMBG,
+					h.Polaznik.Osoba.Ime,
+					h.Polaznik.Osoba.Prezime,
+					h.Polaznik.Osoba.Adresa,
+					h.Polaznik.Osoba.Mail,
+					string.Join(", ", h.Polaznik.Osoba.Telefoni.Select(t => t.BrojTelefona))
+
+					)).ToList();
+				session.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			return odrasliPolaznici;
+		}
+        */
+		public static bool SacuvajOdraslogPolaznika(OdrasliBasic noviOdrasli, OsobaBasic novaOsoba, PolaznikBasic noviPolaznik)
+		{
+			try
+			{
+				ISession session = DataLayer.GetSession();
+				Osoba osobaUBazi = session.Query<Osoba>().FirstOrDefault(o => o.JMBG == novaOsoba.JMBG);
+				if (osobaUBazi != null)
+				{
+					throw new Exception("Osoba sa tim JMBG-om vec postoji");
+				}
+				Osoba osoba = new Osoba
+				{
+					Adresa = novaOsoba.Adresa,
+					Ime = novaOsoba.Ime,
+					JMBG = novaOsoba.JMBG,
+					Mail = novaOsoba.Mail,
+					Prezime = novaOsoba.Prezime,
+				};
+				foreach (var item in novaOsoba.Telefoni)
+				{
+					var telefon = new Telefon { BrojTelefona = item.BrojTelefona, Osoba = osoba };
+					osoba.Telefoni.Add(telefon);
+				}
+				Polaznik polaznik = new Polaznik
+				{
+					Osoba = osoba
+				};
+				Odrasli odrasli = new Odrasli
+				{
+					Polaznik = polaznik,
+					Zanimanje = noviOdrasli.Zanimanje
+				};
+				session.Save(osoba);
+				session.Save(polaznik);
+				session.Save(odrasli);
+
+				session.Close();
+				return true;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			return false;
+		}
+		#endregion
+
+		#region Pohadja
+
+		#endregion
+
+		#region Polaganje
+
+		#endregion
+
+		#region Telefon
+
+		#endregion
+
+		#region Komisija
+
+		#endregion
+
+		#region Ispit
+
+		#endregion
+
+	}
 }
