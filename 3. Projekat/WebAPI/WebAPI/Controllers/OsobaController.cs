@@ -1,24 +1,37 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MuzickaSkola;
-using Muzicka_skola;
-using NHibernate;
-using DatabaseAccess.DataProviders;
+﻿using DatabaseAccess.DataProviders;
 using DatabaseAccess.DTOs;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
+{
+    [Route("[controller]")]
+    [ApiController]
+    public class OsobaController : ControllerBase
     {
-        [ApiController]
-        [Route("[controller]")]
-    
-        public class PolaznikController : ControllerBase
-        {
-
-        [HttpGet("VratiPolaznike")]
+        [HttpPost("SacuvajOsobu")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> VratiPolaznikeAsync()
+        public async Task<IActionResult> SacuvajOsobuAsync([FromBody] OsobaBasic novaOsoba)
         {
-            var rezultat = await PolaznikDataProvider.VratiPolaznikeAsync();
+            var rezultat = await OsobaDataProvider.SacuvajOsobuAsync(novaOsoba);
+
+            if (!rezultat.IsSuccess)
+            {
+                return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
+            }
+
+            return Ok(rezultat.Data); 
+        }
+
+        [HttpDelete("ObrisiOsobu/{jmbg}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> ObrisiOsobuAsync([FromRoute] string jmbg)
+        {
+            var rezultat = await OsobaDataProvider.ObrisiOsobuAsync(jmbg);
 
             if (!rezultat.IsSuccess)
             {
@@ -28,16 +41,31 @@ namespace WebAPI.Controllers
             return Ok(rezultat.Data);
         }
 
-        [HttpDelete("ObrisiPolaznika/{polaznikId}")]
+        [HttpGet("PrikaziSveOsobe")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> PrikaziSveOsobeAsync()
+        {
+            var rezultat = await OsobaDataProvider.PrikaziSveOsobeAsync();
+
+            if (!rezultat.IsSuccess)
+            {
+                return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
+            }
+
+            return Ok(rezultat.Data); 
+        }
+
+        [HttpPut("IzmeniOsobu")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> ObrisiPolaznikaAsync(int polaznikId)
+        public async Task<IActionResult> IzmeniOsobuAsync([FromBody] OsobaBasic novaOsoba)
         {
 
-
-            var rezultat = await PolaznikDataProvider.ObrisiPolaznikaAsync(polaznikId);
+            var rezultat = await OsobaDataProvider.IzmeniOsobuAsync(novaOsoba);
 
             if (!rezultat.IsSuccess)
             {
@@ -47,41 +75,6 @@ namespace WebAPI.Controllers
             return Ok(rezultat.Data);
         }
 
-        [HttpPut("IzmeniPolaznika")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> IzmeniPolaznikaAsync([FromBody] PolaznikDTO podaci)
-        {
-
-            var rezultat = await PolaznikDataProvider.IzmeniPolaznikaAsync(podaci);
-
-            if (!rezultat.IsSuccess)
-            {
-                return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
-            }
-
-            return Ok(rezultat.Data);
-        }
-
-        [HttpPost("DodajPolaznika")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DodajPolaznikaAsync([FromBody] OsobaBasic novaOsoba)
-        {
-
-            var rezultat = await PolaznikDataProvider.DodajPolaznikaAsync(novaOsoba);
-
-            if (!rezultat.IsSuccess)
-            {
-                return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
-            }
-
-            return Ok(rezultat.Data);
-        }
 
     }
 }
-

@@ -36,7 +36,7 @@ namespace DatabaseAccess.DTOs
             public string Id { get; set; }
             public string Oznaka { get; set; }
             public int KapacitetUcionice { get; set; }
-            public string FilijalaId { get; set; }   // flatten reference
+            public string FilijalaId { get; set; }  
 
             public UcionicaDTO() { }
 
@@ -240,8 +240,14 @@ namespace DatabaseAccess.DTOs
             }
         }
 
+          public class SacuvajStarateljaDTO
+          {
+            public StarateljBasic NoviStaratelj { get; set; }
+            public OsobaBasic NovaOsoba { get; set; }
+           }
 
-        public class StarateljBasic
+
+    public class StarateljBasic
         {
             public IList<Dete> Deca { get; set; }
 
@@ -353,7 +359,25 @@ namespace DatabaseAccess.DTOs
             }
         }
 
-        public class StalniBasic
+         public class SacuvajStalnogDTO
+         {
+        public StalniBasic NoviStalni { get; set; }
+        public string MentorJMBG { get; set; }
+        public OsobaBasic NovaOsoba { get; set; }
+        public NastavnikBasic NoviNastavnik { get; set; }
+         }
+
+          public class IzmeniStalnogDTO
+          {
+        public StalniBasic NoviStalni { get; set; }
+        public int StalniId { get; set; }
+        public string MentorJMBG { get; set; }
+        public OsobaBasic NovaOsoba { get; set; }
+        public NastavnikBasic NoviNastavnik { get; set; }
+        public int NastavnikId { get; set; }
+         }
+
+    public class StalniBasic
         {
             public string RadnoVreme { get; set; }
         }
@@ -379,7 +403,14 @@ namespace DatabaseAccess.DTOs
             }
         }
 
-        public class DeteBasic
+        public class SacuvajDeteDTO
+        {
+        public DeteBasic NovoDete { get; set; }
+        public PolaznikBasic NoviPolaznik { get; set; }
+        public OsobaBasic NovaOsoba { get; set; }
+        }
+
+    public class DeteBasic
         {
             public int IdDeteta { get; set; }
             public DateTime DatumRodjenja { get; set; }
@@ -387,10 +418,16 @@ namespace DatabaseAccess.DTOs
             public StarateljBasic Staratelj { get; set; }
 
         }
-        #endregion
+         public class DeteUpdateRequest
+        {
+        public DeteDTO Dete { get; set; }
+        public PolaznikBasic NoviPolaznik { get; set; }
+        public OsobaBasic NovaOsoba { get; set; }
+         }
+    #endregion
 
-        #region Odrasli
-        public class OdrasliDTO : PolaznikDTO
+    #region Odrasli
+    public class OdrasliDTO : PolaznikDTO
         {
             public String Zanimanje { get; set; }
 
@@ -407,11 +444,25 @@ namespace DatabaseAccess.DTOs
         {
             public String Zanimanje;
         }
-        #endregion
-
-        #region Pohadja
-        public class PohadjaDTO
+        public class OdrasliUpdateRequest
         {
+        public PolaznikBasic NoviPolaznik { get; set; }
+        public OdrasliBasic NoviOdrasli { get; set; }
+        public OsobaBasic NovaOsoba { get; set; }
+        }
+    #endregion
+
+    #region Pohadja
+    public class PohadjaDTO
+        {
+           public int ID { get; set; }
+           public Polaznik Polaznik { get; set; }
+           public Kurs Kurs { get; set; }
+          public PohadjaDTO(int id, Polaznik polaznik, Kurs kurs) { 
+            ID = id;
+            Polaznik = polaznik;
+            Kurs = kurs;   
+        }
 
         }
         #endregion
@@ -441,10 +492,16 @@ namespace DatabaseAccess.DTOs
             }
 
         }
-        #endregion
 
-        #region Telefon
-        public class TelefonDTO
+         public class DodajPolaganjeDTO
+         {
+        public List<int> PolaznikIds { get; set; }
+        public string IspitId { get; set; }
+         }
+    #endregion
+
+    #region Telefon
+    public class TelefonDTO
         {
 
         }

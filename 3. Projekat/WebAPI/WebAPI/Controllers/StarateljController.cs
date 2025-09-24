@@ -1,24 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MuzickaSkola;
-using Muzicka_skola;
-using NHibernate;
-using DatabaseAccess.DataProviders;
+﻿using DatabaseAccess.DataProviders;
 using DatabaseAccess.DTOs;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
+{
+    [Route("[controller]")]
+    [ApiController]
+    public class StarateljController : ControllerBase
     {
-        [ApiController]
-        [Route("[controller]")]
-    
-        public class PolaznikController : ControllerBase
-        {
-
-        [HttpGet("VratiPolaznike")]
+        [HttpGet("VratiStaratelje")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> VratiPolaznikeAsync()
+        public async Task<IActionResult> VratiStarateljeAsync()
         {
-            var rezultat = await PolaznikDataProvider.VratiPolaznikeAsync();
+            var rezultat = await StarateljDataProvider.VratiStarateljeAsync();
 
             if (!rezultat.IsSuccess)
             {
@@ -28,16 +24,32 @@ namespace WebAPI.Controllers
             return Ok(rezultat.Data);
         }
 
-        [HttpDelete("ObrisiPolaznika/{polaznikId}")]
+        [HttpPost("SacuvajStaratelja")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> SacuvajStarateljaAsync([FromBody] SacuvajStarateljaDTO sacuvajStarateljaDTO)
+        {
+
+            var rezultat = await StarateljDataProvider.SacuvajStarateljaAsync(sacuvajStarateljaDTO.NoviStaratelj, sacuvajStarateljaDTO.NovaOsoba);
+
+            if (!rezultat.IsSuccess)
+            {
+                return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
+            }
+
+            return Ok(rezultat.Data);
+        }
+
+        [HttpPut("IzmeniStaratelja")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> ObrisiPolaznikaAsync(int polaznikId)
+        public async Task<IActionResult> IzmeniStarateljaAsync([FromBody] StarateljDTO podaci)
         {
 
-
-            var rezultat = await PolaznikDataProvider.ObrisiPolaznikaAsync(polaznikId);
+            var rezultat = await StarateljDataProvider.IzmeniStarateljaAsync(podaci);
 
             if (!rezultat.IsSuccess)
             {
@@ -47,15 +59,16 @@ namespace WebAPI.Controllers
             return Ok(rezultat.Data);
         }
 
-        [HttpPut("IzmeniPolaznika")]
+
+        [HttpDelete("ObrisiStaratelja/{starateljId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> IzmeniPolaznikaAsync([FromBody] PolaznikDTO podaci)
+        public async Task<IActionResult> ObrisiStarateljaAsync(int starateljId)
         {
 
-            var rezultat = await PolaznikDataProvider.IzmeniPolaznikaAsync(podaci);
+            var rezultat = await StarateljDataProvider.ObrisiStarateljaAsync(starateljId);
 
             if (!rezultat.IsSuccess)
             {
@@ -65,23 +78,6 @@ namespace WebAPI.Controllers
             return Ok(rezultat.Data);
         }
 
-        [HttpPost("DodajPolaznika")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DodajPolaznikaAsync([FromBody] OsobaBasic novaOsoba)
-        {
-
-            var rezultat = await PolaznikDataProvider.DodajPolaznikaAsync(novaOsoba);
-
-            if (!rezultat.IsSuccess)
-            {
-                return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
-            }
-
-            return Ok(rezultat.Data);
-        }
 
     }
 }
-

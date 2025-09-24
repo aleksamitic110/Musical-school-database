@@ -1,24 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MuzickaSkola;
-using Muzicka_skola;
-using NHibernate;
-using DatabaseAccess.DataProviders;
+﻿using DatabaseAccess.DataProviders;
 using DatabaseAccess.DTOs;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
+{
+    [Route("[controller]")]
+    [ApiController]
+    public class OdrasliController : ControllerBase
     {
-        [ApiController]
-        [Route("[controller]")]
-    
-        public class PolaznikController : ControllerBase
-        {
-
-        [HttpGet("VratiPolaznike")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [HttpGet("PrikaziOdrasle")]
+        [ProducesResponseType(typeof(List<OdrasliDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> VratiPolaznikeAsync()
+        public async Task<IActionResult> PrikaziOdrasleAsync()
         {
-            var rezultat = await PolaznikDataProvider.VratiPolaznikeAsync();
+            var rezultat = await OdrasliDataProvider.PrikaziOdrasleAsync();
 
             if (!rezultat.IsSuccess)
             {
@@ -28,16 +24,33 @@ namespace WebAPI.Controllers
             return Ok(rezultat.Data);
         }
 
-        [HttpDelete("ObrisiPolaznika/{polaznikId}")]
+        [HttpPost("SacuvajOdraslog")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> SacuvajOdraslogPolaznikaAsync([FromBody] OdrasliUpdateRequest model)
+        {
+            var rezultat = await OdrasliDataProvider.SacuvajOdraslogPolaznikaAsync(
+                model.NoviOdrasli,
+                model.NovaOsoba,
+                model.NoviPolaznik
+            );
+
+            if (!rezultat.IsSuccess)
+            {
+                return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
+            }
+
+            return Ok(rezultat.Data);
+        }
+
+        [HttpDelete("ObrisiOdraslog/{polaznikId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> ObrisiPolaznikaAsync(int polaznikId)
+        public async Task<IActionResult> ObrisiOdraslogPolaznikaAsync(int polaznikId)
         {
-
-
-            var rezultat = await PolaznikDataProvider.ObrisiPolaznikaAsync(polaznikId);
+            var rezultat = await OdrasliDataProvider.ObrisiOdraslogPolaznikaAsync(polaznikId);
 
             if (!rezultat.IsSuccess)
             {
@@ -47,15 +60,14 @@ namespace WebAPI.Controllers
             return Ok(rezultat.Data);
         }
 
-        [HttpPut("IzmeniPolaznika")]
+        [HttpPut("IzmeniPodatkeOdraslogPolaznika/{polaznikId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> IzmeniPolaznikaAsync([FromBody] PolaznikDTO podaci)
+        public async Task<IActionResult> IzmeniPodatkeOdraslogPolaznikaAsync(int polaznikId, [FromBody] OdrasliBasic noviOdrasli)
         {
 
-            var rezultat = await PolaznikDataProvider.IzmeniPolaznikaAsync(podaci);
+            var rezultat = await OdrasliDataProvider.IzmeniPodatkeOdraslogPolaznikaAsync(polaznikId, noviOdrasli);
 
             if (!rezultat.IsSuccess)
             {
@@ -65,23 +77,8 @@ namespace WebAPI.Controllers
             return Ok(rezultat.Data);
         }
 
-        [HttpPost("DodajPolaznika")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DodajPolaznikaAsync([FromBody] OsobaBasic novaOsoba)
-        {
 
-            var rezultat = await PolaznikDataProvider.DodajPolaznikaAsync(novaOsoba);
 
-            if (!rezultat.IsSuccess)
-            {
-                return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
-            }
-
-            return Ok(rezultat.Data);
-        }
 
     }
 }
-

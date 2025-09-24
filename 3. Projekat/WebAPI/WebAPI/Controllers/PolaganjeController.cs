@@ -1,24 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MuzickaSkola;
-using Muzicka_skola;
-using NHibernate;
-using DatabaseAccess.DataProviders;
+﻿using DatabaseAccess.DataProviders;
 using DatabaseAccess.DTOs;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
+{
+    [Route("[controller]")]
+    [ApiController]
+    public class PolaganjeController : ControllerBase
     {
-        [ApiController]
-        [Route("[controller]")]
-    
-        public class PolaznikController : ControllerBase
+        [HttpGet("VratiPolaznikeKojiSuPolagaliIspit/{ispitId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> VratiPolaznikeKojiSuPolagaliIspitAsync(string ispitId)
         {
 
-        [HttpGet("VratiPolaznike")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> VratiPolaznikeAsync()
-        {
-            var rezultat = await PolaznikDataProvider.VratiPolaznikeAsync();
+            var rezultat = await PolaganjeDataProvider.VratiPolaznikeKojiSuPolagaliIspitAsync(ispitId);
 
             if (!rezultat.IsSuccess)
             {
@@ -28,16 +26,15 @@ namespace WebAPI.Controllers
             return Ok(rezultat.Data);
         }
 
-        [HttpDelete("ObrisiPolaznika/{polaznikId}")]
+        [HttpPut("OceniPolaganje/{polaganjeId}/{ocena}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> ObrisiPolaznikaAsync(int polaznikId)
+        public async Task<IActionResult> OceniPolaganjePolaznikaAsync(int polaganjeId, int ocena)
         {
-
-
-            var rezultat = await PolaznikDataProvider.ObrisiPolaznikaAsync(polaznikId);
+            bool polozio = ocena > 5;
+            var rezultat = await PolaganjeDataProvider.OceniPolaganjePolaznikaAsync(polaganjeId, polozio, ocena);
 
             if (!rezultat.IsSuccess)
             {
@@ -47,15 +44,14 @@ namespace WebAPI.Controllers
             return Ok(rezultat.Data);
         }
 
-        [HttpPut("IzmeniPolaznika")]
+        [HttpPost("DodajPolaganje")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> IzmeniPolaznikaAsync([FromBody] PolaznikDTO podaci)
+        public async Task<IActionResult> DodajPolaganjeAsync([FromBody] DodajPolaganjeDTO dodajPolaganjeDto)
         {
-
-            var rezultat = await PolaznikDataProvider.IzmeniPolaznikaAsync(podaci);
+            var rezultat = await PolaganjeDataProvider.DodajPolaganjeAsync(dodajPolaganjeDto.PolaznikIds, dodajPolaganjeDto.IspitId);
 
             if (!rezultat.IsSuccess)
             {
@@ -65,14 +61,15 @@ namespace WebAPI.Controllers
             return Ok(rezultat.Data);
         }
 
-        [HttpPost("DodajPolaznika")]
+        [HttpDelete("ObrisiPolaganje/{polaganjeId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DodajPolaznikaAsync([FromBody] OsobaBasic novaOsoba)
+        public async Task<IActionResult> ObrisiPolaganjeAsync(int polaganjeId)
         {
 
-            var rezultat = await PolaznikDataProvider.DodajPolaznikaAsync(novaOsoba);
+            var rezultat = await PolaganjeDataProvider.ObrisiPolaganjeAsync(polaganjeId);
 
             if (!rezultat.IsSuccess)
             {
@@ -84,4 +81,3 @@ namespace WebAPI.Controllers
 
     }
 }
-
