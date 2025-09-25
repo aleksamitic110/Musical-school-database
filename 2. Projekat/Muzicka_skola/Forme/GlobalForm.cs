@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Muzicka_skola.Forme
 {
@@ -33,11 +34,15 @@ namespace Muzicka_skola.Forme
 			InitializeComponent();
 		}
 
+        public void playSoundFromRes()
+        {
+            SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.Paganini);
+            simpleSound.Play();
+        }
+
 		private void Ucitaj(Tip tip)
 		{
 			this.panelDodatneFunkcije.Controls.Clear();
-			this.panelDodatniFilteri.Controls.Clear();
-			this.panelStandardniFilteri.Controls.Clear();
 
 
 			switch (tip)
@@ -508,8 +513,15 @@ namespace Muzicka_skola.Forme
         private void prikaziPolaznikeKursa_Click(object sender, EventArgs e)
         {
             var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
-            string kursId = (string)selectedRow.Cells["Id"].Value;
-			this.dataGridViewPrikazPodataka.DataSource = DTOManager.nadjiPolaznikeZaKursDTO(kursId);
+            if (selectedRow != null)
+            {
+                string kursId = (string)selectedRow.Cells["Id"].Value;
+			    this.dataGridViewPrikazPodataka.DataSource = DTOManager.nadjiPolaznikeZaKursDTO(kursId);
+            }
+            else
+            {
+                MessageBox.Show("Selektuj Kurs");
+            }
         }
         private void zakaziCas_Click(object sender, EventArgs e)
         {
@@ -525,7 +537,7 @@ namespace Muzicka_skola.Forme
         private void prikaziFilijalu_Click(object sender, EventArgs e)
         {
             var selectedRow = dataGridViewPrikazPodataka.CurrentRow;
-			if (selectedRow != null && selektovanTipKursa == 'D')
+			if (selectedRow != null)
 			{
 				string filijalaId = (string)selectedRow.Cells["Filijala"].Value;
 				this.dataGridViewPrikazPodataka.DataSource = new List<FilijalaDTO> { DTOManager.nadjiFilijaluDTO(filijalaId) };
@@ -541,6 +553,19 @@ namespace Muzicka_skola.Forme
 			this.dataGridViewPrikazPodataka.DataSource = DTOManager.vratiKursPoFilijali((string)comboBoxFilijalaID.SelectedValue);
 			selektovanTipKursa = 'D';
         }
+
+        private void dodajPolaznike_Click(object sender, EventArgs e)
+        {
+            var selectedRowK = dataGridViewPrikazPodataka.CurrentRow;
+
+            if (selectedRowK != null)
+            {
+                KursDTO selectedKurs = selectedRowK.DataBoundItem as KursDTO;
+                ListaPolazinka lp = new ListaPolazinka(this, selectedKurs);
+                lp.ShowDialog();
+            }
+        }
+
         #endregion
 
 
@@ -630,7 +655,6 @@ namespace Muzicka_skola.Forme
         #region Nastavnici
         private void NastavniciRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            panelMentorButtons.Visible = radioButtonStalni.Checked;
 
             if (radioButtonSviNastavnici.Checked)
 			{
@@ -803,8 +827,13 @@ namespace Muzicka_skola.Forme
 
 
 
-		#endregion
 
-		
-	}
+
+        #endregion
+
+        private void pictureBoxPocetna_Click(object sender, EventArgs e)
+        {
+            playSoundFromRes();
+        }
+    }
 }

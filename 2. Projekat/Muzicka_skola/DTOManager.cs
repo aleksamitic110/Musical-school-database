@@ -113,6 +113,65 @@ namespace Muzicka_skola
         #endregion
 
         #region Kurs
+
+        public static void dodajPolaznikaNaKurs(PolaznikDTO polaznik, KursDTO kurs)
+        {
+            ISession session = null;
+            try
+            {
+                session = DataLayer.GetSession();
+                ITransaction transaction = session.BeginTransaction();
+
+                Polaznik p = session.Get<Polaznik>(polaznik.Id);
+                Kurs k = session.Get<Kurs>(kurs.Id);
+
+                Pohadja novaPohadja = new Pohadja
+                {
+                    Polaznik = p,
+                    Kurs = k
+                };
+
+                session.Save(novaPohadja);
+                transaction.Commit();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (session != null && session.IsOpen)
+                {
+                    session.Close();
+                }
+            }
+        }
+
+        public static List<PolaznikDTO> vratiPolaznikeBezKursa(KursDTO k) {
+            List<PolaznikDTO> polaznici = new List<PolaznikDTO>();
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                polaznici = session.Query<Polaznik>().Where(p => !p.Kursevi.Any(ph => ph.Kurs.Id == k.Id))
+                    .Select(n => new PolaznikDTO(
+                    n.Id,
+                    n.Osoba.JMBG,
+                    n.Osoba.Ime,
+                    n.Osoba.Prezime,
+                    n.Osoba.Adresa,
+                    n.Osoba.Mail,
+                    string.Join(", ", n.Osoba.Telefoni.Select(t => t.BrojTelefona))
+                    )).ToList();
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return polaznici;
+        }
+
         public static List<KursDTO> vratiSveKurseve()
         {
             List<KursDTO> kursevi = new List<KursDTO>();

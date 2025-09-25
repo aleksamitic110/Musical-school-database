@@ -221,6 +221,12 @@
     <Compile Include="Forme\Kursevi\DodajKurs.Designer.cs">
       <DependentUpon>DodajKurs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\Kursevi\ListaPolazinka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Kursevi\ListaPolazinka.Designer.cs">
+      <DependentUpon>ListaPolazinka.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\Kursevi\UpdateKurs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -364,6 +370,9 @@
     <EmbeddedResource Include="Forme\Kursevi\DodajKurs.resx">
       <DependentUpon>DodajKurs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Kursevi\ListaPolazinka.resx">
+      <DependentUpon>ListaPolazinka.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forme\Kursevi\UpdateKurs.resx">
       <DependentUpon>UpdateKurs.cs</DependentUpon>
     </EmbeddedResource>
@@ -420,6 +429,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
@@ -441,6 +451,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Paganini.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
