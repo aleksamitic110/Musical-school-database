@@ -33,7 +33,24 @@ namespace WebAPI.Controllers
 			return Ok(rezultat.Data);
 		}
 
-		[HttpPost("DodajClana")]
+        [HttpPut("IzmeniClana/{id}")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> IzmeniClanaKomisijeAsync(int id, [FromBody] KomisijaDTO izmenaVeze)
+        {
+            var rezultat = await KomisijaDataProvider.IzmeniClanaKomisijeAsync(id, izmenaVeze);
+
+            if (!rezultat.IsSuccess)
+                return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
+
+            return Ok(rezultat.Data);
+        }
+
+
+        [HttpPost("DodajClana")]
 		[ProducesResponseType(typeof(int), StatusCodes.Status201Created)]
 		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[ProducesResponseType(StatusCodes.Status409Conflict)]
@@ -44,8 +61,8 @@ namespace WebAPI.Controllers
 			var rezultat = await KomisijaDataProvider.DodajClanaKomisijeAsync(novaVeza);
 			if (!rezultat.IsSuccess)
 				return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
-			return StatusCode(201, rezultat.Data); 
-		}
+            return Ok(rezultat.Data);
+        }
 
 		[HttpDelete("ObrisiClana/{komisijaId}")]
 		[ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]

@@ -22,36 +22,24 @@ namespace WebAPI.Controllers
 			return Ok(rezultat.Data);
 		}
 
-		[HttpGet("VratiKandidate/{ispitId}")]
-		[ProducesResponseType(typeof(List<PolaznikDTO>), StatusCodes.Status200OK)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-		public async Task<IActionResult> VratiKandidateAsync(string ispitId)
-		{
-			var rezultat = await IspitDataProvider.VratiPolaznikeKojiNePolazuAsync(ispitId);
-			if (!rezultat.IsSuccess)
-				return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
-			return Ok(rezultat.Data);
-		}
-
 		[HttpPost("Dodaj")]
 		[ProducesResponseType(typeof(string), StatusCodes.Status201Created)]
 		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-		public async Task<IActionResult> DodajIspitAsync([FromBody] IspitBasic novi)
+		public async Task<IActionResult> DodajIspitAsync([FromBody] IspitSaveDto novi)
 		{
-			var rezultat = await IspitDataProvider.DodajIspitAsync(novi);
+			var rezultat = await IspitDataProvider.SacuvajIspitAsync(novi);
 			if (!rezultat.IsSuccess)
 				return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
-			return CreatedAtAction(nameof(VratiSveIspiteAsync), new { }, rezultat.Data); // Vra?amo samo ID
-		}
+            return Ok(rezultat.Data);
+        }
 
 		[HttpPut("Izmeni")]
 		[ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-		public async Task<IActionResult> IzmeniIspitAsync([FromBody] IspitBasic podaci)
+		public async Task<IActionResult> IzmeniIspitAsync([FromBody] IspitUpdateDto podaci)
 		{
 			var rezultat = await IspitDataProvider.IzmeniIspitAsync(podaci);
 			if (!rezultat.IsSuccess)

@@ -56,8 +56,8 @@ namespace WebAPI.Controllers
 			}
 
 
-			return CreatedAtAction(nameof(NadjiCasAsync), new { casId = rezultat.Data }, null);
-		}
+            return Ok(rezultat.Data);
+        }
 
 		[HttpPut("IzmeniCas")]
 		[ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]

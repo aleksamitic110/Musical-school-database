@@ -55,8 +55,8 @@ namespace WebAPI.Controllers
 				return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
 			}
 
-			return CreatedAtAction(nameof(NadjiFilijaluAsync), new { filijalaId = rezultat.Data }, null);
-		}
+            return Ok(rezultat.Data);
+        }
 
 		[HttpPut("IzmeniFilijalu")]
 		[ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]

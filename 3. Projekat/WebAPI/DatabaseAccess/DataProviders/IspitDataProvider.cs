@@ -11,233 +11,130 @@ namespace DatabaseAccess.DataProviders
 {
     public static class IspitDataProvider
     {
-		#region GET Metode
+        public static async Task<Result<string, ErrorMessage>> SacuvajIspitAsync(IspitSaveDto dto)
+        {
+            ISession session = null;
+            try
+            {
+                session = DataLayer.GetSession();
 
-		public static async Task<Result<List<IspitDTO>, ErrorMessage>> VratiSveIspiteAsync()
-		{
-			ISession session = null;
-			try
-			{
-				session = DataLayer.GetSession();
+                var kurs = await session.GetAsync<Kurs>(dto.KursId);
+                if (kurs == null)
+                    return new ErrorMessage("Kurs ne postoji.", 400);
 
-				
-				var ispitiEntities = await session.Query<Ispit>()
-					.Fetch(i => i.Kurs)
-					.FetchMany(i => i.Komisija)
-					.ThenFetch(k => k.Nastavnik)
-					.ThenFetch(n => n.Osoba)
-					.ToListAsync();
+                var ispit = new Ispit
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Kurs = kurs,
+                    Datum = dto.Datum
+                };
 
-				
-				await session.Query<Polaganje>()
-					.Where(p => ispitiEntities.Contains(p.Ispit)) // Dohvati samo za ispite koje smo već našli
-					.Fetch(p => p.Polaznik) // Opciono, ako ti trebaju podaci o polazniku
-					.ToListAsync();
+                await session.SaveAsync(ispit);
+                await session.FlushAsync();
+                return ispit.Id;
+            }
+            catch (Exception ex)
+            {
+                return new ErrorMessage(ex.Message, 500);
+            }
+            finally
+            {
+                session?.Close();
+                session?.Dispose();
+            }
+        }
 
-				
-				var ispitiDto = new List<IspitDTO>();
-				foreach (var i in ispitiEntities)
-				{
-					var komisijaStr = string.Join(", ", i.Komisija.Select(k => $"{k.Nastavnik.Osoba.Ime} {k.Nastavnik.Osoba.Prezime}"));
+        public static async Task<Result<bool, ErrorMessage>> IzmeniIspitAsync(IspitUpdateDto dto)
+        {
+            ISession session = null;
+            try
+            {
+                session = DataLayer.GetSession();
 
-					var polozenaPolaganja = i.Polaganja.Where(p => p.Polozio);
-					double prosecnaOcena = polozenaPolaganja.Any() ? polozenaPolaganja.Average(p => p.Ocena) : 0;
+                var ispit = await session.GetAsync<Ispit>(dto.Id);
+                if (ispit == null)
+                    return new ErrorMessage($"Ispit sa Id={dto.Id} nije pronađen.", 404);
 
-					ispitiDto.Add(new IspitDTO
-					{
-						Id = i.Id,
-						KursId = i.Kurs.Id,
-						KursNaziv = i.Kurs.Naziv,
-						Datum = i.Datum,
-						Komisija = komisijaStr,
-						ProsecnaOcena = prosecnaOcena
-					});
-				}
+                var kurs = await session.GetAsync<Kurs>(dto.KursId);
+                if (kurs == null)
+                    return new ErrorMessage("Kurs ne postoji.", 400);
 
-				return ispitiDto;
-			}
-			catch (Exception ex)
-			{
-				return new ErrorMessage(ex.Message, 500);
-			}
-			finally
-			{
-				session?.Close();
-				session?.Dispose();
-			}
-		}
+                ispit.Kurs = kurs;
+                ispit.Datum = dto.Datum;
 
-		public static async Task<Result<List<PolaznikDTO>, ErrorMessage>> VratiPolaznikeKojiNePolazuAsync(string ispitId)
-		{
-			ISession session = null;
-			try
-			{
-				session = DataLayer.GetSession();
-			
-				var ispit = await session.GetAsync<Ispit>(ispitId);
-				if (ispit == null)
-					return new ErrorMessage("Ispit sa datim ID-jem ne postoji.", 404);
+                await session.UpdateAsync(ispit);
+                await session.FlushAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return new ErrorMessage(ex.Message, 500);
+            }
+            finally
+            {
+                session?.Close();
+                session?.Dispose();
+            }
+        }
 
-			
-				var sviPolazniciNaKursuIds = await session.Query<Pohadja>()
-													 .Where(p => p.Kurs.Id == ispit.Kurs.Id)
-													 .Select(p => p.Polaznik.Id)
-													 .ToListAsync();
+        public static async Task<Result<bool, ErrorMessage>> ObrisiIspitAsync(string ispitId)
+        {
+            ISession session = null;
+            try
+            {
+                session = DataLayer.GetSession();
 
-				
-				var polazniciKojiPolazuIds = await session.Query<Polaganje>()
-													  .Where(p => p.Ispit.Id == ispitId)
-													  .Select(p => p.Polaznik.Id)
-													  .ToListAsync();
+                var ispit = await session.GetAsync<Ispit>(ispitId);
+                if (ispit == null)
+                    return new ErrorMessage($"Ispit sa Id={ispitId} nije pronađen.", 404);
 
-				
-				var kandidatiIds = sviPolazniciNaKursuIds.Except(polazniciKojiPolazuIds);
+                await session.DeleteAsync(ispit);
+                await session.FlushAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return new ErrorMessage(ex.Message, 500);
+            }
+            finally
+            {
+                session?.Close();
+                session?.Dispose();
+            }
+        }
 
-				var polaznici = await session.Query<Polaznik>()
-					.Where(p => kandidatiIds.Contains(p.Id))
-					.Select(p => new PolaznikDTO
-					{
-						Id = p.Id,
-						JMBG = p.Osoba.JMBG,
-						Ime = p.Osoba.Ime,
-						Prezime = p.Osoba.Prezime,
-						Adresa = p.Osoba.Adresa,
-						Mail = p.Osoba.Mail,
-						Telefoni = string.Join(";", p.Osoba.Telefoni.Select(t => t.BrojTelefona))
-					})
-					.ToListAsync();
+        public static async Task<Result<List<IspitGetDto>, ErrorMessage>> VratiSveIspiteAsync()
+        {
+            ISession session = null;
+            try
+            {
+                session = DataLayer.GetSession();
 
-				return polaznici;
-			}
-			catch (Exception ex)
-			{
-				return new ErrorMessage(ex.Message, 500);
-			}
-			finally
-			{
-				session?.Close();
-				session?.Dispose();
-			}
-		}
+                var ispiti = await session.Query<Ispit>().ToListAsync();
+
+                var dtoLista = ispiti.Select(i => new IspitGetDto
+                {
+                    Id = i.Id,
+                    KursId = i.Kurs?.Id,
+                    KursNaziv = i.Kurs?.Naziv ?? "",
+                    Datum = i.Datum
+                }).ToList();
+
+                return dtoLista;
+            }
+            catch (Exception ex)
+            {
+                return new ErrorMessage(ex.Message, 500);
+            }
+            finally
+            {
+                session?.Close();
+                session?.Dispose();
+            }
+        }
 
 
-		#endregion
 
-		#region POST/CREATE Metoda
 
-		public static async Task<Result<string, ErrorMessage>> DodajIspitAsync(IspitBasic noviIspit)
-		{
-			ISession session = null;
-			ITransaction transaction = null;
-			try
-			{
-				session = DataLayer.GetSession();
-				transaction = session.BeginTransaction();
-
-				var kurs = await session.GetAsync<Kurs>(noviIspit.KursId);
-				if (kurs == null) return new ErrorMessage("Kurs nije pronađen.", 400);
-
-				var ispit = new Ispit { Id = noviIspit.Id, Kurs = kurs, Datum = noviIspit.Datum, Komisija = new List<Komisija>() };
-
-				var nastavnici = await session.Query<Nastavnik>().Where(n => noviIspit.NastavnikIds.Contains(n.Id)).ToListAsync();
-				foreach (var nastavnik in nastavnici)
-				{
-					ispit.Komisija.Add(new Komisija { Nastavnik = nastavnik, Ispit = ispit });
-				}
-
-				await session.SaveAsync(ispit);
-				await transaction.CommitAsync();
-
-				return ispit.Id;
-			}
-			catch (Exception ex)
-			{
-				await transaction?.RollbackAsync();
-				return new ErrorMessage(ex.Message, 500);
-			}
-			finally
-			{
-				transaction?.Dispose(); session?.Close(); session?.Dispose();
-			}
-		}
-
-		#endregion
-
-		#region PUT/UPDATE Metoda
-
-		public static async Task<Result<bool, ErrorMessage>> IzmeniIspitAsync(IspitBasic podaci)
-		{
-			ISession session = null;
-			ITransaction transaction = null;
-			try
-			{
-				session = DataLayer.GetSession();
-				transaction = session.BeginTransaction();
-
-				var ispit = await session.GetAsync<Ispit>(podaci.Id);
-				if (ispit == null) return new ErrorMessage("Ispit nije pronađen.", 404);
-
-				ispit.Datum = podaci.Datum;
-
-				
-				ispit.Komisija.Clear();
-				await session.FlushAsync();
-
-				var nastavnici = await session.Query<Nastavnik>().Where(n => podaci.NastavnikIds.Contains(n.Id)).ToListAsync();
-				foreach (var nastavnik in nastavnici)
-				{
-					ispit.Komisija.Add(new Komisija { Nastavnik = nastavnik, Ispit = ispit });
-				}
-
-				await session.UpdateAsync(ispit);
-				await transaction.CommitAsync();
-
-				return true;
-			}
-			catch (Exception ex)
-			{
-				await transaction?.RollbackAsync();
-				return new ErrorMessage(ex.Message, 500);
-			}
-			finally
-			{
-				transaction?.Dispose(); session?.Close(); session?.Dispose();
-			}
-		}
-
-		#endregion
-
-		#region DELETE Metoda
-
-		public static async Task<Result<bool, ErrorMessage>> ObrisiIspitAsync(string ispitId)
-		{
-			ISession session = null;
-			ITransaction transaction = null;
-			try
-			{
-				session = DataLayer.GetSession();
-				transaction = session.BeginTransaction();
-
-				var ispit = await session.GetAsync<Ispit>(ispitId);
-				if (ispit == null) return new ErrorMessage("Ispit nije pronađen.", 404);
-
-				
-				await session.DeleteAsync(ispit);
-				await transaction.CommitAsync();
-
-				return true;
-			}
-			catch (Exception ex)
-			{
-				await transaction?.RollbackAsync();
-				return new ErrorMessage(ex.Message, 500);
-			}
-			finally
-			{
-				transaction?.Dispose(); session?.Close(); session?.Dispose();
-			}
-		}
-
-		#endregion
-	}
+    }
 }

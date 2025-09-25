@@ -13,7 +13,7 @@ namespace WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> SacuvajOsobuAsync([FromBody] OsobaBasic novaOsoba)
+        public async Task<IActionResult> SacuvajOsobuAsync([FromBody] SacuvajOsobaDTO novaOsoba)
         {
             var rezultat = await OsobaDataProvider.SacuvajOsobuAsync(novaOsoba);
 

@@ -18,7 +18,7 @@ namespace WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> VratiPolaznikeAsync()
         {
-            var rezultat = await PolaznikDataProvider.VratiPolaznikeAsync();
+            var rezultat = await PolaznikDataProvider.VratiSvePolaznikeAsync();
 
             if (!rezultat.IsSuccess)
             {
@@ -52,10 +52,10 @@ namespace WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> IzmeniPolaznikaAsync([FromBody] PolaznikDTO podaci)
+        public async Task<IActionResult> IzmeniPolaznikaAsync([FromBody] PolaznikUpdateDto polaznikUpdateDto)
         {
 
-            var rezultat = await PolaznikDataProvider.IzmeniPolaznikaAsync(podaci);
+            var rezultat = await PolaznikDataProvider.IzmeniPolaznikaAsync(polaznikUpdateDto);
 
             if (!rezultat.IsSuccess)
             {
@@ -69,10 +69,10 @@ namespace WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DodajPolaznikaAsync([FromBody] OsobaBasic novaOsoba)
+        public async Task<IActionResult> DodajPolaznikaAsync([FromBody] PolaznikSaveDto polaznikSaveDto)
         {
 
-            var rezultat = await PolaznikDataProvider.DodajPolaznikaAsync(novaOsoba);
+            var rezultat = await PolaznikDataProvider.SacuvajPolaznikaAsync(polaznikSaveDto);
 
             if (!rezultat.IsSuccess)
             {

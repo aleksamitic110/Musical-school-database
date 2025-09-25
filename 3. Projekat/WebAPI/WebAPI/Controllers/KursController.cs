@@ -39,8 +39,8 @@ namespace WebAPI.Controllers
 		{
 			var rezultat = await KursDataProvider.DodajKursAsync(novi);
 			if (!rezultat.IsSuccess) return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
-			return StatusCode(201, rezultat.Data);
-		}
+            return Ok(rezultat.Data);
+        }
 
 		[HttpPut("Izmeni")]
 		[ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]

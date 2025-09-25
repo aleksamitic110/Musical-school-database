@@ -11,7 +11,7 @@ namespace DatabaseAccess.DataProviders
 {
     public static class OsobaDataProvider
     {
-        public static async Task<Result<string, ErrorMessage>> SacuvajOsobuAsync(OsobaBasic novaOsoba)
+        public static async Task<Result<string, ErrorMessage>> SacuvajOsobuAsync(SacuvajOsobaDTO novaOsoba)
         {
             ISession session = null;
 
@@ -36,11 +36,14 @@ namespace DatabaseAccess.DataProviders
                     Prezime = novaOsoba.Prezime
                 };
 
-                foreach (var item in novaOsoba.Telefoni)
+                foreach (string brojTelefona in novaOsoba.Telefoni)
                 {
+                    if (brojTelefona.Length != 10) {
+                        return new ErrorMessage($"broj: {brojTelefona} nije validan", 400);
+                    }
                     var telefon = new Telefon
                     {
-                        BrojTelefona = item.BrojTelefona,
+                        BrojTelefona = brojTelefona,
                         Osoba = osoba
                     };
                     osoba.Telefoni.Add(telefon);
@@ -79,10 +82,6 @@ namespace DatabaseAccess.DataProviders
                 if (!NHibernateUtil.IsInitialized(osoba.Telefoni))
                     await NHibernateUtil.InitializeAsync(osoba.Telefoni);
 
-                foreach (var telefon in osoba.Telefoni.ToList())
-                {
-                    await session.DeleteAsync(telefon);
-                }
 
                 await session.DeleteAsync(osoba);
                 await session.FlushAsync();

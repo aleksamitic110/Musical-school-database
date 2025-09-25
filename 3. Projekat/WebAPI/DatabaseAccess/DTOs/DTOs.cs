@@ -122,6 +122,28 @@ namespace DatabaseAccess.DTOs
     #endregion
 
     #region Osoba
+
+    public class SacuvajOsobaDTO
+    {
+
+        public string JMBG { get; set; }
+        public string Ime { get; set; }
+        public string Prezime { get; set; }
+        public string Adresa { get; set; }
+        public string Mail { get; set; }
+        public IList<string> Telefoni { get; set; } = new List<string>();
+
+        public SacuvajOsobaDTO(string JMBG, string ime, string prezime, string adresa, string mail, List<string> telefoni)
+        {
+            this.JMBG = JMBG;
+            Ime = ime;
+            Prezime = prezime;
+            Adresa = adresa;
+            Mail = mail;
+            Telefoni = telefoni;
+        }
+        public SacuvajOsobaDTO() { }
+    }
     public class OsobaDTO
     {
 
@@ -156,6 +178,27 @@ namespace DatabaseAccess.DTOs
     #endregion
 
     #region Polaznik
+
+    public class PolaznikSaveDto
+    {
+        public string OsobaJMBG { get; set; }
+    }
+
+    public class PolaznikUpdateDto
+    {
+        public int Id { get; set; }
+        public string OsobaJMBG { get; set; }
+    }
+
+    public class PolaznikGetDto
+    {
+        public int Id { get; set; }
+        public string OsobaJMBG { get; set; }
+        public string Ime { get; set; }
+        public string Prezime { get; set; }
+    }
+
+   
     public class PolaznikDTO : OsobaDTO
     {
         public int Id { get; set; }
@@ -182,20 +225,13 @@ namespace DatabaseAccess.DTOs
     public class StarateljDTO : OsobaDTO
     {
         public int Id { get; set; }
-        public IList<Dete> Deca { get; set; }
-
 
         public StarateljDTO(int IdStaratelja, IList<Dete> deca, string jmbg, string ime, string prezime, string adresa, string mail, string telefoni)
         : base(jmbg, ime, prezime, adresa, mail, telefoni)
         {
             this.Id = IdStaratelja;
-            this.Deca = deca;
         }
 
-        public StarateljDTO()
-        {
-            Deca = new List<Dete>();
-        }
 
         public override string ToString()
         {
@@ -203,14 +239,19 @@ namespace DatabaseAccess.DTOs
         }
     }
 
-        public class SacuvajStarateljaDTO
-        {
-        public StarateljBasic NoviStaratelj { get; set; }
-        public OsobaBasic NovaOsoba { get; set; }
-        }
+    public class SacuvajStarateljaDTO
+    {
+        public string OsobaJMBG { get; set; }
+    }
+
+    public class IzmeniStarateljaDTO
+    {
+        public int Id { get; set; }
+        public string OsobaJMBG { get; set; }
+    }
 
 
-public class StarateljBasic
+    public class StarateljBasic
     {
         public IList<Dete> Deca { get; set; }
 
@@ -290,6 +331,33 @@ public class StarateljBasic
     #endregion
 
     #region Honorarni
+    public class HonorarniSaveDto
+    {
+        public int NastavnikId { get; set; }
+        public string BrojUgovora { get; set; }
+        public int BrojCasovaMesecno { get; set; }
+        public DateTime TrajanjeUgovora { get; set; }
+    }
+
+    public class HonorarniUpdateDto
+    {
+        public int Id { get; set; }
+        public int NastavnikId { get; set; }
+        public string BrojUgovora { get; set; }
+        public int BrojCasovaMesecno { get; set; }
+        public DateTime TrajanjeUgovora { get; set; }
+    }
+
+    public class HonorarniGetDto
+    {
+        public int Id { get; set; }
+        public int NastavnikId { get; set; }
+        public string NastavnikIme { get; set; }
+        public string BrojUgovora { get; set; }
+        public int BrojCasovaMesecno { get; set; }
+        public DateTime TrajanjeUgovora { get; set; }
+    }
+
     public class HonorarniDTO : NastavnikDTO
     {
         public string BrojUgovora { get; set; }
@@ -313,6 +381,30 @@ public class StarateljBasic
     #endregion
 
     #region Stalni
+
+    public class StalniSaveDTO
+    {
+
+        public int NastavnikId { get; set; }
+
+        public string MentorJMBG { get; set; }
+
+        public string RadnoVreme { get; set; }
+        public bool StatusMentora { get; set; }
+    }
+
+    public class StalniUpdateDTO
+    {
+        public int Id { get; set; }
+        public int NastavnikId { get; set; }
+
+        public string MentorJMBG { get; set; }
+
+        public string RadnoVreme { get; set; }
+        public bool StatusMentora { get; set; }
+    }
+
+   
     public class StalniDTO : NastavnikDTO
     {
         public string RadnoVreme { get; set; }
@@ -350,6 +442,33 @@ public class StalniBasic
     #endregion
 
     #region Dete
+    public class DeteSaveDto
+    {
+        public DateTime DatumRodjenja { get; set; }
+        public string BrojDosijea { get; set; }
+        public int StarateljId { get; set; }
+        public int PolaznikId { get; set; }
+    }
+    public class DeteGetDto
+    {
+        public int Id { get; set; }
+        public DateTime DatumRodjenja { get; set; }
+        public string BrojDosijea { get; set; }
+
+        public int StarateljId { get; set; }
+        public string StarateljIme { get; set; }
+
+        public int PolaznikId { get; set; }
+        public string PolaznikIme { get; set; }
+    }
+    public class DeteUpdateDto
+    {
+        public int Id { get; set; }
+        public DateTime DatumRodjenja { get; set; }
+        public string BrojDosijea { get; set; }
+        public int StarateljId { get; set; }
+        public int PolaznikId { get; set; }
+    }
     public class DeteDTO : PolaznikDTO
     {
         public int IdDeteta { get; set; }
@@ -405,7 +524,20 @@ public class DeteBasic
             }
         }
 
-        public class OdrasliBasic
+    public class OdrasliSaveDto
+    {
+        public int PolaznikId { get; set; }
+        public string Zanimanje { get; set; }
+    }
+
+    public class OdrasliUpdateDto
+    {
+        public int Id { get; set; }
+        public int PolaznikId { get; set; }
+        public string Zanimanje { get; set; }
+    }
+
+    public class OdrasliBasic
         {
             public String Zanimanje;
         }
@@ -497,7 +629,28 @@ public class DeteBasic
     #endregion
 
     #region Ispit
-        public class IspitDTO
+    public class IspitSaveDto
+    {
+        public string KursId { get; set; }
+        public DateTime Datum { get; set; }
+    }
+
+    public class IspitUpdateDto
+    {
+        public string Id { get; set; }
+        public string KursId { get; set; }
+        public DateTime Datum { get; set; }
+    }
+
+    public class IspitGetDto
+    {
+        public string Id { get; set; }
+        public string KursId { get; set; }
+        public string KursNaziv { get; set; }
+        public DateTime Datum { get; set; }
+    }
+
+    public class IspitDTO
         {
             public string Id { get; set; }
             public string KursId { get; set; }

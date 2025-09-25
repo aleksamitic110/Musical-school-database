@@ -28,12 +28,10 @@ namespace WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> SacuvajOdraslogPolaznikaAsync([FromBody] OdrasliUpdateRequest model)
+        public async Task<IActionResult> SacuvajOdraslogPolaznikaAsync([FromBody] OdrasliSaveDto model)
         {
             var rezultat = await OdrasliDataProvider.SacuvajOdraslogPolaznikaAsync(
-                model.NoviOdrasli,
-                model.NovaOsoba,
-                model.NoviPolaznik
+              model
             );
 
             if (!rezultat.IsSuccess)
@@ -60,14 +58,14 @@ namespace WebAPI.Controllers
             return Ok(rezultat.Data);
         }
 
-        [HttpPut("IzmeniPodatkeOdraslogPolaznika/{polaznikId}")]
+        [HttpPut("IzmeniPodatkeOdraslogPolaznika")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> IzmeniPodatkeOdraslogPolaznikaAsync(int polaznikId, [FromBody] OdrasliBasic noviOdrasli)
+        public async Task<IActionResult> IzmeniPodatkeOdraslogPolaznikaAsync([FromBody] OdrasliUpdateDto model)
         {
 
-            var rezultat = await OdrasliDataProvider.IzmeniPodatkeOdraslogPolaznikaAsync(polaznikId, noviOdrasli);
+            var rezultat = await OdrasliDataProvider.IzmeniOdraslogPolaznikaAsync(model);
 
             if (!rezultat.IsSuccess)
             {

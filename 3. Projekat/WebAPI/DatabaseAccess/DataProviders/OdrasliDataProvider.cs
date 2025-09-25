@@ -59,70 +59,26 @@ namespace DatabaseAccess.DataProviders
 
 
 
-        public static async Task<Result<bool, ErrorMessage>> SacuvajOdraslogPolaznikaAsync(
-      OdrasliBasic noviOdrasli, OsobaBasic novaOsoba, PolaznikBasic noviPolaznik)
+        public static async Task<Result<bool, ErrorMessage>> SacuvajOdraslogPolaznikaAsync(OdrasliSaveDto dto)
         {
             ISession session = null;
-            ITransaction transaction = null;
-
             try
             {
                 session = DataLayer.GetSession();
-                transaction = session.BeginTransaction();
-
-                var osobaUBazi = await session.Query<Osoba>()
-                    .FirstOrDefaultAsync(o => o.JMBG == novaOsoba.JMBG);
-
-                if (osobaUBazi != null)
-                {
-                    return new ErrorMessage("Osoba sa tim JMBG-om već postoji!", 400);
-                }
-
-                var osoba = new Osoba
-                {
-                    Adresa = novaOsoba.Adresa,
-                    Ime = novaOsoba.Ime,
-                    JMBG = novaOsoba.JMBG,
-                    Mail = novaOsoba.Mail,
-                    Prezime = novaOsoba.Prezime
-                };
-
-                foreach (var item in novaOsoba.Telefoni)
-                {
-                    var telefon = new Telefon
-                    {
-                        BrojTelefona = item.BrojTelefona,
-                        Osoba = osoba
-                    };
-                    osoba.Telefoni.Add(telefon);
-                }
-
-                var polaznik = new Polaznik
-                {
-                    Osoba = osoba
-                };
 
                 var odrasli = new Odrasli
                 {
-                    Polaznik = polaznik,
-                    Zanimanje = noviOdrasli.Zanimanje
+                    Polaznik = await session.LoadAsync<Polaznik>(dto.PolaznikId),
+                    Zanimanje = dto.Zanimanje
                 };
 
-                await session.SaveAsync(osoba);
-                await session.SaveAsync(polaznik);
                 await session.SaveAsync(odrasli);
-
                 await session.FlushAsync();
-
-                await transaction.CommitAsync(); 
 
                 return true;
             }
             catch (Exception ex)
             {
-                if (transaction != null && transaction.IsActive)
-                    await transaction.RollbackAsync(); 
-
                 return new ErrorMessage(ex.Message, 500);
             }
             finally
@@ -131,6 +87,7 @@ namespace DatabaseAccess.DataProviders
                 session?.Dispose();
             }
         }
+
 
 
         public static async Task<Result<bool, ErrorMessage>> ObrisiOdraslogPolaznikaAsync(int polaznikId)
@@ -165,30 +122,23 @@ namespace DatabaseAccess.DataProviders
             }
         }
 
-        public static async Task<Result<bool, ErrorMessage>> IzmeniPodatkeOdraslogPolaznikaAsync(int polaznikId, OdrasliBasic noviOdrasli)
+        public static async Task<Result<bool, ErrorMessage>> IzmeniOdraslogPolaznikaAsync(OdrasliUpdateDto dto)
         {
             ISession session = null;
-
             try
             {
                 session = DataLayer.GetSession();
 
-                var polaznik = await session.Query<Polaznik>()
-                    .FirstOrDefaultAsync(p => p.Id == polaznikId);
-
-                if (polaznik == null)
+                var odrasli = await session.GetAsync<Odrasli>(dto.Id);
+                if (odrasli == null)
                 {
-                    return new ErrorMessage($"Polaznik nije pronađen.", 404);
+                    return new ErrorMessage($"Odrasli polaznik sa Id={dto.Id} nije pronađen.", 404);
                 }
 
-                var odrasli = await session.Query<Odrasli>()
-                    .FirstOrDefaultAsync(o => o.Polaznik.Id == polaznikId);
+                odrasli.Polaznik = await session.LoadAsync<Polaznik>(dto.PolaznikId);
+                odrasli.Zanimanje = dto.Zanimanje;
 
-                if (odrasli != null)
-                {
-                    odrasli.Zanimanje = noviOdrasli.Zanimanje;
-                    await session.UpdateAsync(odrasli);
-                }
+                await session.UpdateAsync(odrasli);
                 await session.FlushAsync();
 
                 return true;
@@ -203,6 +153,7 @@ namespace DatabaseAccess.DataProviders
                 session?.Dispose();
             }
         }
+
 
 
 

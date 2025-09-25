@@ -11,191 +11,36 @@ namespace DatabaseAccess.DataProviders
 {
     public static class DeteDataProvider
     {
-        public static async Task<Result<List<DeteDTO>, ErrorMessage>> VratiDecuStarateljaAsync(int starateljId)
+
+        public static async Task<Result<bool, ErrorMessage>> IzmeniDeteAsync(DeteUpdateDto dto)
         {
             ISession session = null;
-
             try
             {
                 session = DataLayer.GetSession();
 
-                var decaEntities = await session.Query<Dete>()
-                    .Where(d => d.Staratelj.Id == starateljId)
-                    .ToListAsync();
-
-                var decaDto = new List<DeteDTO>();
-
-                foreach (var dete in decaEntities)
-                {
-
-                    await NHibernateUtil.InitializeAsync(dete.Polaznik.Osoba.Telefoni);
-
-                    decaDto.Add(new DeteDTO
-                    {
-                        Id = dete.Polaznik.Id,
-                        JMBG = dete.Polaznik.Osoba.JMBG,
-                        Ime = dete.Polaznik.Osoba.Ime,
-                        Prezime = dete.Polaznik.Osoba.Prezime,
-                        Adresa = dete.Polaznik.Osoba.Adresa,
-                        Mail = dete.Polaznik.Osoba.Mail,
-                        Telefoni = string.Join(", ", dete.Polaznik.Osoba.Telefoni.Select(t => t.BrojTelefona)),
-                        IdDeteta = dete.Id,
-                        DatumRodjenja = dete.DatumRodjenja,
-                        BrojDosijea = dete.BrojDosijea,
-                        Staratelj = new StarateljDTO
-                        {
-                            Id = dete.Staratelj.Id,
-                            Ime = dete.Staratelj.Osoba.Ime,
-                            Prezime = dete.Staratelj.Osoba.Prezime
-                        }
-                    });
-                }
-
-                return decaDto;
-            }
-            catch (Exception ex)
-            {
-                return new ErrorMessage(ex.Message, 500);
-            }
-            finally
-            {
-                session?.Close();
-                session?.Dispose();
-            }
-        }
-
-        public static async Task<Result<int, ErrorMessage>> SacuvajDeteAsync(DeteBasic novoDete,int starateljId,PolaznikBasic noviPolaznik,OsobaBasic novaOsoba)
-        {
-            ISession session = null;
-            ITransaction transaction = null;
-
-            try
-            {
-                session = DataLayer.GetSession();
-                transaction = session.BeginTransaction();
-
-                var starateljUBazi = await session.GetAsync<Staratelj>(starateljId);
-                if (starateljUBazi == null)
-                {
-                    return new ErrorMessage("Staratelj ne postoji.", 404);
-                }
-
-                var osobaUBazi = await session.Query<Osoba>()
-                    .FirstOrDefaultAsync(o => o.JMBG == novaOsoba.JMBG);
-
-                if (osobaUBazi != null)
-                {
-                    return new ErrorMessage("Osoba sa tim JMBG-om već postoji", 400);
-                }
-
-                var osoba = new Osoba
-                {
-                    JMBG = novaOsoba.JMBG,
-                    Ime = novaOsoba.Ime,
-                    Prezime = novaOsoba.Prezime,
-                    Adresa = novaOsoba.Adresa,
-                    Mail = novaOsoba.Mail,
-                    Telefoni = new List<Telefon>()
-                };
-
-                foreach (var telefonBasic in novaOsoba.Telefoni)
-                {
-                    osoba.Telefoni.Add(new Telefon
-                    {
-                        BrojTelefona = telefonBasic.BrojTelefona,
-                        Osoba = osoba
-                    });
-                }
-
-                var polaznik = new Polaznik
-                {
-                    Osoba = osoba
-                };
-
-                var dete = new Dete
-                {
-                    DatumRodjenja = novoDete.DatumRodjenja,
-                    BrojDosijea = novoDete.BrojDosijea,
-                    Polaznik = polaznik,
-                    Staratelj = starateljUBazi
-                };
-
-                await session.SaveAsync(osoba);
-                await session.SaveAsync(polaznik);
-                await session.SaveAsync(dete);
-                await session.FlushAsync();
-
-                await transaction.CommitAsync();
-
-                return dete.Id;
-            }
-            catch (Exception ex)
-            {
-                if (transaction != null && transaction.IsActive)
-                    await transaction.RollbackAsync();
-
-                return new ErrorMessage(ex.Message, 500);
-            }
-            finally
-            {
-                transaction?.Dispose();
-                session?.Close();
-                session?.Dispose();
-            }
-        }
-
-        public static async Task<Result<bool, ErrorMessage>> IzmeniDeteAsync(DeteDTO podaci, PolaznikBasic noviPolaznik, OsobaBasic novaOsoba)
-        {
-            ISession session = null;
-            ITransaction transaction = null;
-
-            try
-            {
-                session = DataLayer.GetSession();
-                transaction = session.BeginTransaction();
-
-                var dete = await session.GetAsync<Dete>(podaci.IdDeteta);
+                var dete = await session.GetAsync<Dete>(dto.Id);
                 if (dete == null)
-                    return new ErrorMessage("Dete ne postoji", 404);
-
-                var polaznik = await session.GetAsync<Polaznik>(dete.Polaznik.Id);
-                var osoba = await session.GetAsync<Osoba>(polaznik.Osoba.JMBG);
-
-                if (osoba == null || polaznik == null)
-                    return new ErrorMessage("Polaznik ili osoba nisu pronađeni", 404);
-
-                osoba.Ime = novaOsoba.Ime;
-                osoba.Prezime = novaOsoba.Prezime;
-                osoba.Adresa = novaOsoba.Adresa;
-                osoba.Mail = novaOsoba.Mail;
-
-                osoba.Telefoni.Clear();
-                foreach (var t in novaOsoba.Telefoni)
                 {
-                    osoba.Telefoni.Add(new Telefon { BrojTelefona = t.BrojTelefona, Osoba = osoba });
+                    return new ErrorMessage($"Dete sa Id={dto.Id} nije pronađeno.", 404);
                 }
 
-                dete.DatumRodjenja = podaci.DatumRodjenja;
-                dete.BrojDosijea = podaci.BrojDosijea;
+                dete.DatumRodjenja = dto.DatumRodjenja;
+                dete.BrojDosijea = dto.BrojDosijea;
+                dete.Staratelj = await session.LoadAsync<Staratelj>(dto.StarateljId);
+                dete.Polaznik = await session.LoadAsync<Polaznik>(dto.PolaznikId);
 
-                await session.UpdateAsync(osoba);
-                await session.UpdateAsync(polaznik);
                 await session.UpdateAsync(dete);
-
-                await transaction.CommitAsync();
+                await session.FlushAsync();
 
                 return true;
             }
             catch (Exception ex)
             {
-                if (transaction != null && transaction.IsActive)
-                    await transaction.RollbackAsync();
-
                 return new ErrorMessage(ex.Message, 500);
             }
             finally
             {
-                transaction?.Dispose();
                 session?.Close();
                 session?.Dispose();
             }
@@ -204,89 +49,53 @@ namespace DatabaseAccess.DataProviders
         public static async Task<Result<bool, ErrorMessage>> ObrisiDeteAsync(int deteId)
         {
             ISession session = null;
-            ITransaction transaction = null;
-
             try
             {
                 session = DataLayer.GetSession();
-                transaction = session.BeginTransaction();
 
                 var dete = await session.GetAsync<Dete>(deteId);
                 if (dete == null)
-                    return new ErrorMessage("Dete ne postoji", 404);
-
-                var polaznik = await session.GetAsync<Polaznik>(dete.Polaznik.Id);
-                var osoba = await session.GetAsync<Osoba>(polaznik.Osoba.JMBG);
-
-                await NHibernateUtil.InitializeAsync(osoba.Telefoni);
-
-                foreach (var t in osoba.Telefoni.ToList())
                 {
-                    await session.DeleteAsync(t);
+                    return new ErrorMessage($"Dete sa Id={deteId} nije pronađeno.", 404);
                 }
 
                 await session.DeleteAsync(dete);
-                await session.DeleteAsync(polaznik);
-                await session.DeleteAsync(osoba);
-
-                await transaction.CommitAsync();
+                await session.FlushAsync();
 
                 return true;
             }
             catch (Exception ex)
             {
-                if (transaction != null && transaction.IsActive)
-                    await transaction.RollbackAsync();
-
                 return new ErrorMessage(ex.Message, 500);
             }
             finally
             {
-                transaction?.Dispose();
                 session?.Close();
                 session?.Dispose();
             }
         }
 
-
-
-        public static async Task<Result<List<DeteDTO>, ErrorMessage>> VratiDecuAsync()
+        public static async Task<Result<List<DeteGetDto>, ErrorMessage>> VratiDecuAsync()
         {
             ISession session = null;
-
             try
             {
                 session = DataLayer.GetSession();
 
-                var decaEntities = await session.Query<Dete>().ToListAsync();
-                var decaDTO = new List<DeteDTO>();
+                var deca = await session.Query<Dete>().ToListAsync();
 
-                foreach (var dete in decaEntities)
+                var dtoLista = deca.Select(d => new DeteGetDto
                 {
-                    await NHibernateUtil.InitializeAsync(dete.Polaznik.Osoba.Telefoni);
+                    Id = d.Id,
+                    DatumRodjenja = d.DatumRodjenja,
+                    BrojDosijea = d.BrojDosijea,
+                    StarateljId = d.Staratelj?.Id ?? 0,
+                    StarateljIme = d.Staratelj?.Osoba?.Ime ?? "",
+                    PolaznikId = d.Polaznik?.Id ?? 0,
+                    PolaznikIme = d.Polaznik?.Osoba?.Ime ?? ""
+                }).ToList();
 
-                    decaDTO.Add(new DeteDTO
-                    {
-                        Id = dete.Polaznik.Id,
-                        JMBG = dete.Polaznik.Osoba.JMBG,
-                        Ime = dete.Polaznik.Osoba.Ime,
-                        Prezime = dete.Polaznik.Osoba.Prezime,
-                        Adresa = dete.Polaznik.Osoba.Adresa,
-                        Mail = dete.Polaznik.Osoba.Mail,
-                        Telefoni = string.Join(", ", dete.Polaznik.Osoba.Telefoni.Select(t => t.BrojTelefona)),
-                        IdDeteta = dete.Id,
-                        DatumRodjenja = dete.DatumRodjenja,
-                        BrojDosijea = dete.BrojDosijea,
-                        Staratelj = new StarateljDTO
-                        {
-                            Id = dete.Staratelj.Id,
-                            Ime = dete.Staratelj.Osoba.Ime,
-                            Prezime = dete.Staratelj.Osoba.Prezime
-                        }
-                    });
-                }
-
-                return decaDTO;
+                return dtoLista;
             }
             catch (Exception ex)
             {
@@ -300,6 +109,38 @@ namespace DatabaseAccess.DataProviders
         }
 
 
+
+
+        public static async Task<Result<bool, ErrorMessage>> SacuvajDeteAsync(DeteSaveDto dto)
+        {
+            ISession session = null;
+            try
+            {
+                session = DataLayer.GetSession();
+
+                var dete = new Dete
+                {
+                    DatumRodjenja = dto.DatumRodjenja,
+                    BrojDosijea = dto.BrojDosijea,
+                    Staratelj = await session.LoadAsync<Staratelj>(dto.StarateljId),
+                    Polaznik = await session.LoadAsync<Polaznik>(dto.PolaznikId)
+                };
+
+                await session.SaveAsync(dete);
+                await session.FlushAsync();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return new ErrorMessage(ex.Message, 500);
+            }
+            finally
+            {
+                session?.Close();
+                session?.Dispose();
+            }
+        }
 
     }
 }

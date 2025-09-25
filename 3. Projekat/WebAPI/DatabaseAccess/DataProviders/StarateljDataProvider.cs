@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace DatabaseAccess.DataProviders
 {
@@ -53,177 +54,94 @@ namespace DatabaseAccess.DataProviders
             }
         }
 
-        public static async Task<Result<int, ErrorMessage>> SacuvajStarateljaAsync(StarateljBasic noviStaratelj, OsobaBasic novaOsoba)
+        public static async Task<Result<bool, ErrorMessage>> SacuvajStarateljaAsync(SacuvajStarateljaDTO dto)
         {
             ISession session = null;
-            ITransaction transaction = null;
-
             try
             {
                 session = DataLayer.GetSession();
-                transaction = session.BeginTransaction();
-
-                var osobaUBazi = await session.Query<Osoba>()
-                    .FirstOrDefaultAsync(o => o.JMBG == novaOsoba.JMBG);
-
-                if (osobaUBazi != null)
-                {
-                    return new ErrorMessage("Osoba sa tim JMBG-om već postoji", 400);
-                }
-
-                var osoba = new Osoba
-                {
-                    JMBG = novaOsoba.JMBG,
-                    Ime = novaOsoba.Ime,
-                    Prezime = novaOsoba.Prezime,
-                    Adresa = novaOsoba.Adresa,
-                    Mail = novaOsoba.Mail,
-                    Telefoni = new List<Telefon>()
-                };
-
-                foreach (var telefonBasic in novaOsoba.Telefoni)
-                {
-                    var telefon = new Telefon
-                    {
-                        BrojTelefona = telefonBasic.BrojTelefona,
-                        Osoba = osoba
-                    };
-                    osoba.Telefoni.Add(telefon);
-                }
 
                 var staratelj = new Staratelj
                 {
-                    Osoba = osoba,
-                    Deca = new List<Dete>()
+                    Osoba = await session.LoadAsync<Osoba>(dto.OsobaJMBG),
                 };
 
-                await session.SaveAsync(osoba);
                 await session.SaveAsync(staratelj);
-                await session.FlushAsync();
-
-                await transaction.CommitAsync();
-
-                return staratelj.Id; 
+                return true;
             }
             catch (Exception ex)
             {
-                if (transaction != null && transaction.IsActive)
-                {
-                    await transaction.RollbackAsync();
-                }
                 return new ErrorMessage(ex.Message, 500);
             }
             finally
             {
-                transaction?.Dispose();
                 session?.Close();
                 session?.Dispose();
             }
         }
 
-        public static async Task<Result<bool, ErrorMessage>> IzmeniStarateljaAsync(StarateljDTO podaci)
+
+        public static async Task<Result<bool, ErrorMessage>> IzmeniStarateljaAsync(IzmeniStarateljaDTO dto)
         {
             ISession session = null;
-            ITransaction transaction = null;
-
             try
             {
                 session = DataLayer.GetSession();
-                transaction = session.BeginTransaction();
 
-                var osobaIzBaze = await session.GetAsync<Osoba>(podaci.JMBG);
-                if (osobaIzBaze == null)
+                var staratelj = await session.GetAsync<Staratelj>(dto.Id);
+                if (staratelj == null)
                 {
-                    return new ErrorMessage("Osoba nije pronađena u bazi.", 404);
+                    return new ErrorMessage($"Staratelj sa Id={dto.Id} nije pronađen.", 404);
                 }
 
-                osobaIzBaze.Ime = podaci.Ime;
-                osobaIzBaze.Prezime = podaci.Prezime;
-                osobaIzBaze.Adresa = podaci.Adresa;
-                osobaIzBaze.Mail = podaci.Mail;
+                staratelj.Osoba = await session.LoadAsync<Osoba>(dto.OsobaJMBG);
 
-                await NHibernateUtil.InitializeAsync(osobaIzBaze.Telefoni);
-                osobaIzBaze.Telefoni.Clear();
-                await session.FlushAsync(); 
-
-                var noviTelefoni = podaci.Telefoni
-                    .Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-
-                foreach (var broj in noviTelefoni)
-                {
-                    osobaIzBaze.Telefoni.Add(new Telefon
-                    {
-                        BrojTelefona = broj.Trim(),
-                        Osoba = osobaIzBaze
-                    });
-                }
-
-                await session.UpdateAsync(osobaIzBaze);
-                await transaction.CommitAsync();
+                await session.UpdateAsync(staratelj);
+                await session.FlushAsync();
 
                 return true;
             }
             catch (Exception ex)
             {
-                if (transaction != null && transaction.IsActive)
-                {
-                    await transaction.RollbackAsync();
-                }
                 return new ErrorMessage(ex.Message, 500);
             }
             finally
             {
-                transaction?.Dispose();
                 session?.Close();
                 session?.Dispose();
             }
         }
+
 
         public static async Task<Result<bool, ErrorMessage>> ObrisiStarateljaAsync(int starateljId)
         {
             ISession session = null;
-            ITransaction transaction = null;
-
             try
             {
                 session = DataLayer.GetSession();
-                transaction = session.BeginTransaction();
 
                 var staratelj = await session.GetAsync<Staratelj>(starateljId);
                 if (staratelj == null)
                 {
-                    return new ErrorMessage("Staratelj ne postoji", 404);
-                }
-
-                await NHibernateUtil.InitializeAsync(staratelj.Deca);
-                await NHibernateUtil.InitializeAsync(staratelj.Osoba.Telefoni);
-
-                foreach (var dete in staratelj.Deca.ToList())
-                {
-                    await session.DeleteAsync(dete);
+                    return new ErrorMessage($"Staratelj sa Id={starateljId} nije pronađen.", 404);
                 }
 
                 await session.DeleteAsync(staratelj);
-
-                await transaction.CommitAsync();
+                await session.FlushAsync();
 
                 return true;
             }
             catch (Exception ex)
             {
-                if (transaction != null && transaction.IsActive)
-                {
-                    await transaction.RollbackAsync();
-                }
                 return new ErrorMessage(ex.Message, 500);
             }
             finally
             {
-                transaction?.Dispose();
                 session?.Close();
                 session?.Dispose();
             }
         }
+
 
 
     }

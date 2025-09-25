@@ -47,96 +47,70 @@ namespace DatabaseAccess.DataProviders
             }
         }
 
-        public static async Task<Result<bool, ErrorMessage>> SacuvajStalnogAsync(StalniBasic noviStalni, string mentorJMBG,OsobaBasic novaOsoba, NastavnikBasic noviNastavnik)
+        public static async Task<Result<bool, ErrorMessage>> SacuvajStalnogAsync(StalniSaveDTO sacuvajStalnogDTO)
         {
             ISession session = null;
-            ITransaction transaction = null;
-
             try
             {
                 session = DataLayer.GetSession();
-                transaction = session.BeginTransaction();
-
-                var osobaUBazi = await session.Query<Osoba>()
-                    .FirstOrDefaultAsync(o => o.JMBG == novaOsoba.JMBG);
-
-                var mentor = !string.IsNullOrEmpty(mentorJMBG)
-                    ? await session.Query<Stalni>()
-                        .FirstOrDefaultAsync(s => s.Nastavnik.Osoba.JMBG == mentorJMBG)
-                    : null;
-
-                if (osobaUBazi != null)
-                {
-                    return new ErrorMessage("Osoba sa tim JMBG-om već postoji", 400);
-                }
-
-                if (!string.IsNullOrEmpty(mentorJMBG) && mentor == null)
-                {
-                    return new ErrorMessage("Mentor sa tim JMBG-om ne postoji", 404);
-                }
-
-                if (mentor != null)
-                {
-                    await NHibernateUtil.InitializeAsync(mentor.Nastavnik.Osoba);
-                }
-
-                var osoba = new Osoba
-                {
-                    Adresa = novaOsoba.Adresa,
-                    Ime = novaOsoba.Ime,
-                    JMBG = novaOsoba.JMBG,
-                    Mail = novaOsoba.Mail,
-                    Prezime = novaOsoba.Prezime,
-                };
-
-                foreach (var item in novaOsoba.Telefoni)
-                {
-                    var telefon = new Telefon
-                    {
-                        BrojTelefona = item.BrojTelefona,
-                        Osoba = osoba
-                    };
-                    osoba.Telefoni.Add(telefon);
-                }
-
-                var nastavnik = new Nastavnik
-                {
-                    DatumZaposlenja = noviNastavnik.DatumZaposlenja,
-                    StrucnaSprema = noviNastavnik.StrucnaSprema,
-                    Osoba = osoba,
-                };
 
                 var stalni = new Stalni
                 {
-                    RadnoVreme = noviStalni.RadnoVreme,
-                    Mentor = mentor?.Nastavnik.Osoba,
-                    Nastavnik = nastavnik,
+                    RadnoVreme = sacuvajStalnogDTO.RadnoVreme,
+                    StatusMentora = sacuvajStalnogDTO.StatusMentora,
+                    Nastavnik = await session.LoadAsync<Nastavnik>(sacuvajStalnogDTO.NastavnikId),
+                    Mentor = await session.LoadAsync<Osoba>(sacuvajStalnogDTO.MentorJMBG),
                 };
 
-                await session.SaveAsync(osoba);
-                await session.SaveAsync(nastavnik);
                 await session.SaveAsync(stalni);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return new ErrorMessage(ex.Message, 500);
+            }
+            finally
+            {
+                session?.Close();
+                session?.Dispose();
+            }
+        }
 
-                await transaction.CommitAsync();
+        public static async Task<Result<bool, ErrorMessage>> IzmeniStalnogAsync(StalniUpdateDTO stalniUpdateDTO)
+        {
+            ISession session = null;
+            try
+            {
+                session = DataLayer.GetSession();
+
+                var stalni = await session.LoadAsync<Stalni>(stalniUpdateDTO.Id);
+
+                if (stalni == null)
+                {
+                    return new ErrorMessage($"Stalni sa Id={stalniUpdateDTO.Id} nije pronađen.", 404);
+                }
+
+                stalni.RadnoVreme = stalniUpdateDTO.RadnoVreme;
+                stalni.StatusMentora = stalniUpdateDTO.StatusMentora;
+                stalni.Nastavnik = await session.LoadAsync<Nastavnik>(stalniUpdateDTO.NastavnikId);
+                stalni.Mentor = await session.LoadAsync<Osoba>(stalniUpdateDTO.MentorJMBG);
+
+                await session.UpdateAsync(stalni);
+                await session.FlushAsync();
 
                 return true;
             }
             catch (Exception ex)
             {
-                if (transaction != null && transaction.IsActive)
-                {
-                    await transaction.RollbackAsync();
-                }
-
                 return new ErrorMessage(ex.Message, 500);
             }
             finally
             {
-                transaction?.Dispose();
                 session?.Close();
                 session?.Dispose();
             }
         }
+
 
         public static async Task<Result<bool, ErrorMessage>> IzmeniStalnogAsync(StalniBasic noviStalni,int stalniId,string mentorJMBG,OsobaBasic novaOsoba,NastavnikBasic noviNastavnik,int nastavnikId)
         {

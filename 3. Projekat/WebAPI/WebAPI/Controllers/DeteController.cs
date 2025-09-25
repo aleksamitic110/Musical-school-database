@@ -9,30 +9,15 @@ namespace WebAPI.Controllers
     [ApiController]
     public class DeteController : ControllerBase
     {
-        [HttpGet("VratiDecuStaratelja/{starateljId}")]
-        [ProducesResponseType(typeof(List<DeteDTO>), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> VratiDecuStarateljaAsync(int starateljId)
-        {
-            var rezultat = await DeteDataProvider.VratiDecuStarateljaAsync(starateljId);
 
-            if (!rezultat.IsSuccess)
-            {
-                return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
-            }
-
-            return Ok(rezultat.Data);
-        }
-
-        [HttpPost("SacuvajDete/{starateljId}")]
+        [HttpPost("SacuvajDete")]
         [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> SacuvajDeteAsync(int starateljId, [FromBody] SacuvajDeteDTO sacuvajDeteDTO)
+        public async Task<IActionResult> SacuvajDeteAsync([FromBody] DeteSaveDto sacuvajDeteDTO)
         {
-            var rezultat = await DeteDataProvider.SacuvajDeteAsync(sacuvajDeteDTO.NovoDete, starateljId, sacuvajDeteDTO.NoviPolaznik, sacuvajDeteDTO.NovaOsoba);
+            var rezultat = await DeteDataProvider.SacuvajDeteAsync(sacuvajDeteDTO);
 
             if (!rezultat.IsSuccess)
             {
@@ -42,15 +27,14 @@ namespace WebAPI.Controllers
             return Ok(rezultat.Data);
         }
 
-        [HttpPut("IzmeniDete/{idDeteta}")]
+        [HttpPut("IzmeniDete")]
         [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> IzmeniDeteAsync(int idDeteta, [FromBody] DeteUpdateRequest request)
+        public async Task<IActionResult> IzmeniDeteAsync([FromBody] DeteUpdateDto izmeniDeteDTO)
         {
-            request.Dete.IdDeteta = idDeteta;
 
-            var rezultat = await DeteDataProvider.IzmeniDeteAsync(request.Dete, request.NoviPolaznik, request.NovaOsoba);
+            var rezultat = await DeteDataProvider.IzmeniDeteAsync(izmeniDeteDTO);
 
             if (!rezultat.IsSuccess)
             {

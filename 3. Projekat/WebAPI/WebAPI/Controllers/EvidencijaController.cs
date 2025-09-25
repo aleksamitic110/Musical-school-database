@@ -55,8 +55,8 @@ namespace WebAPI.Controllers
 				return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
 			}
 
-			return CreatedAtAction(nameof(NadjiEvidencijuAsync), new { evidencijaId = rezultat.Data }, null);
-		}
+            return Ok(rezultat.Data);
+        }
 
 		[HttpPut("IzmeniEvidenciju")]
 		[ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]

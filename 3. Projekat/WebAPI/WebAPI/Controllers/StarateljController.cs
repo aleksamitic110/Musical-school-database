@@ -31,7 +31,7 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> SacuvajStarateljaAsync([FromBody] SacuvajStarateljaDTO sacuvajStarateljaDTO)
         {
 
-            var rezultat = await StarateljDataProvider.SacuvajStarateljaAsync(sacuvajStarateljaDTO.NoviStaratelj, sacuvajStarateljaDTO.NovaOsoba);
+            var rezultat = await StarateljDataProvider.SacuvajStarateljaAsync(sacuvajStarateljaDTO);
 
             if (!rezultat.IsSuccess)
             {
@@ -46,7 +46,7 @@ namespace WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> IzmeniStarateljaAsync([FromBody] StarateljDTO podaci)
+        public async Task<IActionResult> IzmeniStarateljaAsync([FromBody] IzmeniStarateljaDTO podaci)
         {
 
             var rezultat = await StarateljDataProvider.IzmeniStarateljaAsync(podaci);

@@ -28,9 +28,9 @@ namespace WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> SacuvajStalnogAsync([FromBody] SacuvajStalnogDTO sacuvajStalnogDTO)
+        public async Task<IActionResult> SacuvajStalnogAsync([FromBody] StalniSaveDTO sacuvajStalnogDTO)
         {
-            var rezultat = await StalniDataProvider.SacuvajStalnogAsync(sacuvajStalnogDTO.NoviStalni, sacuvajStalnogDTO.MentorJMBG, sacuvajStalnogDTO.NovaOsoba, sacuvajStalnogDTO.NoviNastavnik);
+            var rezultat = await StalniDataProvider.SacuvajStalnogAsync(sacuvajStalnogDTO);
 
             if (!rezultat.IsSuccess)
             {
@@ -45,17 +45,12 @@ namespace WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> IzmeniStalnogAsync([FromBody] IzmeniStalnogDTO izmeniStalnogDTO)
+        public async Task<IActionResult> IzmeniStalnogAsync([FromBody] StalniUpdateDTO stalniUpdateDTO)
         {
  
 
             var rezultat = await StalniDataProvider.IzmeniStalnogAsync(
-                izmeniStalnogDTO.NoviStalni,
-                izmeniStalnogDTO.StalniId,
-                izmeniStalnogDTO.MentorJMBG,
-                izmeniStalnogDTO.NovaOsoba,
-                izmeniStalnogDTO.NoviNastavnik,
-                izmeniStalnogDTO.NastavnikId
+               stalniUpdateDTO
             );
 
             if (!rezultat.IsSuccess)

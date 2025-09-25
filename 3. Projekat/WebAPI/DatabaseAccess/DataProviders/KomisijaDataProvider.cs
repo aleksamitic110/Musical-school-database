@@ -119,14 +119,58 @@ namespace DatabaseAccess.DataProviders
 			}
 		}
 
-		#endregion
+        #endregion
 
-		
+        #region Put
+        public static async Task<Result<bool, ErrorMessage>> IzmeniClanaKomisijeAsync(int komisijaId, KomisijaDTO izmenaVeze)
+        {
+            ISession session = null;
+            ITransaction transaction = null;
 
-		#region DELETE Metoda
+            try
+            {
+                session = DataLayer.GetSession();
+                transaction = session.BeginTransaction();
 
-		
-		public static async Task<Result<bool, ErrorMessage>> ObrisiClanaKomisijeAsync(int komisijaId)
+                var komisija = await session.GetAsync<Komisija>(komisijaId);
+                if (komisija == null)
+                    return new ErrorMessage($"Komisija sa Id={komisijaId} nije pronađena.", 404);
+
+                var nastavnik = await session.GetAsync<Nastavnik>(izmenaVeze.NastavnikId);
+                if (nastavnik == null)
+                    return new ErrorMessage("Nastavnik ne postoji.", 400);
+
+                var ispit = await session.GetAsync<Ispit>(izmenaVeze.IspitId);
+                if (ispit == null)
+                    return new ErrorMessage("Ispit ne postoji.", 400);
+
+                komisija.Nastavnik = nastavnik;
+                komisija.Ispit = ispit;
+
+                await session.UpdateAsync(komisija);
+                await transaction.CommitAsync();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                await transaction?.RollbackAsync();
+                return new ErrorMessage(ex.Message, 500);
+            }
+            finally
+            {
+                transaction?.Dispose();
+                session?.Close();
+                session?.Dispose();
+            }
+        }
+
+        #endregion
+
+        #region DELETE Metoda
+
+
+        public static async Task<Result<bool, ErrorMessage>> ObrisiClanaKomisijeAsync(int komisijaId)
 		{
 			ISession session = null;
 			ITransaction transaction = null;

@@ -38,22 +38,22 @@ namespace WebAPI.Controllers
 		[ProducesResponseType(typeof(int), StatusCodes.Status201Created)]
 		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-		public async Task<IActionResult> DodajHonorarnogAsync([FromBody] HonorarniDTO novi)
+		public async Task<IActionResult> SacuvajHonorarniAsync([FromBody] HonorarniSaveDto novi)
 		{
-			var rezultat = await HonorarniDataProvider.DodajHonorarnogAsync(novi);
+			var rezultat = await HonorarniDataProvider.SacuvajHonorarniAsync(novi);
 			if (!rezultat.IsSuccess)
 				return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
-			return CreatedAtAction(nameof(NadjiHonorarnogAsync), new { id = rezultat.Data }, null);
-		}
+            return Ok(rezultat.Data);
+        }
 
-		[HttpPut("Izmeni/{id}")]
+		[HttpPut("Izmeni")]
 		[ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-		public async Task<IActionResult> IzmeniHonorarnogAsync(int id, [FromBody] HonorarniDTO podaci)
+		public async Task<IActionResult> IzmeniHonorarnogAsync([FromBody] HonorarniUpdateDto podaci)
 		{
-			var rezultat = await HonorarniDataProvider.IzmeniHonorarnogAsync(id, podaci);
+			var rezultat = await HonorarniDataProvider.IzmeniHonorarniAsync(podaci);
 			if (!rezultat.IsSuccess)
 				return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
 			return Ok(rezultat.Data);
@@ -66,7 +66,7 @@ namespace WebAPI.Controllers
 		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
 		public async Task<IActionResult> ObrisiHonorarnogAsync(int id)
 		{
-			var rezultat = await HonorarniDataProvider.ObrisiHonorarnogAsync(id);
+			var rezultat = await HonorarniDataProvider.ObrisiHonorarniAsync(id);
 			if (!rezultat.IsSuccess)
 				return StatusCode(rezultat.Error.StatusCode, rezultat.Error.Message);
 			return Ok(rezultat.Data);
