@@ -92,9 +92,10 @@
             // 
             this.panelPrikaz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(208)))));
             this.panelPrikaz.Controls.Add(this.dataGridViewPrikazPodataka);
-            this.panelPrikaz.Location = new System.Drawing.Point(656, 148);
+            this.panelPrikaz.Location = new System.Drawing.Point(984, 228);
+            this.panelPrikaz.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelPrikaz.Name = "panelPrikaz";
-            this.panelPrikaz.Size = new System.Drawing.Size(826, 468);
+            this.panelPrikaz.Size = new System.Drawing.Size(1239, 720);
             this.panelPrikaz.TabIndex = 0;
             // 
             // dataGridViewPrikazPodataka
@@ -102,10 +103,11 @@
             this.dataGridViewPrikazPodataka.BackgroundColor = System.Drawing.Color.Snow;
             this.dataGridViewPrikazPodataka.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPrikazPodataka.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dataGridViewPrikazPodataka.Location = new System.Drawing.Point(3, 13);
+            this.dataGridViewPrikazPodataka.Location = new System.Drawing.Point(4, 20);
+            this.dataGridViewPrikazPodataka.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridViewPrikazPodataka.Name = "dataGridViewPrikazPodataka";
             this.dataGridViewPrikazPodataka.RowHeadersWidth = 51;
-            this.dataGridViewPrikazPodataka.Size = new System.Drawing.Size(820, 449);
+            this.dataGridViewPrikazPodataka.Size = new System.Drawing.Size(1230, 691);
             this.dataGridViewPrikazPodataka.TabIndex = 0;
             // 
             // panelFunkcije
@@ -113,9 +115,10 @@
             this.panelFunkcije.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(208)))));
             this.panelFunkcije.Controls.Add(this.panelStandardneFunkcije);
             this.panelFunkcije.Controls.Add(this.panelDodatneFunkcije);
-            this.panelFunkcije.Location = new System.Drawing.Point(1485, 148);
+            this.panelFunkcije.Location = new System.Drawing.Point(2228, 228);
+            this.panelFunkcije.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelFunkcije.Name = "panelFunkcije";
-            this.panelFunkcije.Size = new System.Drawing.Size(325, 573);
+            this.panelFunkcije.Size = new System.Drawing.Size(488, 882);
             this.panelFunkcije.TabIndex = 2;
             // 
             // panelStandardneFunkcije
@@ -124,17 +127,17 @@
             this.panelStandardneFunkcije.Controls.Add(this.buttonDelete);
             this.panelStandardneFunkcije.Controls.Add(this.buttonUpdate);
             this.panelStandardneFunkcije.Controls.Add(this.buttonAdd);
-            this.panelStandardneFunkcije.Location = new System.Drawing.Point(6, 10);
+            this.panelStandardneFunkcije.Location = new System.Drawing.Point(9, 15);
+            this.panelStandardneFunkcije.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelStandardneFunkcije.Name = "panelStandardneFunkcije";
-            this.panelStandardneFunkcije.Size = new System.Drawing.Size(309, 241);
+            this.panelStandardneFunkcije.Size = new System.Drawing.Size(464, 371);
             this.panelStandardneFunkcije.TabIndex = 1;
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(17, 166);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDelete.Location = new System.Drawing.Point(26, 255);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(269, 50);
+            this.buttonDelete.Size = new System.Drawing.Size(404, 77);
             this.buttonDelete.TabIndex = 2;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -142,10 +145,9 @@
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(17, 91);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUpdate.Location = new System.Drawing.Point(26, 140);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(269, 52);
+            this.buttonUpdate.Size = new System.Drawing.Size(404, 80);
             this.buttonUpdate.TabIndex = 1;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = true;
@@ -153,10 +155,9 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(17, 16);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAdd.Location = new System.Drawing.Point(26, 25);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(269, 56);
+            this.buttonAdd.Size = new System.Drawing.Size(404, 86);
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -168,9 +169,10 @@
             this.panelDodatneFunkcije.Controls.Add(this.panelKursevi);
             this.panelDodatneFunkcije.Controls.Add(this.panelDodatneFunkcijeIspit);
             this.panelDodatneFunkcije.Controls.Add(this.panelDodatneFunkcijeNastavnik);
-            this.panelDodatneFunkcije.Location = new System.Drawing.Point(6, 275);
+            this.panelDodatneFunkcije.Location = new System.Drawing.Point(9, 423);
+            this.panelDodatneFunkcije.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelDodatneFunkcije.Name = "panelDodatneFunkcije";
-            this.panelDodatneFunkcije.Size = new System.Drawing.Size(309, 276);
+            this.panelDodatneFunkcije.Size = new System.Drawing.Size(464, 425);
             this.panelDodatneFunkcije.TabIndex = 2;
             // 
             // panelKursevi
@@ -185,18 +187,18 @@
             this.panelKursevi.Controls.Add(this.prikaziTeorijski);
             this.panelKursevi.Controls.Add(this.prikaziVokalni);
             this.panelKursevi.Controls.Add(this.prikaziInstrumentalni);
-            this.panelKursevi.Location = new System.Drawing.Point(2, 0);
-            this.panelKursevi.Margin = new System.Windows.Forms.Padding(2);
+            this.panelKursevi.Location = new System.Drawing.Point(3, 0);
             this.panelKursevi.Name = "panelKursevi";
-            this.panelKursevi.Size = new System.Drawing.Size(301, 209);
+            this.panelKursevi.Size = new System.Drawing.Size(452, 322);
             this.panelKursevi.TabIndex = 3;
             this.panelKursevi.Visible = false;
             // 
             // dodajPolaznike
             // 
-            this.dodajPolaznike.Location = new System.Drawing.Point(14, 178);
+            this.dodajPolaznike.Location = new System.Drawing.Point(21, 274);
+            this.dodajPolaznike.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dodajPolaznike.Name = "dodajPolaznike";
-            this.dodajPolaznike.Size = new System.Drawing.Size(270, 27);
+            this.dodajPolaznike.Size = new System.Drawing.Size(405, 42);
             this.dodajPolaznike.TabIndex = 9;
             this.dodajPolaznike.Text = "Dodaj Polaznike";
             this.dodajPolaznike.UseVisualStyleBackColor = true;
@@ -205,18 +207,16 @@
             // comboBoxFilijalaID
             // 
             this.comboBoxFilijalaID.FormattingEnabled = true;
-            this.comboBoxFilijalaID.Location = new System.Drawing.Point(14, 152);
-            this.comboBoxFilijalaID.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxFilijalaID.Location = new System.Drawing.Point(21, 234);
             this.comboBoxFilijalaID.Name = "comboBoxFilijalaID";
-            this.comboBoxFilijalaID.Size = new System.Drawing.Size(270, 21);
+            this.comboBoxFilijalaID.Size = new System.Drawing.Size(403, 28);
             this.comboBoxFilijalaID.TabIndex = 8;
             // 
             // prikaziKursPoFilijali
             // 
-            this.prikaziKursPoFilijali.Location = new System.Drawing.Point(14, 117);
-            this.prikaziKursPoFilijali.Margin = new System.Windows.Forms.Padding(2);
+            this.prikaziKursPoFilijali.Location = new System.Drawing.Point(21, 180);
             this.prikaziKursPoFilijali.Name = "prikaziKursPoFilijali";
-            this.prikaziKursPoFilijali.Size = new System.Drawing.Size(270, 31);
+            this.prikaziKursPoFilijali.Size = new System.Drawing.Size(405, 48);
             this.prikaziKursPoFilijali.TabIndex = 7;
             this.prikaziKursPoFilijali.Text = "Prikazi sve kurseve vezane za selektovanu Filijalu";
             this.prikaziKursPoFilijali.UseVisualStyleBackColor = true;
@@ -224,10 +224,9 @@
             // 
             // prikaziFilijalu
             // 
-            this.prikaziFilijalu.Location = new System.Drawing.Point(14, 82);
-            this.prikaziFilijalu.Margin = new System.Windows.Forms.Padding(2);
+            this.prikaziFilijalu.Location = new System.Drawing.Point(21, 126);
             this.prikaziFilijalu.Name = "prikaziFilijalu";
-            this.prikaziFilijalu.Size = new System.Drawing.Size(270, 31);
+            this.prikaziFilijalu.Size = new System.Drawing.Size(405, 48);
             this.prikaziFilijalu.TabIndex = 6;
             this.prikaziFilijalu.Text = "Prikazi Filijale ";
             this.prikaziFilijalu.UseVisualStyleBackColor = true;
@@ -235,10 +234,9 @@
             // 
             // zakaziCas
             // 
-            this.zakaziCas.Location = new System.Drawing.Point(152, 48);
-            this.zakaziCas.Margin = new System.Windows.Forms.Padding(2);
+            this.zakaziCas.Location = new System.Drawing.Point(228, 74);
             this.zakaziCas.Name = "zakaziCas";
-            this.zakaziCas.Size = new System.Drawing.Size(132, 30);
+            this.zakaziCas.Size = new System.Drawing.Size(198, 46);
             this.zakaziCas.TabIndex = 5;
             this.zakaziCas.Text = "Zakazi Cas";
             this.zakaziCas.UseVisualStyleBackColor = true;
@@ -246,10 +244,9 @@
             // 
             // prikaziPolaznikeKursa
             // 
-            this.prikaziPolaznikeKursa.Location = new System.Drawing.Point(14, 48);
-            this.prikaziPolaznikeKursa.Margin = new System.Windows.Forms.Padding(2);
+            this.prikaziPolaznikeKursa.Location = new System.Drawing.Point(21, 74);
             this.prikaziPolaznikeKursa.Name = "prikaziPolaznikeKursa";
-            this.prikaziPolaznikeKursa.Size = new System.Drawing.Size(134, 30);
+            this.prikaziPolaznikeKursa.Size = new System.Drawing.Size(201, 46);
             this.prikaziPolaznikeKursa.TabIndex = 4;
             this.prikaziPolaznikeKursa.Text = "Polaznici";
             this.prikaziPolaznikeKursa.UseVisualStyleBackColor = true;
@@ -257,10 +254,9 @@
             // 
             // prikaziTeorijski
             // 
-            this.prikaziTeorijski.Location = new System.Drawing.Point(198, 12);
-            this.prikaziTeorijski.Margin = new System.Windows.Forms.Padding(2);
+            this.prikaziTeorijski.Location = new System.Drawing.Point(297, 18);
             this.prikaziTeorijski.Name = "prikaziTeorijski";
-            this.prikaziTeorijski.Size = new System.Drawing.Size(86, 30);
+            this.prikaziTeorijski.Size = new System.Drawing.Size(129, 46);
             this.prikaziTeorijski.TabIndex = 3;
             this.prikaziTeorijski.Text = "Teorijski";
             this.prikaziTeorijski.UseVisualStyleBackColor = true;
@@ -268,10 +264,9 @@
             // 
             // prikaziVokalni
             // 
-            this.prikaziVokalni.Location = new System.Drawing.Point(14, 12);
-            this.prikaziVokalni.Margin = new System.Windows.Forms.Padding(2);
+            this.prikaziVokalni.Location = new System.Drawing.Point(21, 18);
             this.prikaziVokalni.Name = "prikaziVokalni";
-            this.prikaziVokalni.Size = new System.Drawing.Size(90, 30);
+            this.prikaziVokalni.Size = new System.Drawing.Size(135, 46);
             this.prikaziVokalni.TabIndex = 2;
             this.prikaziVokalni.Text = "Vokalni";
             this.prikaziVokalni.UseVisualStyleBackColor = true;
@@ -279,10 +274,9 @@
             // 
             // prikaziInstrumentalni
             // 
-            this.prikaziInstrumentalni.Location = new System.Drawing.Point(108, 12);
-            this.prikaziInstrumentalni.Margin = new System.Windows.Forms.Padding(2);
+            this.prikaziInstrumentalni.Location = new System.Drawing.Point(162, 18);
             this.prikaziInstrumentalni.Name = "prikaziInstrumentalni";
-            this.prikaziInstrumentalni.Size = new System.Drawing.Size(86, 30);
+            this.prikaziInstrumentalni.Size = new System.Drawing.Size(129, 46);
             this.prikaziInstrumentalni.TabIndex = 1;
             this.prikaziInstrumentalni.Text = "Instrumentalni";
             this.prikaziInstrumentalni.UseVisualStyleBackColor = true;
@@ -294,19 +288,17 @@
             this.panelDodatneFunkcijeIspit.Controls.Add(this.buttonPolaganje);
             this.panelDodatneFunkcijeIspit.Controls.Add(this.sortirajIspiteButton);
             this.panelDodatneFunkcijeIspit.Controls.Add(this.ispitOcenjivanjeButton);
-            this.panelDodatneFunkcijeIspit.Location = new System.Drawing.Point(2, 2);
-            this.panelDodatneFunkcijeIspit.Margin = new System.Windows.Forms.Padding(2);
+            this.panelDodatneFunkcijeIspit.Location = new System.Drawing.Point(3, 3);
             this.panelDodatneFunkcijeIspit.Name = "panelDodatneFunkcijeIspit";
-            this.panelDodatneFunkcijeIspit.Size = new System.Drawing.Size(301, 209);
+            this.panelDodatneFunkcijeIspit.Size = new System.Drawing.Size(452, 322);
             this.panelDodatneFunkcijeIspit.TabIndex = 1;
             this.panelDodatneFunkcijeIspit.Visible = false;
             // 
             // buttonPolaganje
             // 
-            this.buttonPolaganje.Location = new System.Drawing.Point(15, 102);
-            this.buttonPolaganje.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonPolaganje.Location = new System.Drawing.Point(22, 157);
             this.buttonPolaganje.Name = "buttonPolaganje";
-            this.buttonPolaganje.Size = new System.Drawing.Size(271, 41);
+            this.buttonPolaganje.Size = new System.Drawing.Size(406, 63);
             this.buttonPolaganje.TabIndex = 2;
             this.buttonPolaganje.Text = "Polaganje";
             this.buttonPolaganje.UseVisualStyleBackColor = true;
@@ -314,10 +306,9 @@
             // 
             // sortirajIspiteButton
             // 
-            this.sortirajIspiteButton.Location = new System.Drawing.Point(15, 57);
-            this.sortirajIspiteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.sortirajIspiteButton.Location = new System.Drawing.Point(22, 88);
             this.sortirajIspiteButton.Name = "sortirajIspiteButton";
-            this.sortirajIspiteButton.Size = new System.Drawing.Size(272, 41);
+            this.sortirajIspiteButton.Size = new System.Drawing.Size(408, 63);
             this.sortirajIspiteButton.TabIndex = 1;
             this.sortirajIspiteButton.Text = "Sortiraj po prosecnoj oceni";
             this.sortirajIspiteButton.UseVisualStyleBackColor = true;
@@ -325,10 +316,9 @@
             // 
             // ispitOcenjivanjeButton
             // 
-            this.ispitOcenjivanjeButton.Location = new System.Drawing.Point(15, 11);
-            this.ispitOcenjivanjeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ispitOcenjivanjeButton.Location = new System.Drawing.Point(22, 17);
             this.ispitOcenjivanjeButton.Name = "ispitOcenjivanjeButton";
-            this.ispitOcenjivanjeButton.Size = new System.Drawing.Size(271, 41);
+            this.ispitOcenjivanjeButton.Size = new System.Drawing.Size(406, 63);
             this.ispitOcenjivanjeButton.TabIndex = 0;
             this.ispitOcenjivanjeButton.Text = "Ocenjivanje";
             this.ispitOcenjivanjeButton.UseVisualStyleBackColor = true;
@@ -346,19 +336,17 @@
             this.panelDodatneFunkcijeNastavnik.Controls.Add(this.radioButtonStalni);
             this.panelDodatneFunkcijeNastavnik.Controls.Add(this.radioButtonHonorarni);
             this.panelDodatneFunkcijeNastavnik.Controls.Add(this.radioButtonSviNastavnici);
-            this.panelDodatneFunkcijeNastavnik.Location = new System.Drawing.Point(2, 4);
-            this.panelDodatneFunkcijeNastavnik.Margin = new System.Windows.Forms.Padding(2);
+            this.panelDodatneFunkcijeNastavnik.Location = new System.Drawing.Point(3, 6);
             this.panelDodatneFunkcijeNastavnik.Name = "panelDodatneFunkcijeNastavnik";
-            this.panelDodatneFunkcijeNastavnik.Size = new System.Drawing.Size(296, 210);
+            this.panelDodatneFunkcijeNastavnik.Size = new System.Drawing.Size(444, 323);
             this.panelDodatneFunkcijeNastavnik.TabIndex = 0;
             this.panelDodatneFunkcijeNastavnik.Visible = false;
             // 
             // buttonPrikaziKomeJeMentor
             // 
-            this.buttonPrikaziKomeJeMentor.Location = new System.Drawing.Point(165, 137);
-            this.buttonPrikaziKomeJeMentor.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonPrikaziKomeJeMentor.Location = new System.Drawing.Point(248, 211);
             this.buttonPrikaziKomeJeMentor.Name = "buttonPrikaziKomeJeMentor";
-            this.buttonPrikaziKomeJeMentor.Size = new System.Drawing.Size(128, 46);
+            this.buttonPrikaziKomeJeMentor.Size = new System.Drawing.Size(192, 71);
             this.buttonPrikaziKomeJeMentor.TabIndex = 4;
             this.buttonPrikaziKomeJeMentor.Text = "Prikazi kome\r\nje mentor";
             this.buttonPrikaziKomeJeMentor.UseVisualStyleBackColor = true;
@@ -366,10 +354,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(165, 89);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Location = new System.Drawing.Point(248, 137);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 44);
+            this.button2.Size = new System.Drawing.Size(189, 68);
             this.button2.TabIndex = 8;
             this.button2.Text = "Prikazi mentora";
             this.button2.UseVisualStyleBackColor = true;
@@ -378,10 +365,9 @@
             // 
             // buttonPrikaziMentora
             // 
-            this.buttonPrikaziMentora.Location = new System.Drawing.Point(17, 137);
-            this.buttonPrikaziMentora.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonPrikaziMentora.Location = new System.Drawing.Point(26, 211);
             this.buttonPrikaziMentora.Name = "buttonPrikaziMentora";
-            this.buttonPrikaziMentora.Size = new System.Drawing.Size(126, 46);
+            this.buttonPrikaziMentora.Size = new System.Drawing.Size(189, 71);
             this.buttonPrikaziMentora.TabIndex = 3;
             this.buttonPrikaziMentora.Text = "Prikazi njegovog\r\nmentora\r\n";
             this.buttonPrikaziMentora.UseVisualStyleBackColor = true;
@@ -389,10 +375,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(17, 89);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(26, 137);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 44);
+            this.button1.Size = new System.Drawing.Size(189, 68);
             this.button1.TabIndex = 7;
             this.button1.Text = "Kome je mentor";
             this.button1.UseVisualStyleBackColor = true;
@@ -401,10 +386,9 @@
             // 
             // buttonKurseviNastavnika
             // 
-            this.buttonKurseviNastavnika.Location = new System.Drawing.Point(165, 41);
-            this.buttonKurseviNastavnika.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonKurseviNastavnika.Location = new System.Drawing.Point(248, 63);
             this.buttonKurseviNastavnika.Name = "buttonKurseviNastavnika";
-            this.buttonKurseviNastavnika.Size = new System.Drawing.Size(128, 44);
+            this.buttonKurseviNastavnika.Size = new System.Drawing.Size(192, 68);
             this.buttonKurseviNastavnika.TabIndex = 6;
             this.buttonKurseviNastavnika.Text = "Kursevi koje drzi";
             this.buttonKurseviNastavnika.UseVisualStyleBackColor = true;
@@ -412,10 +396,9 @@
             // 
             // buttonPrikaziNadgledaniIspiti
             // 
-            this.buttonPrikaziNadgledaniIspiti.Location = new System.Drawing.Point(17, 41);
-            this.buttonPrikaziNadgledaniIspiti.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonPrikaziNadgledaniIspiti.Location = new System.Drawing.Point(26, 63);
             this.buttonPrikaziNadgledaniIspiti.Name = "buttonPrikaziNadgledaniIspiti";
-            this.buttonPrikaziNadgledaniIspiti.Size = new System.Drawing.Size(126, 44);
+            this.buttonPrikaziNadgledaniIspiti.Size = new System.Drawing.Size(189, 68);
             this.buttonPrikaziNadgledaniIspiti.TabIndex = 5;
             this.buttonPrikaziNadgledaniIspiti.Text = "Nadgledani ispiti";
             this.buttonPrikaziNadgledaniIspiti.UseVisualStyleBackColor = true;
@@ -425,10 +408,9 @@
             // 
             this.radioButtonStalni.AutoSize = true;
             this.radioButtonStalni.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonStalni.Location = new System.Drawing.Point(232, 14);
-            this.radioButtonStalni.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButtonStalni.Location = new System.Drawing.Point(348, 22);
             this.radioButtonStalni.Name = "radioButtonStalni";
-            this.radioButtonStalni.Size = new System.Drawing.Size(61, 21);
+            this.radioButtonStalni.Size = new System.Drawing.Size(91, 29);
             this.radioButtonStalni.TabIndex = 2;
             this.radioButtonStalni.Text = "Stalni";
             this.radioButtonStalni.UseVisualStyleBackColor = true;
@@ -438,10 +420,9 @@
             // 
             this.radioButtonHonorarni.AutoSize = true;
             this.radioButtonHonorarni.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonHonorarni.Location = new System.Drawing.Point(136, 14);
-            this.radioButtonHonorarni.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButtonHonorarni.Location = new System.Drawing.Point(204, 22);
             this.radioButtonHonorarni.Name = "radioButtonHonorarni";
-            this.radioButtonHonorarni.Size = new System.Drawing.Size(89, 21);
+            this.radioButtonHonorarni.Size = new System.Drawing.Size(131, 29);
             this.radioButtonHonorarni.TabIndex = 1;
             this.radioButtonHonorarni.Text = "Honorarni";
             this.radioButtonHonorarni.UseVisualStyleBackColor = true;
@@ -452,10 +433,9 @@
             this.radioButtonSviNastavnici.AutoSize = true;
             this.radioButtonSviNastavnici.Checked = true;
             this.radioButtonSviNastavnici.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonSviNastavnici.Location = new System.Drawing.Point(17, 14);
-            this.radioButtonSviNastavnici.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButtonSviNastavnici.Location = new System.Drawing.Point(26, 22);
             this.radioButtonSviNastavnici.Name = "radioButtonSviNastavnici";
-            this.radioButtonSviNastavnici.Size = new System.Drawing.Size(114, 21);
+            this.radioButtonSviNastavnici.Size = new System.Drawing.Size(173, 29);
             this.radioButtonSviNastavnici.TabIndex = 0;
             this.radioButtonSviNastavnici.TabStop = true;
             this.radioButtonSviNastavnici.Text = "Svi Nastavnici";
@@ -469,17 +449,19 @@
             this.panel1.Controls.Add(this.buttonKursevi);
             this.panel1.Controls.Add(this.buttonNastavnici);
             this.panel1.Controls.Add(this.buttunPolaznici);
-            this.panel1.Location = new System.Drawing.Point(12, 622);
+            this.panel1.Location = new System.Drawing.Point(18, 957);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1464, 99);
+            this.panel1.Size = new System.Drawing.Size(2196, 152);
             this.panel1.TabIndex = 3;
             // 
             // buttonIspiti
             // 
             this.buttonIspiti.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonIspiti.Location = new System.Drawing.Point(1101, 11);
+            this.buttonIspiti.Location = new System.Drawing.Point(1652, 17);
+            this.buttonIspiti.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonIspiti.Name = "buttonIspiti";
-            this.buttonIspiti.Size = new System.Drawing.Size(357, 71);
+            this.buttonIspiti.Size = new System.Drawing.Size(536, 109);
             this.buttonIspiti.TabIndex = 11;
             this.buttonIspiti.Text = "Ispiti";
             this.buttonIspiti.UseVisualStyleBackColor = true;
@@ -488,9 +470,10 @@
             // buttonKursevi
             // 
             this.buttonKursevi.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonKursevi.Location = new System.Drawing.Point(738, 12);
+            this.buttonKursevi.Location = new System.Drawing.Point(1107, 18);
+            this.buttonKursevi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonKursevi.Name = "buttonKursevi";
-            this.buttonKursevi.Size = new System.Drawing.Size(357, 71);
+            this.buttonKursevi.Size = new System.Drawing.Size(536, 109);
             this.buttonKursevi.TabIndex = 10;
             this.buttonKursevi.Text = "Kursevi";
             this.buttonKursevi.UseVisualStyleBackColor = true;
@@ -499,9 +482,10 @@
             // buttonNastavnici
             // 
             this.buttonNastavnici.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNastavnici.Location = new System.Drawing.Point(375, 11);
+            this.buttonNastavnici.Location = new System.Drawing.Point(562, 17);
+            this.buttonNastavnici.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonNastavnici.Name = "buttonNastavnici";
-            this.buttonNastavnici.Size = new System.Drawing.Size(357, 71);
+            this.buttonNastavnici.Size = new System.Drawing.Size(536, 109);
             this.buttonNastavnici.TabIndex = 9;
             this.buttonNastavnici.Text = "Nastavnici";
             this.buttonNastavnici.UseVisualStyleBackColor = true;
@@ -510,9 +494,10 @@
             // buttunPolaznici
             // 
             this.buttunPolaznici.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttunPolaznici.Location = new System.Drawing.Point(12, 12);
+            this.buttunPolaznici.Location = new System.Drawing.Point(18, 18);
+            this.buttunPolaznici.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttunPolaznici.Name = "buttunPolaznici";
-            this.buttunPolaznici.Size = new System.Drawing.Size(357, 71);
+            this.buttunPolaznici.Size = new System.Drawing.Size(536, 109);
             this.buttunPolaznici.TabIndex = 8;
             this.buttunPolaznici.Text = "Polaznici";
             this.buttunPolaznici.UseVisualStyleBackColor = true;
@@ -523,9 +508,10 @@
             this.pictureBoxPocetna.BackColor = System.Drawing.Color.IndianRed;
             this.pictureBoxPocetna.Image = global::Muzicka_skola.Properties.Resources.portrait;
             this.pictureBoxPocetna.InitialImage = null;
-            this.pictureBoxPocetna.Location = new System.Drawing.Point(12, 148);
+            this.pictureBoxPocetna.Location = new System.Drawing.Point(18, 228);
+            this.pictureBoxPocetna.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBoxPocetna.Name = "pictureBoxPocetna";
-            this.pictureBoxPocetna.Size = new System.Drawing.Size(633, 468);
+            this.pictureBoxPocetna.Size = new System.Drawing.Size(950, 720);
             this.pictureBoxPocetna.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPocetna.TabIndex = 7;
             this.pictureBoxPocetna.TabStop = false;
@@ -537,9 +523,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Haettenschweiler", 80F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label1.Location = new System.Drawing.Point(571, 18);
+            this.label1.Location = new System.Drawing.Point(856, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(564, 111);
+            this.label1.Size = new System.Drawing.Size(844, 169);
             this.label1.TabIndex = 6;
             this.label1.Text = "MUZICKA SKOLA";
             // 
@@ -583,7 +570,7 @@
             this.radioButtonStaratelji.AutoSize = true;
             this.radioButtonStaratelji.Location = new System.Drawing.Point(218, 11);
             this.radioButtonStaratelji.Name = "radioButtonStaratelji";
-            this.radioButtonStaratelji.Size = new System.Drawing.Size(65, 17);
+            this.radioButtonStaratelji.Size = new System.Drawing.Size(96, 24);
             this.radioButtonStaratelji.TabIndex = 3;
             this.radioButtonStaratelji.TabStop = true;
             this.radioButtonStaratelji.Text = "Staratelji";
@@ -595,7 +582,7 @@
             this.radioButtonDeca.AutoSize = true;
             this.radioButtonDeca.Location = new System.Drawing.Point(161, 11);
             this.radioButtonDeca.Name = "radioButtonDeca";
-            this.radioButtonDeca.Size = new System.Drawing.Size(51, 17);
+            this.radioButtonDeca.Size = new System.Drawing.Size(72, 24);
             this.radioButtonDeca.TabIndex = 2;
             this.radioButtonDeca.TabStop = true;
             this.radioButtonDeca.Text = "Deca";
@@ -607,7 +594,7 @@
             this.radioButtonOdrasli.AutoSize = true;
             this.radioButtonOdrasli.Location = new System.Drawing.Point(98, 11);
             this.radioButtonOdrasli.Name = "radioButtonOdrasli";
-            this.radioButtonOdrasli.Size = new System.Drawing.Size(57, 17);
+            this.radioButtonOdrasli.Size = new System.Drawing.Size(83, 24);
             this.radioButtonOdrasli.TabIndex = 1;
             this.radioButtonOdrasli.TabStop = true;
             this.radioButtonOdrasli.Text = "Odrasli";
@@ -619,7 +606,7 @@
             this.radioButtonSviPolaznici.AutoSize = true;
             this.radioButtonSviPolaznici.Location = new System.Drawing.Point(8, 11);
             this.radioButtonSviPolaznici.Name = "radioButtonSviPolaznici";
-            this.radioButtonSviPolaznici.Size = new System.Drawing.Size(84, 17);
+            this.radioButtonSviPolaznici.Size = new System.Drawing.Size(120, 24);
             this.radioButtonSviPolaznici.TabIndex = 0;
             this.radioButtonSviPolaznici.TabStop = true;
             this.radioButtonSviPolaznici.Text = "Svi polaznici";
@@ -628,11 +615,12 @@
             // 
             // GlobalForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1813, 744);
+            this.ClientSize = new System.Drawing.Size(1178, 944);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelFunkcije);
             this.Controls.Add(this.panelPrikaz);
@@ -640,8 +628,10 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "GlobalForm";
             this.Text = "Muzicka Skola";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelPrikaz.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrikazPodataka)).EndInit();
             this.panelFunkcije.ResumeLayout(false);

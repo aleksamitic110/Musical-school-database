@@ -84,11 +84,11 @@ namespace DatabaseAccess.DataProviders
 				session = DataLayer.GetSession();
 				transaction = session.BeginTransaction();
 
-				// Provera da li postoje Kurs i Ucionica na koje se referencira
+				
 				var kurs = await session.GetAsync<Kurs>(noviCas.IdKursa);
 				if (kurs == null)
 				{
-					return new ErrorMessage("Kurs sa datim ID-jem ne postoji.", 400); // 400 Bad Request
+					return new ErrorMessage("Kurs sa datim ID-jem ne postoji.", 400); 
 				}
 				var ucionica = await session.GetAsync<Ucionica>(noviCas.IdUcionice);
 				if (ucionica == null)
